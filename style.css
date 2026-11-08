@@ -4,3 +4,11 @@
 .single-reading{display:inline-block;max-width:100%;vertical-align:top}
 
 .option.selected:not(:disabled){border-color:var(--green);background:#f0f5e9;box-shadow:0 0 0 2px #a4bba0 inset}.quiz-buttons{display:flex;gap:10px;align-items:center}.quiz-buttons button:disabled{opacity:.5}.option-gloss{display:block;flex:1 1 auto;min-width:0;font-size:11px;color:var(--muted);line-height:1.6;overflow-wrap:anywhere;text-align:right}.option:has(.option-gloss){flex-wrap:nowrap}.option:has(.option-gloss)>span:nth-child(2){flex:0 0 auto}.word-row .meaning strong{color:var(--ink)}@media(max-width:500px){.quiz-buttons{width:100%}.quiz-buttons button{flex:1}}
+
+/* After grading, correct and chosen wrong answers must stay distinct even when buttons remain playable. */
+.option.correct,.option.correct:hover:enabled{background:#e0f2da;border-color:#3b8551;box-shadow:inset 0 0 0 2px #3b8551}
+.option.wrong,.option.wrong:hover:enabled{background:#ffe5e1;border-color:#c54b43;box-shadow:inset 0 0 0 2px #c54b43}
+.option.correct .key{color:#23683a;border-color:#3b8551}
+.option.wrong .key{color:#a82c2c;border-color:#c54b43}
+.option.correct .key::after{content:' ✓';font-weight:700}
+.option.wrong .key::after{content:' ✕';font-weight:700}
