@@ -15,3 +15,5 @@ const stats=vm.runInContext(`({total:Object.keys(KANJI_DATA).length,korean:Objec
 assert(stats.korean/stats.total>.98);
 for(const word of vm.runInContext('WORDS',context))assert.equal(typeof detail.render(word),'string');
 console.log(`PASS: 暖 훈음, Japanese readings, 学→學, multiple 弁 forms, kana/々 handling, missing data, escaping, all 7,811 explanations; ${stats.korean}/${stats.total} Korean kanji glosses`);
+
+assert.equal(detail.korean('病院'),'병원');assert.equal(detail.korean('トイレ'),'화장실');assert(detail.render({word:'病院',meaning:'hospital'}).includes('영어: hospital'));
