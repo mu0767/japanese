@@ -1,0 +1,17 @@
+const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/strict');
+const context=vm.createContext({});
+vm.runInContext(fs.readFileSync('data.js','utf8')+fs.readFileSync('kanji-data.js','utf8')+fs.readFileSync('kanji.js','utf8'),context);
+const detail=context.KanjiDetails;
+const warm=detail.entries('暖かい')[0];
+assert.equal(warm.character,'暖');assert(warm.korean.some(k=>k.meanings.includes('따뜻할 난')));assert(warm.on.includes('ダン'));assert(warm.kun.includes('あたた.かい'));
+assert(detail.render({word:'暖かい',meaning:'warm'}).includes('따뜻하다'));
+const school=detail.entries('学校');assert.equal(school.length,2);assert(school[0].korean.some(k=>k.character==='學'&&k.meanings.includes('배울 학')));
+const multi=detail.entries('弁')[0];assert(multi.korean.some(k=>k.character==='辨'));assert(multi.korean.some(k=>k.character==='辯'));assert(multi.korean.some(k=>k.character==='瓣'));
+assert.equal(detail.entries('テレビ').length,0);assert(!detail.render({word:'テレビ',meaning:'television'}).includes('kanji-card'));
+assert.equal(detail.entries('日日').length,1);assert(detail.render({word:'日々',meaning:'every day'}).includes('앞 한자를 반복하는 기호'));
+assert(detail.render({word:'躾',meaning:'<img onerror=alert(1)>'}).includes('&lt;img'));assert(!detail.render({word:'躾',meaning:'<img onerror=alert(1)>'}).includes('<img'));
+assert(detail.render({word:'躾',meaning:'discipline'}).includes('등록된 한국식 풀이가 없어요'));
+const stats=vm.runInContext(`({total:Object.keys(KANJI_DATA).length,korean:Object.values(KANJI_DATA).filter(k=>k.korean.length).length})`,context);
+assert(stats.korean/stats.total>.98);
+for(const word of vm.runInContext('WORDS',context))assert.equal(typeof detail.render(word),'string');
+console.log(`PASS: 暖 훈음, Japanese readings, 学→學, multiple 弁 forms, kana/々 handling, missing data, escaping, all 7,811 explanations; ${stats.korean}/${stats.total} Korean kanji glosses`);
