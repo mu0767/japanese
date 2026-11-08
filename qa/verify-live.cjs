@@ -11,6 +11,9 @@ async function read(path) {
 (async () => {
   const html = await read('index.html');
   assert.match(html, /최근 갱신 · 20\d\d\.\d\d\.\d\d \d\d:\d\d/, 'Korean update timestamp missing');
+  assert.match(html, /korean-data\\.js\\?v=\\d+/, 'Korean vocabulary asset missing');
+  const korean = await read(html.match(/<script src="(korean-data\\.js\\?v=\\d+)"/)?.[1]);
+  assert.ok(korean.includes('"大切":"소중하다, 중요하다"'), 'N5 Korean vocabulary not deployed');
   const appPath = html.match(/<script src="(app\.js\?v=\d+)"/)?.[1];
   assert.ok(appPath, 'Versioned app.js missing from HTML');
   const app = await read(appPath);
