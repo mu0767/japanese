@@ -11,6 +11,10 @@ async function read(file){
   assert.match(html,/최근 갱신 · 20\d\d\.\d\d\.\d\d \d\d:\d\d/);
   const script=key=>html.match(new RegExp('<script src="('+key+'\\?v=\\d+)"'))?.[1];
   const get=async key=>{const p=script(key);assert(p,'Not referenced: '+key);return read(p)};
+  const stylePath=html.match(/href="(style\\.css\\?v=\\d+)"/)?.[1];
+  assert(stylePath==='style.css?v=6','Updated mobile header CSS version not published yet');
+  const stylesheet=await read(stylePath);
+  assert(stylesheet.includes('Keep the latest update visible on small screens'),'Mobile header styles not published yet');
   const original=await get('korean-data\\.js');
   assert(original.includes('"大切":"소중하다, 중요하다"'),'N5 Korean map not published');
   const sourced=await get('korean-krdict-data\\.js');
