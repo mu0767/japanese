@@ -45,6 +45,7 @@ async function localServer(){const webRoot=path.resolve(__dirname,'..');const se
   for(const page of pages){assert.equal(await page.evaluate(()=>state.correct),6);assert(await page.locator('#cloud-sync-on').isVisible(),'Connected device should show automatic sync state')}
   // Both browsers must display exactly the same mastered-word count once remote sync has settled.
   for(const page of pages)await page.goto(base+'#home');
+  await Promise.all(pages.map(page=>page.waitForFunction(()=>document.querySelector('#home-sync-state')?.textContent?.includes('서버 동기화 완료'),null,{timeout:20000})));
   const mastered=await Promise.all(pages.map(page=>page.locator('[data-level="N5"] .learned').textContent()));
   assert(mastered.every(value=>value===mastered[0]),'PC and mobile mastered-word counts differ after sync');
   for(const page of pages)assert.match(await page.locator('#home-sync-state').textContent(),/서버 동기화 완료/);
