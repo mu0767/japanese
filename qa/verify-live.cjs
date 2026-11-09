@@ -23,6 +23,9 @@ async function read(file){
   const app=await get('app\\.js');
   assert(app.includes('id="confirm"'),'Confirmation button missing');
   assert(app.includes('optionWords'),'Exact option word association missing');
+  assert(app.includes("scope='pending'") && app.includes('studyPool('),'New unseen/missed learning mode not deployed yet');
+  const core=await get('core\\.js');
+  assert(core.includes('function studyPool('),'New learning pool logic not deployed yet');
   assert(app.includes('b.classList.remove(\'selected\')'),'Grading colors regression');
   assert(app.includes("e.error==='canceled'"),'TTS cancelled error regression');
   const next=app.indexOf('id="next"'),explanation=app.indexOf('${KanjiDetails.render(w)}');

@@ -4,7 +4,7 @@ assert.equal(k.normalize('ガク セイ'),'がくせい');let state={total:0,cor
 
 // Default study pool includes only unseen and currently missed words; all mode reopens learned words.
 const [unseen,wrong,learned,wrongAgain]=words.slice(100,104);
-const progress={words:{[wrong.id]:{right:0,wrong:1,missed:true},[learned.id]:{right:1,wrong:0,missed:false},[wrongAgain.id]:{right:2,wrong:1,missed:true}}};
+const progress={total:0,correct:0,days:{},words:{[wrong.id]:{right:0,wrong:1,missed:true},[learned.id]:{right:1,wrong:0,missed:false},[wrongAgain.id]:{right:2,wrong:1,missed:true}}};
 assert.deepEqual(k.studyPool([unseen,wrong,learned,wrongAgain],progress).map(w=>w.id),[unseen.id,wrong.id,wrongAgain.id]);
 assert.equal(k.studyPool([unseen,wrong,learned,wrongAgain],progress,'all').length,4);
 k.record(progress,wrongAgain,true,'2026-11-09');

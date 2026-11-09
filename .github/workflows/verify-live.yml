@@ -29,6 +29,10 @@ jobs:
             sleep 8
           done
           test "$success" = 1
+      - name: Unit tests for progress and kanji glossary
+        run: |
+          node test.cjs
+          node test-kanji.cjs
       - name: Install browser harness
         run: npm install --no-save playwright-core
       - name: Verify real mobile browser interactions
