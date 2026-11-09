@@ -1,0 +1,22 @@
+const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm'),assert=require('node:assert/strict'),{pathToFileURL}=require('node:url');
+const {chromium}=require('playwright');
+const words=vm.runInNewContext(fs.readFileSync('data.js','utf8')+';WORDS'),[a,b,c]=words.slice(0,3),day='2026-11-09';
+const original=[{total:4,correct:3,days:{[day]:4},words:{[a.id]:{right:2,wrong:1,missed:false},[b.id]:{right:1,wrong:0,missed:false}}},{total:3,correct:1,days:{[day]:3},words:{[a.id]:{right:0,wrong:2,missed:true},[c.id]:{right:1,wrong:0,missed:false}}},{total:2,correct:2,days:{[day]:2},words:{[b.id]:{right:2,wrong:0,missed:false}}}];
+(async()=>{const browser=await chromium.launch({executablePath:process.env.CHROME_PATH||'C:/Program Files/Google/Chrome/Application/chrome.exe',headless:true});try{
+const contexts=[],pages=[],errors=[];for(const state of original){const ctx=await browser.newContext({viewport:{width:390,height:844},acceptDownloads:true});await ctx.addInitScript(s=>{if(!localStorage.getItem('qa-seeded')){localStorage.setItem('kotoba-v1',JSON.stringify(s));localStorage.setItem('qa-seeded','yes')}Object.defineProperty(window,'speechSynthesis',{value:{cancel(){},getVoices(){return []},speak(){}}})},state);const p=await ctx.newPage();p.on('pageerror',e=>errors.push(e.message));await p.goto((process.argv[2]||pathToFileURL(path.resolve('index.html')).href)+'#records');await p.waitForSelector('#export-progress');contexts.push(ctx);pages.push(p)}
+const [pc,edge,phone]=pages;assert.equal(await pc.evaluate(()=>state.total),4);assert.equal(await edge.evaluate(()=>state.total),3);
+const edgeExport=await edge.evaluate(()=>progressStore.exportData()),phoneExport=await phone.evaluate(()=>progressStore.exportData());
+async function importText(page,text){await page.locator('#progress-json').fill(text);await page.locator('#preview-progress').click();assert(await page.locator('#merge-progress').isEnabled());await page.locator('#merge-progress').click()}
+await pc.locator('#progress-json').fill('{"invalid":true}');await pc.locator('#preview-progress').click();assert(await pc.locator('#merge-progress').isDisabled());assert.equal(await pc.evaluate(()=>state.total),4);
+await importText(pc,edgeExport);assert.equal(await pc.evaluate(()=>state.total),7);await importText(pc,phoneExport);assert.equal(await pc.evaluate(()=>state.total),9);assert.equal(await pc.evaluate(()=>state.correct),6);
+await importText(pc,edgeExport);assert.equal(await pc.evaluate(()=>state.total),9);assert.equal(await pc.evaluate(id=>state.words[id].missed,a.id),true);
+const merged=await pc.evaluate(()=>progressStore.exportData());await importText(edge,merged);assert.equal(await edge.evaluate(()=>state.total),9);
+await edge.locator('a.records-home').click();await edge.evaluate(id=>{const w=WORDS.find(x=>x.id===id);mode='reading';session={list:[w],index:0,correct:0,review:false,answers:[],answered:false,selected:null,q:null};quiz();answer(session.q.options.indexOf(session.q.answer))},a.id);assert.equal(await edge.evaluate(()=>state.total),10);
+assert.equal(await edge.evaluate(id=>state.words[id].missed,a.id),false);
+await importText(pc,await edge.evaluate(()=>progressStore.exportData()));assert.equal(await pc.evaluate(()=>state.total),10);assert.equal(await pc.evaluate(id=>state.words[id].missed,a.id),false);
+await pc.locator('#restore-progress').click();assert.equal(await pc.evaluate(()=>state.total),9);await importText(pc,await edge.evaluate(()=>progressStore.exportData()));assert.equal(await pc.evaluate(()=>state.total),10);
+await pc.locator('#progress-label').fill('PC-Chrome');const [download]=await Promise.all([pc.waitForEvent('download'),pc.locator('#export-progress').click()]);assert(download.suggestedFilename().startsWith('kotoba-progress-'));assert(download.suggestedFilename().includes('PC-Chrome'));
+await pc.reload();await pc.waitForSelector('#export-progress');assert.equal(await pc.evaluate(()=>state.total),10);assert.equal(await pc.evaluate(()=>JSON.parse(localStorage.getItem('kotoba-v1')).total),10);
+assert(await pc.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));await pc.screenshot({path:'qa-progress-mobile.png',fullPage:true});assert.deepEqual(errors,[]);
+console.log('PASS: three independent legacy browsers, PC+Edge+phone union, reimport, round-trip, new answer, undo, download, reload, mobile and no errors');for(const ctx of contexts)await ctx.close();
+}finally{await browser.close()}})().catch(e=>{console.error(e);process.exitCode=1});

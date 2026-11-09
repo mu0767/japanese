@@ -7,7 +7,8 @@ N5~N1 일본어 단어 7,811개를 학습하는 반응형 정적 웹사이트입
 - 기본 출제는 미학습·오답 우선, 전체 단어로 다시 학습 가능
 - 정답 확인 후 한자별 한국식 뜻·음(예: 暖 따뜻할 난), 일본어 음독·훈독 해설
 - 정답률, 연속 학습, 최근 7일 기록 (브라우저 localStorage)
-- 모바일과 키보드 지원. 별도 API 키·로그인·서버 불필요
+- 모바일과 키보드 지원. 별도 API 키·로그인 불필요
+- 기기 연결 링크로 기록 합치기·자동 동기화, JSON 파일 백업
 
 ## GitHub Pages
 
@@ -24,7 +25,7 @@ Node.js에서 `node test.cjs`. 모든 단어에 대해 급수별 선택지의 �
 
 OpenJLPT에서 가져온 데이터의 필드를 축약했습니다. CC BY-SA 4.0. DATA-NOTICE.md와 DATA-LICENSE.txt 참고.
 전체 7,811개 단어의 뜻을 한국어로 제공합니다. 급수는 공식 출제 목록이 아닌 커뮤니티 학습용 분류입니다.
-진도는 기기 간 자동 동기화되지 않습니다. 음성 재생은 기기의 일본어 TTS 지원 여부에 따라 달라집니다.
+기기 동기화를 한 번 연결하면 기존 기록을 합치고 이후 진도를 공유합니다. 기존 UNION Site의 Cloudflare D1을 사용하며 GitHub에는 개인 기록을 저장하지 않습니다. 연결 방법과 데이터 구조는 [PROGRESS.md](PROGRESS.md) 참조. 음성 재생은 기기의 일본어 TTS 지원 여부에 따라 달라집니다.
 
 한자 해설은 OpenJLPT/KANJIDIC2, libhangul, OpenCC의 정적 데이터를 결합했습니다. KANJI-NOTICE.md와 각 라이선스 참조. 한국식 풀이가 없는 글자는 없다고 표시합니다.
 
@@ -33,3 +34,5 @@ OpenJLPT에서 가져온 데이터의 필드를 축약했습니다. CC BY-SA 4.0
 검증: `node test-korean.cjs`, `node test-kanji.cjs`. 선택된 원본 근거로 재생성: `node build-korean.cjs --from-snapshot`.
 
 UI 참고: Duolingo의 짧은 연습과 오답 복습, WaniKani의 복습 중심 학습. 디자인은 코토바용으로 작성했습니다.
+
+진도 검증: `node test-progress.cjs`, `node test-cloud-sync.cjs`, `node qa/qa-progress-browser.cjs`, `node qa/qa-cloud-browser.cjs`. 실제 배포 연결은 `node qa/qa-cloud-browser.cjs --live https://mu0767.github.io/japanese/`로 검증합니다.
