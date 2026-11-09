@@ -1,0 +1,21 @@
+.quick-export-dock{position:fixed;right:16px;bottom:16px;z-index:30;font-family:'Noto Sans KR',sans-serif}
+.quick-export-trigger{padding:11px 15px;min-height:46px;border:1px solid #1d4833;background:#28543f;color:#fff;border-radius:999px;font-size:12px;font-weight:700;box-shadow:0 5px 20px #183b2b40}
+.quick-export-trigger:hover{background:#1d4230}
+.quick-export-panel{position:absolute;right:0;bottom:calc(100% + 10px);width:min(365px,calc(100vw - 24px));max-height:min(74vh,640px);overflow:auto;background:#fff;border:1px solid #cdd8c8;border-radius:17px;padding:20px;box-shadow:0 12px 38px #17362735;color:#203a30;overscroll-behavior:contain}
+.quick-export-panel[hidden]{display:none}
+.quick-export-heading{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.quick-export-heading h2{font-size:17px;margin:0}
+#quick-export-close{border:0;background:#eef2e9;border-radius:9px;padding:7px 11px;font-size:14px}
+.quick-export-panel p{font-size:12px;line-height:1.75;color:#65776b;margin:12px 0}
+.quick-export-summary{background:#f1f6ed;border-radius:9px;padding:10px;font-size:12px;margin:10px 0}
+.quick-export-buttons{display:flex;gap:8px;flex-wrap:wrap}
+.quick-export-buttons button{flex:1;min-height:42px;padding:8px 9px;border-radius:9px;font-size:12px;font-weight:600}
+.quick-export-copy{background:#28543f;border:1px solid #28543f;color:#fff}
+.quick-export-download{background:#fff;border:1px solid #aab9a5;color:#28543f}
+.quick-export-message{font-size:12px;line-height:1.6;color:#28543f;margin:10px 0;min-height:1px}
+.quick-export-message.is-error{color:#af3f39}
+.quick-export-panel label{display:block;font-size:11px;line-height:1.5;color:#69766d;margin-top:12px}
+.quick-export-panel textarea{box-sizing:border-box;width:100%;max-width:100%;min-height:82px;margin-top:7px;border:1px solid #d5ddd0;border-radius:8px;padding:9px;background:#f8faf7;font:11px/1.55 monospace;color:#3b5143;resize:vertical;overflow-wrap:anywhere}
+.quick-export-import{display:block;color:#28543f;font-size:12px;font-weight:600;margin:12px 0;text-decoration:underline}
+.quick-export-panel small{display:block;font-size:10px;line-height:1.6;color:#7b887e}
+@media(max-width:500px){.quick-export-dock{right:12px;bottom:12px}.quick-export-panel{padding:17px;width:calc(100vw - 24px)}.quick-export-trigger{min-height:45px}}

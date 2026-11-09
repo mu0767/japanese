@@ -33,6 +33,8 @@ jobs:
         run: |
           node test.cjs
           node test-kanji.cjs
+          node test-progress.cjs
+          node --check quick-export.js
       - name: Install browser harness
         run: npm install --no-save playwright-core
       - name: Verify real mobile browser interactions

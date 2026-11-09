@@ -15,6 +15,18 @@ const base=(process.argv[2]||'https://mu0767.github.io/japanese/').replace(/\/?$
     assert(noteBox.x+noteBox.width<=390+1,'Mobile update timestamp must fit on screen');
     assert(noteBox.y>=headerBox.y&&noteBox.y+noteBox.height<=headerBox.y+headerBox.height+1,'Timestamp must remain within mobile header');
     await page.locator('#start').click();
+    const quick=page.locator('#quick-export-trigger');
+    assert(await quick.isVisible(),'Mobile quick export button is missing');
+    await quick.click();
+    const exportField=page.locator('#quick-export-text');
+    assert(await exportField.isVisible(),'Export fallback text should be visible');
+    const exported=JSON.parse(await exportField.inputValue());
+    assert.equal(exported.format,'kotoba-progress');
+    assert.equal(exported.version,2);
+    assert(exported.sourceDeviceId&&exported.components[exported.sourceDeviceId]);
+    assert(!JSON.stringify(exported).includes('kotoba-cloud-sync-v1'),'Export must not include cloud connection key');
+    await page.locator('#quick-export-close').click();
+    assert(!await page.locator('#quick-export-panel').isVisible(),'Export dialog should close');
     const options=page.locator('[data-option]');
     assert.equal(await options.count(),4);
     const labels=await options.locator('span:nth-child(2)').allTextContents();
