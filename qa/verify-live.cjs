@@ -6,14 +6,16 @@ async function read(path){const url=new URL(path,base);url.searchParams.set('_ve
  const html=await read('index.html');
  const paths=[...html.matchAll(/<script src="([^"]+)"/g)].map(m=>m[1]);
  assert(paths.some(p=>/^korean-data\.js\?v=\d+$/.test(p)));assert(paths.some(p=>/^korean-kengdic\.js\?v=\d+$/.test(p)));
- assert(paths.includes('quick-export.js?v=1'),'Right-side progress export asset not deployed');
- assert((await read('quick-export.css?v=1')).includes('quick-export-dock'),'Export shortcut CSS not deployed');
+ assert(!paths.some(p=>p.startsWith('quick-export.js')||p.startsWith('records-ui.js')),'Legacy import/export scripts still published');
+ assert(paths.includes('cloud-sync-ui.js?v=2'),'Automatic sync UI version missing');
  const scripts=await Promise.all(paths.map(read)),context=vm.createContext({});let app='';
  for(let i=0;i<paths.length;i++){if(paths[i].startsWith('app.js'))app=scripts[i];else vm.runInContext(scripts[i],context)}
  const coverage=vm.runInContext(`({total:WORDS.length,translated:WORDS.filter(w=>/\\p{Script=Hangul}/u.test(KanjiDetails.korean(w)||'')).length,levels:Object.fromEntries(['N5','N4','N3','N2','N1'].map(level=>[level,WORDS.filter(w=>w.level===level&&KanjiDetails.korean(w)).length]))})`,context);
- assert(typeof context.KotobaQuickExport?.mount==='function','One-click copy export is not available');
+ assert(typeof context.KotobaCloudUI?.mount==='function','Automatic sync UI missing');
  assert.equal(coverage.total,7811);
  assert(app.includes('setupCloud()'),'Cloud synchronization initialization missing');
+ assert(app.includes('refreshRecordDashboard'),'Progress dashboard missing');
+ assert(!app.includes('RecordsUI.render'),'Legacy manual import/export UI still used');
  const sync=await read(paths.find(p=>p.startsWith('cloud-sync.js')));
  assert(sync.includes('https://kotoba-sync.union-raid.workers.dev/api/kotoba-progress'),'New D1 endpoint not published');assert.equal(coverage.translated,7811);
  assert(app.includes('id="confirm"'));assert(app.includes("b.onclick=()=>speak(s.q.options[i])"),'Post-answer option replay lost');

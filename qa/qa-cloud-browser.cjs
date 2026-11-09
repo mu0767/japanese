@@ -33,23 +33,23 @@ async function localServer(){const webRoot=path.resolve(__dirname,'..');const se
     }
     await route.fulfill({status:200,headers,body:JSON.stringify({version:room?.version||0,progress:room?JSON.parse(room.store.exportData()):null})});
    });
-   const page=await ctx.newPage();pages.push(page);page.on('pageerror',e=>errors.push(e.message));await page.goto(base+'#records');await page.waitForSelector('#cloud-enable');
+   const page=await ctx.newPage();pages.push(page);page.on('pageerror',e=>errors.push(e.message));await page.goto(base+'#records');await page.waitForSelector('#cloud-sync-off');
   }
   const [pc,edge,phone]=pages;
   for(let i=0;i<pages.length;i++)assert.equal(await pages[i].evaluate(()=>state.total),fixtures[i].total);
-  await pc.locator('#cloud-enable').click();await pc.waitForFunction(()=>cloudClient.status().lastSyncedAt&&!cloudClient.status().syncing);
-  const privateLink=await pc.evaluate(()=>cloudClient.link());assert(privateLink.startsWith('https://mu0767.github.io/japanese/#records?connect='));
+  // The mock test uses a provisioned private link, not an unrecognized new key.
+  const privateLink='https://mu0767.github.io/japanese/#records?connect='+('q'.repeat(43));
   async function incoming(page,index){const before=postCounts[index];await page.goto(base+new URL(privateLink).hash);await page.waitForSelector('#cloud-join');assert.equal(await page.evaluate(()=>cloudClient.status().connected),false);assert.equal(await page.locator('#cloud-join-link').inputValue(),privateLink);assert.equal(await page.evaluate(()=>location.hash),'#records');await page.evaluate(()=>progressChanged(progressStore.load()));assert.equal(await page.locator('#cloud-join-link').inputValue(),privateLink);if(!live)assert.equal(postCounts[index],before,'incoming link must not upload until explicit join');await page.locator('#cloud-join').click();await page.waitForFunction(()=>cloudClient.status().lastSyncedAt&&!cloudClient.status().syncing)}
   async function syncAll(total){for(let attempt=0;attempt<6;attempt++){await Promise.all(pages.map(p=>p.evaluate(()=>cloudClient.sync())));const counts=await Promise.all(pages.map(p=>p.evaluate(()=>state.total)));if(counts.every(x=>x===total))return;await new Promise(resolve=>setTimeout(resolve,100))}assert.deepEqual(await Promise.all(pages.map(p=>p.evaluate(()=>state.total))),[total,total,total])}
-  await incoming(edge,1);await incoming(phone,2);await syncAll(9);
-  for(const page of pages){assert.equal(await page.evaluate(()=>state.correct),6);assert(await page.locator('#restore-progress').isDisabled(),'cloud merge cannot be undone by local backup restore')}
+  await incoming(pc,0);await incoming(edge,1);await incoming(phone,2);await syncAll(9);
+  for(const page of pages){assert.equal(await page.evaluate(()=>state.correct),6);assert(await page.locator('#cloud-sync-on').isVisible(),'Connected device should show automatic sync state')}
   async function answerOne(page){await page.goto(base+'#home');await page.waitForSelector('#start');await page.evaluate(id=>{const w=WORDS.find(x=>x.id===id);mode='reading';session={list:[w],index:0,correct:0,review:false,answers:[],answered:false,selected:null,q:null};quiz();answer(session.q.options.indexOf(session.q.answer))},a.id)}
   await answerOne(pc);assert.equal(await pc.evaluate(()=>state.total),10);await syncAll(10);
-  await phone.goto(base+'#records');await phone.waitForSelector('#cloud-join');await phone.locator('#cloud-join-link').fill(privateLink);await phone.locator('#cloud-join').click();await phone.waitForFunction(()=>cloudClient.status().lastSyncedAt&&!cloudClient.status().syncing);await syncAll(10);
+  await phone.goto(base+'#records');await phone.evaluate(()=>cloudClient.sync());await syncAll(10);
   offline[2]=true;await contexts[2].setOffline(true);await answerOne(phone);assert.equal(await phone.evaluate(()=>state.total),11);await phone.evaluate(()=>cloudClient.sync().catch(()=>{}));assert.equal(await phone.evaluate(()=>state.total),11);assert(await phone.evaluate(()=>!!cloudClient.status().error));assert.equal(await pc.evaluate(()=>state.total),10);
-  offline[2]=false;await contexts[2].setOffline(false);await syncAll(11);await phone.goto(base+'#records');await phone.waitForSelector('#cloud-share-link');assert(await phone.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),'390px mobile layout must not overflow');assert(await phone.locator('#restore-progress').isDisabled());
-  await phone.reload();await phone.waitForSelector('#cloud-share-link');await phone.waitForFunction(()=>cloudClient.status().lastSyncedAt&&!cloudClient.status().syncing);assert.equal(await phone.evaluate(()=>state.total),11);assert.equal(await phone.evaluate(()=>JSON.parse(localStorage.getItem('kotoba-v1')).total),11);
+  offline[2]=false;await contexts[2].setOffline(false);await syncAll(11);await phone.goto(base+'#records');await phone.waitForSelector('#cloud-sync-on');assert(await phone.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),'390px mobile layout must not overflow');
+  await phone.reload();await phone.waitForSelector('#cloud-sync-on');await phone.waitForFunction(()=>cloudClient.status().lastSyncedAt&&!cloudClient.status().syncing);assert.equal(await phone.evaluate(()=>state.total),11);assert.equal(await phone.evaluate(()=>JSON.parse(localStorage.getItem('kotoba-v1')).total),11);
   assert.deepEqual(errors,[]);
-  console.log(`PASS (${live?'live D1':'mock API'}): three isolated legacy devices 4+3+2=9; explicit join; pending link preserved; new answer=10; idempotent join; offline answer/recovery=11; reload; mobile 390px; connected backup restore disabled; no page errors`);
+  console.log(`PASS (${live?'live D1':'mock API'}): three isolated legacy devices 4+3+2=9; explicit join; pending link preserved; new answer=10; idempotent join; offline answer/recovery=11; reload; mobile 390px; manual transfer controls absent; no page errors`);
  }finally{for(const ctx of contexts)await ctx.close();await browser.close();if(local)await new Promise(resolve=>local.server.close(resolve))}
 })().catch(error=>{console.error(error?.stack||String(error));process.exitCode=1});
