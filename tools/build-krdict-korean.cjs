@@ -70,11 +70,12 @@ for(const file of fs.readdirSync(sourceDir).filter(f=>f.endsWith('.json')).sort(
 }
 const output = {};
 for(const [key,items] of [...counts.entries()].sort(([a],[b])=>a.localeCompare(b,'ja'))){
-  // Prefer the most frequent Korean headword across independent dictionary senses.
-  // Equal-frequency homonyms are ambiguous; do not invent a chosen translation.
+  // Retain up to three equally attested Korean equivalents as dictionary senses.
+  // Do not fabricate translations for heavily ambiguous terms.
   const ranks=[...items.entries()].sort((a,b)=>b[1]-a[1]||a[0].length-b[0].length||a[0].localeCompare(b[0],'ko'));
-  if(ranks.length>1 && ranks[0][1]===ranks[1][1])continue;
-  output[key]=ranks[0][0];
+  const tied=ranks.filter(item=>item[1]===ranks[0][1]);
+  if(tied.length>3)continue;
+  output[key]=tied.map(item=>item[0]).join(' / ');
 }
 assert(Object.keys(output).length>0,'No dictionary matches generated; check source structure');
 const destination=path.join(root,'korean-krdict-data.js');
