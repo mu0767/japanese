@@ -14,18 +14,20 @@ const sourceDir = path.join(sourceRoot, 'shards', 'tr', 'ja');
 assert(fs.existsSync(sourceDir), 'Missing bilingual shard directory: '+sourceDir);
 const ctx = vm.createContext({});
 vm.runInContext(fs.readFileSync(path.join(root,'data.js'),'utf8') + '\n' +
+  (fs.existsSync(path.join(root,'korean-kengdic.js'))?fs.readFileSync(path.join(root,'korean-kengdic.js'),'utf8'):'') + '\n' +
   fs.readFileSync(path.join(root,'korean-data.js'),'utf8') + '\n' +
   fs.readFileSync(path.join(root,'kanji-data.js'),'utf8') + '\n' +
   fs.readFileSync(path.join(root,'kanji.js'),'utf8'), ctx);
 const words = vm.runInContext('WORDS',ctx);
-const curated = new Set(words.filter(w => vm.runInContext('KanjiDetails.korean('+JSON.stringify(w.word)+')',ctx)).map(w=>w.word));
+const curated = new Set(words.filter(w => vm.runInContext('KanjiDetails.korean('+JSON.stringify(w)+')',ctx)).map(w=>w.id));
 const target = new Map();
 function normalize(s) {return String(s).normalize('NFKC').replace(/\s+/g,'').replace(/[ァ-ヶ]/g,c=>String.fromCharCode(c.charCodeAt(0)-96));}
 for (const w of words) {
-  if(curated.has(w.word))continue;
+  if(curated.has(w.id))continue;
   const key=w.word+'\t'+normalize(w.reading);
   if(!target.has(key))target.set(key,w.word);
 }
+if(!target.size){console.log('The reviewed ID-based Korean glossary covers every word; preserving the existing optional KRDict overlay.');process.exit(0)}
 const counts = new Map();
 function count(japanese, reading, korean){
   const jp=String(japanese||'').trim(), rd=normalize(reading||'');

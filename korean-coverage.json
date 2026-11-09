@@ -1,0 +1,37 @@
+{
+  "total": 7811,
+  "translated": 7811,
+  "missing": 0,
+  "levels": {
+    "N5": {
+      "total": 674,
+      "translated": 674
+    },
+    "N4": {
+      "total": 630,
+      "translated": 630
+    },
+    "N3": {
+      "total": 1659,
+      "translated": 1659
+    },
+    "N2": {
+      "total": 1778,
+      "translated": 1778
+    },
+    "N1": {
+      "total": 3070,
+      "translated": 3070
+    }
+  },
+  "sources": {
+    "kengdic": 223,
+    "krdict": 5680,
+    "kowiktionary": 1025,
+    "openjlpt-reviewed-translation": 709,
+    "open-english-korean-dict": 80,
+    "jawiktionary-ko-translation": 36,
+    "kaikki": 3,
+    "KRDict (NIKL), reviewed aligned Japanese–English senses": 55
+  }
+}

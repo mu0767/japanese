@@ -1,7 +1,28 @@
 (function(root){
   const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-  const wordKorean={"暖かい":"따뜻하다","温かい":"따뜻하다","寒い":"춥다","暑い":"덥다","涼しい":"시원하다","学校":"학교","学生":"학생","先生":"선생님","勉強":"공부","日本":"일본","日本語":"일본어","今日":"오늘","明日":"내일","昨日":"어제","毎日":"매일","会う":"만나다","青":"파랑","青い":"파랗다","赤":"빨강","赤い":"빨갛다","明るい":"밝다","秋":"가을","開く":"열리다, 열다","開ける":"열다","上げる":"올리다","朝":"아침","朝ごはん":"아침밥","あさって":"모레","足":"발, 다리","頭":"머리","新しい":"새롭다","トイレ":"화장실","帽子":"모자","病院":"병원","あそこ":"저기","遊ぶ":"놀다","あなた":"당신","兄":"형, 오빠","姉":"누나, 언니","アパート":"아파트","危ない":"위험하다","甘い":"달다","飴":"사탕","雨":"비","洗う":"씻다","ありがとう":"고맙다","ある":"있다 (사물)","歩く":"걷다","いい":"좋다","いいえ":"아니요","言う":"말하다","家":"집","行く":"가다","いくつ":"몇 개, 몇 살","いくら":"얼마","池":"연못","医者":"의사","いす":"의자","忙しい":"바쁘다","痛い":"아프다","いただきます":"잘 먹겠습니다","一":"하나","一日":"하루, 1일","いつ":"언제","一緒":"함께","犬":"개","今":"지금","意味":"의미","妹":"여동생","入口":"입구","いる":"있다 (사람, 동물)","要る":"필요하다","色":"색","後ろ":"뒤","歌":"노래","歌う":"노래하다","海":"바다","売る":"팔다","映画":"영화","映画館":"영화관","英語":"영어","駅":"역","鉛筆":"연필","おいしい":"맛있다","多い":"많다","大きい":"크다","お母さん":"어머니","お金":"돈","起きる":"일어나다","置く":"놓다","お茶":"차","お手洗い":"화장실","お父さん":"아버지","弟":"남동생","男":"남자","大人":"어른","お風呂":"목욕","覚える":"외우다, 기억하다","重い":"무겁다","泳ぐ":"수영하다","音楽":"음악","女":"여자","外国":"외국","外国人":"외국인","会社":"회사","階段":"계단","買う":"사다","帰る":"돌아가다","書く":"쓰다","傘":"우산","風邪":"감기","家族":"가족","家庭":"가정","紙":"종이","カメラ":"카메라","火曜日":"화요일","黒い":"검다","今朝":"오늘 아침","結婚":"결혼","月曜日":"월요일","玄関":"현관","元気":"건강함, 활기","公園":"공원","声":"목소리","コーヒー":"커피","午後":"오후","午前":"오전","今年":"올해","言葉":"말, 단어","子供":"아이","御飯":"밥, 식사","低い":"낮다, (키가) 작다","短い":"짧다"};
-  function korean(word){const key=typeof word==='string'?word:word.word;const curated=(typeof KOREAN_WORDS!=='undefined'&&KOREAN_WORDS[key])||wordKorean[key];if(curated)return curated;if(typeof word==='string'||!word.reading||typeof KRDICT_KOREAN_WORDS==='undefined')return null;const kana=word.reading.normalize('NFKC').replace(/[ァ-ヶ]/g,c=>String.fromCharCode(c.charCodeAt(0)-96));return KRDICT_KOREAN_WORDS[key+'\t'+kana]||null}
+  const normalize=s=>String(s).normalize('NFKC').replace(/[ァ-ヶ]/g,c=>String.fromCharCode(c.charCodeAt(0)-96));
+  const bySpelling=new Map(),byReading=new Map();
+  for(const word of typeof WORDS!=='undefined'?WORDS:[]){
+    const spelling=normalize(word.word),pair=spelling+'\t'+normalize(word.reading);
+    if(!bySpelling.has(spelling))bySpelling.set(spelling,[]);
+    if(!byReading.has(pair))byReading.set(pair,[]);
+    bySpelling.get(spelling).push(word);byReading.get(pair).push(word);
+  }
+  function korean(word){
+    if(!word||typeof KOREAN_BY_ID==='undefined')return null;
+    if(typeof word==='object'&&word.id&&Object.hasOwn(KOREAN_BY_ID,word.id))return KOREAN_BY_ID[word.id]||null;
+    const spelling=normalize(typeof word==='string'?word:word.word);
+    let candidates;
+    if(typeof word==='object'&&word.reading)candidates=byReading.get(spelling+'\t'+normalize(word.reading))||[];
+    else{
+      candidates=bySpelling.get(spelling)||[];
+      if(new Set(candidates.map(w=>normalize(w.reading))).size!==1)return null;
+    }
+    const meanings=[...new Set(candidates.map(w=>KOREAN_BY_ID[w.id]).filter(Boolean))];
+    if(meanings.length===1)return meanings[0];
+    if(typeof word==='object'&&word.reading&&typeof KRDICT_KOREAN_WORDS!=='undefined')return KRDICT_KOREAN_WORDS[word.word+'\t'+normalize(word.reading)]||null;
+    return null;
+  }
   function dictionaryUrl(word){return 'https://ja.dict.naver.com/#/search?query='+encodeURIComponent(word)}
   function entries(word){return [...new Set([...word].filter(c=>/\p{Script=Han}/u.test(c)))].map(character=>({character,...(KANJI_DATA[character]||{})}))}
   function kunReading(raw){const [stem,...tail]=raw.split('.');return '<span class="single-reading">'+esc(stem)+(tail.length?`<span class="okurigana">（${esc(tail.join(''))}）</span>`:'')+'</span>'}

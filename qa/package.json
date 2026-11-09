@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "playwright": "^1.65.0",
+    "wanakana": "^5.3.1"
+  }
+}
