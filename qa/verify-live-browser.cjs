@@ -47,6 +47,22 @@ const base=(process.argv[2]||'https://mu0767.github.io/japanese/').replace(/\/?$
     for(const gloss of await page.locator('.option-gloss').allTextContents())
       assert(!gloss.includes('사전 검색 필요'),'Distractor with missing Korean meaning was selected: '+gloss);
     console.log('PASS: public site 390px quiz, sourced N4 meanings, Korean distractors, colors, audio replay and score.');
+    // Default study scope must exclude correctly learned words, but include missed and unseen.
+    const scopeState=await page.evaluate(()=>{
+      level='N5';mode='reading';scope='pending';size=10;
+      const candidates=WORDS.filter(w=>w.level==='N5'&&Kotoba.normalize(w.word)!==Kotoba.normalize(w.reading));
+      const unseen=candidates[0],missedWord=candidates[1];
+      for(const w of candidates)state.words[w.id]={right:1,wrong:0,missed:false};
+      delete state.words[unseen.id];
+      state.words[missedWord.id]={right:2,wrong:1,missed:true};
+      start(false);
+      return {chosen:session.list.map(w=>w.id),unseen:unseen.id,missed:missedWord.id};
+    });
+    assert.deepEqual(new Set(scopeState.chosen),new Set([scopeState.unseen,scopeState.missed]),'Default quiz included learned words');
+    const allState=await page.evaluate(()=>{scope='all';start(false);return session.list.length});
+    assert.equal(allState,10,'All-words scope should allow previously mastered words');
+    console.log('PASS: default excludes mastered words, keeps missed/unseen, optional all-words review');
+
 
   }finally{await browser.close()}
 })().catch(e=>{console.error(e.stack||e);process.exitCode=1});
