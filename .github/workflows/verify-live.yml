@@ -1,0 +1,37 @@
+name: Verify public Kotoba Pages
+on:
+  push:
+    paths:
+      - '.github/workflows/verify-live.yml'
+      - 'qa/verify-live.cjs'
+      - 'qa/verify-live-browser.cjs'
+      - 'index.html'
+      - 'app.js'
+      - 'core.js'
+      - 'korean-krdict-data.js'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify-public:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Confirm GitHub Pages deployment files (retry while publishing)
+        shell: bash
+        run: |
+          success=0
+          for attempt in $(seq 1 15); do
+            if node qa/verify-live.cjs https://mu0767.github.io/japanese/; then success=1; break; fi
+            sleep 8
+          done
+          test "$success" = 1
+      - name: Install browser harness
+        run: npm install --no-save playwright-core
+      - name: Verify real mobile browser interactions
+        env:
+          CHROME_PATH: /usr/bin/google-chrome
+        run: node qa/verify-live-browser.cjs https://mu0767.github.io/japanese/
