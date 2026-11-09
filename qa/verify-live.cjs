@@ -7,7 +7,7 @@ async function read(path){const url=new URL(path,base);url.searchParams.set('_ve
  const paths=[...html.matchAll(/<script src="([^"]+)"/g)].map(m=>m[1]);
  assert(paths.some(p=>/^korean-data\.js\?v=\d+$/.test(p)));assert(paths.some(p=>/^korean-kengdic\.js\?v=\d+$/.test(p)));
  assert(!paths.some(p=>p.startsWith('quick-export.js')||p.startsWith('records-ui.js')),'Legacy import/export scripts still published');
- assert(paths.includes('cloud-sync-ui.js?v=2'),'Automatic sync UI version missing');
+ assert(paths.includes('cloud-sync-ui.js?v=3'),'Automatic sync UI version missing');
  const scripts=await Promise.all(paths.map(read)),context=vm.createContext({});let app='';
  for(let i=0;i<paths.length;i++){if(paths[i].startsWith('app.js'))app=scripts[i];else vm.runInContext(scripts[i],context)}
  const coverage=vm.runInContext(`({total:WORDS.length,translated:WORDS.filter(w=>/\\p{Script=Hangul}/u.test(KanjiDetails.korean(w)||'')).length,levels:Object.fromEntries(['N5','N4','N3','N2','N1'].map(level=>[level,WORDS.filter(w=>w.level===level&&KanjiDetails.korean(w)).length]))})`,context);
