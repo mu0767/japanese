@@ -1,0 +1,88 @@
+#!/usr/bin/env node
+// Build an offline Japanese -> Korean overlay from NIKL Korean Basic Dictionary
+// Japanese translations, republished by basickorean/basickorean-vocab under
+// CC BY-SA 2.0 KR. NO machine/LLM translation or Naver scraping.
+// Usage: node tools/build-krdict-korean.cjs path/to/basickorean-vocab
+const fs = require('node:fs');
+const path = require('node:path');
+const vm = require('node:vm');
+const assert = require('node:assert/strict');
+const root = path.resolve(__dirname, '..');
+const sourceRoot = process.argv[2];
+if (!sourceRoot) { console.error('Usage: node tools/build-krdict-korean.cjs <basickorean-vocab>'); process.exit(2); }
+const sourceDir = path.join(sourceRoot, 'shards', 'tr', 'ja');
+assert(fs.existsSync(sourceDir), 'Missing bilingual shard directory: '+sourceDir);
+const ctx = vm.createContext({});
+vm.runInContext(fs.readFileSync(path.join(root,'data.js'),'utf8') + '\n' +
+  fs.readFileSync(path.join(root,'korean-data.js'),'utf8') + '\n' +
+  fs.readFileSync(path.join(root,'kanji-data.js'),'utf8') + '\n' +
+  fs.readFileSync(path.join(root,'kanji.js'),'utf8'), ctx);
+const words = vm.runInContext('WORDS',ctx);
+const curated = new Set(words.filter(w => vm.runInContext('KanjiDetails.korean('+JSON.stringify(w.word)+')',ctx)).map(w=>w.word));
+const target = new Map();
+function normalize(s) {return String(s).normalize('NFKC').replace(/\s+/g,'').replace(/[ァ-ヶ]/g,c=>String.fromCharCode(c.charCodeAt(0)-96));}
+for (const w of words) {
+  if(curated.has(w.word))continue;
+  const key=w.word+'\t'+normalize(w.reading);
+  if(!target.has(key))target.set(key,w.word);
+}
+const counts = new Map();
+function count(japanese, reading, korean){
+  const jp=String(japanese||'').trim(), rd=normalize(reading||'');
+  const key=jp+'\t'+rd;
+  if(!target.has(key)||!korean||korean.length>30)return;
+  const bucket=counts.get(jp)||new Map();
+  bucket.set(korean,(bucket.get(korean)||0)+1);
+  counts.set(jp,bucket);
+}
+function processGloss(gloss,korean){
+  if(typeof gloss!=='string')return;
+  // Delimit alternatives only in the translation headword, never in definitions.
+  for (const part of gloss.split(/[。；;、，]/)) {
+    const s=part.trim();
+    // 'がっこう【学校】' or 'おもいで【思い出】': require exact written form AND kana.
+    const rx=/([^\s【】()（）]+)【([^【】]+)】/g;
+    let m, found=false;
+    while((m=rx.exec(s))!==null){
+      found=true;
+      const reading=m[1].replace(/^[〜~·・]/,'').replace(/[〜~·・]$/,'');
+      for(const head of m[2].split(/[・／/]/)){
+        if(!head||!reading||!/[\u3040-\u30ff]/.test(reading))continue;
+        count(head,reading,korean);
+      }
+    }
+    // Kana-only translations, e.g. 'こんにちは', exact reading/headword only.
+    if(!found && /^[\u3040-\u30ffー]+$/.test(s)) count(s,s,korean);
+  }
+}
+let sourceEntries=0, files=0;
+for(const file of fs.readdirSync(sourceDir).filter(f=>f.endsWith('.json')).sort()){
+  const shard=JSON.parse(fs.readFileSync(path.join(sourceDir,file),'utf8'));
+  files++;
+  for(const [korean,senses] of Object.entries(shard)){
+    for(const forms of senses||[]){
+      for(const entry of forms||[]){
+        if(Array.isArray(entry)) processGloss(entry[0],korean);
+      }
+    }
+    sourceEntries++;
+  }
+}
+const output = {};
+for(const [jp,items] of [...counts.entries()].sort(([a],[b])=>a.localeCompare(b,'ja'))){
+  // Prefer the most frequent Korean headword across independent dictionary senses.
+  // Equal-frequency homonyms are ambiguous; do not invent a chosen translation.
+  const ranks=[...items.entries()].sort((a,b)=>b[1]-a[1]||a[0].length-b[0].length||a[0].localeCompare(b[0],'ko'));
+  if(ranks.length>1 && ranks[0][1]===ranks[1][1])continue;
+  output[jp]=ranks[0][0];
+}
+assert(Object.keys(output).length>0,'No dictionary matches generated; check source structure');
+const destination=path.join(root,'korean-krdict-data.js');
+const header='// Korean headword equivalents sourced from NIKL Korean Basic Dictionary\n' +
+  '// via basickorean/basickorean-vocab, CC BY-SA 2.0 KR. See KOREAN-NOTICE.md.\n' +
+  '// Matched by exact Japanese spelling AND kana, keeping unambiguous entries only.\n';
+fs.writeFileSync(destination,header+'const KRDICT_KOREAN_WORDS = '+JSON.stringify(output)+';\n');
+const per=Object.fromEntries(['N5','N4','N3','N2','N1'].map(level=>[level,words.filter(w=>w.level===level&&output[w.word]).length]));
+console.log('Source Korean entries:',sourceEntries,'shards:',files);
+console.log('Derived Japanese glosses:',Object.keys(output).length,'per level:',JSON.stringify(per));
+console.log('Saved:',destination);
