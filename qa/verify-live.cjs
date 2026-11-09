@@ -19,5 +19,11 @@ async function read(path){const url=new URL(path,base);url.searchParams.set('_ve
  assert(app.includes('id="confirm"'));assert(app.includes("b.onclick=()=>speak(s.q.options[i])"),'Post-answer option replay lost');
  assert(!vm.runInContext(`KanjiDetails.render(WORDS.find(w=>w.word==='大切')).includes('word-meaning')`,context),'Duplicate word meaning restored');
  const metadata=JSON.parse(await read('korean-coverage.json'));assert.equal(metadata.missing,0);assert.equal(metadata.translated,7811);
+ const endpoint='https://kotoba-sync.union-raid.workers.dev/api/kotoba-progress';
+ const unauthed=await fetch(endpoint,{headers:{Origin:'https://mu0767.github.io',Accept:'application/json'}});
+ assert.equal(unauthed.status,401,'D1 endpoint must require private Bearer key');
+ assert.equal(unauthed.headers.get('access-control-allow-origin'),'https://mu0767.github.io','Kotoba origin CORS missing');
+ const preflight=await fetch(endpoint,{method:'OPTIONS',headers:{Origin:'https://mu0767.github.io','Access-Control-Request-Method':'POST','Access-Control-Request-Headers':'authorization,content-type'}});
+ assert.equal(preflight.status,204,'Sync preflight must be allowed');
  console.log('PASS: Live GitHub Pages serves all 7,811 Korean meanings, every level, source metadata, current confirmation/replay UI.');console.log(JSON.stringify(coverage));console.log('Site:',base);
 })().catch(e=>{console.error('FAIL:',e.message);process.exitCode=1});
