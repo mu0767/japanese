@@ -25,6 +25,7 @@ async function localServer(){const webRoot=path.resolve(__dirname,'..');const se
     const request=route.request(),origin=new URL(base).origin,headers={'Content-Type':'application/json','Access-Control-Allow-Origin':origin,'Access-Control-Allow-Headers':'Authorization, Content-Type','Access-Control-Allow-Methods':'GET, POST, OPTIONS'};
     if(request.method()==='OPTIONS'){await route.fulfill({status:204,headers});return}
     const key=request.headers().authorization;assert(/^Bearer [-A-Za-z0-9_]{43,128}$/.test(key));
+    if(key==='Bearer '+('z'.repeat(43))){await route.fulfill({status:401,headers,body:'{"error":"Invalid connection"}'});return}
     let room=rooms.get(key);
     if(request.method()==='POST'){
      postCounts[i]++;const text=request.postData(),doc=JSON.parse(text);
@@ -49,6 +50,20 @@ async function localServer(){const webRoot=path.resolve(__dirname,'..');const se
   const mastered=await Promise.all(pages.map(page=>page.locator('[data-level="N5"] .learned').textContent()));
   assert(mastered.every(value=>value===mastered[0]),'PC and mobile mastered-word counts differ after sync');
   for(const page of pages)assert.match(await page.locator('#home-sync-state').textContent(),/서버 동기화 완료/);
+  // An old or wrong link must be visibly rejected and recoverable on mobile,
+  // without resetting its local answers.
+  await phone.goto(base+'#records');
+  const beforeRecovery=await phone.evaluate(()=>state.total);
+  await phone.evaluate(()=>cloudClient.connect('z'.repeat(43)).catch(()=>{}));
+  await phone.waitForFunction(()=>cloudClient.status().error?.includes('연결 정보가 유효하지'),null,{timeout:12000});
+  assert(await phone.locator('#cloud-sync-off').isVisible(),'Rejected mobile key should expose the reconnect form');
+  await phone.locator('#cloud-join-details summary').click();
+  await phone.locator('#cloud-join-link').fill(privateLink);
+  await phone.locator('#cloud-join').click();
+  await phone.waitForFunction(()=>cloudClient.status().lastSyncedAt&&!cloudClient.status().error&&!cloudClient.status().syncing,null,{timeout:20000});
+  assert.equal(await phone.evaluate(()=>state.total),beforeRecovery,'Reconnecting must not lose mobile answers');
+  await syncAll(9);
+
 
   async function answerOne(page){await page.goto(base+'#home');await page.waitForSelector('#start');await page.evaluate(id=>{const w=WORDS.find(x=>x.id===id);mode='reading';session={list:[w],index:0,correct:0,review:false,answers:[],answered:false,selected:null,q:null};quiz();answer(session.q.options.indexOf(session.q.answer))},a.id)}
   await answerOne(pc);assert.equal(await pc.evaluate(()=>state.total),10);await syncAll(10);
