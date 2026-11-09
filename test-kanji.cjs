@@ -1,6 +1,6 @@
 const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/strict');
 const context=vm.createContext({});
-vm.runInContext(fs.readFileSync('data.js','utf8')+fs.readFileSync('kanji-data.js','utf8')+fs.readFileSync('korean-data.js','utf8')+fs.readFileSync('kanji.js','utf8'),context);
+vm.runInContext(fs.readFileSync('data.js','utf8')+fs.readFileSync('kanji-data.js','utf8')+fs.readFileSync('korean-data.js','utf8')+(fs.existsSync('korean-krdict-data.js')?fs.readFileSync('korean-krdict-data.js','utf8'):'')+fs.readFileSync('kanji.js','utf8'),context);
 const detail=context.KanjiDetails;
 const warm=detail.entries('暖かい')[0];
 assert.equal(warm.character,'暖');assert(warm.korean.some(k=>k.meanings.includes('따뜻할 난')));assert(warm.on.includes('ダン'));assert(warm.kun.includes('あたた.かい'));
@@ -31,3 +31,5 @@ console.log('PASS: 674/674 N5 Korean meanings and example translations');
 assert.equal(detail.render({word:'ありがとう',meaning:'Thank you'}),'');
 assert(detail.render({word:'学校',meaning:'school'}).includes('한국식 뜻·음 (훈음)'));
 console.log('PASS: no duplicated word meaning; kana-only entries have no redundant kanji panel');
+
+if(fs.existsSync('korean-krdict-data.js')){const sourced=vm.runInContext('KRDICT_KOREAN_WORDS',context);assert(Object.keys(sourced).length>0);assert(Object.keys(sourced).every(k=>k.includes('\t')));console.log('PASS: external KRDict glossary contains',Object.keys(sourced).length,'spelling+reading matches')}

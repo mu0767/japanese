@@ -16,3 +16,11 @@ node test.cjs
 node test-kanji.cjs
 node qa/verify-live.cjs https://mu0767.github.io/japanese/
 ```
+
+## Open-data Japanese→Korean enrichment
+
+`korean-krdict-data.js` is generated using the Japanese translation headwords in the **National Institute of Korean Language (국립국어원) Korean Basic Dictionary**. The publicly distributed, sharded source is [basickorean/basickorean-vocab](https://github.com/basickorean/basickorean-vocab). These Korean headwords and Japanese equivalents are used under **CC BY-SA 2.0 Korea** ([license](https://creativecommons.org/licenses/by-sa/2.0/kr/)). They are kept in a separate generated file with their own attribution and license; existing OpenJLPT entries and the separately curated Korean vocabulary remain under their prior licenses.
+
+The generator in `tools/build-krdict-korean.cjs` matches **both** the Japanese spelling and kana reading, requires an unambiguous Korean counterpart, and ignores entries not found in the bilingual source. No machine translation, individual manual translation, or Naver scraping is performed. Japanese dictionary equivalents may differ in nuance from the exact JLPT gloss and should be checked in context.
+
+The GitHub Actions workflow in `.github/workflows/build-korean.yml` rebuilds the standalone overlay. Coverage depends on the published KRDict data; unmatched words are not silently fabricated.

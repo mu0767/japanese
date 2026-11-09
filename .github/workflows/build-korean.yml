@@ -1,0 +1,46 @@
+name: Build sourced Korean vocabulary glossary
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/build-korean.yml'
+      - 'tools/build-krdict-korean.cjs'
+      - 'data.js'
+      - 'korean-data.js'
+      - 'kanji.js'
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Fetch open NIKL Korean Basic Dictionary Japanese translations
+        shell: bash
+        run: |
+          git clone --depth 1 --filter=blob:none --sparse https://github.com/basickorean/basickorean-vocab.git "$RUNNER_TEMP/basickorean-vocab"
+          git -C "$RUNNER_TEMP/basickorean-vocab" sparse-checkout set shards/tr/ja
+      - name: Generate local static glossary (no API keys)
+        run: node tools/build-krdict-korean.cjs "$RUNNER_TEMP/basickorean-vocab"
+      - name: Validate generated data and quiz
+        run: |
+          node --check tools/build-krdict-korean.cjs
+          node --check kanji.js
+          node --check app.js
+          node --check core.js
+          node test.cjs
+          node test-kanji.cjs
+      - name: Commit generated standalone dictionary
+        shell: bash
+        run: |
+          git add korean-krdict-data.js
+          if git diff --cached --quiet; then
+            echo "Glossary is up to date."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Update Korean meanings from open KRDict translations [skip ci]"
+          git push origin HEAD:main
