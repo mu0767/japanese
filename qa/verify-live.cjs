@@ -15,6 +15,8 @@ async function read(path){const url=new URL(path,base);url.searchParams.set('_ve
  assert.equal(coverage.total,7811);
  assert(app.includes('setupCloud()'),'Cloud synchronization initialization missing');
  assert(app.includes('refreshRecordDashboard'),'Progress dashboard missing');
+ assert(app.includes('refreshHomeSyncStatus'),'Per-device sync indicator is missing');
+ assert(paths.includes('cloud-sync.js?v=3'),'New cloud sync polling logic is not published');
  assert(!app.includes('RecordsUI.render'),'Legacy manual import/export UI still used');
  const sync=await read(paths.find(p=>p.startsWith('cloud-sync.js')));
  assert(sync.includes('https://kotoba-sync.union-raid.workers.dev/api/kotoba-progress'),'New D1 endpoint not published');assert.equal(coverage.translated,7811);

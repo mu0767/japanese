@@ -1,6 +1,6 @@
 // Isolated browser fixtures only. No real browser profiles or personal records.
 const fs=require('node:fs'),path=require('node:path'),http=require('node:http'),vm=require('node:vm'),assert=require('node:assert/strict');
-const {chromium}=require('playwright');
+const {chromium}=require('playwright-core');
 const ProgressStore=require('../progress.js');
 const API='https://kotoba-sync.union-raid.workers.dev/api/kotoba-progress';
 const live=process.argv.includes('--live'),urlArg=process.argv.find(x=>/^https?:\/\//.test(x));
@@ -14,7 +14,7 @@ function storage(seed=[]){const map=new Map(seed);return {getItem:k=>map.get(k)?
 async function localServer(){const webRoot=path.resolve(__dirname,'..');const server=http.createServer((req,res)=>{let name;try{name=decodeURIComponent(new URL(req.url,'http://localhost').pathname)}catch{res.writeHead(400).end();return}const file=path.resolve(webRoot,'.'+(name==='/'?'/index.html':name));if(!file.startsWith(webRoot+path.sep)){res.writeHead(403).end();return}fs.readFile(file,(err,data)=>{if(err){res.writeHead(404).end();return}const type={'.html':'text/html','.js':'text/javascript','.css':'text/css','.md':'text/plain','.txt':'text/plain'}[path.extname(file)]||'application/octet-stream';res.writeHead(200,{'Content-Type':type+'; charset=utf-8','Cache-Control':'no-store'}).end(data)})});await new Promise(resolve=>server.listen(0,'127.0.0.1',resolve));return {server,url:`http://127.0.0.1:${server.address().port}/`}}
 (async()=>{
  const local=!live&&!urlArg?await localServer():null,base=(urlArg||(live?'https://mu0767.github.io/japanese/':local.url)).split('#')[0];
- const browser=await chromium.launch({executablePath:process.env.CHROME_PATH||'C:/Program Files/Google/Chrome/Application/chrome.exe',headless:true});
+ const browser=await chromium.launch({executablePath:process.env.CHROME_PATH||'/usr/bin/google-chrome',headless:true});
  const rooms=new Map(),contexts=[],pages=[],errors=[],postCounts=[0,0,0],offline=[false,false,false];
  try{
   for(let i=0;i<fixtures.length;i++){
@@ -43,6 +43,12 @@ async function localServer(){const webRoot=path.resolve(__dirname,'..');const se
   async function syncAll(total){for(let attempt=0;attempt<6;attempt++){await Promise.all(pages.map(p=>p.evaluate(()=>cloudClient.sync())));const counts=await Promise.all(pages.map(p=>p.evaluate(()=>state.total)));if(counts.every(x=>x===total))return;await new Promise(resolve=>setTimeout(resolve,100))}assert.deepEqual(await Promise.all(pages.map(p=>p.evaluate(()=>state.total))),[total,total,total])}
   await incoming(pc,0);await incoming(edge,1);await incoming(phone,2);await syncAll(9);
   for(const page of pages){assert.equal(await page.evaluate(()=>state.correct),6);assert(await page.locator('#cloud-sync-on').isVisible(),'Connected device should show automatic sync state')}
+  // Both browsers must display exactly the same mastered-word count once remote sync has settled.
+  for(const page of pages)await page.goto(base+'#home');
+  const mastered=await Promise.all(pages.map(page=>page.locator('[data-level="N5"] .learned').textContent()));
+  assert(mastered.every(value=>value===mastered[0]),'PC and mobile mastered-word counts differ after sync');
+  for(const page of pages)assert.match(await page.locator('#home-sync-state').textContent(),/서버 동기화 완료/);
+
   async function answerOne(page){await page.goto(base+'#home');await page.waitForSelector('#start');await page.evaluate(id=>{const w=WORDS.find(x=>x.id===id);mode='reading';session={list:[w],index:0,correct:0,review:false,answers:[],answered:false,selected:null,q:null};quiz();answer(session.q.options.indexOf(session.q.answer))},a.id)}
   await answerOne(pc);assert.equal(await pc.evaluate(()=>state.total),10);await syncAll(10);
   await phone.goto(base+'#records');await phone.evaluate(()=>cloudClient.sync());await syncAll(10);

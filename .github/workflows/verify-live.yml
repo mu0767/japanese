@@ -8,6 +8,9 @@ on:
       - 'index.html'
       - 'app.js'
       - 'cloud-sync.js'
+      - 'style.css'
+      - 'qa/qa-cloud-browser.cjs'
+      - 'cloud-sync-ui.js'
       - 'worker/kotoba-sync.js'
       - 'core.js'
       - 'korean-krdict-data.js'
@@ -39,6 +42,10 @@ jobs:
           node --check quick-export.js
       - name: Install browser harness
         run: npm install --no-save playwright-core
+      - name: Regression test: PC and mobile share the same mastered-word counts
+        env:
+          CHROME_PATH: /usr/bin/google-chrome
+        run: node qa/qa-cloud-browser.cjs
       - name: Verify real mobile browser interactions
         env:
           CHROME_PATH: /usr/bin/google-chrome

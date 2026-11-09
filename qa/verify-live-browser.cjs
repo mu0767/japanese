@@ -22,6 +22,8 @@ const base=(process.argv[2]||'https://mu0767.github.io/japanese/').replace(/\/?$
     assert.equal(await page.locator('#cloud-enable').count(),0,'New random sync key must not be generated');
     assert(await page.locator('#cloud-sync-off').isVisible(),'Unconnected browser needs one-time link help');
     await page.goto(base+'#home');
+    await page.locator('#home-sync-state').waitFor();
+    assert.match(await page.locator('#home-sync-state').textContent(),/로컬 학습 기록만 표시 중/,'Disconnected mobile must not mislabel local counts as synced');
     await page.locator('#start').click();
     const options=page.locator('[data-option]');
     assert.equal(await options.count(),4);
