@@ -10,7 +10,7 @@ const base=(process.argv[2]||'https://mu0767.github.io/japanese/').replace(/\/?$
     await page.goto(base+'?verify='+Date.now(),{waitUntil:'domcontentloaded',timeout:45000});
     const update=page.locator('header .header-note');
     assert(await update.isVisible(),'Mobile header must show latest update timestamp');
-    assert.match(await update.textContent(),/최근 갱신 · 20\\d\\d\\.\\d\\d\\.\\d\\d \\d\\d:\\d\\d/);
+    assert.match(await update.textContent(),/최근 갱신 · 20[0-9]{2}[.][0-9]{2}[.][0-9]{2} [0-9]{2}:[0-9]{2}/);
     const headerBox=await page.locator('header').boundingBox(),noteBox=await update.boundingBox();
     assert(noteBox.x+noteBox.width<=390+1,'Mobile update timestamp must fit on screen');
     assert(noteBox.y>=headerBox.y&&noteBox.y+noteBox.height<=headerBox.y+headerBox.height+1,'Timestamp must remain within mobile header');
