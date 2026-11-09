@@ -13,6 +13,9 @@ on:
       - 'cloud-sync-ui.js'
       - 'worker/kotoba-sync.js'
       - 'core.js'
+      - 'audio.js'
+      - 'audio-data.js'
+      - 'korean-data.js'
       - 'korean-krdict-data.js'
   workflow_dispatch:
 permissions:
@@ -38,6 +41,7 @@ jobs:
         run: |
           node test.cjs
           node test-kanji.cjs
+          node test-audio.cjs
           node test-progress.cjs
           node --check quick-export.js
       - name: Install browser harness

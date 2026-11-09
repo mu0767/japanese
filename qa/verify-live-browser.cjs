@@ -22,6 +22,14 @@ const base=(process.argv[2]||'https://mu0767.github.io/japanese/').replace(/\/?$
     assert.equal(await page.locator('#cloud-enable').count(),0,'New random sync key must not be generated');
     assert(await page.locator('#cloud-sync-off').isVisible(),'Unconnected browser needs one-time link help');
     await page.goto(base+'#home');
+    const natives=await page.evaluate(()=>{
+      const hashiru=WORDS.find(w=>w.word==='走る'&&w.reading==='はしる');
+      const utau=WORDS.find(w=>w.word==='歌う'&&w.reading==='うたう');
+      return {a:KotobaAudio.sources(hashiru),b:KotobaAudio.sources(utau),gloss:KanjiDetails.korean(utau)};
+    });
+    assert(natives.a.some(s=>s.endsWith('.mp3')),'Native Hashiru audio URL missing');
+    assert(natives.b.some(s=>s.endsWith('.mp3')),'Native Utau audio URL missing');
+    assert.equal(natives.gloss,'노래하다');
     await page.locator('#home-sync-state').waitFor();
     assert.match(await page.locator('#home-sync-state').textContent(),/로컬 학습 기록만 표시 중/,'Disconnected mobile must not mislabel local counts as synced');
     await page.locator('#start').click();

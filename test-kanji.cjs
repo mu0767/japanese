@@ -26,6 +26,7 @@ for(const word of allN5){assert(detail.korean(word),`Missing Korean meaning: ${w
 assert.match(detail.korean('大切'),/소중|중요/);
 assert.match(detail.korean('散歩'),/산[보책]/);
 assert.equal(detail.korean('せっけん'),'비누');
+assert.equal(detail.korean('歌う'),'노래하다','歌う should never be mapped to 뽑다');
 console.log('PASS: 674/674 N5 Korean meanings and example translations');
 
 assert.equal(detail.render({word:'ありがとう',meaning:'Thank you'}),'');
