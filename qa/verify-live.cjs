@@ -11,7 +11,7 @@ async function read(file){
   assert.match(html,/최근 갱신 · 20\d\d\.\d\d\.\d\d \d\d:\d\d/);
   const script=key=>html.match(new RegExp('<script src="('+key+'\\?v=\\d+)"'))?.[1];
   const get=async key=>{const p=script(key);assert(p,'Not referenced: '+key);return read(p)};
-  const stylePath=html.match(/href="(style\\.css\\?v=\\d+)"/)?.[1];
+  const stylePath=html.match(/href="([^"]*style[.]css[?]v=[0-9]+)"/)?.[1];
   assert(stylePath==='style.css?v=6','Updated mobile header CSS version not published yet');
   const stylesheet=await read(stylePath);
   assert(stylesheet.includes('Keep the latest update visible on small screens'),'Mobile header styles not published yet');
