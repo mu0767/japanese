@@ -31,9 +31,9 @@ function count(japanese, reading, korean){
   const jp=String(japanese||'').trim(), rd=normalize(reading||'');
   const key=jp+'\t'+rd;
   if(!target.has(key)||!korean||korean.length>30)return;
-  const bucket=counts.get(jp)||new Map();
+  const bucket=counts.get(key)||new Map();
   bucket.set(korean,(bucket.get(korean)||0)+1);
-  counts.set(jp,bucket);
+  counts.set(key,bucket);
 }
 function processGloss(gloss,korean){
   if(typeof gloss!=='string')return;
@@ -69,12 +69,12 @@ for(const file of fs.readdirSync(sourceDir).filter(f=>f.endsWith('.json')).sort(
   }
 }
 const output = {};
-for(const [jp,items] of [...counts.entries()].sort(([a],[b])=>a.localeCompare(b,'ja'))){
+for(const [key,items] of [...counts.entries()].sort(([a],[b])=>a.localeCompare(b,'ja'))){
   // Prefer the most frequent Korean headword across independent dictionary senses.
   // Equal-frequency homonyms are ambiguous; do not invent a chosen translation.
   const ranks=[...items.entries()].sort((a,b)=>b[1]-a[1]||a[0].length-b[0].length||a[0].localeCompare(b[0],'ko'));
   if(ranks.length>1 && ranks[0][1]===ranks[1][1])continue;
-  output[jp]=ranks[0][0];
+  output[key]=ranks[0][0];
 }
 assert(Object.keys(output).length>0,'No dictionary matches generated; check source structure');
 const destination=path.join(root,'korean-krdict-data.js');
@@ -82,7 +82,7 @@ const header='// Korean headword equivalents sourced from NIKL Korean Basic Dict
   '// via basickorean/basickorean-vocab, CC BY-SA 2.0 KR. See KOREAN-NOTICE.md.\n' +
   '// Matched by exact Japanese spelling AND kana, keeping unambiguous entries only.\n';
 fs.writeFileSync(destination,header+'const KRDICT_KOREAN_WORDS = '+JSON.stringify(output)+';\n');
-const per=Object.fromEntries(['N5','N4','N3','N2','N1'].map(level=>[level,words.filter(w=>w.level===level&&output[w.word]).length]));
+const per=Object.fromEntries(['N5','N4','N3','N2','N1'].map(level=>[level,words.filter(w=>w.level===level&&output[w.word+'\t'+normalize(w.reading)]).length]));
 console.log('Source Korean entries:',sourceEntries,'shards:',files);
 console.log('Derived Japanese glosses:',Object.keys(output).length,'per level:',JSON.stringify(per));
 console.log('Saved:',destination);
