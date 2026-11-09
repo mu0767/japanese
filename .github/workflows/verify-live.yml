@@ -7,6 +7,8 @@ on:
       - 'qa/verify-live-browser.cjs'
       - 'index.html'
       - 'app.js'
+      - 'cloud-sync.js'
+      - 'worker/kotoba-sync.js'
       - 'core.js'
       - 'korean-krdict-data.js'
   workflow_dispatch:

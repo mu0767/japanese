@@ -12,7 +12,10 @@ async function read(path){const url=new URL(path,base);url.searchParams.set('_ve
  for(let i=0;i<paths.length;i++){if(paths[i].startsWith('app.js'))app=scripts[i];else vm.runInContext(scripts[i],context)}
  const coverage=vm.runInContext(`({total:WORDS.length,translated:WORDS.filter(w=>/\\p{Script=Hangul}/u.test(KanjiDetails.korean(w)||'')).length,levels:Object.fromEntries(['N5','N4','N3','N2','N1'].map(level=>[level,WORDS.filter(w=>w.level===level&&KanjiDetails.korean(w)).length]))})`,context);
  assert(typeof context.KotobaQuickExport?.mount==='function','One-click copy export is not available');
- assert.equal(coverage.total,7811);assert.equal(coverage.translated,7811);
+ assert.equal(coverage.total,7811);
+ assert(app.includes('setupCloud()'),'Cloud synchronization initialization missing');
+ const sync=await read(paths.find(p=>p.startsWith('cloud-sync.js')));
+ assert(sync.includes('https://kotoba-sync.union-raid.workers.dev/api/kotoba-progress'),'New D1 endpoint not published');assert.equal(coverage.translated,7811);
  assert(app.includes('id="confirm"'));assert(app.includes("b.onclick=()=>speak(s.q.options[i])"),'Post-answer option replay lost');
  assert(!vm.runInContext(`KanjiDetails.render(WORDS.find(w=>w.word==='大切')).includes('word-meaning')`,context),'Duplicate word meaning restored');
  const metadata=JSON.parse(await read('korean-coverage.json'));assert.equal(metadata.missing,0);assert.equal(metadata.translated,7811);

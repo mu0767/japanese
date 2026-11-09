@@ -2,7 +2,7 @@
 const fs=require('node:fs'),path=require('node:path'),http=require('node:http'),vm=require('node:vm'),assert=require('node:assert/strict');
 const {chromium}=require('playwright');
 const ProgressStore=require('../progress.js');
-const API='https://union-raid-records.mu0767.chatgpt.site/api/kotoba-progress';
+const API='https://kotoba-sync.union-raid.workers.dev/api/kotoba-progress';
 const live=process.argv.includes('--live'),urlArg=process.argv.find(x=>/^https?:\/\//.test(x));
 const words=vm.runInNewContext(fs.readFileSync(path.join(__dirname,'../data.js'),'utf8')+';WORDS'),[a,b,c]=words.slice(0,3),day='2026-11-09';
 const fixtures=[

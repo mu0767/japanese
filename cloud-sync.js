@@ -1,6 +1,6 @@
 (function(root){
 'use strict';
-const API='https://union-raid-records.mu0767.chatgpt.site/api/kotoba-progress';
+const API='https://kotoba-sync.union-raid.workers.dev/api/kotoba-progress';
 const SITE='https://mu0767.github.io/japanese/';
 const SETTINGS='kotoba-cloud-sync-v1';
 const KEY=/^[A-Za-z0-9_-]{43,128}$/;
