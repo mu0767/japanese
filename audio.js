@@ -26,26 +26,51 @@ let active=null,speaking=null,request=0,watchdog=null;
 const prepared=new Map();
 const MAX_PREPARED=12;
 const PLAYBACK_RATE=1.1;
+function releasePrepared(entry){
+ if(entry?.objectUrl&&typeof root.URL?.revokeObjectURL==='function'){
+  try{root.URL.revokeObjectURL(entry.objectUrl)}catch{}
+ }
+}
+function primeElement(entry,url){
+ const audio=new root.Audio(url);
+ audio.preload='auto';
+ audio.playbackRate=PLAYBACK_RATE;
+ if(typeof audio.load==='function')audio.load();
+ entry.audio=audio;
+}
 function prepare(words){
  if(typeof root.Audio!=='function')return 0;
  let count=0;
  for(const word of words||[]){
   const url=archiveSource(word);
   if(!url||prepared.has(word.id))continue;
-  try{
-   const audio=new root.Audio(url);
-   audio.preload='auto';
-   audio.playbackRate=PLAYBACK_RATE;
-   // Download and decode while the user reads the question, BEFORE tapping an option.
-   if(typeof audio.load==='function')audio.load();
-   prepared.set(word.id,{audio,url});
-   count++;
-   while(prepared.size>MAX_PREPARED){
-    const oldest=prepared.keys().next().value;
-    if(prepared.get(oldest)?.audio===active)break;
-    prepared.delete(oldest);
-   }
-  }catch{}
+  const id=word.id,entry={url,audio:null,objectUrl:null};
+  prepared.set(id,entry);
+  count++;
+  // iOS may ignore audio.preload. Download the CORS WAV ahead of the click
+  // and turn it into a local Blob URL for immediate playback.
+  if(typeof root.fetch==='function'&&typeof root.URL?.createObjectURL==='function'){
+   root.fetch(url,{mode:'cors',cache:'force-cache'}).then(response=>{
+    if(!response.ok)throw Error('Audio prefetch failed');
+    return response.blob();
+   }).then(blob=>{
+    if(prepared.get(id)!==entry)return;
+    entry.objectUrl=root.URL.createObjectURL(blob);
+    primeElement(entry,entry.objectUrl);
+   }).catch(()=>{
+    if(prepared.get(id)===entry){
+     try{primeElement(entry,url)}catch{}
+    }
+   });
+  }else{
+   try{primeElement(entry,url)}catch{prepared.delete(id);count--}
+  }
+  while(prepared.size>MAX_PREPARED){
+   const oldest=prepared.keys().next().value;
+   if(prepared.get(oldest)?.audio===active)break;
+   releasePrepared(prepared.get(oldest));
+   prepared.delete(oldest);
+  }
  }
  return count;
 }
@@ -58,7 +83,10 @@ function sources(word){
  if(data[1])result.push(WANI+encodeURIComponent(word.word+'【'+word.reading+'】.mp3'));
  return result;
 }
-function clearPrepared(){prepared.clear()}
+function clearPrepared(){
+ for(const entry of prepared.values())if(entry.audio!==active)releasePrepared(entry);
+ prepared.clear();
+}
 function readingText(word){
  // Never ask the speech engine to guess a kanji reading from its spelling.
  // Convert katakana to hiragana to avoid non-Japanese voice heuristics.
@@ -146,7 +174,7 @@ function play(word,options={}){
    let audio;
    try{
     const cached=prepared.get(word?.id);
-    audio=cached?.url===url?cached.audio:new root.Audio(url);
+    audio=cached?.url===url&&cached.audio?cached.audio:new root.Audio(url);
    }catch{attempt();return}
    active=audio;
    audio.preload='auto';
