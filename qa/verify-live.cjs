@@ -24,7 +24,12 @@ async function read(path){const url=new URL(path,base);url.searchParams.set('_ve
  assert(sync.includes('https://kotoba-sync.union-raid.workers.dev/api/kotoba-progress'),'New D1 endpoint not published');assert.equal(coverage.translated,7811);
  assert(app.includes('id="confirm"'));assert(app.includes("b.onclick=()=>speak(s.q.optionWords[i])"),'Post-answer option replay lost');
  assert(!app.includes('SpeechSynthesisUtterance'),'Mispronouncing browser TTS must not be used');
- assert(paths.includes('audio-data.js?v=1')&&paths.includes('audio.js?v=1'),'Recorded audio assets not published');
+ assert(paths.includes('audio-data.js?v=1')&&paths.includes('audio.js?v=2'),'Japanese recorded + synthesized audio assets not published');
+ assert(paths.includes('app.js?v=22'),'Quiz speech fallback version not published');
+ assert(app.includes('speak(s.q.optionWords[index]);'),'Quiz option selection still silently ignores audio failures');
+ assert.equal(vm.runInContext("KotobaAudio.readingText(WORDS.find(w=>w.word==='ゼロ'))",context),'ぜろ');
+ const audioScript=scripts[paths.findIndex(p=>p.startsWith('audio.js'))];
+ assert(audioScript.includes("utterance.lang='ja-JP'"),'Japanese speech language not explicitly configured');
  assert(vm.runInContext(`KotobaAudio.sources(WORDS.find(w=>w.word==='走る')).length>0`,context),'Native 走る audio missing');
  assert(vm.runInContext(`KotobaAudio.sources(WORDS.find(w=>w.word==='歌う')).length>0`,context),'Native 歌う audio missing');
  assert.equal(vm.runInContext(`KanjiDetails.korean(WORDS.find(w=>w.word==='歌う'))`,context),'노래하다');
@@ -43,5 +48,5 @@ async function read(path){const url=new URL(path,base);url.searchParams.set('_ve
  assert(backup.ok,'WaniKani 走る original recorded MP3 is unreachable: '+backup.status);
  const preflight=await fetch(endpoint,{method:'OPTIONS',headers:{Origin:'https://mu0767.github.io','Access-Control-Request-Method':'POST','Access-Control-Request-Headers':'authorization,content-type'}});
  assert.equal(preflight.status,204,'Sync preflight must be allowed');
- console.log('PASS: Live GitHub Pages serves all 7,811 Korean meanings, every level, source metadata, current confirmation/replay UI.');console.log(JSON.stringify(coverage));console.log('Site:',base);
+ console.log('PASS: Live GitHub Pages serves all 7,811 Korean meanings, every level, recorded + Japanese synthesized audio fallback, current confirmation/replay UI.');console.log(JSON.stringify(coverage));console.log('Site:',base);
 })().catch(e=>{console.error('FAIL:',e.message);process.exitCode=1});
