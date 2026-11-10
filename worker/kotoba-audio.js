@@ -21,7 +21,7 @@ export default {
    const headers={...cors,'Content-Type':'audio/wav','Accept-Ranges':'bytes','Access-Control-Expose-Headers':'Accept-Ranges,Content-Range,Content-Length','Cache-Control':'public, max-age=86400','X-Audio-Source':'kotoba-archive'};
    const range=request.headers.get('Range');
    if(range){
-    const m=/^bytes=(\\d*)-(\\d*)$/.exec(range);
+    const m=/^bytes=(\d*)-(\d*)$/.exec(range);
     let start,end;
     if(m&&(m[1]||m[2])){
      if(m[1]){
