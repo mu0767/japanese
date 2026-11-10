@@ -1,10 +1,11 @@
 (function(root){
 'use strict';
-// Licensed native-speaker recordings, matched by BOTH exact spelling and reading.
-// Source attribution and licenses: AUDIO-SOURCES.md
+// Prefer licensed native-speaker recordings. If one is missing/unreachable,
+// pronounce the dictionary reading with a Japanese-locale speech synthesizer.
+// Recording attribution and license: AUDIO-SOURCES.md
 const KANJI='https://media.kanjialive.com/examples_audio/audio-mp3/';
 const WANI='https://raw.githubusercontent.com/tofugu/japanese-vocabulary-pronunciation-audio/master/lib/mp3/';
-let active=null,request=0;
+let active=null,speaking=null,request=0,watchdog=null;
 function sources(word){
  if(!word||!word.id||!word.word||!word.reading||typeof KOTOBA_AUDIO_RECORDINGS==='undefined')return [];
  const data=Object.hasOwn(KOTOBA_AUDIO_RECORDINGS,word.id)?KOTOBA_AUDIO_RECORDINGS[word.id]:null;
@@ -14,54 +15,120 @@ function sources(word){
  if(data[1])result.push(WANI+encodeURIComponent(word.word+'【'+word.reading+'】.mp3'));
  return result;
 }
+function readingText(word){
+ // Never ask the speech engine to guess a kanji reading from its spelling.
+ // Convert katakana to hiragana to avoid non-Japanese voice heuristics.
+ return String(word?.reading||word?.word||'').trim().replace(/[ァ-ヶ]/g,
+  c=>String.fromCharCode(c.charCodeAt(0)-96));
+}
+function japaneseVoice(synth){
+ if(typeof synth.getVoices!=='function')return null;
+ const voices=synth.getVoices()||[];
+ return voices.find(v=>/^ja(?:[-_]|$)/i.test(v.lang||''))||null;
+}
+function clearWatchdog(){
+ if(watchdog!==null){root.clearTimeout(watchdog);watchdog=null}
+}
 function stop(){
  request++;
- if(active){const old=active;active=null;old.onerror=null;try{old.pause()}catch{}}
+ clearWatchdog();
+ if(active){
+  const old=active;active=null;old.onerror=null;
+  try{old.pause()}catch{}
+ }
+ if(speaking){
+  speaking.onstart=null;speaking.onerror=null;speaking.onend=null;speaking=null;
+  try{root.speechSynthesis?.cancel()}catch{}
+ }
 }
 function play(word,options={}){
  const {silent=false,notify=()=>{}}=options;
  stop();
- const token=request;
- const urls=sources(word);
- if(!urls.length){
-  if(!silent)notify('이 단어는 아직 검증된 원어민 녹음 음원이 없습니다. 잘못된 TTS 발음은 재생하지 않습니다.');
-  return Promise.resolve(false);
- }
- if(typeof root.Audio!=='function'){
-  if(!silent)notify('이 브라우저에서 MP3 재생을 지원하지 않습니다.');
-  return Promise.resolve(false);
- }
+ const token=request,urls=sources(word);
+ let resolved=false,next=0;
  return new Promise(resolve=>{
-  let next=0,resolved=false;
   const finish=value=>{if(!resolved){resolved=true;resolve(value)}};
+  const fail=message=>{if(token===request&&!silent)notify(message);finish(false)};
+  function synthesize(){
+   if(token!==request){finish(false);return}
+   const text=readingText(word);
+   const synth=root.speechSynthesis,Utterance=root.SpeechSynthesisUtterance;
+   if(!text||!synth||typeof synth.speak!=='function'||typeof Utterance!=='function'){
+    fail('일본어 음성을 재생할 수 없습니다. 브라우저의 일본어 음성 지원을 확인해주세요.');
+    return;
+   }
+   let utterance;
+   try{
+    utterance=new Utterance(text);
+    utterance.lang='ja-JP';
+    utterance.rate=0.9;
+    const voice=japaneseVoice(synth);
+    if(voice)utterance.voice=voice;
+    speaking=utterance;
+    utterance.onstart=()=>{
+     if(token!==request||speaking!==utterance)return;
+     clearWatchdog();finish(true);
+    };
+    utterance.onend=()=>{
+     if(speaking!==utterance)return;
+     speaking=null;clearWatchdog();
+     // Some engines report end without start for a blocked/failed utterance.
+     if(!resolved)fail('일본어 음성 재생이 완료되지 않았습니다. 일본어 음성팩을 확인해주세요.');
+    };
+    utterance.onerror=()=>{
+     if(speaking!==utterance)return;
+     speaking=null;clearWatchdog();
+     fail('일본어 음성 재생에 실패했습니다. 기기의 일본어 음성팩과 음량을 확인해주세요.');
+    };
+    synth.speak(utterance);
+    watchdog=root.setTimeout(()=>{
+     if(token!==request||speaking!==utterance||resolved)return;
+     try{synth.cancel()}catch{}
+     speaking=null;
+     fail('일본어 음성 엔진이 응답하지 않습니다. 일본어 음성팩을 확인해주세요.');
+    },7000);
+   }catch{
+    speaking=null;
+    fail('일본어 음성 합성을 시작하지 못했습니다. 브라우저의 음성 설정을 확인해주세요.');
+   }
+  }
   function attempt(){
    if(token!==request){finish(false);return}
+   clearWatchdog();
    const url=urls[next++];
-   if(!url){
-    active=null;
-    if(!silent)notify('원어민 발음 음원을 불러오지 못했습니다. 인터넷 연결을 확인해주세요.');
-    finish(false);return;
-   }
-   const audio=new root.Audio(url);active=audio;
+   if(!url||typeof root.Audio!=='function'){active=null;synthesize();return}
+   let audio;
+   try{audio=new root.Audio(url)}catch{attempt();return}
+   active=audio;
    audio.preload='auto';
    audio.onended=()=>{if(active===audio)active=null};
-   audio.onerror=()=>{if(active===audio)attempt()};
+   audio.onerror=()=>{if(active!==audio)return;active=null;attempt()};
+   const failed=()=>{
+    if(active!==audio||token!==request){finish(false);return}
+    active=null;
+    try{audio.pause()}catch{}
+    attempt();
+   };
    try{
     const promise=audio.play();
-    if(promise&&typeof promise.then==='function')promise.then(()=>{if(token===request)finish(true);else finish(false)}).catch(error=>{
-     if(active!==audio){finish(false);return}
-     if(error&&error.name==='NotAllowedError'){
-      if(!silent)notify('브라우저에서 자동 재생을 차단했습니다. 발음 듣기 버튼을 직접 눌러주세요.');
-      finish(false);return;
-     }
-     attempt();
-    });
-    else finish(true);
-   }catch{attempt()}
+    watchdog=root.setTimeout(()=>{
+     if(active===audio&&token===request&&!resolved)failed();
+    },5000);
+    if(promise&&typeof promise.then==='function'){
+     promise.then(()=>{
+      if(active!==audio||token!==request){finish(false);return}
+      clearWatchdog();finish(true);
+     }).catch(failed);
+    }else{clearWatchdog();finish(true)}
+   }catch{failed()}
   }
+  if(!readingText(word)){fail('읽기 데이터가 없어 발음을 생성할 수 없습니다.');return}
   attempt();
  });
 }
-root.KotobaAudio={sources,play,stop,hasRecording:word=>sources(word).length>0};
+root.KotobaAudio={
+ sources,play,stop,readingText,japaneseVoice,
+ hasRecording:word=>sources(word).length>0
+};
 if(typeof module!=='undefined'&&module.exports)module.exports=root.KotobaAudio;
 })(typeof window!=='undefined'?window:globalThis);
