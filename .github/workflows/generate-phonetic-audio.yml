@@ -4,6 +4,7 @@ on:
     paths:
       - '.github/workflows/generate-phonetic-audio.yml'
       - 'qa/generate-phonetic-audio.cjs'
+      - 'qa/synthesize-forced-kana.py'
   workflow_dispatch:
 permissions:
   contents: write
@@ -31,6 +32,15 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install structured NJD label generator
+        run: |
+          python -m pip install 'numpy==1.26.4' 'Cython==3.0.12' 'cmake==3.31.6' setuptools setuptools_scm wheel
+          python -m pip install --no-build-isolation 'pyopenjtalk==0.4.1'
+      - name: Audit every forced phoneme sequence before synthesis
+        run: node qa/generate-phonetic-audio.cjs --labels-only
       - name: Validate short kana and 七 before the full build
         run: node qa/generate-phonetic-audio.cjs --sample
       - name: Synthesize and audit all 7,811 pronunciations

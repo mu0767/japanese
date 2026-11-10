@@ -3,7 +3,7 @@
 // Open JTalk / NAIST / NIT ATR503 M001: https://open-jtalk.sourceforge.net/
 'use strict';
 const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm'),os=require('node:os'),crypto=require('node:crypto');
-const {execFile}=require('node:child_process'),{promisify}=require('node:util');
+const {execFile,spawn}=require('node:child_process'),{promisify}=require('node:util'),readline=require('node:readline');
 const run=promisify(execFile),ROOT=path.resolve('pronunciation');
 const VOICE=process.env.JTALK_VOICE||'/usr/share/hts-voice/nitech-jp-atr503-m001/nitech_jp_atr503_m001.htsvoice';
 const DIC=process.env.JTALK_DICT||'/var/lib/mecab/dic/open-jtalk/naist-jdic';
@@ -40,22 +40,37 @@ function pcmInfo(wav){
  if(!Number.isFinite(durationSeconds)||durationSeconds<0.1||durationSeconds>20||peak<100||rms<0.0001)throw Error('Silent or invalid PCM audio');
  return {durationSeconds:+durationSeconds.toFixed(5),rms:+rms.toFixed(7),peak:+(peak/32768).toFixed(7),sampleRate,channels};
 }
+function forcedSynth(){
+ const child=spawn(process.env.PYTHON||'python3',['-u',path.join(__dirname,'synthesize-forced-kana.py'),DIC,VOICE],{stdio:['pipe','pipe','pipe'],windowsHide:true,env:{...process.env,PYTHONUTF8:'1',OPEN_JTALK_DICT_DIR:DIC}});
+ let pending=null,stderr='',resolveReady,rejectReady;
+ const ready=new Promise((resolve,reject)=>{resolveReady=resolve;rejectReady=reject});
+ const initTimer=setTimeout(()=>{rejectReady(Error('Forced phoneme engine initialization timed out'));child.kill()},90000);
+ child.stderr.on('data',chunk=>{stderr=(stderr+chunk.toString()).slice(-4000)});
+ readline.createInterface({input:child.stdout}).on('line',line=>{let data;try{data=JSON.parse(line)}catch{stderr=(stderr+line).slice(-4000);return}if(data.ready){clearTimeout(initTimer);resolveReady(data);return}if(pending){const p=pending;pending=null;clearTimeout(p.timer);if(data.error)p.reject(Error(data.error));else p.resolve(data)}});
+ function failed(error){clearTimeout(initTimer);rejectReady(error);if(pending){clearTimeout(pending.timer);pending.reject(error);pending=null}}
+ child.on('error',failed);child.on('exit',code=>{if(code!==0||pending)failed(Error('Forced phoneme engine stopped: '+code+' '+stderr))});
+ return {async send(value){await ready;if(pending)throw Error('Concurrent request on one phoneme worker');return new Promise((resolve,reject)=>{const timer=setTimeout(()=>{pending=null;reject(Error('Forced synthesis timed out'));child.kill()},90000);pending={resolve,reject,timer};child.stdin.write(JSON.stringify(value)+'\n',error=>{if(error)failed(error)})})},close(){child.stdin.end()}};
+}
+function synthesisItem(word){const expected=expectedPhonemes(synthesisReading(word));return {id:word.id,word:word.word,input:synthesisReading(word)+'。',expected,moraSize:expected.filter(p=>/^[aiueo]$/.test(p)||p==='N'||p==='cl').length}}
 async function main(){
  const words=vm.runInNewContext(fs.readFileSync('data.js','utf8')+';WORDS'),sample=process.argv.includes('--sample');
- const samples=new Set(['七','絵','胃','料理','階段','歌う','ゼロ','歯','葉','を']),target=sample?words.filter(w=>samples.has(w.word)||w.reading.length===1||Object.hasOwn(spokenOverrides,w.reading)):words;
+ const previousFailures=new Set([]);
+ const samples=new Set(['七','絵','胃','料理','階段','歌う','ゼロ','歯','葉','を']),target=sample?words.filter(w=>samples.has(w.word)||w.reading.length===1||Object.hasOwn(spokenOverrides,w.reading)||previousFailures.has(w.id)):words;
  if(!fs.existsSync(path.join(DIC,'sys.dic'))||!fs.existsSync(VOICE))throw Error('Missing Open JTalk dictionary/voice');
  for(const w of words){if(!/^N[1-5]-[a-f\d]+$/.test(w.id)||!/^N[1-5]$/.test(w.level))throw Error('Invalid vocabulary ID');expectedPhonemes(w.reading)}
+ const auditor=forcedSynth();let labelAudit;try{labelAudit=await auditor.send({op:'audit',items:words.map(synthesisItem)})}finally{auditor.close()}
+ console.log('ALL_WORD_PHONEME_AUDIT',JSON.stringify(labelAudit));if(labelAudit.audited!==words.length||labelAudit.errors.length)throw Error('Forced phoneme labels failed the all-word audit');
+ if(process.argv.includes('--labels-only'))return;
  fs.mkdirSync(ROOT,{recursive:true});let cursor=0,processed=0,bytes=0;const failures=[],items=[];
  const concurrency=Math.max(1,Math.min(8,Number(process.env.AUDIO_CONCURRENCY)||4)),options={timeout:30000,maxBuffer:4*1024*1024,windowsHide:true};
  async function worker(){
-  const tmp=fs.mkdtempSync(path.join(os.tmpdir(),'kotoba-speech-')),input=path.join(tmp,'input.txt'),wav=path.join(tmp,'word.wav'),trace=path.join(tmp,'trace.txt');
+  const tmp=fs.mkdtempSync(path.join(os.tmpdir(),'kotoba-speech-')),wav=path.join(tmp,'word.wav'),synth=forcedSynth();
   try{while(cursor<target.length){
    const word=target[cursor++],relativePath='pronunciation/'+word.level+'/'+word.id+'.mp3',output=path.resolve(relativePath);fs.mkdirSync(path.dirname(output),{recursive:true});
    try{
     // Katakana specifies phonetic input; standalone は/へ must not become particles.
-    const text=synthesisReading(word)+'。';fs.writeFileSync(input,text,'utf8');
-    await run('open_jtalk',['-x',DIC,'-m',VOICE,'-r','1.0','-ot',trace,'-ow',wav,input],options);
-    const phonemes=tracePhonemes(fs.readFileSync(trace,'utf8')),expected=expectedPhonemes(synthesisReading(word));
+    const item=synthesisItem(word),text=item.input,result=await synth.send({...item,wav});
+    const phonemes=result.phonemes,expected=item.expected;
     if(JSON.stringify(canonicalPhones(phonemes))!==JSON.stringify(canonicalPhones(expected)))throw Error('PHONEME_MISMATCH expected='+expected.join(' ')+' actual='+phonemes.join(' '));
     if(word.word==='七'&&word.reading==='しち'&&canonicalPhones(phonemes).join(' ')!=='sh i ch i')throw Error('Seven pronunciation regression');
     const pcm=pcmInfo(fs.readFileSync(wav));
@@ -63,15 +78,15 @@ async function main(){
     const probe=JSON.parse((await run('ffprobe',['-v','error','-select_streams','a:0','-show_entries','format=duration:stream=codec_name,sample_rate,channels','-of','json',output],options)).stdout);
     if(probe.streams?.[0]?.codec_name!=='mp3'||Number(probe.format?.duration)<0.1)throw Error('Invalid encoded MP3 stream');
     const encoded=fs.readFileSync(output);if(encoded.length<256||encoded.length>500000)throw Error('Invalid MP3 asset size');bytes+=encoded.length;
-    items.push({id:word.id,word:word.word,reading:word.reading,input:text,...(spokenOverrides[word.reading]?{inputOverride:'The written particle は is pronounced wa in this expression; the visible vocabulary reading is retained.'}:{}),inputSha256:sha(text),path:relativePath,sha256:sha(encoded),bytes:encoded.length,phonemes,expectedPhonemes:expected,...pcm});
+    items.push({id:word.id,word:word.word,reading:word.reading,input:text,...(spokenOverrides[word.reading]?{inputOverride:'The written particle は is pronounced wa in this expression; the visible vocabulary reading is retained.'}:{}),inputSha256:sha(text),path:relativePath,sha256:sha(encoded),bytes:encoded.length,phonemes,expectedPhonemes:expected,labelSha256:result.labelSha256,...pcm});
    }catch(err){failures.push({id:word.id,word:word.word,reading:word.reading,error:String(err.message||err).slice(0,400)});try{fs.unlinkSync(output)}catch{}}
    processed++;if(processed%200===0||processed===target.length)console.log('GENERATED_PROGRESS',JSON.stringify({processed,total:target.length,generated:items.length,failures:failures.length,bytes}));
-  }}finally{fs.rmSync(tmp,{recursive:true,force:true})}
+  }}finally{synth.close();fs.rmSync(tmp,{recursive:true,force:true})}
  }
  await Promise.all(Array.from({length:concurrency},worker));
  const report={totalWords:words.length,targets:target.length,generated:items.length,failures:failures.length,bytes,errors:failures};fs.writeFileSync(path.join(ROOT,sample?'sample-build-report.json':'build-report.json'),JSON.stringify(report,null,2)+'\n');console.log('PHONETIC_BUILD_RESULT',JSON.stringify(report));
  if(failures.length||items.length!==target.length){process.exitCode=1;return}
- const manifest={version:2,engine:'Open JTalk 1.11 / NIT ATR503 M001',voiceAttribution:'HTS Working Group / Nagoya Institute of Technology, NIT ATR503 M001 voice; see VOICE-LICENSE.txt',dictionary:'NAIST Japanese dictionary',source:'https://open-jtalk.sourceforge.net/',generatedAt:new Date().toISOString(),totalWords:words.length,total:items.length,voiceLicenseFile:'VOICE-LICENSE.txt',validation:'Exact kana-to-phoneme comparison (vowel devoicing and ei/ou long-vowel equivalence), PCM energy/duration, encoded MP3 stream, SHA-256. This is not human listening verification.',items:items.sort((a,b)=>a.id.localeCompare(b.id))};
+ const manifest={version:2,engine:'Open JTalk 1.11 forced NJD pronunciation / NIT ATR503 M001',voiceAttribution:'HTS Working Group / Nagoya Institute of Technology, NIT ATR503 M001 voice; see VOICE-LICENSE.txt',dictionary:'NAIST Japanese dictionary; MeCab segmentation bypassed for explicit kana pronunciation',phonemeMethod:'One structured NJD feature with explicit pron/read/mora_size; make_label directly converts it through njd2jpcommon. Accent=0 (neutral synthesis), not a verified pitch-accent dictionary.',source:'https://open-jtalk.sourceforge.net/',generatedAt:new Date().toISOString(),totalWords:words.length,total:items.length,voiceLicenseFile:'VOICE-LICENSE.txt',validation:'All-word forced-label audit, exact kana-to-phoneme comparison, PCM energy/duration, encoded MP3 stream, SHA-256. This is not human listening verification.',items:items.sort((a,b)=>a.id.localeCompare(b.id))};
  fs.writeFileSync(path.join(ROOT,sample?'sample-manifest.json':'manifest.json'),JSON.stringify(manifest,null,2)+'\n');
 }
 module.exports={normalizedReading,synthesisReading,expectedPhonemes,canonicalPhones,tracePhonemes,pcmInfo};

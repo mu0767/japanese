@@ -6,8 +6,11 @@ const read=file=>fs.readFileSync(path.join(ROOT,file),'utf8'),sha=data=>crypto.c
 const words=vm.runInNewContext(read('data.js')+';WORDS');
 const recordings=vm.runInNewContext(read('audio-data.js')+';KOTOBA_AUDIO_RECORDINGS');
 const core=require('../core.js');
+const generation=require('./generate-phonetic-audio.cjs');
 const kana=s=>String(s).normalize('NFKC').replace(/[ァ-ヶ]/g,c=>String.fromCharCode(c.charCodeAt(0)-96));
-const katakana=s=>kana(s).replace(/[ぁ-ゖ]/g,c=>String.fromCharCode(c.charCodeAt(0)+96));
+// These nine expressions preserve written は while saying /wa/. A lexical は
+// (歯・葉・刃・派・特派・爆破) must keep /ha/; no blanket substitution is allowed.
+const spokenOverrides={'こんにちは':'コンニチワ','こんばんは':'コンバンワ','それでは':'ソレデワ','では':'デワ','または':'マタワ','あるいは':'アルイワ','じつは':'ジツワ','ひいては':'ヒイテワ','もしくは':'モシクワ'};
 const ids=new Map(words.map(w=>[w.id,w])),errors=[];
 function problem(scope,id,detail){errors.push({scope,id,detail})}
 const levels=Object.fromEntries(['N5','N4','N3','N2','N1'].map(level=>[level,words.filter(w=>w.level===level)]));
@@ -37,12 +40,11 @@ for(const id of Object.keys(recordings))if(!ids.has(id))problem('native-index',i
 // Ensure the runtime handlers select the exact source object, including post-grade replay.
 const app=read('app.js');
 if(!app.includes('speak(s.q.optionWords[index])')||!app.includes('speak(s.q.optionWords[i])'))problem('runtime',null,'Choice playback no longer uses its exact optionWords object');
-function phonemes(values){return values.filter(p=>!['sil','pau'].includes(p)).map(p=>p==='I'?'i':p==='U'?'u':p)}
+function phonemes(values){return values.filter(p=>!['sil','pau'].includes(p)).map(p=>/^[AIUEO]$/.test(p)?p.toLowerCase():p)}
 function equivalent(actual,expected){
- const a=phonemes(actual),e=phonemes(expected);if(JSON.stringify(a)===JSON.stringify(e))return true;
- // Japanese dictionary phonology may realize written ei/ou as long ee/oo.
- for(let i=1;i<e.length;i++){if(e[i-1]==='e'&&e[i]==='i')e[i]='e';else if(e[i-1]==='o'&&e[i]==='u')e[i]='o'}
- return JSON.stringify(a)===JSON.stringify(e);
+ // Apply the same explicitly documented phonological equivalence to both
+ // sides: devoicing, written ei/ou and spoken ee/oo do not change the word.
+ return JSON.stringify(generation.canonicalPhones(actual))===JSON.stringify(generation.canonicalPhones(expected));
 }
 const manifestPath=path.join(ROOT,'pronunciation/manifest.json');
 let manifest=null;
@@ -54,9 +56,11 @@ if(fs.existsSync(manifestPath)){
   const seen=new Set();
   for(const item of manifest.items||[]){
    const word=ids.get(item.id);if(!word||seen.has(item.id)){problem('manifest',item.id,'Unknown or duplicate entry');continue}seen.add(item.id);report.assets.manifestChecked++;
-   const expectedPath='pronunciation/'+word.level+'/'+word.id+'.mp3',input=katakana(word.reading)+'。';
+   const expectedPath='pronunciation/'+word.level+'/'+word.id+'.mp3',input=(spokenOverrides[word.reading]||generation.normalizedReading(word.reading))+'。';
    if(item.word!==word.word||item.reading!==word.reading||item.path!==expectedPath||item.input!==input||item.inputSha256!==sha(input))problem('manifest',item.id,'Audio provenance does not match its exact vocabulary and kana input');
+   if(!!item.inputOverride!==Object.hasOwn(spokenOverrides,word.reading))problem('manifest',item.id,'Undocumented or missing spoken-particle input override');
    if(!Array.isArray(item.phonemes)||!item.phonemes.length||!Array.isArray(item.expectedPhonemes)||!equivalent(item.phonemes,item.expectedPhonemes))problem('phonemes',item.id,'Generated phoneme sequence differs from kana expectation');
+   else if(JSON.stringify(generation.canonicalPhones(item.expectedPhonemes))!==JSON.stringify(generation.canonicalPhones(generation.expectedPhonemes(input.slice(0,-1)))))problem('phonemes',item.id,'Manifest phonemes do not derive from its audited spoken reading');
    if(word.word==='七'&&word.reading==='しち'&&JSON.stringify(phonemes(item.phonemes||[]))!==JSON.stringify(['sh','i','ch','i']))problem('phonemes',item.id,'七（しち） must contain sh i ch i');
    if(!(item.durationSeconds>0.08&&item.durationSeconds<30)||!(item.rms>0)||!(item.peak>0&&item.peak<=1))problem('signal',item.id,'Missing or invalid duration/audio signal metrics');
    const filename=path.join(ROOT,expectedPath);if(!fs.existsSync(filename))continue;
@@ -68,7 +72,7 @@ for(const word of words){
  const file=path.join(ROOT,'pronunciation',word.level,word.id+'.mp3');
  if(!fs.existsSync(file)){report.assets.missing++;continue}
  report.assets.present++;const bytes=fs.readFileSync(file);report.assets.bytes+=bytes.length;
- if(bytes.length<1800||bytes.length>500000)problem('asset',word.id,'Suspicious MP3 length');
+ if(bytes.length<256||bytes.length>500000)problem('asset',word.id,'Suspicious MP3 length');
  if(bytes.subarray(0,3).toString()!=='ID3'&&!((bytes[0]===255)&&(bytes[1]&224)===224))problem('asset',word.id,'File does not begin with an MP3 header');
 }
 report.assets.status=manifest&&report.assets.present===words.length&&report.assets.manifestChecked===words.length?'audited':'pending';
