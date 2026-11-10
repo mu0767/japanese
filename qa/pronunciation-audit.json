@@ -1,0 +1,71 @@
+{
+  "version": 1,
+  "generatedAt": "2026-11-10T14:07:42.244Z",
+  "scope": {
+    "words": 7811,
+    "levels": {
+      "N5": 674,
+      "N4": 630,
+      "N3": 1659,
+      "N2": 1778,
+      "N1": 3070
+    },
+    "humanListening": "not performed; this report verifies data, routing, phonemes and files only"
+  },
+  "inputs": {
+    "dataSha256": "72485e5618b6383bdc0cc9c1245f9535c3af736ed727082aba6d80c51e5a58c9",
+    "recordingIndexSha256": "cb4caac3b78d74c0f92cce4098533a4abd4952d654f4bf0add412c0bcd8e2285"
+  },
+  "readings": {
+    "checked": 7811,
+    "invalid": 0,
+    "shorterThanThreeKana": 1108
+  },
+  "quizBindings": {
+    "questionSets": 7811,
+    "options": 31244,
+    "mismatches": 0
+  },
+  "nativeRecordings": {
+    "indexed": 4199,
+    "waniIndexed": 3230,
+    "kanjiIndexed": 2830,
+    "waniExactSourceAudit": {
+      "source": "https://api.github.com/repos/tofugu/japanese-vocabulary-pronunciation-audio/git/trees/master?recursive=1",
+      "treeSha": "9725e0e7d628ab616e8b14e126d3daa33eba8d36",
+      "checked": 3230,
+      "missing": 0
+    },
+    "sevenEvidence": {
+      "shichi": false,
+      "nana": true,
+      "note": "Different readings must not be substituted."
+    }
+  },
+  "assets": {
+    "status": "pending",
+    "expected": 7811,
+    "present": 0,
+    "manifestChecked": 0,
+    "missing": 7811,
+    "bytes": 0
+  },
+  "reportedWord": [
+    {
+      "id": "N5-988db98632",
+      "word": "七",
+      "reading": "しち",
+      "nativeIndexPresent": false,
+      "expectedPhonemes": [
+        "sh",
+        "i",
+        "ch",
+        "i"
+      ]
+    }
+  ],
+  "errors": {
+    "count": 0,
+    "details": []
+  }
+}

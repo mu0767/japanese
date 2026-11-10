@@ -3,6 +3,7 @@ on:
   push:
     paths:
       - '.github/workflows/generate-phonetic-audio.yml'
+      - 'qa/generate-phonetic-audio.cjs'
   workflow_dispatch:
 permissions:
   contents: write
@@ -22,27 +23,43 @@ jobs:
         run: |
           sudo apt-get update -qq
           sudo apt-get install -y -qq open-jtalk open-jtalk-mecab-naist-jdic hts-voice-nitech-jp-atr503-m001 ffmpeg
+          mkdir -p pronunciation/licenses
+          cp /usr/share/doc/hts-voice-nitech-jp-atr503-m001/copyright pronunciation/licenses/hts-voice-copyright.txt
+          cp /usr/share/doc/hts-voice-nitech-jp-atr503-m001/copyright pronunciation/VOICE-LICENSE.txt
+          cp /usr/share/doc/open-jtalk/copyright pronunciation/licenses/open-jtalk-copyright.txt
+          cp /usr/share/doc/open-jtalk-mecab-naist-jdic/copyright pronunciation/licenses/naist-jdic-copyright.txt
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Synthesize all 7,811 pronunciations from actual kana readings
+      - name: Validate short kana and 七 before the full build
+        run: node qa/generate-phonetic-audio.cjs --sample
+      - name: Synthesize and audit all 7,811 pronunciations
+        env:
+          AUDIO_CONCURRENCY: '4'
         run: node qa/generate-phonetic-audio.cjs
-      - name: Commit validated MP3 assets to GitHub Pages
+      - name: Preserve auditable audio and phoneme artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: kotoba-phonetic-audio
+          path: pronunciation/
+          retention-days: 7
+      - name: Commit fully validated MP3 assets
         shell: bash
         run: |
           set -euo pipefail
-          python3 - <<'PY'
-          import json,glob,os,subprocess
-          files=glob.glob('pronunciation/N*/*.mp3')
-          expected=len(files)
-          assert expected==7811,f'{expected} pronunciation files expected 7811'
-          assert all(os.path.getsize(p)>1800 for p in files)
-          print('MP3_ASSET_AUDIT',json.dumps({'files':expected,'megabytes':round(sum(os.path.getsize(x) for x in files)/1000000,1)}))
-          PY
+          node - <<'NODE'
+          const fs=require('fs'),crypto=require('crypto');
+          const m=JSON.parse(fs.readFileSync('pronunciation/manifest.json','utf8'));
+          if(m.total!==7811||m.items.length!==7811)throw Error('Incomplete pronunciation manifest');
+          for(const x of m.items){const b=fs.readFileSync(x.path);if(b.length!==x.bytes||crypto.createHash('sha256').update(b).digest('hex')!==x.sha256)throw Error('Asset mismatch: '+x.id)}
+          console.log('MP3_ASSET_AUDIT',JSON.stringify({files:m.items.length,megabytes:Math.round(m.items.reduce((n,x)=>n+x.bytes,0)/100000)/10}));
+          NODE
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add pronunciation/
           git diff --cached --quiet && exit 0
-          git commit -m "audio: publish phoneme-accurate offline Japanese pronunciations for 7811 words"
+          git commit -m "audio: publish phoneme-audited Japanese pronunciations for all 7811 words"
           git pull --rebase origin main
           git push origin HEAD:main
+          echo 'Assets committed. A subsequent authorized source commit publishes them through branch-based GitHub Pages.'
