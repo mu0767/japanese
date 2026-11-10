@@ -21,17 +21,17 @@ for(const word of words){
  const prefix=audio.hasRecording(word)?'n':'g';
  const group=Math.floor(groups[prefix]++/12);
  const expected='https://kotoba-audio.union-raid.workers.dev/v1/audio/'+prefix+'/'+group+'/'+word.id;
- const actual=audio.archiveSource(word);
- assert.equal(actual,expected,'Archive mapping changed: '+word.word);
- archives.add(actual);
+ assert.equal(audio.archiveSource(word),expected,'Archive mapping changed: '+word.word);
+ archives.add(expected);
 }
 assert.equal(groups.g,3612);
 assert.equal(groups.n,4199);
-assert.equal(archives.size,7811,'All entries must have independently accessible audio');
+assert.equal(archives.size,7811);
 assert.equal(audio.readingText(zero),'ぜろ');
-let made=[],spoken=[],notifications=[];
+let made=[],loaded=[],spoken=[],notifications=[];
 ctx.Audio=class{
- constructor(url){this.src=url;made.push(url)}
+ constructor(url){this.src=url;this.readyState=2;made.push(this)}
+ load(){loaded.push(this.src)}
  play(){return Promise.resolve()}
  pause(){}
 };
@@ -42,45 +42,60 @@ ctx.speechSynthesis={
  cancel(){}
 };
 (async()=>{
- // Licensed recordings are preferred. All 3,612 missing originals use first-party WAV.
- assert.equal(await audio.play(hashiru),true);
- assert.match(made.at(-1),/media.kanjialive.com/);
+ // Prepare four (or more) options before the user taps; loaded Audio elements are reused.
+ const options=[zero,hashiru,utau,missing[0]];
+ assert.equal(audio.prepare(options),4);
+ assert.equal(loaded.length,4);
+ assert(loaded.every(url=>url.includes('kotoba-audio.union-raid.workers.dev')));
+ const before=made.length;
  assert.equal(await audio.play(zero),true);
- assert.match(made.at(-1),/kotoba-audio.union-raid.workers.dev/);
- assert.match(made.at(-1),/\/g\/7\/N5-434707d737$/);
- assert.equal(spoken.length,0,'First-party audio should avoid device TTS');
+ assert.equal(made.length,before,'Click must reuse the already-preloaded audio element');
+ assert.equal(made.at(-1).playbackRate,1.1,'Playback rate should be faster');
+ assert.equal(spoken.length,0,'Preloaded recorded audio must not use device TTS');
+ audio.clearPrepared();
+ // Playback starts with own faster server, not two slow third-party lookups.
+ made=[];
+ assert.equal(await audio.play(hashiru),true);
+ assert.equal(made.length,1);
+ assert.match(made[0].src,/kotoba-audio.union-raid.workers.dev/);
 
- // Native original endpoints can fail; next attempt must serve archived WAV.
+ // If first-party server is unavailable, fall back to verified original recording.
+ audio.clearPrepared();
  made=[];
  ctx.Audio=class{
   constructor(url){this.src=url;made.push(url)}
-  play(){return this.src.includes('kotoba-audio.')?Promise.resolve():Promise.reject(new Error('HTTP 404'))}
+  play(){return this.src.includes('kotoba-audio.')?Promise.reject(new Error('HTTP 404')):Promise.resolve()}
   pause(){}
  };
  assert.equal(await audio.play(hashiru),true);
- assert.equal(made.length,3,'Kanji alive, WaniKani, then archive');
- assert(made.at(-1).includes('/v1/audio/n/'));
- assert.equal(spoken.length,0);
+ assert.equal(made.length,2,'Archive failure must immediately try original Kanji alive MP3');
+ assert.match(made[0],/kotoba-audio/);
+ assert.match(made[1],/media.kanjialive.com/);
 
- // Even if all internet audio endpoints fail, Japanese reading TTS remains last.
+ // If network audio is unavailable, Japanese TTS still works.
+ audio.clearPrepared();
  ctx.Audio=class{constructor(url){this.src=url}play(){return Promise.reject(new Error('failed'))}pause(){}};
  assert.equal(await audio.play(zero),true);
  assert.equal(spoken.at(-1).text,'ぜろ');
  assert.equal(spoken.at(-1).lang,'ja-JP');
  assert.equal(spoken.at(-1).voice.lang,'ja-JP');
+ assert.equal(spoken.at(-1).rate,1.08);
 
- // No Japanese system voice: we still set ja-JP rather than selecting a wrong locale.
+ // If no Japanese voice is advertised, only the explicit Japanese locale is used.
  ctx.speechSynthesis.getVoices=()=>[{lang:'ko-KR'}];
  assert.equal(await audio.play(utau),true);
  assert.equal(spoken.at(-1).text,'うたう');
  assert.equal(spoken.at(-1).lang,'ja-JP');
  assert.equal(spoken.at(-1).voice,undefined);
 
- // With neither internet nor any speech engine, there is an explicit error.
+ // With neither network nor a voice engine the user sees a useful error.
  ctx.speechSynthesis=null;
  assert.equal(await audio.play(zero,{notify:x=>notifications.push(x)}),false);
  assert.equal(notifications.length,1);
  assert.match(notifications[0],/음성/);
+ const app=fs.readFileSync('app.js','utf8');
+ assert(app.includes("KotobaAudio.prepare(mode==='reading'?s.q.optionWords:[w])"));
+ assert(app.includes('KotobaAudio.prepare(list.slice(page*30,page*30+3))'));
  audio.stop();
- console.log('PASS: 7,811/7,811 archive URLs; 651 groups; original MP3 > self-hosted WAV > Japanese TTS; errors surfaced');
+ console.log('PASS: 7,811 archived URLs; 4-choice audio preload, prepared player reuse, 1.1x speed, archive-first fallback, Japanese TTS and visible errors');
 })().catch(error=>{console.error(error.stack||error);process.exitCode=1});
