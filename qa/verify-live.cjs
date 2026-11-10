@@ -26,7 +26,11 @@ async function read(path){const url=new URL(path,base);url.searchParams.set('_ve
  assert(!app.includes('SpeechSynthesisUtterance'),'Mispronouncing browser TTS must not be used');
  assert(paths.includes('audio-data.js?v=1')&&paths.includes('audio.js?v=7')&&paths.includes('audio-offline.js?v=2'),'Persistent offline audio scripts not published');
  assert(scripts.find((x,i)=>paths[i].startsWith('audio.js')).includes("root.fetch(url,{mode:'cors',cache:'force-cache'})"),'Real mobile MP3 prefetch missing');
- assert(paths.includes('app.js?v=26'),'Offline audio controls are not published');
+ assert(paths.includes('app.js?v=27'),'Listening-test version is not published');
+ assert(paths.includes('core.js?v=4'),'Listening mode question generator is not published');
+ assert(app.includes('value="listening"'),'Audio comprehension test option missing');
+ assert(app.includes('listening-reveal'),'Japanese reading reveal after audio quiz is missing');
+ assert(app.includes("if(mode==='listening')speak(w)"),'Listening test must autoplay question voice');
  assert(app.includes('id="audio-cache-all"')&&app.includes('id="audio-cache-level"'),'Bulk or per-level audio download controls missing');
  assert(app.includes('refreshAudioPanel()'),'Offline storage progress UI missing');
  const offline=vm.runInContext('KotobaOfflineAudio',context);
