@@ -45,6 +45,7 @@ jobs:
         run: |
           node test.cjs
           node test-kanji.cjs
+          node test-korean.cjs
           node test-audio.cjs
           node test-audio-offline.cjs
           node qa/audit-pronunciation.cjs --require-assets
