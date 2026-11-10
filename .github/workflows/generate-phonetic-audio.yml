@@ -1,0 +1,48 @@
+name: Build independently pronounced JLPT audio
+on:
+  push:
+    paths:
+      - '.github/workflows/generate-phonetic-audio.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 150
+    concurrency:
+      group: kotoba-generate-audio
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+          fetch-depth: 1
+      - name: Install Japanese rule-based speech
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq open-jtalk open-jtalk-mecab-naist-jdic hts-voice-nitech-jp-atr503-m001 ffmpeg
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Synthesize all 7,811 pronunciations from actual kana readings
+        run: node qa/generate-phonetic-audio.cjs
+      - name: Commit validated MP3 assets to GitHub Pages
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import json,glob,os,subprocess
+          files=glob.glob('pronunciation/N*/*.mp3')
+          expected=len(files)
+          assert expected==7811,f'{expected} pronunciation files expected 7811'
+          assert all(os.path.getsize(p)>1800 for p in files)
+          print('MP3_ASSET_AUDIT',json.dumps({'files':expected,'megabytes':round(sum(os.path.getsize(x) for x in files)/1000000,1)}))
+          PY
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add pronunciation/
+          git diff --cached --quiet && exit 0
+          git commit -m "audio: publish phoneme-accurate offline Japanese pronunciations for 7811 words"
+          git pull --rebase origin main
+          git push origin HEAD:main
