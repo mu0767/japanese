@@ -60,6 +60,7 @@ async function downloadAudio(targetLevel){
  try{
   const result=await service.download(list,progress=>{
    offlineAudioProgress=progress;
+   if(progress.done===0)refreshAudioPanel();
    const status=$('#audio-cache-status');
    if(status&&service.active())status.textContent=progress.done.toLocaleString()+' / '+progress.total.toLocaleString()+'개 확인 · 새로 저장 '+progress.downloaded.toLocaleString()+'개 · '+Math.floor(progress.done/Math.max(1,progress.total)*100)+'%';
   });
