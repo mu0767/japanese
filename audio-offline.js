@@ -57,11 +57,17 @@ function stop(){
 }
 async function download(words,onProgress=()=>{}){
  if(task)throw new Error('이미 음원을 저장하는 중입니다.');
- const cache=await openCache();
- const targets=Array.from(new Map(words.map(word=>[urlFor(word),word]).filter(([url])=>allowed(url))).keys());
  const controller=new AbortController();
  const local={controller};
  task=local;
+ let cache,targets;
+ try{
+  cache=await openCache();
+  targets=Array.from(new Map(words.map(word=>[urlFor(word),word]).filter(([url])=>allowed(url))).keys());
+ }catch(error){
+  if(task===local)task=null;
+  throw error;
+ }
  let cursor=0,done=0,downloaded=0,existing=0,failed=0,bytes=0,quotaError=false;
  const failures=[];
  const emit=()=>{
