@@ -23,6 +23,32 @@ function archiveSource(word){
  return path?ARCHIVE+path:null;
 }
 let active=null,speaking=null,request=0,watchdog=null;
+const prepared=new Map();
+const MAX_PREPARED=12;
+const PLAYBACK_RATE=1.1;
+function prepare(words){
+ if(typeof root.Audio!=='function')return 0;
+ let count=0;
+ for(const word of words||[]){
+  const url=archiveSource(word);
+  if(!url||prepared.has(word.id))continue;
+  try{
+   const audio=new root.Audio(url);
+   audio.preload='auto';
+   audio.playbackRate=PLAYBACK_RATE;
+   // Download and decode while the user reads the question, BEFORE tapping an option.
+   if(typeof audio.load==='function')audio.load();
+   prepared.set(word.id,{audio,url});
+   count++;
+   while(prepared.size>MAX_PREPARED){
+    const oldest=prepared.keys().next().value;
+    if(prepared.get(oldest)?.audio===active)break;
+    prepared.delete(oldest);
+   }
+  }catch{}
+ }
+ return count;
+}
 function sources(word){
  if(!word||!word.id||!word.word||!word.reading||typeof KOTOBA_AUDIO_RECORDINGS==='undefined')return [];
  const data=Object.hasOwn(KOTOBA_AUDIO_RECORDINGS,word.id)?KOTOBA_AUDIO_RECORDINGS[word.id]:null;
@@ -61,7 +87,9 @@ function stop(){
 function play(word,options={}){
  const {silent=false,notify=()=>{}}=options;
  stop();
- const token=request,urls=[...sources(word),archiveSource(word)].filter(Boolean);
+ // The archived server is consistently available and avoids slow third-party hops.
+ // Keep native recordings as secondary sources, then device TTS as final fallback.
+ const token=request,urls=[archiveSource(word),...sources(word)].filter(Boolean);
  let resolved=false,next=0;
  return new Promise(resolve=>{
   const finish=value=>{if(!resolved){resolved=true;resolve(value)}};
@@ -78,7 +106,7 @@ function play(word,options={}){
    try{
     utterance=new Utterance(text);
     utterance.lang='ja-JP';
-    utterance.rate=0.9;
+    utterance.rate=1.08;
     const voice=japaneseVoice(synth);
     if(voice)utterance.voice=voice;
     speaking=utterance;
@@ -115,9 +143,16 @@ function play(word,options={}){
    const url=urls[next++];
    if(!url||typeof root.Audio!=='function'){active=null;synthesize();return}
    let audio;
-   try{audio=new root.Audio(url)}catch{attempt();return}
+   try{
+    const cached=prepared.get(word?.id);
+    audio=cached?.url===url?cached.audio:new root.Audio(url);
+   }catch{attempt();return}
    active=audio;
    audio.preload='auto';
+   audio.playbackRate=PLAYBACK_RATE;
+   if(typeof audio.readyState==='number'&&audio.readyState>=1){
+    try{audio.currentTime=0}catch{}
+   }
    audio.onended=()=>{if(active===audio)active=null};
    audio.onerror=()=>{if(active!==audio)return;active=null;attempt()};
    const failed=()=>{
@@ -130,7 +165,7 @@ function play(word,options={}){
     const promise=audio.play();
     watchdog=root.setTimeout(()=>{
      if(active===audio&&token===request&&!resolved)failed();
-    },5000);
+    },url.startsWith(ARCHIVE)?3200:2500);
     if(promise&&typeof promise.then==='function'){
      promise.then(()=>{
       if(active!==audio||token!==request){finish(false);return}
@@ -144,7 +179,7 @@ function play(word,options={}){
  });
 }
 root.KotobaAudio={
- sources,archiveSource,play,stop,readingText,japaneseVoice,
+ sources,archiveSource,prepare,play,stop,readingText,japaneseVoice,
  hasRecording:word=>sources(word).length>0
 };
 if(typeof module!=='undefined'&&module.exports)module.exports=root.KotobaAudio;
