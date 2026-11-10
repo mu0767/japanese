@@ -17,7 +17,7 @@ jobs:
           sudo apt-get install -y -qq open-jtalk open-jtalk-mecab-naist-jdic hts-voice-nitech-jp-atr503-m001 ffmpeg
       - name: Read kana and synthesize 料理, 階段, 歌う
         run: |
-          DIC=$(find /var/lib/mecab/dic -type d -name "*jtalk*" | head -1)
+          DIC=$(dirname "$(find /var/lib/mecab/dic -type f -name sys.dic | head -1)")
           VOICE=$(find /usr/share -type f -name "*.htsvoice" | head -1)
           echo "dictionary=$DIC voice=$VOICE"
           test -n "$DIC" && test -n "$VOICE"
