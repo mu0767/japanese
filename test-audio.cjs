@@ -53,6 +53,23 @@ ctx.speechSynthesis={
  assert.equal(made.at(-1).playbackRate,1.1,'Playback rate should be faster');
  assert.equal(spoken.length,0,'Preloaded recorded audio must not use device TTS');
  audio.clearPrepared();
+ // On mobile Safari preloading may be ignored: explicit fetch -> Blob URL is used.
+ ctx.fetch=async()=>({ok:true,blob:async()=>({size:123,type:'audio/wav'})});
+ let revoked=[];
+ ctx.URL={createObjectURL:()=> 'blob:cached-japanese-wav',revokeObjectURL:url=>revoked.push(url)};
+ made=[];
+ const blobWord=missing.find(w=>w.id!==zero.id);
+ assert.equal(audio.prepare([blobWord]),1);
+ await new Promise(resolve=>setImmediate(resolve));
+ assert.equal(made.length,1,'Blob-backed audio element should be created after fetch');
+ assert.equal(made[0].src,'blob:cached-japanese-wav');
+ assert.equal(await audio.play(blobWord),true);
+ assert.equal(made.length,1,'Tap should reuse in-memory Blob instead of requesting the server again');
+ audio.stop();
+ audio.clearPrepared();
+ assert.deepEqual(revoked,['blob:cached-japanese-wav']);
+ delete ctx.fetch;
+ delete ctx.URL;
  // Playback starts with own faster server, not two slow third-party lookups.
  made=[];
  assert.equal(await audio.play(hashiru),true);
