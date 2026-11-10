@@ -58,6 +58,7 @@ function sources(word){
  if(data[1])result.push(WANI+encodeURIComponent(word.word+'【'+word.reading+'】.mp3'));
  return result;
 }
+function clearPrepared(){prepared.clear()}
 function readingText(word){
  // Never ask the speech engine to guess a kanji reading from its spelling.
  // Convert katakana to hiragana to avoid non-Japanese voice heuristics.
@@ -179,7 +180,7 @@ function play(word,options={}){
  });
 }
 root.KotobaAudio={
- sources,archiveSource,prepare,play,stop,readingText,japaneseVoice,
+ sources,archiveSource,prepare,clearPrepared,play,stop,readingText,japaneseVoice,
  hasRecording:word=>sources(word).length>0
 };
 if(typeof module!=='undefined'&&module.exports)module.exports=root.KotobaAudio;
