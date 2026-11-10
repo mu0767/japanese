@@ -1,0 +1,24 @@
+{
+  "schema": 1,
+  "source": "mu0767/japanese main, connector full file inspection",
+  "verifiedAt": "2026-11-11",
+  "scope": "Static reading and playback source integrity only; does NOT certify acoustic correctness or pitch accent.",
+  "vocabulary": 7811,
+  "uniqueIds": 7811,
+  "levels": {
+    "N5": 674,
+    "N4": 630,
+    "N3": 1659,
+    "N2": 1778,
+    "N1": 3070
+  },
+  "recordingReferences": 4199,
+  "waniExactWordReadingIndexed": 3230,
+  "kanjiAliveIndexed": 2830,
+  "uniqueAudioPaths": 7811,
+  "choiceUsesExactWordObject": true,
+  "choiceJapaneseAndKoreanLabels": true,
+  "ttsUsesKanaReading": true,
+  "errorsCount": 0,
+  "errors": []
+}
