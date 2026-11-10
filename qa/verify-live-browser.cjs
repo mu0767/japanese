@@ -95,7 +95,7 @@ const base=(process.argv[2]||'https://mu0767.github.io/japanese/').replace(/\/?$
     for(const gloss of await page.locator('.option-gloss').allTextContents())
       assert(!gloss.includes('사전 검색 필요'),'Distractor with missing Korean meaning was selected: '+gloss);
     // Audio → Korean meaning is a separate test type, not a variation that leaks the printed word.
-    await page.goto(base+'#home');
+    await page.evaluate(()=>{session=null;home()});
     assert.equal(await page.locator('#mode option[value="listening"]').count(),1,'Listening test missing from mode selector');
     const listeningStart=await page.evaluate(()=>{
       level='N5'; mode='listening';scope='all';size=10;
