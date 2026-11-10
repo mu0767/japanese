@@ -1,0 +1,4112 @@
+{
+  "scope": [
+    "N1"
+  ],
+  "reviewed": 3070,
+  "batches": 69,
+  "failedBatches": [
+    {
+      "ix": 57,
+      "status": "err",
+      "message": "SyntaxError: Expected ',' or '}' after property value in JSON at position 45 (line 1 column 46)",
+      "items": []
+    },
+    {
+      "ix": 67,
+      "status": "err",
+      "message": "SyntaxError: Expected ',' or '}' after property value in JSON at position 12 (line 1 column 13)",
+      "items": []
+    }
+  ],
+  "engine": "independent-qa-llama-3.3-70b",
+  "suggestions": [
+    {
+      "id": "N1-1cf257772e",
+      "word": "嗚呼",
+      "reading": "ああ",
+      "english": "Ah!; Oh!; Alas!",
+      "proposed": "아아"
+    },
+    {
+      "id": "N1-568d94afad",
+      "word": "仰ぐ",
+      "reading": "あおぐ",
+      "english": "to look up (to); to respect; to depend on; to ask for; to seek; to revere; to drink; to take",
+      "current": "우러르다",
+      "proposed": "올려다보다"
+    },
+    {
+      "id": "N1-8645802338",
+      "word": "亜科",
+      "reading": "あか",
+      "english": "suborder; subfamily",
+      "proposed": "아과"
+    },
+    {
+      "id": "N1-3b72fad905",
+      "word": "垢",
+      "reading": "あか",
+      "english": "dirt; filth",
+      "current": "때",
+      "proposed": "흙"
+    },
+    {
+      "id": "N1-ddb83d9881",
+      "word": "証",
+      "reading": "あかし",
+      "english": "proof; evidence",
+      "current": "증거",
+      "proposed": "증명"
+    },
+    {
+      "id": "N1-6836124c3c",
+      "word": "赤字",
+      "reading": "あかじ",
+      "english": "deficit; go in the red",
+      "current": "결손",
+      "proposed": "적자"
+    },
+    {
+      "id": "N1-b82e2ceca8",
+      "word": "明かす",
+      "reading": "あかす",
+      "english": "to pass; spend; to reveal; to divulge",
+      "current": "밝히다",
+      "proposed": "밝히다"
+    },
+    {
+      "id": "N1-ff854ec90e",
+      "word": "赤らむ",
+      "reading": "あからむ",
+      "english": "to become red; to redden; to blush",
+      "current": "뻘게지다",
+      "proposed": "붉어지다"
+    },
+    {
+      "id": "N1-b20eb26e92",
+      "word": "上がり",
+      "reading": "あがり",
+      "english": "slope; advance income; crop yield; ascent; rise; advance; death; spinning; completion; stop; finish; after (rain, illness, etc.)",
+      "current": "올라감, 오름, 상승",
+      "proposed": "오름"
+    },
+    {
+      "id": "N1-61c572fca7",
+      "word": "空き間",
+      "reading": "あきま",
+      "english": "vacancy; room for rent or lease",
+      "current": "빈방",
+      "proposed": "빈방, 방실"
+    },
+    {
+      "id": "N1-7e9e492582",
+      "word": "諦め",
+      "reading": "あきらめ",
+      "english": "resignation; acceptance; consolation",
+      "current": "체념",
+      "proposed": "체념, 포기"
+    },
+    {
+      "id": "N1-0812660ad4",
+      "word": "悪",
+      "reading": "あく",
+      "english": "evil; wickedness",
+      "current": "악",
+      "proposed": "악, 사악함"
+    },
+    {
+      "id": "N1-1acc5eb731",
+      "word": "アクセル",
+      "reading": "アクセル",
+      "english": "accelerator",
+      "current": "액셀",
+      "proposed": "엑셀レ터"
+    },
+    {
+      "id": "N1-08ef2a4717",
+      "word": "アップ",
+      "reading": "アップ",
+      "english": "up",
+      "current": "상승, 증가; 확대",
+      "proposed": "상승, 증가, 올림"
+    },
+    {
+      "id": "N1-11fdbf024e",
+      "word": "誂える",
+      "reading": "あつらえる",
+      "english": "to give an order; to place an order",
+      "current": "맞추다",
+      "proposed": "주문하다"
+    },
+    {
+      "id": "N1-23f01f9d4e",
+      "word": "当て",
+      "reading": "あて",
+      "english": "object; aim; end; hopes; expectations",
+      "current": "의지",
+      "proposed": "목표, 목적"
+    },
+    {
+      "id": "N1-20b715b301",
+      "word": "後回し",
+      "reading": "あとまわし",
+      "english": "putting off; postponing",
+      "current": "뒷전",
+      "proposed": "미루다"
+    },
+    {
+      "id": "N1-06f6d3304a",
+      "word": "油絵",
+      "reading": "あぶらえ",
+      "english": "oil painting",
+      "current": "유채",
+      "proposed": "유화"
+    },
+    {
+      "id": "N1-2143d1e370",
+      "word": "アプローチ",
+      "reading": "アプローチ",
+      "english": "approach (in golf)",
+      "current": "어프로치, 골프에서 홀 가까이 보내는 샷",
+      "proposed": "접근"
+    },
+    {
+      "id": "N1-3d62f0758a",
+      "word": "あべこべ",
+      "reading": "あべこべ",
+      "english": "contrary; opposite; inverse",
+      "current": "거꾸로임, 반대임",
+      "proposed": "반대, 거꾸로"
+    },
+    {
+      "id": "N1-5869bef4e6",
+      "word": "甘える",
+      "reading": "あまえる",
+      "english": "to behave like a spoiled child; to fawn on",
+      "current": "응석을 부리다, 기대다",
+      "proposed": "재롱부리다"
+    },
+    {
+      "id": "N1-b8e8053584",
+      "word": "雨具",
+      "reading": "あまぐ",
+      "english": "rain gear",
+      "current": "우비",
+      "proposed": "우산, 우의"
+    },
+    {
+      "id": "N1-b4f987e2d7",
+      "word": "甘口",
+      "reading": "あまくち",
+      "english": "sweet flavour; mildness; flattery; stupidity",
+      "current": "단맛, 부드러운 맛; 아첨",
+      "proposed": "달콤함, 부드러움"
+    },
+    {
+      "id": "N1-4570b0ab6b",
+      "word": "天津",
+      "reading": "あまつ",
+      "english": "heavenly; imperial",
+      "current": "중국의 도시, '톈진'",
+      "proposed": "천진"
+    },
+    {
+      "id": "N1-925a73e9ad",
+      "word": "網",
+      "reading": "あみ",
+      "english": "net; network",
+      "current": "망사",
+      "proposed": "그물, 네트워크"
+    },
+    {
+      "id": "N1-4f85c70c6c",
+      "word": "家出",
+      "reading": "いえで",
+      "english": "running away from home; leaving home",
+      "current": "출가",
+      "proposed": "가출"
+    },
+    {
+      "id": "N1-9b84f255df",
+      "word": "怒り",
+      "reading": "いかり",
+      "english": "anger; hatred",
+      "current": "골",
+      "proposed": "분노"
+    },
+    {
+      "id": "N1-fedad22ef0",
+      "word": "怒る",
+      "reading": "いかる",
+      "english": "to get angry; to be angry",
+      "current": "분노하다, 성내다",
+      "proposed": "화내다"
+    },
+    {
+      "id": "N1-d19fa15a3f",
+      "word": "粋",
+      "reading": "いき",
+      "english": "chic; style; purity; essence",
+      "current": "멋스럽다",
+      "proposed": "우아하다"
+    },
+    {
+      "id": "N1-a96bfe80af",
+      "word": "域外",
+      "reading": "いきがい",
+      "english": "outside the area",
+      "current": "구역 밖, 역외",
+      "proposed": "외곽"
+    },
+    {
+      "id": "N1-5ffd03b2a2",
+      "word": "意気込む",
+      "reading": "いきごむ",
+      "english": "to be enthusiastic about",
+      "current": "의욕을 불태우다, 열의를 보이다",
+      "proposed": "의욕을 가지고 있다"
+    },
+    {
+      "id": "N1-f555ee7e0d",
+      "word": "行き違い",
+      "reading": "いきちがい",
+      "english": "misunderstanding; estrangement; disagreement; crossing without meeting; going astray",
+      "proposed": "오해"
+    },
+    {
+      "id": "N1-cb3d7cda2e",
+      "word": "軍",
+      "reading": "いくさ",
+      "english": "war; battle; campaign; fight",
+      "current": "전쟁",
+      "proposed": "군대"
+    },
+    {
+      "id": "N1-d5373e6a45",
+      "word": "戦",
+      "reading": "いくさ",
+      "english": "war; battle; campaign; fight",
+      "current": "전쟁",
+      "proposed": "전투"
+    },
+    {
+      "id": "N1-8dc66af6e2",
+      "word": "育成",
+      "reading": "いくせい",
+      "english": "rearing; training; nurture; cultivation; promotion",
+      "current": "육성",
+      "proposed": "육성하기"
+    },
+    {
+      "id": "N1-ff3f63ebf1",
+      "word": "幾多",
+      "reading": "いくた",
+      "english": "many; numerous",
+      "proposed": "수많은"
+    },
+    {
+      "id": "N1-8af48d87c5",
+      "word": "活ける",
+      "reading": "いける",
+      "english": "to arrange (flowers)",
+      "current": "꽃을 꽂다",
+      "proposed": "꽂다"
+    },
+    {
+      "id": "N1-685e56a1d4",
+      "word": "異見",
+      "reading": "いけん",
+      "english": "different opinion; objection",
+      "current": "이견",
+      "proposed": "다른 의견"
+    },
+    {
+      "id": "N1-4f60e61ae2",
+      "word": "一見",
+      "reading": "いちげん",
+      "english": "unfamiliar; never before met",
+      "current": "처음 만남, 안면이 없음",
+      "proposed": "처음 보는 사람, 얼굴을 모르는 사람"
+    },
+    {
+      "id": "N1-241f51574c",
+      "word": "著しい",
+      "reading": "いちじるしい",
+      "english": "remarkable; considerable",
+      "current": "두드러지다",
+      "proposed": "눈에 띄다"
+    },
+    {
+      "id": "N1-0b6a6ef3da",
+      "word": "一同",
+      "reading": "いちどう",
+      "english": "all present; all concerned; all of us",
+      "current": "일동",
+      "proposed": "모두, 모두 함께"
+    },
+    {
+      "id": "N1-8e0babd804",
+      "word": "一部",
+      "reading": "いちぶ",
+      "english": "one copy e.g. of a document; a part; partly; some",
+      "current": "일부",
+      "proposed": "일부, 일부분"
+    },
+    {
+      "id": "N1-a9862719ca",
+      "word": "一部分",
+      "reading": "いちぶぶん",
+      "english": "a part",
+      "current": "일부분",
+      "proposed": "일부분, 일부분"
+    },
+    {
+      "id": "N1-5a16851bd6",
+      "word": "一別",
+      "reading": "いちべつ",
+      "english": "parting",
+      "proposed": "이별"
+    },
+    {
+      "id": "N1-9a43e5dbf7",
+      "word": "一面",
+      "reading": "いちめん",
+      "english": "one side; one phase; front page; the other hand; the whole surface",
+      "current": "일면",
+      "proposed": "한면, 한쪽면"
+    },
+    {
+      "id": "N1-e183ec9f8c",
+      "word": "一目",
+      "reading": "いちもく",
+      "english": "a glance; a look; a glimpse",
+      "proposed": "한눈에 보기, 일시적으로 보기"
+    },
+    {
+      "id": "N1-312c69ed58",
+      "word": "一様",
+      "reading": "いちよう",
+      "english": "uniformity; evenness; similarity; equality; impartiality",
+      "current": "하나같다",
+      "proposed": "균일, 동일함"
+    },
+    {
+      "id": "N1-e190e9818a",
+      "word": "一律",
+      "reading": "いちりつ",
+      "english": "evenness; uniformity; monotony; equality",
+      "current": "일률",
+      "proposed": "균일, 일률적임"
+    },
+    {
+      "id": "N1-fe6273e5ef",
+      "word": "一連",
+      "reading": "いちれん",
+      "english": "a series; a chain; a ream (of paper)",
+      "current": "일련",
+      "proposed": "연속, 일련의 것"
+    },
+    {
+      "id": "N1-7ac2b47d4c",
+      "word": "員",
+      "reading": "いん",
+      "english": "member",
+      "current": "~원(員)",
+      "proposed": "원"
+    },
+    {
+      "id": "N1-9033ded88e",
+      "word": "陰気",
+      "reading": "いんき",
+      "english": "gloom; melancholy",
+      "current": "음침함, 침울함",
+      "proposed": "우울함"
+    },
+    {
+      "id": "N1-f3190b2a08",
+      "word": "隠居",
+      "reading": "いんきょ",
+      "english": "retirement; retired person",
+      "current": "은거",
+      "proposed": "은퇴"
+    },
+    {
+      "id": "N1-592706bc9c",
+      "word": "インターナショナル",
+      "reading": "インターナショナル",
+      "english": "international",
+      "proposed": "국제적"
+    },
+    {
+      "id": "N1-cdc5cc7f6c",
+      "word": "インターフォン",
+      "reading": "インターフォン",
+      "english": "intercom",
+      "current": "인터폰, 구내 통화 장치",
+      "proposed": "대화기"
+    },
+    {
+      "id": "N1-07bd9dcf33",
+      "word": "インテリ",
+      "reading": "インテリ",
+      "english": "egghead; intelligentsia",
+      "current": "지식인",
+      "proposed": "지성인"
+    },
+    {
+      "id": "N1-f3830b7aa8",
+      "word": "インフォメーション",
+      "reading": "インフォメーション",
+      "english": "information",
+      "proposed": "정보"
+    },
+    {
+      "id": "N1-4cfeb38640",
+      "word": "インフレ",
+      "reading": "インフレ",
+      "english": "inflation",
+      "current": "인플레",
+      "proposed": "인플레이션"
+    },
+    {
+      "id": "N1-1e2cd74d5d",
+      "word": "卯",
+      "reading": "う",
+      "english": "fourth sign of Chinese zodiac (The Hare, 5am-7am, east, February)",
+      "current": "묘, 십이지의 토끼",
+      "proposed": "토끼"
+    },
+    {
+      "id": "N1-104005ac4b",
+      "word": "ウェートレス",
+      "reading": "ウェートレス",
+      "english": "waitress",
+      "proposed": "여자 종업원"
+    },
+    {
+      "id": "N1-1f3b016d79",
+      "word": "上下",
+      "reading": "うえした",
+      "english": "high and low; up and down; unloading and loading; praising and blaming",
+      "current": "상하",
+      "proposed": "위아래"
+    },
+    {
+      "id": "N1-3b9ec31cf4",
+      "word": "含嗽",
+      "reading": "うがい",
+      "english": "gargle; rinse mouth",
+      "proposed": "코감기"
+    },
+    {
+      "id": "N1-d46f3d3b77",
+      "word": "受かる",
+      "reading": "うかる",
+      "english": "to pass (examination)",
+      "current": "붙다",
+      "proposed": "합격하다"
+    },
+    {
+      "id": "N1-4014e54a17",
+      "word": "浮気",
+      "reading": "うわき",
+      "english": "flighty; fickle; wanton; unfaithful",
+      "current": "바람기",
+      "proposed": "불륜"
+    },
+    {
+      "id": "N1-4436cfdbab",
+      "word": "上手",
+      "reading": "うわて",
+      "english": "upper part; upper stream; left side (of a stage); skillful (only in comparisons)",
+      "current": "고수, 고단수",
+      "proposed": "고수, 숙련자"
+    },
+    {
+      "id": "N1-3803d886c8",
+      "word": "上回る",
+      "reading": "うわまわる",
+      "english": "to exceed",
+      "current": "웃돌다",
+      "proposed": "초과하다"
+    },
+    {
+      "id": "N1-57d17c9b5d",
+      "word": "植わる",
+      "reading": "うわる",
+      "english": "to be planted",
+      "current": "심기다, 뿌리를 내리다",
+      "proposed": "뿌리내리다, 자라다"
+    },
+    {
+      "id": "N1-ca47625fe8",
+      "word": "役",
+      "reading": "えき",
+      "english": "war; campaign; battle",
+      "current": "역할(役割)",
+      "proposed": "전쟁, 작전"
+    },
+    {
+      "id": "N1-2cd66712b3",
+      "word": "閲覧",
+      "reading": "えつらん",
+      "english": "inspection; reading",
+      "current": "열람",
+      "proposed": "열람하다, 검토하다"
+    },
+    {
+      "id": "N1-d8f1d8b772",
+      "word": "獲物",
+      "reading": "えもの",
+      "english": "game; spoils; trophy",
+      "current": "사냥감",
+      "proposed": "사냥감, 전리품"
+    },
+    {
+      "id": "N1-13ff9735e2",
+      "word": "襟",
+      "reading": "えり",
+      "english": "neck; collar; lapel; neckband",
+      "current": "깃",
+      "proposed": "깃,襟부리"
+    },
+    {
+      "id": "N1-6451784f21",
+      "word": "エレガント",
+      "reading": "エレガント",
+      "english": "elegant",
+      "proposed": "우아한, 고상한"
+    },
+    {
+      "id": "N1-9214f9905f",
+      "word": "園",
+      "reading": "えん",
+      "english": "garden (esp. man-made)",
+      "current": "정원, 뜰",
+      "proposed": "정원, 공원"
+    },
+    {
+      "id": "N1-f11ad5d8d2",
+      "word": "縁",
+      "reading": "えん",
+      "english": "chance; fate; destiny; relation; bonds; connection; karma",
+      "current": "인연, 연분",
+      "proposed": "인연, 운명"
+    },
+    {
+      "id": "N1-263aeb9d53",
+      "word": "応急",
+      "reading": "おうきゅう",
+      "english": "emergency",
+      "current": "응급",
+      "proposed": "응급상황"
+    },
+    {
+      "id": "N1-571519d3bb",
+      "word": "応募",
+      "reading": "おうぼ",
+      "english": "subscription; application",
+      "current": "응모",
+      "proposed": "지원서 제출"
+    },
+    {
+      "id": "N1-98909531bf",
+      "word": "おおい",
+      "reading": "おおい",
+      "english": "hey!",
+      "current": "많다",
+      "proposed": "많이"
+    },
+    {
+      "id": "N1-bc37b59298",
+      "word": "おごる",
+      "reading": "おごる",
+      "english": "to be proud",
+      "current": "(동료나 아랫사람에게 먹을 것을) 한턱내다",
+      "proposed": "자랑하다"
+    },
+    {
+      "id": "N1-1dd6d7ea55",
+      "word": "長",
+      "reading": "おさ",
+      "english": "chief; head",
+      "current": "장",
+      "proposed": "리더"
+    },
+    {
+      "id": "N1-019aed3e0a",
+      "word": "治まる",
+      "reading": "おさまる",
+      "english": "to be at peace; to clamp down; to lessen (storm, terror, anger)",
+      "current": "잦다",
+      "proposed": "고요해지다"
+    },
+    {
+      "id": "N1-6ebf36ca63",
+      "word": "収まる",
+      "reading": "おさまる",
+      "english": "to be obtained; to end; to settle into; to fit into; to be settled; to be paid; to be delivered",
+      "current": "제자리에 들어가다, 안정되다, 끝나다",
+      "proposed": "마무리되다"
+    },
+    {
+      "id": "N1-ade60dd5fd",
+      "word": "納まる",
+      "reading": "おさまる",
+      "english": "to be obtained; to end; to settle into; to fit into; to be settled; to be paid; to be delivered",
+      "current": "제자리에 들어가다, 납부되다",
+      "proposed": "마무리되다"
+    },
+    {
+      "id": "N1-20d2bde23d",
+      "word": "お産",
+      "reading": "おさん",
+      "english": "(giving) birth",
+      "current": "출산, 해산",
+      "proposed": "출산"
+    },
+    {
+      "id": "N1-f9d8a00b70",
+      "word": "教え",
+      "reading": "おしえ",
+      "english": "teachings; precept; lesson; doctrine",
+      "current": "가르침",
+      "proposed": "교훈"
+    },
+    {
+      "id": "N1-9cc36de6c5",
+      "word": "押し込む",
+      "reading": "おしこむ",
+      "english": "to push into; to crowd into",
+      "current": "디밀다",
+      "proposed": "밀어넣다"
+    },
+    {
+      "id": "N1-744be0e917",
+      "word": "襲う",
+      "reading": "おそう",
+      "english": "to attack",
+      "current": "퍼붓다",
+      "proposed": "공격하다"
+    },
+    {
+      "id": "N1-64ad3d3360",
+      "word": "折り返す",
+      "reading": "おりかえす",
+      "english": "to turn up; to fold back",
+      "current": "돌이키다",
+      "proposed": "펼치다"
+    },
+    {
+      "id": "N1-1d05a03cd3",
+      "word": "俺",
+      "reading": "おれ",
+      "english": "I (ego) (boastful first-person pronoun)",
+      "current": "나",
+      "proposed": "저"
+    },
+    {
+      "id": "N1-679dc60eb0",
+      "word": "疎か",
+      "reading": "おろそか",
+      "english": "neglect; negligence; carelessness",
+      "current": "소홀",
+      "proposed": "부주의"
+    },
+    {
+      "id": "N1-612aa8aa8b",
+      "word": "オンライン",
+      "reading": "オンライン",
+      "english": "on-line",
+      "current": "온라인",
+      "proposed": "온라인 (but note: already correct)"
+    },
+    {
+      "id": "N1-75df9efb1e",
+      "word": "温和",
+      "reading": "おんわ",
+      "english": "gentle; mild; moderate",
+      "current": "온화하다",
+      "proposed": "온화한"
+    },
+    {
+      "id": "N1-bacad0baf0",
+      "word": "科",
+      "reading": "か",
+      "english": "department; section",
+      "current": "과",
+      "proposed": "학科"
+    },
+    {
+      "id": "N1-e8f22989ca",
+      "word": "階",
+      "reading": "かい",
+      "english": "-floor (counter); stories",
+      "current": "층",
+      "proposed": "층 (but note: already correct)"
+    },
+    {
+      "id": "N1-42cf1a5950",
+      "word": "街",
+      "reading": "がい",
+      "english": "~street; ~quarters",
+      "current": "거리, 구역",
+      "proposed": "거리"
+    },
+    {
+      "id": "N1-a6f8ab22ac",
+      "word": "改悪",
+      "reading": "かいあく",
+      "english": "deterioration; changing for the worse",
+      "current": "개악",
+      "proposed": "악화"
+    },
+    {
+      "id": "N1-230db12bf5",
+      "word": "海運",
+      "reading": "かいうん",
+      "english": "maritime; marine transportation",
+      "current": "해운",
+      "proposed": "해상운송"
+    },
+    {
+      "id": "N1-ac684e96b8",
+      "word": "外貨",
+      "reading": "がいか",
+      "english": "imported goods; foreign money",
+      "current": "외화",
+      "proposed": "외국환"
+    },
+    {
+      "id": "N1-4385ccd897",
+      "word": "海路",
+      "reading": "かいろ",
+      "english": "sea route",
+      "current": "바닷길",
+      "proposed": "해로"
+    },
+    {
+      "id": "N1-5b0b01155c",
+      "word": "賭け",
+      "reading": "かけ",
+      "english": "betting; gambling; a gamble",
+      "proposed": "도박"
+    },
+    {
+      "id": "N1-7860c45396",
+      "word": "賭ける",
+      "reading": "かける",
+      "english": "to wager; to bet; to risk; to stake; to gamble",
+      "current": "걸다",
+      "proposed": "걸다"
+    },
+    {
+      "id": "N1-b5f8d282d1",
+      "word": "駆ける",
+      "reading": "かける",
+      "english": "to run (race, esp. horse); to gallop; to canter",
+      "current": "뛰다",
+      "proposed": "달리다"
+    },
+    {
+      "id": "N1-10e649caaa",
+      "word": "嵩む",
+      "reading": "かさむ",
+      "english": "to pile up; to increase",
+      "current": "불어나다, 늘어나다",
+      "proposed": "쌓이다"
+    },
+    {
+      "id": "N1-904529718c",
+      "word": "華奢",
+      "reading": "かしゃ",
+      "english": "luxury; pomp; delicate; slender; gorgeous",
+      "current": "사치스러움, 화려함",
+      "proposed": "사치, 호사"
+    },
+    {
+      "id": "N1-35398ed297",
+      "word": "火傷",
+      "reading": "かしょう",
+      "english": "burn; scald",
+      "proposed": "화상"
+    },
+    {
+      "id": "N1-c283e8c6ea",
+      "word": "箇条書き",
+      "reading": "かじょうがき",
+      "english": "itemized form; itemization",
+      "current": "항목별로 적음, 조목조목 씀",
+      "proposed": "목록식"
+    },
+    {
+      "id": "N1-807c84bfa5",
+      "word": "微か",
+      "reading": "かすか",
+      "english": "faint; dim; weak; indistinct; hazy; poor; wretched",
+      "current": "아련하다",
+      "proposed": "모호하다"
+    },
+    {
+      "id": "N1-6f92f7e305",
+      "word": "霞む",
+      "reading": "かすむ",
+      "english": "to grow hazy; to be misty",
+      "current": "안개끼다",
+      "proposed": "안개가 끼다"
+    },
+    {
+      "id": "N1-a5a7b2d6d5",
+      "word": "化する",
+      "reading": "かする",
+      "english": "to change into; to convert into; to transform; to be reduced; to influence; to improve (someone)",
+      "current": "변하다, 변화시키다",
+      "proposed": "변화하다"
+    },
+    {
+      "id": "N1-6ba1bae967",
+      "word": "擦る",
+      "reading": "かする",
+      "english": "to touch lightly; to take a percentage (from)",
+      "current": "스치다, 일부를 떼어 가지다",
+      "proposed": "스치다"
+    },
+    {
+      "id": "N1-f5120815d3",
+      "word": "火星",
+      "reading": "かせい",
+      "english": "Mars (planet)",
+      "current": "화성",
+      "proposed": "화성(행성)"
+    },
+    {
+      "id": "N1-5b0765a40d",
+      "word": "化石",
+      "reading": "かせき",
+      "english": "fossil; petrifaction; fossilization",
+      "current": "화석",
+      "proposed": "화석"
+    },
+    {
+      "id": "N1-18c78b84a5",
+      "word": "月日",
+      "reading": "がっぴ",
+      "english": "(the) date",
+      "proposed": "날짜"
+    },
+    {
+      "id": "N1-8ac22c99b5",
+      "word": "管",
+      "reading": "かん",
+      "english": "pipe; tube",
+      "current": "관",
+      "proposed": "파이프"
+    },
+    {
+      "id": "N1-e36dea4beb",
+      "word": "観",
+      "reading": "かん",
+      "english": "look; appearance; spectacle",
+      "current": "모습, 광경",
+      "proposed": "모습, 광경은 맞지만 관할하는 의미도 있음"
+    },
+    {
+      "id": "N1-982393851b",
+      "word": "館",
+      "reading": "かん",
+      "english": "house; hall; building; hotel; inn; guesthouse",
+      "current": "회관, 건물",
+      "proposed": "건물, 호텔, 여관"
+    },
+    {
+      "id": "N1-3032faf776",
+      "word": "癌",
+      "reading": "がん",
+      "english": "cancer",
+      "current": "암",
+      "proposed": "암病"
+    },
+    {
+      "id": "N1-8d1c155181",
+      "word": "簡易",
+      "reading": "かんい",
+      "english": "simplicity; easiness; quasi-",
+      "current": "간이",
+      "proposed": "간단함"
+    },
+    {
+      "id": "N1-c1fa0bdbba",
+      "word": "眼科",
+      "reading": "がんか",
+      "english": "ophthalmology",
+      "current": "안과",
+      "proposed": "안과학"
+    },
+    {
+      "id": "N1-229675dfd1",
+      "word": "感慨",
+      "reading": "かんがい",
+      "english": "strong feelings; deep emotion",
+      "current": "감개",
+      "proposed": "감사, 감동"
+    },
+    {
+      "id": "N1-fd76167657",
+      "word": "寒気",
+      "reading": "かんき",
+      "english": "cold; frost; chill",
+      "current": "추위",
+      "proposed": "추운 기운"
+    },
+    {
+      "id": "N1-fdf92d887d",
+      "word": "眼球",
+      "reading": "がんきゅう",
+      "english": "eyeball",
+      "current": "눈방울",
+      "proposed": "눈알"
+    },
+    {
+      "id": "N1-208f1c892d",
+      "word": "眼鏡",
+      "reading": "がんきょう",
+      "english": "spectacles; glasses",
+      "current": "안경",
+      "proposed": "안경, 眼鏡은 맞지만 안경 Frames도 포함됨"
+    },
+    {
+      "id": "N1-32936b686e",
+      "word": "簡潔",
+      "reading": "かんけつ",
+      "english": "brevity; conciseness; simplicity",
+      "current": "간결",
+      "proposed": "간결함, 단순함"
+    },
+    {
+      "id": "N1-7ab6d50625",
+      "word": "気障",
+      "reading": "きざ",
+      "english": "affectation; conceit; snobbery",
+      "current": "아니꼽다",
+      "proposed": "거들먹거리다"
+    },
+    {
+      "id": "N1-3cad90a857",
+      "word": "記載",
+      "reading": "きさい",
+      "english": "mention; entry",
+      "current": "기재",
+      "proposed": "기록"
+    },
+    {
+      "id": "N1-7c29a620bc",
+      "word": "築く",
+      "reading": "きずく",
+      "english": "to build; to pile up; to amass",
+      "current": "축구하다",
+      "proposed": "짓다"
+    },
+    {
+      "id": "N1-1932992711",
+      "word": "傷付く",
+      "reading": "きずつく",
+      "english": "to be hurt; to be wounded; to get injured",
+      "current": "상하다",
+      "proposed": "다치다"
+    },
+    {
+      "id": "N1-0ce664d522",
+      "word": "偽造",
+      "reading": "ぎぞう",
+      "english": "forgery; falsification; fabrication; counterfeiting",
+      "current": "위조",
+      "proposed": "위조사"
+    },
+    {
+      "id": "N1-6a55eceb06",
+      "word": "鍛える",
+      "reading": "きたえる",
+      "english": "to forge; to drill; to temper; to train; to discipline",
+      "current": "담금질하다",
+      "proposed": "단련하다"
+    },
+    {
+      "id": "N1-0aba7c931b",
+      "word": "気立て",
+      "reading": "きだて",
+      "english": "disposition; nature",
+      "current": "맘",
+      "proposed": "성격"
+    },
+    {
+      "id": "N1-48d1eb2573",
+      "word": "来る",
+      "reading": "きたる",
+      "english": "to come; to arrive; to be due to; to be next; to be forthcoming",
+      "current": "('…して∼'의 꼴로) (쭉)…해 오다",
+      "proposed": "오다"
+    },
+    {
+      "id": "N1-23de10d698",
+      "word": "喫茶",
+      "reading": "きっさ",
+      "english": "tea drinking; tea house",
+      "current": "끽다, 차를 마심",
+      "proposed": "차 마시기"
+    },
+    {
+      "id": "N1-99d671e7c9",
+      "word": "甲",
+      "reading": "きのえ",
+      "english": "1st in rank; first sign of the Chinese calendar; shell; instep; grade A",
+      "current": "음독",
+      "proposed": "제1위"
+    },
+    {
+      "id": "N1-e05bb17edd",
+      "word": "気品",
+      "reading": "きひん",
+      "english": "aroma",
+      "current": "기품",
+      "proposed": "기품, 기운"
+    },
+    {
+      "id": "N1-d23da22be0",
+      "word": "気風",
+      "reading": "きふう",
+      "english": "character; traits; ethos",
+      "current": "기풍",
+      "proposed": "기풍, 성격"
+    },
+    {
+      "id": "N1-e5983c3097",
+      "word": "起伏",
+      "reading": "きふく",
+      "english": "undulation",
+      "current": "기복",
+      "proposed": "파도, 기복"
+    },
+    {
+      "id": "N1-9d306d1477",
+      "word": "生真面目",
+      "reading": "きまじめ",
+      "english": "too serious; person who is too serious; honesty; sincerity",
+      "current": "지나치게 성실함, 고지식함",
+      "proposed": "성실, 고지식"
+    },
+    {
+      "id": "N1-ac858447fc",
+      "word": "期末",
+      "reading": "きまつ",
+      "english": "end of term",
+      "current": "기말",
+      "proposed": "학기말"
+    },
+    {
+      "id": "N1-47871e07a3",
+      "word": "決まり悪い",
+      "reading": "きまりわるい",
+      "english": "feeling awkward; being ashamed",
+      "current": "면구스럽다",
+      "proposed": "부끄러워하다"
+    },
+    {
+      "id": "N1-40679c4e7e",
+      "word": "脅迫",
+      "reading": "きょうはく",
+      "english": "threat; menace; coercion; terrorism",
+      "current": "으름장",
+      "proposed": "협박"
+    },
+    {
+      "id": "N1-972ca66946",
+      "word": "清らか",
+      "reading": "きよらか",
+      "english": "clean; pure; chaste",
+      "current": "정하다",
+      "proposed": "청정하다"
+    },
+    {
+      "id": "N1-a8ba7d61d2",
+      "word": "切り",
+      "reading": "きり",
+      "english": "limits; end; bounds; period; place to leave off; closing sentence; all there is; only; since",
+      "current": "끝, 한계; 오직 그것뿐",
+      "proposed": "끝, 한계; 오직 그것뿐; 한도"
+    },
+    {
+      "id": "N1-746e5a2a80",
+      "word": "極めて",
+      "reading": "きわめて",
+      "english": "exceedingly; extremely",
+      "current": "무지무지",
+      "proposed": "극도로"
+    },
+    {
+      "id": "N1-451a92254d",
+      "word": "緊急",
+      "reading": "きんきゅう",
+      "english": "urgent; pressing; emergency",
+      "current": "화급하다",
+      "proposed": "긴급한"
+    },
+    {
+      "id": "N1-4d62fb410a",
+      "word": "件",
+      "reading": "くだん",
+      "english": "example; precedent; the usual; the said; the above-mentioned; (man) in question",
+      "current": "다음 단어를 만듦",
+      "proposed": "사항; 경우"
+    },
+    {
+      "id": "N1-74638a00a2",
+      "word": "クラブ",
+      "reading": "クラブ",
+      "english": "club; crab",
+      "current": "클럽",
+      "proposed": "게"
+    },
+    {
+      "id": "N1-3296476a71",
+      "word": "警部",
+      "reading": "けいぶ",
+      "english": "police inspector",
+      "current": "(경찰 계급) 게부 (한국의 경위에 상당함)",
+      "proposed": "경위"
+    },
+    {
+      "id": "N1-fc259785af",
+      "word": "汚す",
+      "reading": "けがす",
+      "english": "to disgrace; to dishonour",
+      "current": "더럽히다, 모독하다",
+      "proposed": "모욕하다, 더럽히다"
+    },
+    {
+      "id": "N1-d3c748f3ba",
+      "word": "汚らわしい",
+      "reading": "けがらわしい",
+      "english": "filthy; unfair",
+      "current": "더럽다, 불결하다",
+      "proposed": "불결하다, 더럽다"
+    },
+    {
+      "id": "N1-eb830c293c",
+      "word": "汚れ",
+      "reading": "けがれ",
+      "english": "uncleanness; impurity; disgrace",
+      "current": "오염",
+      "proposed": "부정, 더러움, 오욕"
+    },
+    {
+      "id": "N1-8e53bced4f",
+      "word": "劇団",
+      "reading": "げきだん",
+      "english": "troupe; theatrical company",
+      "current": "극단",
+      "proposed": "극단, 연극단"
+    },
+    {
+      "id": "N1-7197c6d07a",
+      "word": "激励",
+      "reading": "げきれい",
+      "english": "encouragement",
+      "current": "격려",
+      "proposed": "격려, 응원"
+    },
+    {
+      "id": "N1-914c5e15b1",
+      "word": "ゲスト",
+      "reading": "ゲスト",
+      "english": "guest",
+      "current": "게스트",
+      "proposed": "손님, 게스트"
+    },
+    {
+      "id": "N1-0f9f515d94",
+      "word": "獣",
+      "reading": "けだもの",
+      "english": "beast; brute",
+      "current": "짐승",
+      "proposed": "짐승, 야수"
+    },
+    {
+      "id": "N1-d777353b7e",
+      "word": "傑",
+      "reading": "けつ",
+      "english": "excellence",
+      "proposed": "뛰어난 재능, 기량"
+    },
+    {
+      "id": "N1-0023032732",
+      "word": "決意",
+      "reading": "けつい",
+      "english": "decision; determination",
+      "current": "결의",
+      "proposed": "결심, 결의"
+    },
+    {
+      "id": "N1-a0f10b94be",
+      "word": "結核",
+      "reading": "けっかく",
+      "english": "tuberculosis; tubercule",
+      "current": "결핵",
+      "proposed": "결핵, 폐결핵"
+    },
+    {
+      "id": "N1-abf31d2e6d",
+      "word": "血管",
+      "reading": "けっかん",
+      "english": "blood vessel",
+      "current": "혈관",
+      "proposed": "혈관, 동맥"
+    },
+    {
+      "id": "N1-204ce2024f",
+      "word": "兼用",
+      "reading": "けんよう",
+      "english": "multi-use; combined use; combination; serving two purposes",
+      "current": "겸용",
+      "proposed": "다용도"
+    },
+    {
+      "id": "N1-cbbb3f1bb9",
+      "word": "合議",
+      "reading": "ごうぎ",
+      "english": "consultation; conference",
+      "current": "합의",
+      "proposed": "의견 교환"
+    },
+    {
+      "id": "N1-334ba829ae",
+      "word": "興業",
+      "reading": "こうぎょう",
+      "english": "industrial enterprise",
+      "current": "사업을 일으킴, 산업 사업",
+      "proposed": "기업 활동"
+    },
+    {
+      "id": "N1-0fafecee52",
+      "word": "工作",
+      "reading": "こうさく",
+      "english": "work; construction; handicraft; maneuvering",
+      "current": "공작",
+      "proposed": "작업"
+    },
+    {
+      "id": "N1-6a99d0c518",
+      "word": "向上",
+      "reading": "こうじょう",
+      "english": "elevation; rise; improvement; advancement; progress",
+      "current": "향상",
+      "proposed": "향상, 발전"
+    },
+    {
+      "id": "N1-8eaf15f84c",
+      "word": "行進",
+      "reading": "こうしん",
+      "english": "march; parade",
+      "current": "행군",
+      "proposed": "행진"
+    },
+    {
+      "id": "N1-22383cfb48",
+      "word": "降水",
+      "reading": "こうすい",
+      "english": "rainfall; precipitation",
+      "current": "강수",
+      "proposed": "강수량"
+    },
+    {
+      "id": "N1-36f0eeba9f",
+      "word": "合成",
+      "reading": "ごうせい",
+      "english": "synthesis; composition; synthetic; composite; mixed; combined; compound",
+      "current": "합성",
+      "proposed": "합성, 결합"
+    },
+    {
+      "id": "N1-aa577197fc",
+      "word": "公然",
+      "reading": "こうぜん",
+      "english": "open (e.g. secret); public; official",
+      "current": "공공연하다",
+      "proposed": "공개적으로"
+    },
+    {
+      "id": "N1-01d0e9895f",
+      "word": "抗争",
+      "reading": "こうそう",
+      "english": "dispute; resistance",
+      "current": "항쟁",
+      "proposed": "분쟁, 저항"
+    },
+    {
+      "id": "N1-e6a8a40d3e",
+      "word": "構想",
+      "reading": "こうそう",
+      "english": "plan; plot; idea; conception",
+      "current": "구상",
+      "proposed": "계획, 아이디어"
+    },
+    {
+      "id": "N1-7113165c32",
+      "word": "拘束",
+      "reading": "こうそく",
+      "english": "restriction; restraint",
+      "current": "구속",
+      "proposed": "제한, 구속"
+    },
+    {
+      "id": "N1-802b0bd9ca",
+      "word": "後退",
+      "reading": "こうたい",
+      "english": "retreat; backspace (BS)",
+      "current": "후퇴",
+      "proposed": "후퇴, 철수"
+    },
+    {
+      "id": "N1-70f79bff43",
+      "word": "漕ぐ",
+      "reading": "こぐ",
+      "english": "to row; to scull; to pedal",
+      "current": "내젓다",
+      "proposed": "저어지다"
+    },
+    {
+      "id": "N1-308f45926c",
+      "word": "凝る",
+      "reading": "こごる",
+      "english": "to congeal; to freeze",
+      "current": "열중하다",
+      "proposed": "굳다, 얼다"
+    },
+    {
+      "id": "N1-9589a1d266",
+      "word": "心得",
+      "reading": "こころえ",
+      "english": "knowledge; information",
+      "current": "마음가짐",
+      "proposed": "마음속에 담아 두다, 지식"
+    },
+    {
+      "id": "N1-4f051504c2",
+      "word": "志",
+      "reading": "こころざし",
+      "english": "will; intention; motive",
+      "current": "마음",
+      "proposed": "의지"
+    },
+    {
+      "id": "N1-8f0629d530",
+      "word": "心細い",
+      "reading": "こころぼそい",
+      "english": "helpless; forlorn; hopeless; unpromising; lonely; discouraging; disheartening",
+      "current": "허하다",
+      "proposed": "유연하지 않다, 심이狹い"
+    },
+    {
+      "id": "N1-d99e36feff",
+      "word": "古代",
+      "reading": "こだい",
+      "english": "ancient times",
+      "current": "고대",
+      "proposed": "고대시대"
+    },
+    {
+      "id": "N1-708be70d5e",
+      "word": "堪える",
+      "reading": "こたえる",
+      "english": "to bear; to stand; to endure; to put up with; to support; to withstand; to resist; to brave; to be fit for",
+      "proposed": "참다, 견디다"
+    },
+    {
+      "id": "N1-e642ca265e",
+      "word": "こたつ",
+      "reading": "こたつ",
+      "english": "table with heater; (orig) charcoal brazier in a floor well",
+      "current": "고타쓰, 난방 기구가 달린 낮은 탁자",
+      "proposed": "난방의자"
+    },
+    {
+      "id": "N1-c2b11f0429",
+      "word": "こだわる",
+      "reading": "こだわる",
+      "english": "to fuss over; to be particular about; to be concerned about",
+      "current": "집착하다, 세세하게 따지다",
+      "proposed": "집착하다, 신경쓰다"
+    },
+    {
+      "id": "N1-7878bde6a2",
+      "word": "誇張",
+      "reading": "こちょう",
+      "english": "exaggeration",
+      "current": "과장",
+      "proposed": "과장, 거짓말"
+    },
+    {
+      "id": "N1-3b5b1c60b8",
+      "word": "骨",
+      "reading": "こつ",
+      "english": "knack; skill",
+      "current": "요령",
+      "proposed": "기술, 재주"
+    },
+    {
+      "id": "N1-0fe2f2817d",
+      "word": "滑稽",
+      "reading": "こっけい",
+      "english": "funny; humorous; comical; laughable; ridiculous; joking",
+      "current": "우스꽝스럽다",
+      "proposed": "웃기다, 재미있다"
+    },
+    {
+      "id": "N1-adcfdcee87",
+      "word": "国交",
+      "reading": "こっこう",
+      "english": "diplomatic relations",
+      "current": "국교",
+      "proposed": "외교관계"
+    },
+    {
+      "id": "N1-4951764bd4",
+      "word": "骨董品",
+      "reading": "こっとうひん",
+      "english": "curio",
+      "current": "골동품",
+      "proposed": "골동품, 오래된 물건"
+    },
+    {
+      "id": "N1-241e01eeea",
+      "word": "固定",
+      "reading": "こてい",
+      "english": "fixation",
+      "current": "고정",
+      "proposed": "고정, 확정"
+    },
+    {
+      "id": "N1-3ebdf0c56a",
+      "word": "毎",
+      "reading": "ごと",
+      "english": "each respectively",
+      "current": "마다, 각각",
+      "proposed": "각각, 매"
+    },
+    {
+      "id": "N1-3356c0b63c",
+      "word": "根本",
+      "reading": "こんぽん",
+      "english": "origin; source; foundation; root; base; principle",
+      "current": "뿌리",
+      "proposed": "기본"
+    },
+    {
+      "id": "N1-efd3b15360",
+      "word": "差し掛かる",
+      "reading": "さしかかる",
+      "english": "to come near to; to approach",
+      "current": "바라보다",
+      "proposed": "가까이 하다"
+    },
+    {
+      "id": "N1-896f36ec1e",
+      "word": "指図",
+      "reading": "さしず",
+      "english": "instruction; mandate",
+      "current": "명",
+      "proposed": "지시"
+    },
+    {
+      "id": "N1-97067b8785",
+      "word": "差し出す",
+      "reading": "さしだす",
+      "english": "to present; to submit; to tender; to hold out",
+      "current": "넣다",
+      "proposed": "제시하다"
+    },
+    {
+      "id": "N1-cdf5e77c1e",
+      "word": "差し支える",
+      "reading": "さしつかえる",
+      "english": "to interfere; to hinder; to become impeded",
+      "current": "거리끼다",
+      "proposed": "방해하다"
+    },
+    {
+      "id": "N1-398673bdbc",
+      "word": "定まる",
+      "reading": "さだまる",
+      "english": "to become settled; to be fixed",
+      "current": "결정되다, 정해지다",
+      "proposed": "정착하다"
+    },
+    {
+      "id": "N1-938c9d8608",
+      "word": "裂ける",
+      "reading": "さける",
+      "english": "to split; to tear; to burst",
+      "current": "째지다",
+      "proposed": "갈라지다"
+    },
+    {
+      "id": "N1-5e5c2e2c1c",
+      "word": "障る",
+      "reading": "さわる",
+      "english": "to hinder; to interfere with; to affect; to do one harm; to be harmful to",
+      "proposed": "방해받다"
+    },
+    {
+      "id": "N1-f5d9fdc3f4",
+      "word": "残酷",
+      "reading": "ざんこく",
+      "english": "cruelty; harshness",
+      "current": "잔혹",
+      "proposed": "잔인함"
+    },
+    {
+      "id": "N1-705dbe5e87",
+      "word": "参上",
+      "reading": "さんじょう",
+      "english": "calling on; visiting",
+      "current": "찾아뵘, 방문함",
+      "proposed": "방문,謁見"
+    },
+    {
+      "id": "N1-6114f36b6b",
+      "word": "桟橋",
+      "reading": "さんばし",
+      "english": "wharf; bridge; jetty; pier",
+      "proposed": "부두, 선착장"
+    },
+    {
+      "id": "N1-6c40f292f8",
+      "word": "賛美",
+      "reading": "さんび",
+      "english": "praise; adoration; glorification",
+      "current": "찬송",
+      "proposed": "찬미, 경배"
+    },
+    {
+      "id": "N1-dddbd253bb",
+      "word": "山腹",
+      "reading": "さんぷく",
+      "english": "hillside; mountainside",
+      "current": "중턱",
+      "proposed": "산사면, 산록"
+    },
+    {
+      "id": "N1-adb0af83d2",
+      "word": "産婦人科",
+      "reading": "さんふじんか",
+      "english": "maternity and gynecology department",
+      "current": "산부인과",
+      "proposed": "산부인과학"
+    },
+    {
+      "id": "N1-c3e8729b86",
+      "word": "産物",
+      "reading": "さんぶつ",
+      "english": "product; result; fruit",
+      "current": "산물",
+      "proposed": "제품, 산출물"
+    },
+    {
+      "id": "N1-92c0bddf4b",
+      "word": "山脈",
+      "reading": "さんみゃく",
+      "english": "mountain range",
+      "current": "산맥",
+      "proposed": "산맥, 산계"
+    },
+    {
+      "id": "N1-966e181cea",
+      "word": "次",
+      "reading": "じ",
+      "english": "order; sequence; times; next; below",
+      "current": "차",
+      "proposed": "순서, 차례, 차이"
+    },
+    {
+      "id": "N1-bc5b286310",
+      "word": "仕上がり",
+      "reading": "しあがり",
+      "english": "finish; end; completion",
+      "proposed": "완성, 마무리"
+    },
+    {
+      "id": "N1-42b43ce436",
+      "word": "仕上げ",
+      "reading": "しあげ",
+      "english": "end; finishing touches; being finished",
+      "current": "마무리",
+      "proposed": "마무리, 완성"
+    },
+    {
+      "id": "N1-4f03a7c46d",
+      "word": "仕上げる",
+      "reading": "しあげる",
+      "english": "to finish up; to complete",
+      "current": "끝마무리하다",
+      "proposed": "마무리하다, 완성하다"
+    },
+    {
+      "id": "N1-b5bf192e57",
+      "word": "死刑",
+      "reading": "しけい",
+      "english": "death penalty; capital punishment",
+      "current": "극형",
+      "proposed": "사형"
+    },
+    {
+      "id": "N1-9cbce49fda",
+      "word": "湿気る",
+      "reading": "しける",
+      "english": "to be damp; to be moist",
+      "proposed": "습기다"
+    },
+    {
+      "id": "N1-61fc1c79e5",
+      "word": "思考",
+      "reading": "しこう",
+      "english": "thought",
+      "current": "생각",
+      "proposed": "사고"
+    },
+    {
+      "id": "N1-5dea6ed2ff",
+      "word": "施行",
+      "reading": "しこう",
+      "english": "execution; enforcing; carrying out",
+      "current": "시행",
+      "proposed": "시행하다"
+    },
+    {
+      "id": "N1-9f66f67f0f",
+      "word": "嗜好",
+      "reading": "しこう",
+      "english": "taste; liking; preference",
+      "current": "취향",
+      "proposed": "취미"
+    },
+    {
+      "id": "N1-27a80f5aeb",
+      "word": "事項",
+      "reading": "じこう",
+      "english": "matter; item; facts",
+      "current": "사항",
+      "proposed": "사항들"
+    },
+    {
+      "id": "N1-6fd972e632",
+      "word": "時刻表",
+      "reading": "じこくひょう",
+      "english": "table; diagram; chart; timetable; schedule",
+      "current": "시각표",
+      "proposed": "시간표"
+    },
+    {
+      "id": "N1-f4553f0b0b",
+      "word": "時差",
+      "reading": "じさ",
+      "english": "time difference",
+      "current": "시차",
+      "proposed": "시간 차이"
+    },
+    {
+      "id": "N1-8b4027dbec",
+      "word": "自在",
+      "reading": "じざい",
+      "english": "freely; at will",
+      "proposed": "자유로이"
+    },
+    {
+      "id": "N1-fb769f71e3",
+      "word": "視察",
+      "reading": "しさつ",
+      "english": "inspection; observation",
+      "current": "시찰",
+      "proposed": "현장 관찰"
+    },
+    {
+      "id": "N1-454687e7e8",
+      "word": "資産",
+      "reading": "しさん",
+      "english": "property; fortune; means; assets",
+      "current": "자산",
+      "proposed": "재산들"
+    },
+    {
+      "id": "N1-3d995a5e6a",
+      "word": "指示",
+      "reading": "しじ",
+      "english": "indication; instruction; directions",
+      "current": "지시",
+      "proposed": "지시하다"
+    },
+    {
+      "id": "N1-70c9f8812e",
+      "word": "支持",
+      "reading": "しじ",
+      "english": "support; maintenance",
+      "current": "지지",
+      "proposed": "지지하다"
+    },
+    {
+      "id": "N1-9ee0d57fa7",
+      "word": "じっくり",
+      "reading": "じっくり",
+      "english": "deliberately; carefully",
+      "current": "잘",
+      "proposed": "신중히"
+    },
+    {
+      "id": "N1-ff02641ef7",
+      "word": "仕付ける",
+      "reading": "しつける",
+      "english": "to be used to a job; to begin to do; to baste; to tack; to plant",
+      "current": "시치다",
+      "proposed": "시킨다"
+    },
+    {
+      "id": "N1-49b24ec6dc",
+      "word": "実態",
+      "reading": "じったい",
+      "english": "truth; fact",
+      "current": "속살",
+      "proposed": "진실"
+    },
+    {
+      "id": "N1-4cd81e6ad4",
+      "word": "嫉妬",
+      "reading": "しっと",
+      "english": "jealousy",
+      "current": "샘",
+      "proposed": "질투"
+    },
+    {
+      "id": "N1-c5cf46de8e",
+      "word": "実費",
+      "reading": "じっぴ",
+      "english": "actual expense; cost price",
+      "current": "실비",
+      "proposed": "실제 비용"
+    },
+    {
+      "id": "N1-05b951102a",
+      "word": "十分",
+      "reading": "じっぷん",
+      "english": "10 minutes",
+      "current": "십분",
+      "proposed": "10분,十分은 시간을 의미"
+    },
+    {
+      "id": "N1-3418fde87d",
+      "word": "指摘",
+      "reading": "してき",
+      "english": "pointing out; identification",
+      "current": "지적",
+      "proposed": "지적하다"
+    },
+    {
+      "id": "N1-b16728beb7",
+      "word": "視点",
+      "reading": "してん",
+      "english": "opinion; point of view; visual point",
+      "current": "견지",
+      "proposed": "관점"
+    },
+    {
+      "id": "N1-0c02e83a22",
+      "word": "自転",
+      "reading": "じてん",
+      "english": "rotation; spin",
+      "current": "자전",
+      "proposed": "자전, 회전"
+    },
+    {
+      "id": "N1-84fca05588",
+      "word": "自動詞",
+      "reading": "じどうし",
+      "english": "intransitive verb (no direct obj)",
+      "current": "자동사",
+      "proposed": "자동사, 비수동사"
+    },
+    {
+      "id": "N1-151f614c5f",
+      "word": "萎びる",
+      "reading": "しなびる",
+      "english": "to wilt; to fade",
+      "current": "시들다",
+      "proposed": "시들다, 쇠하다"
+    },
+    {
+      "id": "N1-192cd7a066",
+      "word": "嫋か",
+      "reading": "しなやか",
+      "english": "supple; flexible; elastic",
+      "proposed": "유연하다, 가늘다"
+    },
+    {
+      "id": "N1-9ba2fec541",
+      "word": "洒落",
+      "reading": "しゃらく",
+      "english": "frank; open-hearted",
+      "proposed": "솔직한"
+    },
+    {
+      "id": "N1-0d2aa6414a",
+      "word": "洒落る",
+      "reading": "しゃれる",
+      "english": "to joke; to play on words; to dress stylishly",
+      "current": "모양내다",
+      "proposed": "농담하다"
+    },
+    {
+      "id": "N1-5f947c1f81",
+      "word": "周",
+      "reading": "しゅう",
+      "english": "circuit; lap; circumference; vicinity; Chou (dynasty)",
+      "current": "한 바퀴, 둘레",
+      "proposed": "주위, 근처"
+    },
+    {
+      "id": "N1-3a37cfc263",
+      "word": "住",
+      "reading": "じゅう",
+      "english": "dwelling; living",
+      "proposed": "거주, 거주지"
+    },
+    {
+      "id": "N1-ca33fac1ae",
+      "word": "収益",
+      "reading": "しゅうえき",
+      "english": "earnings; proceeds; returns",
+      "current": "수익",
+      "proposed": "수입"
+    },
+    {
+      "id": "N1-0699f319be",
+      "word": "修学",
+      "reading": "しゅうがく",
+      "english": "learning",
+      "current": "수학",
+      "proposed": "공부"
+    },
+    {
+      "id": "N1-36e8d19bfd",
+      "word": "周期",
+      "reading": "しゅうき",
+      "english": "cycle; period",
+      "current": "주기",
+      "proposed": "주기, 기간"
+    },
+    {
+      "id": "N1-e1fdef8d38",
+      "word": "就業",
+      "reading": "しゅうぎょう",
+      "english": "employment; starting work",
+      "current": "취업",
+      "proposed": "취직"
+    },
+    {
+      "id": "N1-0f1bb19bcf",
+      "word": "修業",
+      "reading": "しゅうぎょう",
+      "english": "pursuit of knowledge; studying; learning; training; ascetic practice; discipline",
+      "current": "수업",
+      "proposed": "수련, 훈련"
+    },
+    {
+      "id": "N1-5109d1778b",
+      "word": "従業員",
+      "reading": "じゅうぎょういん",
+      "english": "employee; worker",
+      "current": "종업원",
+      "proposed": "직원"
+    },
+    {
+      "id": "N1-818b55e107",
+      "word": "集計",
+      "reading": "しゅうけい",
+      "english": "totalization; aggregate",
+      "current": "집계",
+      "proposed": "합계"
+    },
+    {
+      "id": "N1-07cab7ee92",
+      "word": "襲撃",
+      "reading": "しゅうげき",
+      "english": "attack; charge; raid",
+      "current": "습격",
+      "proposed": "기습"
+    },
+    {
+      "id": "N1-a41e86909d",
+      "word": "出産",
+      "reading": "しゅっさん",
+      "english": "(child)birth; delivery; production (of goods)",
+      "current": "해산",
+      "proposed": "출산"
+    },
+    {
+      "id": "N1-6ef434075e",
+      "word": "詳細",
+      "reading": "しょうさい",
+      "english": "detail; particulars",
+      "current": "상세하다",
+      "proposed": "상세"
+    },
+    {
+      "id": "N1-76e18f07d6",
+      "word": "神殿",
+      "reading": "しんでん",
+      "english": "temple; sacred place",
+      "current": "신전",
+      "proposed": "사당"
+    },
+    {
+      "id": "N1-7e5a40bce6",
+      "word": "進度",
+      "reading": "しんど",
+      "english": "progress",
+      "current": "진도",
+      "proposed": "진행도"
+    },
+    {
+      "id": "N1-ca35157394",
+      "word": "振動",
+      "reading": "しんどう",
+      "english": "oscillation; vibration",
+      "current": "진동",
+      "proposed": "진동"
+    },
+    {
+      "id": "N1-de323abf88",
+      "word": "新入生",
+      "reading": "しんにゅうせい",
+      "english": "freshman; first-year student",
+      "current": "신입생",
+      "proposed": "신입생"
+    },
+    {
+      "id": "N1-7a85665422",
+      "word": "信任",
+      "reading": "しんにん",
+      "english": "trust; confidence; credence",
+      "current": "신임",
+      "proposed": "신뢰"
+    },
+    {
+      "id": "N1-6de88050b9",
+      "word": "神秘",
+      "reading": "しんぴ",
+      "english": "mystery",
+      "current": "신비",
+      "proposed": "신비"
+    },
+    {
+      "id": "N1-e27b945f77",
+      "word": "辛抱",
+      "reading": "しんぼう",
+      "english": "patience; endurance",
+      "current": "인내",
+      "proposed": "인내"
+    },
+    {
+      "id": "N1-1ee31a24cb",
+      "word": "人民",
+      "reading": "じんみん",
+      "english": "people; public",
+      "current": "인민, 국민",
+      "proposed": "인민, 국민"
+    },
+    {
+      "id": "N1-14a20b03ef",
+      "word": "真理",
+      "reading": "しんり",
+      "english": "truth",
+      "current": "도",
+      "proposed": "진리"
+    },
+    {
+      "id": "N1-194ead860f",
+      "word": "侵略",
+      "reading": "しんりゃく",
+      "english": "aggression; invasion; raid",
+      "current": "침략",
+      "proposed": "침략"
+    },
+    {
+      "id": "N1-9e1b9872a7",
+      "word": "診療",
+      "reading": "しんりょう",
+      "english": "medical examination and treatment; diagnosis",
+      "current": "진료",
+      "proposed": "진료"
+    },
+    {
+      "id": "N1-7b0e6a6d8d",
+      "word": "進路",
+      "reading": "しんろ",
+      "english": "course; route",
+      "current": "코스",
+      "proposed": "코스"
+    },
+    {
+      "id": "N1-76883dba8d",
+      "word": "水源",
+      "reading": "すいげん",
+      "english": "source of river; fountainhead",
+      "current": "수원",
+      "proposed": "물원"
+    },
+    {
+      "id": "N1-e11f113050",
+      "word": "済ます",
+      "reading": "すます",
+      "english": "to finish; to get it over with; to settle; to conclude; to pay back",
+      "current": "끄다",
+      "proposed": "마치다"
+    },
+    {
+      "id": "N1-0f0d43dcdb",
+      "word": "ずらっと",
+      "reading": "ずらっと",
+      "english": "in a line; in a row",
+      "current": "죽",
+      "proposed": "일렬로"
+    },
+    {
+      "id": "N1-8a15574f02",
+      "word": "擦れる",
+      "reading": "すれる",
+      "english": "to rub; to chafe; to wear; to become sophisticated",
+      "current": "닳다",
+      "proposed": "부서지다, 닳다"
+    },
+    {
+      "id": "N1-1bd79302aa",
+      "word": "すんなり",
+      "reading": "すんなり",
+      "english": "pass with no objection; slim; slender",
+      "current": "쏙",
+      "proposed": "가볍게, 매끄럽게"
+    },
+    {
+      "id": "N1-534cb7e2f0",
+      "word": "制",
+      "reading": "せい",
+      "english": "system; organization; imperial command; laws; regulation; control; government; suppression; restraint; holding back",
+      "current": "제도, 규정, 통제",
+      "proposed": "제도, 체계, 통제"
+    },
+    {
+      "id": "N1-757a20aae1",
+      "word": "製",
+      "reading": "せい",
+      "english": "-made; make",
+      "current": "~제, ~에서 만든 것",
+      "proposed": "만들다, 제조하다"
+    },
+    {
+      "id": "N1-ac9ee9e6da",
+      "word": "生育",
+      "reading": "せいいく",
+      "english": "growth; development; breeding",
+      "current": "생육",
+      "proposed": "성장, 발달"
+    },
+    {
+      "id": "N1-f9a5606644",
+      "word": "成果",
+      "reading": "せいか",
+      "english": "results; fruits",
+      "current": "결실",
+      "proposed": "결과, 성과"
+    },
+    {
+      "id": "N1-4b235d70bd",
+      "word": "正解",
+      "reading": "せいかい",
+      "english": "correct; right; correct interpretation (answer, solution)",
+      "current": "정답",
+      "proposed": "정답, 올바른 해석"
+    },
+    {
+      "id": "N1-115b63e0d0",
+      "word": "正規",
+      "reading": "せいき",
+      "english": "regular; legal; formal; established; legitimate",
+      "current": "정규",
+      "proposed": "정식, 공식"
+    },
+    {
+      "id": "N1-9b4e449cc9",
+      "word": "正義",
+      "reading": "せいぎ",
+      "english": "justice; right; righteousness; correct meaning",
+      "current": "정의",
+      "proposed": "정의, 공의"
+    },
+    {
+      "id": "N1-4831341731",
+      "word": "勢力",
+      "reading": "せいりょく",
+      "english": "influence; power; might; strength; potency; force; energy",
+      "current": "세",
+      "proposed": "세력, 영향력"
+    },
+    {
+      "id": "N1-72112e3cd6",
+      "word": "先だって",
+      "reading": "せんだって",
+      "english": "recently; the other day",
+      "current": "전",
+      "proposed": "최근에"
+    },
+    {
+      "id": "N1-157822a4e5",
+      "word": "壮大",
+      "reading": "そうだい",
+      "english": "magnificent; grand; majestic; splendid",
+      "current": "장대하다",
+      "proposed": "그랜드하다"
+    },
+    {
+      "id": "N1-829881846f",
+      "word": "騒動",
+      "reading": "そうどう",
+      "english": "strife; riot; rebellion",
+      "current": "파동",
+      "proposed": "소동"
+    },
+    {
+      "id": "N1-373d4aa9cc",
+      "word": "相場",
+      "reading": "そうば",
+      "english": "market price; speculation; estimation",
+      "current": "장세",
+      "proposed": "시장 가"
+    },
+    {
+      "id": "N1-5eac5a540a",
+      "word": "即座に",
+      "reading": "そくざに",
+      "english": "immediately; right away",
+      "current": "대번",
+      "proposed": "즉시"
+    },
+    {
+      "id": "N1-457aa713b6",
+      "word": "即する",
+      "reading": "そくする",
+      "english": "to conform to; to agree with; to be adapted to; to be based on",
+      "proposed": "일치하다"
+    },
+    {
+      "id": "N1-0164f687ce",
+      "word": "側面",
+      "reading": "そくめん",
+      "english": "side; flank; sidelight; lateral",
+      "current": "측면",
+      "proposed": "손상하다, 상처를 입히다"
+    },
+    {
+      "id": "N1-e2bac0fcd6",
+      "word": "そこら",
+      "reading": "そこら",
+      "english": "everywhere; somewhere; approximately; that area; around there",
+      "current": "그 근처, 그 일대",
+      "proposed": "그 근처에"
+    },
+    {
+      "id": "N1-4fb12cffa9",
+      "word": "阻止",
+      "reading": "そし",
+      "english": "obstruction; check; hindrance; prevention; interdiction",
+      "current": "저지",
+      "proposed": "방해하다"
+    },
+    {
+      "id": "N1-116afb9f88",
+      "word": "措置",
+      "reading": "そち",
+      "english": "measure; step",
+      "current": "조치",
+      "proposed": "조치하다"
+    },
+    {
+      "id": "N1-55c6c669a2",
+      "word": "素っ気ない",
+      "reading": "そっけない",
+      "english": "cold; short; curt; blunt",
+      "current": "쌀쌀맞다, 무뚝뚝하다",
+      "proposed": "무뚝뚝하다, 쌀쌀맞다"
+    },
+    {
+      "id": "N1-3fb57d175d",
+      "word": "そっぽ",
+      "reading": "そっぽ",
+      "english": "look (or turn) the other way",
+      "current": "다른 쪽, 외면하는 방향",
+      "proposed": "다른 쪽을 돌아보다"
+    },
+    {
+      "id": "N1-47d96ccdae",
+      "word": "備え付ける",
+      "reading": "そなえつける",
+      "english": "to provide; to furnish; to equip; to install",
+      "current": "달다",
+      "proposed": "설치하다, 비치하다"
+    },
+    {
+      "id": "N1-6020741e51",
+      "word": "耐える",
+      "reading": "たえる",
+      "english": "to bear; to endure",
+      "current": "배겨나다",
+      "proposed": "참다"
+    },
+    {
+      "id": "N1-8c66ef9335",
+      "word": "高まる",
+      "reading": "たかまる",
+      "english": "to rise; to swell; to be promoted",
+      "current": "높아지다",
+      "proposed": "높아지다 -> 올라가다"
+    },
+    {
+      "id": "N1-63f8921eaf",
+      "word": "焚火",
+      "reading": "たきび",
+      "english": "(open) fire",
+      "current": "장작불",
+      "proposed": "장작불 -> 불"
+    },
+    {
+      "id": "N1-371c591e26",
+      "word": "妥協",
+      "reading": "だきょう",
+      "english": "compromise; giving in",
+      "current": "타협",
+      "proposed": "타협 -> 妥協하다"
+    },
+    {
+      "id": "N1-c8291517d8",
+      "word": "類",
+      "reading": "たぐい",
+      "english": "a kind",
+      "current": "종",
+      "proposed": "종 -> 종류"
+    },
+    {
+      "id": "N1-6f9cce2604",
+      "word": "逞しい",
+      "reading": "たくましい",
+      "english": "burly; strong; sturdy",
+      "current": "다부지다",
+      "proposed": "다부지다 -> 건장하다"
+    },
+    {
+      "id": "N1-bcaec73ef9",
+      "word": "巧み",
+      "reading": "たくみ",
+      "english": "skill; cleverness",
+      "current": "용하다",
+      "proposed": "용하다 -> 재주가 있다"
+    },
+    {
+      "id": "N1-2f632ca933",
+      "word": "丈",
+      "reading": "たけ",
+      "english": "height; stature; length; measure; all (one has)",
+      "current": "기장",
+      "proposed": "기장 -> 높이"
+    },
+    {
+      "id": "N1-60c76df858",
+      "word": "打撃",
+      "reading": "だげき",
+      "english": "blow; shock; strike; damage; batting (baseball)",
+      "current": "타격",
+      "proposed": "타격 -> 충격"
+    },
+    {
+      "id": "N1-4f31153f7d",
+      "word": "妥結",
+      "reading": "だけつ",
+      "english": "agreement",
+      "current": "타결",
+      "proposed": "타결 -> 합의"
+    },
+    {
+      "id": "N1-6ab801e3b9",
+      "word": "駄作",
+      "reading": "ださく",
+      "english": "poor work; rubbish",
+      "proposed": "(no change)"
+    },
+    {
+      "id": "N1-cc5f0dfb05",
+      "word": "足し算",
+      "reading": "たしざん",
+      "english": "addition",
+      "current": "덧셈",
+      "proposed": "덧셈 -> 더하기"
+    },
+    {
+      "id": "N1-b70211c5e0",
+      "word": "多様",
+      "reading": "たよう",
+      "english": "diversity; variety",
+      "current": "갖가지",
+      "proposed": "다양성"
+    },
+    {
+      "id": "N1-0edcf936db",
+      "word": "だらけ",
+      "reading": "だらけ",
+      "english": "implying (negatively) that something is full of e.g. mistakes",
+      "current": "천지",
+      "proposed": "가득 차다"
+    },
+    {
+      "id": "N1-43461422a9",
+      "word": "怠い",
+      "reading": "だるい",
+      "english": "sluggish; feel heavy; languid; dull",
+      "current": "찌뿌드드하다",
+      "proposed": "느리다"
+    },
+    {
+      "id": "N1-3a27cdfca7",
+      "word": "弛み",
+      "reading": "たるみ",
+      "english": "slack; slackening; dullness; letdown",
+      "current": "느슨함, 처짐",
+      "proposed": "느슨함"
+    },
+    {
+      "id": "N1-10b51c7b3d",
+      "word": "弛む",
+      "reading": "たるむ",
+      "english": "to slacken; to loosen; to relax",
+      "proposed": "느슨해지다"
+    },
+    {
+      "id": "N1-d3809a260e",
+      "word": "垂れる",
+      "reading": "たれる",
+      "english": "to hang; to droop; to drop; to lower; to pull down; to dangle; to sag; to drip; to ooze; to trickle; to leave behind (at death)",
+      "current": "드리워지다",
+      "proposed": "내리다"
+    },
+    {
+      "id": "N1-789cb27c85",
+      "word": "歎",
+      "reading": "たん",
+      "english": "grief; sigh; lamentation",
+      "proposed": "한숨"
+    },
+    {
+      "id": "N1-a6da3499d8",
+      "word": "反",
+      "reading": "たん",
+      "english": "roll of cloth (c. 10 yds.); 245 acres; 300 tsubo",
+      "current": "필",
+      "proposed": "말"
+    },
+    {
+      "id": "N1-8d67659ba3",
+      "word": "壇",
+      "reading": "だん",
+      "english": "platform; podium; rostrum; (archaic) mandala",
+      "proposed": "무대"
+    },
+    {
+      "id": "N1-606b4ac32d",
+      "word": "単一",
+      "reading": "たんいつ",
+      "english": "single; simple; sole; individual; unitory",
+      "current": "단일",
+      "proposed": "단일의"
+    },
+    {
+      "id": "N1-62053b0356",
+      "word": "担架",
+      "reading": "たんか",
+      "english": "stretcher; litter",
+      "current": "들것",
+      "proposed": "担架는 맞지만, 들것은 비슷한 단어지만,担架는 더 정확한 의미로 쓰임"
+    },
+    {
+      "id": "N1-873a4f5e09",
+      "word": "短歌",
+      "reading": "たんか",
+      "english": "tanka; 31-syllable Japanese poem",
+      "current": "단카",
+      "proposed": "단가"
+    },
+    {
+      "id": "N1-fd6d1d2bef",
+      "word": "着",
+      "reading": "ちゃく",
+      "english": "counter for suits of clothing; arriving at ..",
+      "current": "벌",
+      "proposed": "착"
+    },
+    {
+      "id": "N1-ded9d444a6",
+      "word": "茶の間",
+      "reading": "ちゃのま",
+      "english": "living room (Japanese style)",
+      "current": "거실",
+      "proposed": "거실 or 생활방"
+    },
+    {
+      "id": "N1-73761da587",
+      "word": "宙返り",
+      "reading": "ちゅうがえり",
+      "english": "somersault; looping-the-loop",
+      "current": "재주넘기",
+      "proposed": "뒤집어짐 or 회전"
+    },
+    {
+      "id": "N1-4201f02f16",
+      "word": "中枢",
+      "reading": "ちゅうすう",
+      "english": "centre; pivot; mainstay; nucleus; backbone; central figure; pillar; key man",
+      "current": "기간",
+      "proposed": "중심 or 핵심"
+    },
+    {
+      "id": "N1-8814988b80",
+      "word": "中腹",
+      "reading": "ちゅうっぱら",
+      "english": "irritated; offended",
+      "current": "짜증이 남, 화가 남",
+      "proposed": "화가 나다 or 짜증나다"
+    },
+    {
+      "id": "N1-6686f635d7",
+      "word": "造る",
+      "reading": "つくる",
+      "english": "to make; to create; to manufacture; to draw up; to write; to compose; to build; to coin; to cultivate",
+      "current": "축구하다",
+      "proposed": "만들다"
+    },
+    {
+      "id": "N1-7831f2b02c",
+      "word": "月並み",
+      "reading": "つきなみ",
+      "english": "every month; common",
+      "current": "매달, 평범함",
+      "proposed": "매월"
+    },
+    {
+      "id": "N1-353975152e",
+      "word": "尽きる",
+      "reading": "つきる",
+      "english": "to be used up; to be run out; to be exhausted; to be consumed; to come to an end",
+      "current": "되다",
+      "proposed": "다함"
+    },
+    {
+      "id": "N1-08cfe03cb3",
+      "word": "吐く",
+      "reading": "つく",
+      "english": "to breathe; to tell (lies); to vomit; to disgorge",
+      "current": "내뱉다, 토하다",
+      "proposed": "토하거나 내뱉다"
+    },
+    {
+      "id": "N1-b0dfaaf7ed",
+      "word": "継ぐ",
+      "reading": "つぐ",
+      "english": "to succeed",
+      "current": "잇다",
+      "proposed": "계승하다"
+    },
+    {
+      "id": "N1-2e6b817c6f",
+      "word": "接ぐ",
+      "reading": "つぐ",
+      "english": "to join; to piece together; to set (bones); to graft (trees)",
+      "current": "잇다",
+      "proposed": "연결하다"
+    },
+    {
+      "id": "N1-a942fde509",
+      "word": "尽くす",
+      "reading": "つくす",
+      "english": "to exhaust; to run out; to serve (a person); to befriend",
+      "current": "다 써 버리다, 고갈시키다",
+      "proposed": "모두 사용하다"
+    },
+    {
+      "id": "N1-617364b915",
+      "word": "作り",
+      "reading": "つくり",
+      "english": "make-up; sliced raw fish",
+      "current": "조성",
+      "proposed": "구성"
+    },
+    {
+      "id": "N1-5b0c727913",
+      "word": "造り",
+      "reading": "つくり",
+      "english": "make up; structure; physique",
+      "current": "조성",
+      "proposed": "구조"
+    },
+    {
+      "id": "N1-88bf13c181",
+      "word": "繕う",
+      "reading": "つくろう",
+      "english": "to mend; to repair; to fix; to patch up; to darn; to tidy up; to adjust; to trim",
+      "current": "꿰매다",
+      "proposed": "수리하다"
+    },
+    {
+      "id": "N1-6a852ae347",
+      "word": "付け加える",
+      "reading": "つけくわえる",
+      "english": "to add one thing to another",
+      "current": "부가하다",
+      "proposed": "추가하다"
+    },
+    {
+      "id": "N1-4b3148b7e1",
+      "word": "告げる",
+      "reading": "つげる",
+      "english": "to inform",
+      "current": "고하다",
+      "proposed": "알리다"
+    },
+    {
+      "id": "N1-134e796195",
+      "word": "辻褄",
+      "reading": "つじつま",
+      "english": "coherence; consistency",
+      "proposed": "일관성"
+    },
+    {
+      "id": "N1-c002a107c0",
+      "word": "筒",
+      "reading": "つつ",
+      "english": "pipe; tube",
+      "current": "관",
+      "proposed": "파이프"
+    },
+    {
+      "id": "N1-2564dfcfcb",
+      "word": "突く",
+      "reading": "つつく",
+      "english": "to thrust; to strike; to attack; to poke; to nudge; to pick at",
+      "current": "찌르다",
+      "proposed": "찔러대다 or 찌르다 (considering the nuance of 'to thrust' or 'to poke')"
+    },
+    {
+      "id": "N1-70d41d423d",
+      "word": "突っ張る",
+      "reading": "つっぱる",
+      "english": "to support; to become stiff; to become taut; to thrust (ones opponent); to stick to (ones opinion)",
+      "current": "버티다",
+      "proposed": "서서 버티다 or 버티다 (considering the nuance of 'to support' or 'to stick to')"
+    },
+    {
+      "id": "N1-00c77c36b3",
+      "word": "勤まる",
+      "reading": "つとまる",
+      "english": "to be fit for; to be equal to; to function properly",
+      "current": "감당하다",
+      "proposed": "감당할 수 있다 or 적합하다 (considering the nuance of 'to be fit for')"
+    },
+    {
+      "id": "N1-3a6a16d2af",
+      "word": "募る",
+      "reading": "つのる",
+      "english": "to invite; to solicit help participation etc",
+      "current": "모으다",
+      "proposed": "모집하다 (considering the nuance of 'to invite' or 'to solicit')"
+    },
+    {
+      "id": "N1-a50ce976f1",
+      "word": "的",
+      "reading": "てき",
+      "english": "-like; typical",
+      "current": "목표, 대상",
+      "proposed": "목적, 대상"
+    },
+    {
+      "id": "N1-6f8843433d",
+      "word": "デコレーション",
+      "reading": "デコレーション",
+      "english": "decoration",
+      "proposed": "장식"
+    },
+    {
+      "id": "N1-dd601f9a30",
+      "word": "デザート",
+      "reading": "デザート",
+      "english": "dessert",
+      "current": "후식",
+      "proposed": "디저트"
+    },
+    {
+      "id": "N1-221e4e0f2e",
+      "word": "デザイン",
+      "reading": "デザイン",
+      "english": "design",
+      "current": "설계",
+      "proposed": "디자인"
+    },
+    {
+      "id": "N1-74d5bfd2bf",
+      "word": "手近",
+      "reading": "てぢか",
+      "english": "near; handy; familiar",
+      "current": "가까이 있음, 손쉽게 이용할 수 있음",
+      "proposed": "가까운"
+    },
+    {
+      "id": "N1-20886c9138",
+      "word": "デッサン",
+      "reading": "デッサン",
+      "english": "rough sketch (fr: dessin)",
+      "current": "데상",
+      "proposed": "스케치"
+    },
+    {
+      "id": "N1-5975722676",
+      "word": "徹する",
+      "reading": "てっする",
+      "english": "to sink in; to penetrate; to devote oneself; to believe in; to go through",
+      "current": "투철하다",
+      "proposed": "잘 들어맞다"
+    },
+    {
+      "id": "N1-c710a69f99",
+      "word": "鉄片",
+      "reading": "てっぺん",
+      "english": "iron scraps",
+      "current": "쇳조각",
+      "proposed": "철가루"
+    },
+    {
+      "id": "N1-e1ea2bb61d",
+      "word": "出直し",
+      "reading": "でなおし",
+      "english": "adjustment; touch up",
+      "current": "다시 시작함, 새로 고침",
+      "proposed": "수정"
+    },
+    {
+      "id": "N1-8d4d7b12ab",
+      "word": "掌",
+      "reading": "てのひら",
+      "english": "the palm",
+      "current": "손뼉",
+      "proposed": "손바닥"
+    },
+    {
+      "id": "N1-a4eceaa662",
+      "word": "手配",
+      "reading": "てはい",
+      "english": "arrangement; search (by police)",
+      "current": "수배. 범인 체포를 위한 지령",
+      "proposed": "수배, 준비"
+    },
+    {
+      "id": "N1-a98d722351",
+      "word": "手筈",
+      "reading": "てはず",
+      "english": "arrangement; plan; programme",
+      "current": "준비 절차, 계획",
+      "proposed": "계획, 준비"
+    },
+    {
+      "id": "N1-dfce23b181",
+      "word": "手引き",
+      "reading": "てびき",
+      "english": "guidance; guide; introduction",
+      "current": "인도",
+      "proposed": "안내"
+    },
+    {
+      "id": "N1-36c896b63d",
+      "word": "天災",
+      "reading": "てんさい",
+      "english": "natural calamity; disaster",
+      "current": "천재",
+      "proposed": "천재는 'genius'를 의미하므로 '천재'가 아닌 다른 단어를 사용해야 합니다. 예를 들어, '천재지변'을 사용할 수 있습니다."
+    },
+    {
+      "id": "N1-22b728e889",
+      "word": "転じる",
+      "reading": "てんじる",
+      "english": "to turn; to shift; to alter; to distract",
+      "current": "바뀌다, 방향을 돌리다",
+      "proposed": "바뀌다, 방향을 돌리다 -> 바뀌다 또는 방향을 바꾸다"
+    },
+    {
+      "id": "N1-2788360295",
+      "word": "伝説",
+      "reading": "でんせつ",
+      "english": "tradition; legend; folklore",
+      "current": "전설",
+      "proposed": "전설 -> 전통, 전설"
+    },
+    {
+      "id": "N1-17c604c3de",
+      "word": "点線",
+      "reading": "てんせん",
+      "english": "dotted line; perforated line",
+      "current": "점선",
+      "proposed": "점선 -> 점선, 점표시선"
+    },
+    {
+      "id": "N1-26b5d39346",
+      "word": "電線",
+      "reading": "でんせん",
+      "english": "electric line",
+      "current": "전깃줄",
+      "proposed": "전깃줄 -> 전선"
+    },
+    {
+      "id": "N1-ab565da65e",
+      "word": "天体",
+      "reading": "てんたい",
+      "english": "heavenly body",
+      "current": "천체",
+      "proposed": "천체 -> 천체, 하늘의 물체"
+    },
+    {
+      "id": "N1-c410adfcf0",
+      "word": "伝達",
+      "reading": "でんたつ",
+      "english": "transmission (e.g. news); communication; delivery",
+      "current": "전달",
+      "proposed": "전달 -> 전달, 전송, 통보"
+    },
+    {
+      "id": "N1-1ecdf1e6a6",
+      "word": "天地",
+      "reading": "てんち",
+      "english": "heaven and earth; the universe; nature; top and bottom; realm; sphere; world",
+      "current": "천지",
+      "proposed": "천지 -> 천지, 하늘과 땅, 우주"
+    },
+    {
+      "id": "N1-02783d9713",
+      "word": "丁々",
+      "reading": "とうとう",
+      "english": "clashing of swords; felling of trees; ringing of an ax",
+      "current": "칼이나 도끼가 부딪치는 쨍쨍한 소리",
+      "proposed": "도끼가 부딪치는 소리"
+    },
+    {
+      "id": "N1-61384ae276",
+      "word": "時折",
+      "reading": "ときおり",
+      "english": "sometimes",
+      "current": "때로",
+      "proposed": "가끔"
+    },
+    {
+      "id": "N1-c7ae16d498",
+      "word": "跡切れる",
+      "reading": "とぎれる",
+      "english": "to pause; to be interrupted",
+      "current": "끊기다, 중단되다",
+      "proposed": "잘리다"
+    },
+    {
+      "id": "N1-1aae8e7f19",
+      "word": "説く",
+      "reading": "とく",
+      "english": "to explain; to advocate; to preach; to persuade",
+      "current": "설명하다",
+      "proposed": "설명하다, 주장하다"
+    },
+    {
+      "id": "N1-c290d45d0e",
+      "word": "研ぐ",
+      "reading": "とぐ",
+      "english": "to sharpen; to grind; to scour; to hone; to polish; to wash (rice)",
+      "current": "갈다",
+      "proposed": "갈아내다, 다듬다"
+    },
+    {
+      "id": "N1-d66de4083e",
+      "word": "独裁",
+      "reading": "どくさい",
+      "english": "dictatorship; despotism",
+      "current": "독재",
+      "proposed": "독재정치"
+    },
+    {
+      "id": "N1-4cfa1859c8",
+      "word": "特産",
+      "reading": "とくさん",
+      "english": "specialty; special product",
+      "current": "특산",
+      "proposed": "특산물"
+    },
+    {
+      "id": "N1-8d4e07c793",
+      "word": "独自",
+      "reading": "どくじ",
+      "english": "original; peculiar; characteristic",
+      "current": "독자",
+      "proposed": "고유의, 독특한"
+    },
+    {
+      "id": "N1-ba4cc6d7fc",
+      "word": "読者",
+      "reading": "どくしゃ",
+      "english": "reader",
+      "current": "독자",
+      "proposed": "독자, 책을 읽는 사람"
+    },
+    {
+      "id": "N1-b45b17d66b",
+      "word": "特集",
+      "reading": "とくしゅう",
+      "english": "feature (e.g. newspaper); special edition; report",
+      "current": "특집",
+      "proposed": "특집방송, 특집기사"
+    },
+    {
+      "id": "N1-8754a51980",
+      "word": "独占",
+      "reading": "どくせん",
+      "english": "monopoly",
+      "current": "독점",
+      "proposed": "독점권"
+    },
+    {
+      "id": "N1-28703048eb",
+      "word": "独創",
+      "reading": "どくそう",
+      "english": "originality",
+      "proposed": "독창성"
+    },
+    {
+      "id": "N1-7f7552dfdc",
+      "word": "年頃",
+      "reading": "としごろ",
+      "english": "age; marriageable age; age of puberty; adolescence; for some years",
+      "current": "나이, 적령기; 사춘기",
+      "proposed": "나이, 적령기; 청춘기"
+    },
+    {
+      "id": "N1-2a6adce990",
+      "word": "戸締り",
+      "reading": "とじまり",
+      "english": "closing up; fastening the doors",
+      "current": "문단속",
+      "proposed": "문닫기"
+    },
+    {
+      "id": "N1-53a5166545",
+      "word": "途上",
+      "reading": "とじょう",
+      "english": "en route; half way",
+      "current": "도중",
+      "proposed": "途중"
+    },
+    {
+      "id": "N1-7e9c5f0365",
+      "word": "綴じる",
+      "reading": "とじる",
+      "english": "to bind; to file",
+      "current": "철하다",
+      "proposed": "묶다"
+    },
+    {
+      "id": "N1-74fb00cbe2",
+      "word": "土台",
+      "reading": "どだい",
+      "english": "foundation; base; basis",
+      "current": "지반",
+      "proposed": "기초"
+    },
+    {
+      "id": "N1-f7f005f251",
+      "word": "途絶える",
+      "reading": "とだえる",
+      "english": "to stop; to cease; to come to an end",
+      "current": "두절되다",
+      "proposed": "중단되다"
+    },
+    {
+      "id": "N1-70b4d1e574",
+      "word": "特許",
+      "reading": "とっきょ",
+      "english": "special permission; patent",
+      "current": "특허",
+      "proposed": "특허권"
+    },
+    {
+      "id": "N1-1927098b36",
+      "word": "特権",
+      "reading": "とっけん",
+      "english": "privilege; special right",
+      "current": "특권",
+      "proposed": "특권"
+    },
+    {
+      "id": "N1-f291ca1d87",
+      "word": "咄嗟",
+      "reading": "とっさ",
+      "english": "moment; instant",
+      "proposed": "순간"
+    },
+    {
+      "id": "N1-dfe5d66fb1",
+      "word": "突如",
+      "reading": "とつじょ",
+      "english": "suddenly; all of a sudden",
+      "current": "불현듯",
+      "proposed": "갑자기"
+    },
+    {
+      "id": "N1-8be707a42d",
+      "word": "取っ手",
+      "reading": "とって",
+      "english": "handle; grip; knob",
+      "current": "핸들",
+      "proposed": "손잡이"
+    },
+    {
+      "id": "N1-a75a59840b",
+      "word": "突破",
+      "reading": "とっぱ",
+      "english": "breaking through; breakthrough; penetration",
+      "current": "돌파",
+      "proposed": "돌파구"
+    },
+    {
+      "id": "N1-150cea0f30",
+      "word": "土手",
+      "reading": "どて",
+      "english": "embankment; bank",
+      "current": "둑",
+      "proposed": "제방"
+    },
+    {
+      "id": "N1-cfeca5e5ef",
+      "word": "取り組む",
+      "reading": "とりくむ",
+      "english": "to tackle; to wrestle with; to engage in a bout; to come to grips with",
+      "current": "(스모에서) 맞붙다, 대전하다",
+      "proposed": "맞서다, 대적하다"
+    },
+    {
+      "id": "N1-78d8978095",
+      "word": "取り締まる",
+      "reading": "とりしまる",
+      "english": "to manage; to control; to supervise",
+      "current": "단속하다",
+      "proposed": "관리하다, 감독하다"
+    },
+    {
+      "id": "N1-8302e4c473",
+      "word": "取り立てる",
+      "reading": "とりたてる",
+      "english": "to collect; to extort; to appoint; to promote",
+      "current": "등용하다",
+      "proposed": "수금하다, 징수하다"
+    },
+    {
+      "id": "N1-6964beadb0",
+      "word": "取り除く",
+      "reading": "とりのぞく",
+      "english": "to remove; to take away; to set apart",
+      "current": "빼다",
+      "proposed": "제거하다, 없애다"
+    },
+    {
+      "id": "N1-84712a74c1",
+      "word": "取り引き",
+      "reading": "とりひき",
+      "english": "transactions; dealings; business",
+      "current": "거래하다, 매매하다",
+      "proposed": "거래, 상거래"
+    },
+    {
+      "id": "N1-edbb308319",
+      "word": "取り混ぜる",
+      "reading": "とりまぜる",
+      "english": "to mix; to put together",
+      "proposed": "섞다, 혼합하다"
+    },
+    {
+      "id": "N1-5ce219cc8b",
+      "word": "取り寄せる",
+      "reading": "とりよせる",
+      "english": "to order; to send away for",
+      "current": "(주문하거나 말하여) 가져오게 하다",
+      "proposed": "주문하다, 가져오다"
+    },
+    {
+      "id": "N1-00214393d1",
+      "word": "とりわけ",
+      "reading": "とりわけ",
+      "english": "especially; above all",
+      "current": "특히; 유난히; 그 중에서도.(=ことに·とりわけて)",
+      "proposed": "尤其, 더욱"
+    },
+    {
+      "id": "N1-4ec7fe1166",
+      "word": "何々",
+      "reading": "どれどれ",
+      "english": "which (emphatic)",
+      "current": "어디어디, 어느 것들",
+      "proposed": "어느, 어느 것"
+    },
+    {
+      "id": "N1-a6b3309e5a",
+      "word": "とろける",
+      "reading": "とろける",
+      "english": "to be enchanted with",
+      "current": "녹다",
+      "proposed": "매료되다, 심취하다"
+    },
+    {
+      "id": "N1-4fa38f27ac",
+      "word": "度忘れ",
+      "reading": "どわすれ",
+      "english": "lapse of memory; forget for a moment",
+      "current": "깜박깜박",
+      "proposed": "잠시 잊다, 깜박 잊다"
+    },
+    {
+      "id": "N1-ba1748f1df",
+      "word": "生臭い",
+      "reading": "なまぐさい",
+      "english": "smelling of fish or blood; fish or meat",
+      "current": "비리다",
+      "proposed": "생선이나 고기 냄새가 나다"
+    },
+    {
+      "id": "N1-64ae2006dd",
+      "word": "生温い",
+      "reading": "なまぬるい",
+      "english": "lukewarm; halfhearted",
+      "current": "미적지근하다",
+      "proposed": "미지근하다"
+    },
+    {
+      "id": "N1-432e75bc0b",
+      "word": "生身",
+      "reading": "なまみ",
+      "english": "living flesh; flesh and blood; the quick",
+      "current": "살아 있는 몸, 살아 있는 육체",
+      "proposed": "살아 있는 몸, 살"
+    },
+    {
+      "id": "N1-6c7a3fe563",
+      "word": "鉛",
+      "reading": "なまり",
+      "english": "lead (the metal)",
+      "current": "납",
+      "proposed": "납(원소)"
+    },
+    {
+      "id": "N1-3917b83619",
+      "word": "なめる",
+      "reading": "なめる",
+      "english": "to lick; to taste; to experience; to make fun of; to make light of; to put down; to treat with contempt",
+      "current": "핥다",
+      "proposed": "핥다, 맛보다"
+    },
+    {
+      "id": "N1-bad8c2fee2",
+      "word": "悩ましい",
+      "reading": "なやましい",
+      "english": "seductive; melancholy; languid",
+      "current": "고민스럽다, 마음이 괴롭다; 관능적이다",
+      "proposed": "고민이 되다, 괴롭다; 섹시하다"
+    },
+    {
+      "id": "N1-e9cfb54883",
+      "word": "悩ます",
+      "reading": "なやます",
+      "english": "to afflict; to torment; to harass; to molest",
+      "current": "썩다",
+      "proposed": "괴롭히다, 苦しめる"
+    },
+    {
+      "id": "N1-c4be7bde99",
+      "word": "慣らす",
+      "reading": "ならす",
+      "english": "to accustom",
+      "current": "길들이다",
+      "proposed": "익숙해지다"
+    },
+    {
+      "id": "N1-c35361ecb7",
+      "word": "馴らす",
+      "reading": "ならす",
+      "english": "to domesticate; to tame",
+      "current": "적응시키다",
+      "proposed": "길들이다,驯服する"
+    },
+    {
+      "id": "N1-3837730fa3",
+      "word": "成り立つ",
+      "reading": "なりたつ",
+      "english": "to conclude; to consist of; to be practical (logical, feasible, viable); to hold true",
+      "current": "이루어지다",
+      "proposed": "이루어지다, 성립하다"
+    },
+    {
+      "id": "N1-8d6d7688de",
+      "word": "慣れ",
+      "reading": "なれ",
+      "english": "practice; experience",
+      "current": "익숙함, 숙련",
+      "proposed": "익숙함, 경험이름"
+    },
+    {
+      "id": "N1-c88c8e2462",
+      "word": "担う",
+      "reading": "になう",
+      "english": "to carry on shoulder; to bear (burden); to shoulder (gun)",
+      "current": "떠메다",
+      "proposed": "메다"
+    },
+    {
+      "id": "N1-4c90b6d71c",
+      "word": "寝かせる",
+      "reading": "ねかせる",
+      "english": "to put to bed; to lay down; to ferment",
+      "current": "뉘다",
+      "proposed": "자다"
+    },
+    {
+      "id": "N1-9b6551f601",
+      "word": "強請る",
+      "reading": "ねだる",
+      "english": "to tease; to coax; to solicit; to demand",
+      "current": "조르다",
+      "proposed": "재촉하다"
+    },
+    {
+      "id": "N1-64e8f7eda0",
+      "word": "熱量",
+      "reading": "ねつりょう",
+      "english": "temperature",
+      "current": "열량",
+      "proposed": "온도"
+    },
+    {
+      "id": "N1-48a804961e",
+      "word": "根回し",
+      "reading": "ねまわし",
+      "english": "making necessary arrangements",
+      "current": "사전 교섭, 미리 하는 준비",
+      "proposed": "미리 준비하다"
+    },
+    {
+      "id": "N1-3e7fc9179d",
+      "word": "練る",
+      "reading": "ねる",
+      "english": "to knead; to work over; to polish up",
+      "current": "치대다",
+      "proposed": "반죽하다"
+    },
+    {
+      "id": "N1-4ac13343dc",
+      "word": "脳",
+      "reading": "のう",
+      "english": "brain; memory",
+      "current": "골",
+      "proposed": "뇌"
+    },
+    {
+      "id": "N1-7b38fa3613",
+      "word": "長閑",
+      "reading": "のどか",
+      "english": "tranquil; calm; quiet",
+      "current": "한갓지다",
+      "proposed": "조용하다"
+    },
+    {
+      "id": "N1-6cbe3e8ae9",
+      "word": "罵る",
+      "reading": "ののしる",
+      "english": "to speak ill of; to abuse",
+      "current": "욕하다",
+      "proposed": "비방하다"
+    },
+    {
+      "id": "N1-ee708f5bbd",
+      "word": "延べ",
+      "reading": "のべ",
+      "english": "futures; credit (buying); stretching; total",
+      "current": "연",
+      "proposed": "총"
+    },
+    {
+      "id": "N1-10a1ffe4df",
+      "word": "飲み込む",
+      "reading": "のみこむ",
+      "english": "to gulp down; to swallow deeply; to understand; to take in; to catch on to; to learn; to digest",
+      "current": "삼키다",
+      "proposed": "삼키다"
+    },
+    {
+      "id": "N1-115e6f8702",
+      "word": "乗り込む",
+      "reading": "のりこむ",
+      "english": "to board; to embark on; to get into (a car); to ship (passengers); to man (a ship)",
+      "current": "오르다",
+      "proposed": "타다"
+    },
+    {
+      "id": "N1-661d1ef651",
+      "word": "刃",
+      "reading": "は",
+      "english": "edge (of a sword)",
+      "current": "칼",
+      "proposed": "날"
+    },
+    {
+      "id": "N1-128e858d57",
+      "word": "把握",
+      "reading": "はあく",
+      "english": "grasp; catch; understanding",
+      "current": "파악",
+      "proposed": "파악하다"
+    },
+    {
+      "id": "N1-7afb21c39b",
+      "word": "肺",
+      "reading": "はい",
+      "english": "lung",
+      "current": "폐",
+      "proposed": "폐장"
+    },
+    {
+      "id": "N1-0eb30dd86f",
+      "word": "廃棄",
+      "reading": "はいき",
+      "english": "annullment; disposal; abandon; scrap; discarding; repeal",
+      "current": "폐기",
+      "proposed": "폐지"
+    },
+    {
+      "id": "N1-d59e92f5eb",
+      "word": "配給",
+      "reading": "はいきゅう",
+      "english": "distribution (eg. films, rice)",
+      "current": "배급",
+      "proposed": "공급"
+    },
+    {
+      "id": "N1-4fe5047b84",
+      "word": "黴菌",
+      "reading": "ばいきん",
+      "english": "bacteria; germ(s)",
+      "current": "세균",
+      "proposed": "균"
+    },
+    {
+      "id": "N1-23a4264046",
+      "word": "配偶者",
+      "reading": "はいぐうしゃ",
+      "english": "spouse; wife; husband",
+      "current": "임자",
+      "proposed": "배우자"
+    },
+    {
+      "id": "N1-ccd39dd447",
+      "word": "泊",
+      "reading": "はく",
+      "english": "counter for nights of a stay",
+      "current": "숙박하다",
+      "proposed": "하룻밤"
+    },
+    {
+      "id": "N1-10bd68b7e8",
+      "word": "白状",
+      "reading": "はくじょう",
+      "english": "confession",
+      "current": "자백",
+      "proposed": "자백하다"
+    },
+    {
+      "id": "N1-988a31e98d",
+      "word": "漠然",
+      "reading": "ばくぜん",
+      "english": "obscure; vague; equivocal",
+      "current": "막막하다",
+      "proposed": "모호하다"
+    },
+    {
+      "id": "N1-5f88d07bc6",
+      "word": "爆弾",
+      "reading": "ばくだん",
+      "english": "bomb",
+      "current": "폭탄",
+      "proposed": "폭탄을 던지다"
+    },
+    {
+      "id": "N1-79dbad028d",
+      "word": "爆破",
+      "reading": "ばくは",
+      "english": "blast; explosion; blow up",
+      "current": "폭파",
+      "proposed": "폭발하다"
+    },
+    {
+      "id": "N1-bb5ca4e9bd",
+      "word": "暴露",
+      "reading": "ばくろ",
+      "english": "disclosure; exposure; revelation",
+      "current": "폭로",
+      "proposed": "폭로하다"
+    },
+    {
+      "id": "N1-7ea060b767",
+      "word": "励ます",
+      "reading": "はげます",
+      "english": "to encourage; to cheer; to raise (the voice)",
+      "current": "격려하다",
+      "proposed": "격려해 주다"
+    },
+    {
+      "id": "N1-2ea4ecdaab",
+      "word": "励む",
+      "reading": "はげむ",
+      "english": "to be zealous; to brace oneself; to endeavour; to strive; to make an effort",
+      "current": "힘쓰다, 열심히 노력하다",
+      "proposed": "노력하다"
+    },
+    {
+      "id": "N1-1b0c715111",
+      "word": "剥げる",
+      "reading": "はげる",
+      "english": "to come off; to be worn off; to fade; to discolor",
+      "current": "벗어지다",
+      "proposed": "벗겨지다"
+    },
+    {
+      "id": "N1-c59d6e396d",
+      "word": "化ける",
+      "reading": "ばける",
+      "english": "to appear in disguise; to take the form of; to change for the worse",
+      "current": "둔갑하다",
+      "proposed": "변장하다"
+    },
+    {
+      "id": "N1-8cd57dd5b8",
+      "word": "派遣",
+      "reading": "はけん",
+      "english": "dispatch; send",
+      "current": "파견",
+      "proposed": "파견하다"
+    },
+    {
+      "id": "N1-9eb0cbae51",
+      "word": "恥",
+      "reading": "はじ",
+      "english": "shame; embarrassment",
+      "current": "창피",
+      "proposed": "부끄러움"
+    },
+    {
+      "id": "N1-d02723096e",
+      "word": "浜",
+      "reading": "はま",
+      "english": "beach; seashore",
+      "current": "지명 등에 쓰임",
+      "proposed": "해변"
+    },
+    {
+      "id": "N1-5f261717b0",
+      "word": "はまる",
+      "reading": "はまる",
+      "english": "to get into; to go into; to fit; to be fit for; to suit; to fall into; to plunge into; to be deceived",
+      "current": "꼭 끼이다",
+      "proposed": "들어맞다"
+    },
+    {
+      "id": "N1-6fc9543bfe",
+      "word": "生やす",
+      "reading": "はやす",
+      "english": "to grow; to cultivate; to wear beard",
+      "current": "기르다",
+      "proposed": "기르다, 자라다"
+    },
+    {
+      "id": "N1-270dc2bedf",
+      "word": "早める",
+      "reading": "はやめる",
+      "english": "to hasten; to quicken; to expedite; to precipitate; to accelerate",
+      "current": "빨리하다",
+      "proposed": "빨리하다, 서두르다"
+    },
+    {
+      "id": "N1-398c83bac1",
+      "word": "遥か",
+      "reading": "はるか",
+      "english": "far; far-away; distant; remote; far off",
+      "current": "까마득하다",
+      "proposed": "멀리"
+    },
+    {
+      "id": "N1-4da424bbd5",
+      "word": "破裂",
+      "reading": "はれつ",
+      "english": "explosion; rupture; break off",
+      "current": "파열",
+      "proposed": "파열, 터지다"
+    },
+    {
+      "id": "N1-e3a908e6d8",
+      "word": "腫れる",
+      "reading": "はれる",
+      "english": "to swell (from inflammation); to become swollen",
+      "current": "붓다",
+      "proposed": "부어오르다"
+    },
+    {
+      "id": "N1-6c1de07dfd",
+      "word": "判",
+      "reading": "はん",
+      "english": "seal; stamp; monogram signature; judgment",
+      "current": "도장",
+      "proposed": "인장, 판단"
+    },
+    {
+      "id": "N1-02e6ac02bf",
+      "word": "ハンガー",
+      "reading": "ハンガー",
+      "english": "hangar; (coat) hanger; hunger",
+      "current": "옷걸이",
+      "proposed": "옷걸이, 격납고"
+    },
+    {
+      "id": "N1-ebea08a82f",
+      "word": "反感",
+      "reading": "はんかん",
+      "english": "antipathy; revolt; animosity",
+      "current": "반감",
+      "proposed": "반감, 불쾌감"
+    },
+    {
+      "id": "N1-ebb9dafc92",
+      "word": "反響",
+      "reading": "はんきょう",
+      "english": "echo; reverberation; repercussion; reaction; influence",
+      "current": "반향",
+      "proposed": "반향, 영향"
+    },
+    {
+      "id": "N1-24aad19c86",
+      "word": "パンク",
+      "reading": "パンク",
+      "english": "(abbreviation) puncture; bursting; punk",
+      "current": "펑크",
+      "proposed": "펑크, 펑크 음악"
+    },
+    {
+      "id": "N1-9b0e88db96",
+      "word": "控える",
+      "reading": "ひかえる",
+      "english": "to draw in; to hold back; to make notes; to be temperate in",
+      "current": "삼가다, 줄이다; 적어 두다",
+      "proposed": "참다, 자제하다; 메모하다"
+    },
+    {
+      "id": "N1-d4a59bb971",
+      "word": "雛",
+      "reading": "ひな",
+      "english": "young bird; chick; doll",
+      "current": "병아리",
+      "proposed": "새끼치어"
+    },
+    {
+      "id": "N1-3951ae3c0c",
+      "word": "福",
+      "reading": "ふく",
+      "english": "good fortune",
+      "current": "다음 지명에 쓰임",
+      "proposed": "행운"
+    },
+    {
+      "id": "N1-2e2b2bb861",
+      "word": "不憫",
+      "reading": "ふびん",
+      "english": "pity; compassion",
+      "current": "가엽다",
+      "proposed": "불쌍하다"
+    },
+    {
+      "id": "N1-393877926f",
+      "word": "不服",
+      "reading": "ふふく",
+      "english": "dissatisfaction; discontent; disapproval; objection; complaint; protest; disagreement",
+      "current": "거역",
+      "proposed": "불만"
+    },
+    {
+      "id": "N1-856da87e15",
+      "word": "文",
+      "reading": "ふみ",
+      "english": "letter; writings",
+      "proposed": "글자"
+    },
+    {
+      "id": "N1-4302df1674",
+      "word": "不明",
+      "reading": "ふめい",
+      "english": "unknown; obscure; indistinct; uncertain; ambiguous; ignorant; lack of wisdom; anonymous; unidentified",
+      "current": "불분명하다",
+      "proposed": "모르다"
+    },
+    {
+      "id": "N1-61145dbc05",
+      "word": "扶養",
+      "reading": "ふよう",
+      "english": "support; maintenance",
+      "current": "부양",
+      "proposed": "양육"
+    },
+    {
+      "id": "N1-2eff177d9a",
+      "word": "ぶらぶら",
+      "reading": "ぶらぶら",
+      "english": "dangle heavily; swing; sway to and fro; aimlessly; idly; lazily; loiter; loaf; be idle; stroll idly",
+      "current": "건들건들",
+      "proposed": "들들거리다"
+    },
+    {
+      "id": "N1-471e8a709b",
+      "word": "振り",
+      "reading": "ふり",
+      "english": "pretence; show; appearance",
+      "current": "태",
+      "proposed": "모습"
+    },
+    {
+      "id": "N1-5b99825c62",
+      "word": "振り出し",
+      "reading": "ふりだし",
+      "english": "outset; starting point; drawing or issuing (draft)",
+      "proposed": "시작"
+    },
+    {
+      "id": "N1-f64c527a25",
+      "word": "不良",
+      "reading": "ふりょう",
+      "english": "badness; delinquent; inferiority; failure",
+      "current": "불량하다",
+      "proposed": "불량"
+    },
+    {
+      "id": "N1-bfcaf39312",
+      "word": "浮力",
+      "reading": "ふりょく",
+      "english": "buoyancy; floating power",
+      "current": "부력",
+      "proposed": "부력"
+    },
+    {
+      "id": "N1-fb44d951d9",
+      "word": "武力",
+      "reading": "ぶりょく",
+      "english": "armed might; military power; the sword; force",
+      "current": "무력",
+      "proposed": "무력"
+    },
+    {
+      "id": "N1-4036541a77",
+      "word": "ブルー",
+      "reading": "ブルー",
+      "english": "blue",
+      "current": "파랑",
+      "proposed": "파랑"
+    },
+    {
+      "id": "N1-ad9000928d",
+      "word": "震わせる",
+      "reading": "ふるわせる",
+      "english": "to be shaking; to be trembling",
+      "current": "떨다",
+      "proposed": "떠다"
+    },
+    {
+      "id": "N1-c3fd7b34c2",
+      "word": "放り出す",
+      "reading": "ほうりだす",
+      "english": "to throw out; to fire; to expel; to give up; to abandon; to neglect",
+      "current": "나가떨어지다",
+      "proposed": "버리다"
+    },
+    {
+      "id": "N1-10d587dd95",
+      "word": "発作",
+      "reading": "ほっさ",
+      "english": "fit; spasm",
+      "current": "발작",
+      "proposed": "발작"
+    },
+    {
+      "id": "N1-f907fc3a9b",
+      "word": "没収",
+      "reading": "ぼっしゅう",
+      "english": "forfeited",
+      "current": "몰수",
+      "proposed": "没収"
+    },
+    {
+      "id": "N1-5dd2205042",
+      "word": "発足",
+      "reading": "ほっそく",
+      "english": "starting; inauguration",
+      "current": "발족",
+      "proposed": "발족"
+    },
+    {
+      "id": "N1-633a98a624",
+      "word": "ほっと",
+      "reading": "ほっと",
+      "english": "feel relieved",
+      "current": "한숨 놓는 모양",
+      "proposed": "안도하다"
+    },
+    {
+      "id": "N1-536520ea92",
+      "word": "ポット",
+      "reading": "ポット",
+      "english": "pot",
+      "current": "포트, 주전자, 보온병",
+      "proposed": "포트"
+    },
+    {
+      "id": "N1-a94e911306",
+      "word": "頬っぺた",
+      "reading": "ほっぺた",
+      "english": "cheek",
+      "current": "볼",
+      "proposed": "볼"
+    },
+    {
+      "id": "N1-f196c171b6",
+      "word": "ぼつぼつ",
+      "reading": "ぼつぼつ",
+      "english": "gradually; here and there; spots; pimples",
+      "current": "송송",
+      "proposed": "점점"
+    },
+    {
+      "id": "N1-cf530cd84a",
+      "word": "没落",
+      "reading": "ぼつらく",
+      "english": "ruin; fall; collapse",
+      "current": "몰락",
+      "proposed": "망하다"
+    },
+    {
+      "id": "N1-bedcbe87a3",
+      "word": "施す",
+      "reading": "ほどこす",
+      "english": "to donate; to give; to conduct; to apply; to perform",
+      "current": "내다",
+      "proposed": "제공하다"
+    },
+    {
+      "id": "N1-ce141a5e31",
+      "word": "保母",
+      "reading": "ほぼ",
+      "english": "day care worker in a kindergarten nursery school etc.",
+      "current": "보모",
+      "proposed": "보모"
+    },
+    {
+      "id": "N1-e80181aca1",
+      "word": "ぼやく",
+      "reading": "ぼやく",
+      "english": "to grumble; to complain",
+      "proposed": "불평하다"
+    },
+    {
+      "id": "N1-ea5ad26c76",
+      "word": "ぼやける",
+      "reading": "ぼやける",
+      "english": "to become dim; to become blurred",
+      "current": "흐릿하다",
+      "proposed": "흐리다"
+    },
+    {
+      "id": "N1-2d4100b55d",
+      "word": "保養",
+      "reading": "ほよう",
+      "english": "health preservation; recuperation; recreation",
+      "current": "몸조리",
+      "proposed": "휴식"
+    },
+    {
+      "id": "N1-f1d383593c",
+      "word": "捲る",
+      "reading": "まくる",
+      "english": "verb suffix to indicate reckless abandon to the activity",
+      "current": "젖히다",
+      "proposed": "미치다"
+    },
+    {
+      "id": "N1-9d2c461a37",
+      "word": "真心",
+      "reading": "まごころ",
+      "english": "sincerity; devotion",
+      "current": "성심",
+      "proposed": "진심"
+    },
+    {
+      "id": "N1-74601e860d",
+      "word": "まごつく",
+      "reading": "まごつく",
+      "english": "to be confused; to be flustered",
+      "current": "허둥대다",
+      "proposed": "혼乱하다"
+    },
+    {
+      "id": "N1-ef7ac8431d",
+      "word": "誠",
+      "reading": "まこと",
+      "english": "truth; faith; fidelity; sincerity; trust; confidence; reliance; devotion",
+      "current": "진실",
+      "proposed": "진리"
+    },
+    {
+      "id": "N1-3e5a78ba5b",
+      "word": "真に",
+      "reading": "まことに",
+      "english": "truly; actually; really",
+      "current": "실로",
+      "proposed": "정말로"
+    },
+    {
+      "id": "N1-3a292b13b7",
+      "word": "正しく",
+      "reading": "まさしく",
+      "english": "surely; no doubt; evidently",
+      "proposed": "확실하게"
+    },
+    {
+      "id": "N1-0be04a2d0d",
+      "word": "勝る",
+      "reading": "まさる",
+      "english": "to excel; to surpass; to outrival",
+      "current": "낫다",
+      "proposed": "가볍다"
+    },
+    {
+      "id": "N1-2864340a00",
+      "word": "増し",
+      "reading": "まし",
+      "english": "extra; additional; less objectionable; better; preferable",
+      "current": "옳다",
+      "proposed": "옳다, 낫다"
+    },
+    {
+      "id": "N1-fcb506d21f",
+      "word": "交える",
+      "reading": "まじえる",
+      "english": "to mix; to converse with; to cross (swords)",
+      "proposed": "섞다, 대화하다, 교차하다"
+    },
+    {
+      "id": "N1-2964d84ae8",
+      "word": "真下",
+      "reading": "ました",
+      "english": "right under; directly below",
+      "current": "바로 아래, 직하",
+      "proposed": "바로 아래, 직하"
+    },
+    {
+      "id": "N1-7bc604ca44",
+      "word": "まして",
+      "reading": "まして",
+      "english": "still more; still less (with neg. verb); to say nothing of; not to mention",
+      "current": "하물며",
+      "proposed": "하물며, 더욱이"
+    },
+    {
+      "id": "N1-9e08dfb738",
+      "word": "交わる",
+      "reading": "まじわる",
+      "english": "to cross; to intersect; to associate with; to mingle with; to interest; to join",
+      "current": "어울리다",
+      "proposed": "교차하다, 어울리다, 관계하다"
+    },
+    {
+      "id": "N1-b93e0a31d0",
+      "word": "未開",
+      "reading": "みかい",
+      "english": "savage land; backward region; uncivilized",
+      "current": "미개하다",
+      "proposed": "미개한 땅"
+    },
+    {
+      "id": "N1-2b0e48cde1",
+      "word": "見込み",
+      "reading": "みこみ",
+      "english": "hope; prospects; expectation",
+      "current": "싹",
+      "proposed": "기대"
+    },
+    {
+      "id": "N1-1534662816",
+      "word": "未熟",
+      "reading": "みじゅく",
+      "english": "inexperience; unripeness; raw; unskilled; immature; inexperienced",
+      "current": "미숙하다",
+      "proposed": "미숙"
+    },
+    {
+      "id": "N1-2bbc3577e1",
+      "word": "微塵",
+      "reading": "みじん",
+      "english": "particle; atom",
+      "current": "미진",
+      "proposed": "미세한 먼지"
+    },
+    {
+      "id": "N1-434fc61861",
+      "word": "水気",
+      "reading": "みずけ",
+      "english": "moisture; dampness; vapor; dropsy; edema",
+      "current": "물기",
+      "proposed": "습기"
+    },
+    {
+      "id": "N1-e4c887588d",
+      "word": "見すぼらしい",
+      "reading": "みすぼらしい",
+      "english": "shabby; seedy",
+      "current": "초라하다, 볼품없다",
+      "proposed": "보잘것없다"
+    },
+    {
+      "id": "N1-084bab949b",
+      "word": "満たす",
+      "reading": "みたす",
+      "english": "to satisfy; to ingratiate; to fill; to fulfill",
+      "current": "충족하다",
+      "proposed": "채우다"
+    },
+    {
+      "id": "N1-492bf6e2fc",
+      "word": "乱す",
+      "reading": "みだす",
+      "english": "to throw out of order; to disarrange; to disturb",
+      "current": "어지럽히다",
+      "proposed": "어지럽혀지다"
+    },
+    {
+      "id": "N1-affcd995c2",
+      "word": "乱れる",
+      "reading": "みだれる",
+      "english": "to get confused; to be disordered; to be disturbed",
+      "current": "헝클리다",
+      "proposed": "어지럽혀지다"
+    },
+    {
+      "id": "N1-5fe2bc62e1",
+      "word": "未知",
+      "reading": "みち",
+      "english": "not yet known",
+      "current": "미지",
+      "proposed": "미지의 것"
+    },
+    {
+      "id": "N1-72f6bc6de3",
+      "word": "身近",
+      "reading": "みぢか",
+      "english": "near oneself; close to one; familiar",
+      "current": "자기 가까이에 있음, 친숙함",
+      "proposed": "가까운 곳"
+    },
+    {
+      "id": "N1-cfaa0c9c42",
+      "word": "導く",
+      "reading": "みちびく",
+      "english": "to be guided; to be shown",
+      "current": "이끌다. 인도하다",
+      "proposed": "안내하다"
+    },
+    {
+      "id": "N1-8c2103a006",
+      "word": "無効",
+      "reading": "むこう",
+      "english": "invalid; no effect; unavailable",
+      "current": "무효하다",
+      "proposed": "무효"
+    },
+    {
+      "id": "N1-bb06602638",
+      "word": "目盛",
+      "reading": "めもり",
+      "english": "scale; gradations",
+      "current": "눈",
+      "proposed": "자"
+    },
+    {
+      "id": "N1-9f6a0cdf6c",
+      "word": "面会",
+      "reading": "めんかい",
+      "english": "interview",
+      "current": "면회",
+      "proposed": "면담"
+    },
+    {
+      "id": "N1-29000d2970",
+      "word": "面する",
+      "reading": "めんする",
+      "english": "to face on; to look out on to",
+      "current": "임하다",
+      "proposed": "마주하다"
+    },
+    {
+      "id": "N1-1dd4a1423d",
+      "word": "面目",
+      "reading": "めんぼく",
+      "english": "face; honour; reputation; prestige; dignity; credit",
+      "current": "얼굴",
+      "proposed": "체면"
+    },
+    {
+      "id": "N1-ac2fe3732a",
+      "word": "設ける",
+      "reading": "もうける",
+      "english": "to create; to establish",
+      "current": "차리다",
+      "proposed": "마련하다"
+    },
+    {
+      "id": "N1-b843d494ba",
+      "word": "申し入れる",
+      "reading": "もうしいれる",
+      "english": "to propose; to suggest",
+      "proposed": "제안하다"
+    },
+    {
+      "id": "N1-ba2699e0fa",
+      "word": "申し出る",
+      "reading": "もうしでる",
+      "english": "to report to; to tell; to suggest; to submit; to request; to make an offer",
+      "current": "나서다",
+      "proposed": "제시하다"
+    },
+    {
+      "id": "N1-f3cfd2a1e8",
+      "word": "もがく",
+      "reading": "もがく",
+      "english": "to struggle; to wriggle; to be impatient",
+      "current": "몸부림치다, 발버둥치다",
+      "proposed": "투쟁하다"
+    },
+    {
+      "id": "N1-303fa096e1",
+      "word": "目録",
+      "reading": "もくろく",
+      "english": "catalogue; catalog; list",
+      "current": "목록",
+      "proposed": "목차"
+    },
+    {
+      "id": "N1-d58572d331",
+      "word": "目論見",
+      "reading": "もくろみ",
+      "english": "a plan; a scheme; a project; a program; intention; goal",
+      "current": "도모",
+      "proposed": "계획"
+    },
+    {
+      "id": "N1-9baecfa9f3",
+      "word": "模型",
+      "reading": "もけい",
+      "english": "model; dummy; maquette",
+      "current": "모형",
+      "proposed": "모형"
+    },
+    {
+      "id": "N1-912c2148b4",
+      "word": "模索",
+      "reading": "もさく",
+      "english": "groping (for)",
+      "current": "모색",
+      "proposed": "모색하다"
+    },
+    {
+      "id": "N1-16f035d374",
+      "word": "もしかして",
+      "reading": "もしかして",
+      "english": "perhaps; possibly",
+      "current": "혹",
+      "proposed": "아마"
+    },
+    {
+      "id": "N1-ee1446d4cb",
+      "word": "易い",
+      "reading": "やすい",
+      "english": "easy",
+      "current": "좋다",
+      "proposed": "쉽다"
+    },
+    {
+      "id": "N1-182fdae0a6",
+      "word": "緩む",
+      "reading": "ゆるむ",
+      "english": "to become loose; to slacken",
+      "current": "놀다",
+      "proposed": "헐거지다"
+    },
+    {
+      "id": "N1-0814ddbb40",
+      "word": "緩やか",
+      "reading": "ゆるやか",
+      "english": "lenient",
+      "current": "완만함",
+      "proposed": "완하"
+    },
+    {
+      "id": "N1-d0cc8bf9a9",
+      "word": "ランプ",
+      "reading": "ランプ",
+      "english": "lamp; ramp; headlight; light",
+      "current": "남포",
+      "proposed": "램프"
+    },
+    {
+      "id": "N1-105141ee39",
+      "word": "利息",
+      "reading": "りそく",
+      "english": "interest (bank)",
+      "current": "이식",
+      "proposed": "리석"
+    },
+    {
+      "id": "N1-21cc63f32d",
+      "word": "領土",
+      "reading": "りょうど",
+      "english": "dominion; territory; possession",
+      "current": "강토",
+      "proposed": "영토"
+    },
+    {
+      "id": "N1-fd65caed2e",
+      "word": "割り込む",
+      "reading": "わりこむ",
+      "english": "to cut in; to thrust oneself into; to wedge oneself in; to muscle in on; to interrupt; to disturb",
+      "current": "껴들다",
+      "proposed": "끼어들다"
+    }
+  ]
+}
