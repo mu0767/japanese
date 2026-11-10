@@ -14,6 +14,30 @@ const base=(process.argv[2]||'https://mu0767.github.io/japanese/').replace(/\/?$
     const headerBox=await page.locator('header').boundingBox(),noteBox=await update.boundingBox();
     assert(noteBox.x+noteBox.width<=390+1,'Mobile update timestamp must fit on screen');
     assert(noteBox.y>=headerBox.y&&noteBox.y+noteBox.height<=headerBox.y+headerBox.height+1,'Timestamp must remain within mobile header');
+    // Verify persistent device audio: one-time download, then playback even if
+    // the audio network endpoint is unavailable in this browser session.
+    const offlineSample=await page.evaluate(async()=>{
+      const zero=WORDS.find(w=>w.word==='ゼロ');
+      const url=KotobaAudio.archiveSource(zero);
+      const result=await KotobaOfflineAudio.download([zero]);
+      const status=await KotobaOfflineAudio.status(WORDS);
+      const original=window.fetch;
+      let networkAttempts=0,bytes=0;
+      window.fetch=async(...args)=>{
+        if(String(args[0]).startsWith('https://kotoba-audio.union-raid.workers.dev/')){
+          networkAttempts++;throw Error('Network intentionally unavailable');
+        }
+        return original(...args);
+      };
+      try{bytes=(await KotobaOfflineAudio.getBlob(url)).size}
+      finally{window.fetch=original}
+      return {result,statusStored:status.stored,bytes,networkAttempts};
+    });
+    assert.equal(offlineSample.result.downloaded,1,'Could not save the ゼロ WAV for reuse');
+    assert(offlineSample.statusStored>=1);
+    assert(offlineSample.bytes>1000,'Cached WAV is invalid');
+    assert.equal(offlineSample.networkAttempts,0,'Cached pronunciation still makes a network request');
+    assert(await page.locator('#audio-cache-all').isVisible(),'Whole-library download control missing');
     await page.locator('#start').click();
     assert.equal(await page.locator('#quick-export-trigger').count(),0,'Legacy export button still visible');
     await page.goto(base+'#records');
