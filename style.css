@@ -29,3 +29,13 @@
 .home-sync-state{display:inline-block;margin:0 0 0 12px;font-size:12px;color:#276144;text-decoration:underline;text-underline-offset:3px}
 .home-sync-state.sync-warning{color:#b24c34}
 @media(max-width:600px){.record-shortcut{display:flex;flex-wrap:wrap;gap:8px}.home-sync-state{margin-left:0;font-size:11px}}
+
+/* Audio-first JLPT comprehension test: never reveal Japanese before grading. */
+.question-card .listening-icon{display:grid;place-items:center;margin:20px auto 8px;width:100px;height:100px;border-radius:50%;background:var(--soft);color:var(--green);font-size:62px;line-height:1;font-family:inherit}
+.question-card:has(.listening-icon) .sound{font-size:16px;padding:14px 24px;min-height:50px;margin-top:12px}
+.listening-reveal{margin-top:22px;padding:20px;border:1px solid #b6d0b0;background:#edf6e8;border-radius:16px;display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px}
+.listening-reveal .eyebrow{width:100%}
+.listening-reveal strong{font:700 30px/1.5 'Noto Sans JP',sans-serif}
+.listening-reveal span[lang="ja"]{font-family:'Noto Sans JP',sans-serif;font-size:16px}
+.listening-reveal .sound{margin-left:auto}
+@media(max-width:500px){.listening-reveal{padding:16px}.listening-reveal .sound{width:100%}}
