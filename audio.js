@@ -121,9 +121,10 @@ function stop(){
 function play(word,options={}){
  const {silent=false,notify=()=>{}}=options;
  stop();
- // The archived server is consistently available and avoids slow third-party hops.
- // Keep native recordings as secondary sources, then device TTS as final fallback.
- const token=request,urls=[archiveSource(word),...sources(word)].filter(Boolean);
+ // Only use precisely keyed WaniKani word+reading recordings before synthetic audio.
+ // Kanji alive clips are character readings and can differ from the whole word.
+ // The archived synthesized clip remains a fallback, not the default.
+ const token=request,urls=[...sources(word).filter(u=>u.startsWith(WANI)),archiveSource(word)].filter(Boolean);
  let resolved=false,next=0;
  return new Promise(resolve=>{
   const finish=value=>{if(!resolved){resolved=true;resolve(value)}};
