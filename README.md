@@ -39,7 +39,7 @@ Node.js에서 `node test.cjs`. 모든 단어에 대해 급수별 선택지의 �
 
 OpenJLPT에서 가져온 데이터의 필드를 축약했습니다. CC BY-SA 4.0. DATA-NOTICE.md와 DATA-LICENSE.txt 참고.
 전체 7,811개 단어의 뜻을 한국어로 제공합니다. 급수는 공식 출제 목록이 아닌 커뮤니티 학습용 분류입니다.
-기기 동기화를 한 번 연결하면 기존 기록을 합치고 이후 진도를 공유합니다. 기존 UNION Site의 Cloudflare D1을 사용하며 GitHub에는 개인 기록을 저장하지 않습니다. 연결 방법과 데이터 구조는 [PROGRESS.md](PROGRESS.md) 참조. 발음은 읽기·음소·파일 검사를 통과한 Open JTalk MP3를 먼저 재생합니다. 표기·읽기가 일치하는 WaniKani 녹음과 확인된 일본어 기기 음성만 대체 경로로 사용합니다. 기존 Melo WAV는 사용하지 않습니다. [검증 범위와 출처](AUDIO-SOURCES.md)를 확인하세요.
+기기 동기화를 한 번 연결하면 기존 기록을 합치고 이후 진도를 공유합니다. 기존 UNION Site의 Cloudflare D1을 사용하며 GitHub에는 개인 기록을 저장하지 않습니다. 연결 방법과 데이터 구조는 [PROGRESS.md](PROGRESS.md) 참조. 발음은 표기·읽기가 정확하게 일치하는 원어민 녹음을 우선 재생합니다. 원어민 녹음이 없으면 사전의 읽기를 일본어 기기 TTS에 전달하고, 일본어 음성을 사용할 수 없으면 Open JTalk MP3로 대체합니다. TTS의 단어별 악센트와 합성 음원의 자연스러움은 별도의 청취 검증이 필요합니다. 기존 Melo WAV는 사용하지 않습니다. [검증 범위와 출처](AUDIO-SOURCES.md)를 확인하세요.
 
 한자 해설은 OpenJLPT/KANJIDIC2, libhangul, OpenCC의 정적 데이터를 결합했습니다. KANJI-NOTICE.md와 각 라이선스 참조. 한국식 풀이가 없는 글자는 없다고 표시합니다.
 
@@ -52,3 +52,9 @@ UI 참고: Duolingo의 짧은 연습과 오답 복습, WaniKani의 복습 중심
 진도 검증: `node test-progress.cjs`, `node test-cloud-sync.cjs`, `node qa/qa-progress-browser.cjs`, `node qa/qa-cloud-browser.cjs`. 실제 배포 연결은 `node qa/qa-cloud-browser.cjs --live https://mu0767.github.io/japanese/`로 검증합니다.
 
 발음 전수 검사: `node qa/audit-pronunciation.cjs --require-assets --verify-native`. 배포 파일 전부 확인: `node qa/verify-pronunciation-live.cjs`.
+
+## 외부 사전과 7,811개 읽기 전수 대조
+
+`python3 qa/audit-dictionary-readings.py`는 EDRDG의 EDICT2 UTF-8 사전을 내려받아 모든 단어의 표기와 읽기를 비교하고 `qa/dictionary-reading-audit.json`에 불일치·미등재 항목을 남깁니다. `.github/workflows/audit-dictionary-readings.yml`은 읽기 데이터 변경 시 감사를 실행합니다. 사전 대조는 원어민 녹음 청취 및 악센트 검증과 별개이며, 사전이 확인하지 못한 항목을 임의로 변경하지 않습니다.
+
+발음 우선순위와 전체 단어 ID 연결의 회귀 검사: `node qa/test-reading-playback.cjs`.
