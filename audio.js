@@ -1,10 +1,27 @@
 (function(root){
 'use strict';
-// Prefer licensed native-speaker recordings. If one is missing/unreachable,
-// pronounce the dictionary reading with a Japanese-locale speech synthesizer.
-// Recording attribution and license: AUDIO-SOURCES.md
+// Prefer native-speaker recordings; all 7,811 words also have a stored first-party
+// Japanese WAV file, independent of the device's TTS language packs.
+// Browser Japanese speech synthesis remains the final emergency fallback.
+// Source attribution: AUDIO-SOURCES.md
 const KANJI='https://media.kanjialive.com/examples_audio/audio-mp3/';
 const WANI='https://raw.githubusercontent.com/tofugu/japanese-vocabulary-pronunciation-audio/master/lib/mp3/';
+const ARCHIVE='https://kotoba-audio.union-raid.workers.dev/v1/audio/';
+let archiveGroups=null;
+function archiveSource(word){
+ if(!word?.id||typeof WORDS==='undefined'||typeof KOTOBA_AUDIO_RECORDINGS==='undefined')return null;
+ if(!archiveGroups){
+  archiveGroups=new Map();
+  const counts={g:0,n:0};
+  for(const w of WORDS){
+   const prefix=Object.hasOwn(KOTOBA_AUDIO_RECORDINGS,w.id)?'n':'g';
+   const group=Math.floor(counts[prefix]++/12);
+   archiveGroups.set(w.id,prefix+'/'+group+'/'+encodeURIComponent(w.id));
+  }
+ }
+ const path=archiveGroups.get(word.id);
+ return path?ARCHIVE+path:null;
+}
 let active=null,speaking=null,request=0,watchdog=null;
 function sources(word){
  if(!word||!word.id||!word.word||!word.reading||typeof KOTOBA_AUDIO_RECORDINGS==='undefined')return [];
@@ -44,7 +61,7 @@ function stop(){
 function play(word,options={}){
  const {silent=false,notify=()=>{}}=options;
  stop();
- const token=request,urls=sources(word);
+ const token=request,urls=[...sources(word),archiveSource(word)].filter(Boolean);
  let resolved=false,next=0;
  return new Promise(resolve=>{
   const finish=value=>{if(!resolved){resolved=true;resolve(value)}};
@@ -127,7 +144,7 @@ function play(word,options={}){
  });
 }
 root.KotobaAudio={
- sources,play,stop,readingText,japaneseVoice,
+ sources,archiveSource,play,stop,readingText,japaneseVoice,
  hasRecording:word=>sources(word).length>0
 };
 if(typeof module!=='undefined'&&module.exports)module.exports=root.KotobaAudio;
