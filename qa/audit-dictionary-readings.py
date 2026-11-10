@@ -3,10 +3,10 @@
 This audits lexical readings, not audio quality or pitch accent.
 Run: python3 qa/audit-dictionary-readings.py
 """
-import gzip, hashlib, json, pathlib, re, subprocess, urllib.request
+import gzip, hashlib, json, pathlib, re, urllib.request
 from collections import defaultdict
 ROOT=pathlib.Path(__file__).resolve().parent.parent
-SRC="https://ftp.edrdg.org/pub/Nihongo/edict2u.gz"
+SRC="https://ftp.edrdg.org/pub/Nihongo/edict2.gz"
 def words():
     # data.js is a single JS literal; extract its JSON without evaluating code.
     source=(ROOT/"data.js").read_text(encoding="utf-8-sig")
@@ -19,7 +19,7 @@ def norm(s):
 def main():
     req=urllib.request.Request(SRC,headers={"User-Agent":"Kotoba-dictionary-audit/1.0"})
     with urllib.request.urlopen(req, timeout=90) as response: compressed=response.read()
-    dictionary=gzip.decompress(compressed).decode("utf-8")
+    dictionary=gzip.decompress(compressed).decode("euc_jis_2004",errors="replace")
     lexicon=defaultdict(set)
     for row in dictionary.splitlines():
         if " /" not in row: continue
