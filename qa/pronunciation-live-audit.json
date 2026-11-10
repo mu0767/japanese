@@ -1,0 +1,15 @@
+{
+  "base": "https://mu0767.github.io/japanese/",
+  "checkedAt": "2026-11-10T14:41:46.888Z",
+  "total": 7811,
+  "checked": 7811,
+  "bytes": 38360593,
+  "levels": {
+    "N1": 3070,
+    "N2": 1778,
+    "N3": 1659,
+    "N4": 630,
+    "N5": 674
+  },
+  "errors": []
+}
