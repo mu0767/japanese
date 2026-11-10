@@ -24,9 +24,13 @@ async function read(path){const url=new URL(path,base);url.searchParams.set('_ve
  assert(sync.includes('https://kotoba-sync.union-raid.workers.dev/api/kotoba-progress'),'New D1 endpoint not published');assert.equal(coverage.translated,7811);
  assert(app.includes('id="confirm"'));assert(app.includes("b.onclick=()=>speak(s.q.optionWords[i])"),'Post-answer option replay lost');
  assert(!app.includes('SpeechSynthesisUtterance'),'Mispronouncing browser TTS must not be used');
- assert(paths.includes('audio-data.js?v=1')&&paths.includes('audio.js?v=5'),'Mobile Blob-prefetch audio player not published');
+ assert(paths.includes('audio-data.js?v=1')&&paths.includes('audio.js?v=6')&&paths.includes('audio-offline.js?v=1'),'Persistent offline audio scripts not published');
  assert(scripts.find((x,i)=>paths[i].startsWith('audio.js')).includes("root.fetch(url,{mode:'cors',cache:'force-cache'})"),'Real mobile WAV prefetch missing');
- assert(paths.includes('app.js?v=24'),'Quiz audio preloading version not published');
+ assert(paths.includes('app.js?v=25'),'Offline audio controls are not published');
+ assert(app.includes('id="audio-cache-all"')&&app.includes('id="audio-cache-level"'),'Bulk or per-level audio download controls missing');
+ assert(app.includes('refreshAudioPanel()'),'Offline storage progress UI missing');
+ const offline=vm.runInContext('KotobaOfflineAudio',context);
+ assert(typeof offline.getBlob==='function'&&typeof offline.download==='function','Persistent cache API missing');
  assert(html.includes('rel="preconnect" href="https://kotoba-audio.union-raid.workers.dev"'),'Audio server preconnect missing');
  assert(app.includes("KotobaAudio.prepare(mode==='reading'?s.q.optionWords:[w])"),'Quiz must preload all four option voices');
  assert(app.includes('KotobaAudio.prepare(list.slice(page*30,page*30+3))'),'Word list audio preload missing');
