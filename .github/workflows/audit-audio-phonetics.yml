@@ -1,0 +1,39 @@
+name: Probe independent Japanese phoneme synthesis
+on:
+  push:
+    paths:
+      - '.github/workflows/audit-audio-phonetics.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  phonetic-probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install independent offline Japanese speech engine
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq open-jtalk open-jtalk-mecab-naist-jdic hts-voice-nitech-jp-atr503-m001 ffmpeg
+      - name: Read kana and synthesize 料理, 階段, 歌う
+        run: |
+          DIC=$(find /var/lib/mecab/dic -type d -name "*jtalk*" | head -1)
+          VOICE=$(find /usr/share -type f -name "*.htsvoice" | head -1)
+          echo "dictionary=$DIC voice=$VOICE"
+          test -n "$DIC" && test -n "$VOICE"
+          for row in '料理|りょうり' '階段|かいだん' '歌う|うたう'; do
+            term=${row%%|*}
+            kana=${row#*|}
+            printf '%s' "$kana" > /tmp/phonemes.txt
+            open_jtalk -x "$DIC" -m "$VOICE" -ow "/tmp/voice-$term.wav" /tmp/phonemes.txt
+            ffmpeg -hide_banner -loglevel error -y -i "/tmp/voice-$term.wav" -codec:a libmp3lame -qscale:a 4 "/tmp/voice-$term.mp3"
+            ls -lh "/tmp/voice-$term.wav" "/tmp/voice-$term.mp3"
+          done
+          python3 - <<'PY'
+          import wave,glob,math
+          for filename in glob.glob('/tmp/voice-*.wav'):
+              with wave.open(filename) as f:
+                  frames=f.readframes(f.getnframes())
+                  samples=[int.from_bytes(frames[i:i+2],'little',signed=True) for i in range(0,len(frames),2)]
+                  print('AUDIO_PROBE',filename,'duration',round(f.getnframes()/f.getframerate(),3),'max_amp',max(abs(x) for x in samples))
+          PY
