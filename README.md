@@ -3,7 +3,7 @@
 N5~N1 일본어 단어 7,811개를 학습하는 반응형 정적 웹사이트입니다.
 
 - 히라가나 읽기 / 한국어 뜻 4지선다 퀴즈, 10·20·50문제
-- 오답 복습, 단어 검색, 전체 7,811개 서버 보관 WAV 발음, 음성 사전 로딩 및 기기 영구 캐시 옵션
+- 오답 복습, 단어 검색, 전체 7,811개 읽기 기반 MP3 발음, 음성 사전 로딩 및 기기 영구 캐시 옵션
 - 기본 출제는 미학습·오답 우선, 전체 단어로 다시 학습 가능
 - 정답 확인 후 한자별 한국식 뜻·음(예: 暖 따뜻할 난), 일본어 음독·훈독 해설
 - 정답률, 연속 학습, 최근 7일 기록 (브라우저 localStorage)
@@ -12,7 +12,7 @@ N5~N1 일본어 단어 7,811개를 학습하는 반응형 정적 웹사이트입
 
 ## 발음 음원 미리 저장
 
-발음 7,811개는 서버에 전부 생성·보관되어 있으나, 처음 사이트를 방문하는 휴대폰에 전부 다운로드되어 있는 것은 아닙니다. 실제 WAV 파일 합계는 **585MiB(약 613MB)**입니다.
+전체 발음은 읽기에서 생성한 MP3 파일입니다. 선택한 급수 또는 전체 음원을 기기에 미리 저장할 수 있습니다. 기존 Melo WAV 캐시는 자동 폐기하고 새 MP3 캐시를 사용합니다. 학습 기록은 유지합니다.
 
 - 홈 화면에서 **N5~N1 중 현재 급수 음원 미리 저장** 또는 **전체 7,811개 저장**을 명시적으로 선택할 수 있습니다.
 - 브라우저 CacheStorage에 음원을 한 번만 저장합니다. 같은 기기에서 다시 시작하면 저장 완료한 단어는 건너뛰고 나머지부터 이어받습니다.
@@ -39,7 +39,7 @@ Node.js에서 `node test.cjs`. 모든 단어에 대해 급수별 선택지의 �
 
 OpenJLPT에서 가져온 데이터의 필드를 축약했습니다. CC BY-SA 4.0. DATA-NOTICE.md와 DATA-LICENSE.txt 참고.
 전체 7,811개 단어의 뜻을 한국어로 제공합니다. 급수는 공식 출제 목록이 아닌 커뮤니티 학습용 분류입니다.
-기기 동기화를 한 번 연결하면 기존 기록을 합치고 이후 진도를 공유합니다. 기존 UNION Site의 Cloudflare D1을 사용하며 GitHub에는 개인 기록을 저장하지 않습니다. 연결 방법과 데이터 구조는 [PROGRESS.md](PROGRESS.md) 참조. 원어민 음원이 있는 4,199개는 녹음을 우선 사용합니다. 전체 7,811개에 서버에 저장된 일본어 WAV가 별도로 있어, 녹음이 없는 3,612개와 외부 녹음 불러오기 실패 시 즉시 자체 WAV를 시도합니다. 두 경로가 모두 불가능하면 일본어(`ja-JP`) 기기 합성 음성을 최후로 시도합니다. 브라우저에 일본어 음성 엔진이 없는 경우 정확한 발음은 보장할 수 없으며, 합성 실패 시 오류를 표시합니다. 음원 출처와 재생 방식은 [AUDIO-SOURCES.md](AUDIO-SOURCES.md) 참조.
+기기 동기화를 한 번 연결하면 기존 기록을 합치고 이후 진도를 공유합니다. 기존 UNION Site의 Cloudflare D1을 사용하며 GitHub에는 개인 기록을 저장하지 않습니다. 연결 방법과 데이터 구조는 [PROGRESS.md](PROGRESS.md) 참조. 발음은 읽기·음소·파일 검사를 통과한 Open JTalk MP3를 먼저 재생합니다. 표기·읽기가 일치하는 WaniKani 녹음과 확인된 일본어 기기 음성만 대체 경로로 사용합니다. 기존 Melo WAV는 사용하지 않습니다. [검증 범위와 출처](AUDIO-SOURCES.md)를 확인하세요.
 
 한자 해설은 OpenJLPT/KANJIDIC2, libhangul, OpenCC의 정적 데이터를 결합했습니다. KANJI-NOTICE.md와 각 라이선스 참조. 한국식 풀이가 없는 글자는 없다고 표시합니다.
 
@@ -50,3 +50,5 @@ OpenJLPT에서 가져온 데이터의 필드를 축약했습니다. CC BY-SA 4.0
 UI 참고: Duolingo의 짧은 연습과 오답 복습, WaniKani의 복습 중심 학습. 디자인은 코토바용으로 작성했습니다.
 
 진도 검증: `node test-progress.cjs`, `node test-cloud-sync.cjs`, `node qa/qa-progress-browser.cjs`, `node qa/qa-cloud-browser.cjs`. 실제 배포 연결은 `node qa/qa-cloud-browser.cjs --live https://mu0767.github.io/japanese/`로 검증합니다.
+
+발음 전수 검사: `node qa/audit-pronunciation.cjs --require-assets --verify-native`. 배포 파일 전부 확인: `node qa/verify-pronunciation-live.cjs`.

@@ -1,21 +1,30 @@
 (function(root){
 'use strict';
-// An opt-in, persistent device cache. Never silently download the entire 585 MiB library.
+// An opt-in persistent cache of the corrected, kana-derived MP3 library.
 // CacheStorage is device-local and independent of the synced learning progress.
-const CACHE_NAME='kotoba-wav-v1';
-const PREFIX='https://kotoba-audio.union-raid.workers.dev/v1/audio/';
+const CACHE_NAME='kotoba-phonetic-mp3-v1';
+const RETIRED_CACHES=['kotoba-wav-v1'];
 const CONCURRENCY=4;
-let task=null;
+let task=null,retirement=null,allowedUrls=null;
 function supported(){
  return !!(root.caches&&typeof root.caches.open==='function'&&typeof root.fetch==='function');
 }
 function urlFor(word){
- return root.KotobaAudio?.archiveSource(word)||null;
+ return root.KotobaAudio?.assetSource(word)||null;
 }
-function allowed(url){return typeof url==='string'&&url.startsWith(PREFIX);}
+function allowed(url){
+ if(!allowedUrls&&typeof WORDS!=='undefined')allowedUrls=new Set(WORDS.map(urlFor).filter(Boolean));
+ return typeof url==='string'&&!!allowedUrls?.has(url);
+}
 async function openCache(){
  if(!supported())throw new Error('이 브라우저에서는 음원 저장을 지원하지 않습니다.');
+ if(!retirement)retirement=Promise.all(RETIRED_CACHES.map(name=>root.caches.delete?.(name))).catch(()=>{});
+ await retirement;
  return root.caches.open(CACHE_NAME);
+}
+async function validated(response){
+ if(!response.ok)throw new Error('음원 다운로드 실패 ('+response.status+')');
+ return root.KotobaAudio.validateBlob(await response.blob());
 }
 async function getBlob(url){
  if(!allowed(url))throw new Error('잘못된 음원 주소입니다.');
@@ -23,16 +32,16 @@ async function getBlob(url){
  if(cache){
   try{
    const match=await cache.match(url);
-   if(match)return await match.blob();
+   if(match){try{return await validated(match)}catch{await cache.delete?.(url)}}
   }catch{}
  }
  const response=await root.fetch(url,{mode:'cors',cache:'force-cache'});
- if(!response.ok)throw new Error('음원 다운로드 실패 ('+response.status+')');
+ const blob=await validated(response.clone());
  if(cache){
   // Do not make click-to-speech wait for slow disk writes.
   try{cache.put(url,response.clone()).catch(()=>{})}catch{}
  }
- return response.blob();
+ return blob;
 }
 async function status(words){
  if(!supported())return {supported:false,stored:0,total:words.length,levelCounts:{}};
@@ -78,11 +87,13 @@ async function download(words,onProgress=()=>{}){
    const url=targets[cursor++];
    try{
     const hit=await cache.match(url);
-    if(hit){existing++}
+    let validHit=false;
+    if(hit){try{await validated(hit);validHit=true}catch{await cache.delete?.(url)}}
+    if(validHit){existing++}
     else{
      const response=await root.fetch(url,{mode:'cors',cache:'force-cache',signal:controller.signal});
-     if(!response.ok)throw new Error('HTTP '+response.status);
-     const size=Number(response.headers?.get('content-length'))||0;
+     const blob=await validated(response.clone());
+     const size=blob.size;
      await cache.put(url,response);
      bytes+=size;
      downloaded++;

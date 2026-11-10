@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-11-10T14:07:42.244Z",
+  "generatedAt": "2026-11-10T14:39:00.569Z",
   "scope": {
     "words": 7811,
     "levels": {
@@ -43,12 +43,14 @@
     }
   },
   "assets": {
-    "status": "pending",
+    "status": "audited",
     "expected": 7811,
-    "present": 0,
-    "manifestChecked": 0,
-    "missing": 7811,
-    "bytes": 0
+    "present": 7811,
+    "manifestChecked": 7811,
+    "missing": 0,
+    "bytes": 38360593,
+    "manifestSha256": "019863c15cb3ed5c6e1a2f4a5c877ca9b62f2c8b0355424b3ca51e46ad38d22f",
+    "engine": "Open JTalk 1.11 forced NJD pronunciation / NIT ATR503 M001"
   },
   "reportedWord": [
     {

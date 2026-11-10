@@ -53,7 +53,7 @@ if(fs.existsSync(manifestPath)){
  if(manifest){
   report.assets.manifestSha256=sha(fs.readFileSync(manifestPath));report.assets.engine=manifest.engine;
   if(manifest.version!==2||manifest.totalWords!==words.length||!Array.isArray(manifest.items)||manifest.items.length!==words.length)problem('manifest',null,'Expected v2 manifest for every vocabulary entry');
-  const seen=new Set();
+  const seen=new Set(),audioByHash=new Map();
   for(const item of manifest.items||[]){
    const word=ids.get(item.id);if(!word||seen.has(item.id)){problem('manifest',item.id,'Unknown or duplicate entry');continue}seen.add(item.id);report.assets.manifestChecked++;
    const expectedPath='pronunciation/'+word.level+'/'+word.id+'.mp3',input=(spokenOverrides[word.reading]||generation.normalizedReading(word.reading))+'。';
@@ -65,6 +65,9 @@ if(fs.existsSync(manifestPath)){
    if(!(item.durationSeconds>0.08&&item.durationSeconds<30)||!(item.rms>0)||!(item.peak>0&&item.peak<=1))problem('signal',item.id,'Missing or invalid duration/audio signal metrics');
    const filename=path.join(ROOT,expectedPath);if(!fs.existsSync(filename))continue;
    const bytes=fs.readFileSync(filename);if(item.sha256!==sha(bytes)||item.bytes!==bytes.length)problem('asset',item.id,'MP3 hash or length differs from manifest');
+   const phones=JSON.stringify(generation.canonicalPhones(item.phonemes||[]));
+   if(audioByHash.has(item.sha256)&&audioByHash.get(item.sha256)!==phones)problem('asset',item.id,'Different pronunciations unexpectedly share identical audio bytes');
+   audioByHash.set(item.sha256,phones);
   }
  }
 }

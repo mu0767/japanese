@@ -24,7 +24,7 @@ const base=(process.argv[2]||'https://mu0767.github.io/japanese/').replace(/\/?$
       const original=window.fetch;
       let networkAttempts=0,bytes=0;
       window.fetch=async(...args)=>{
-        if(String(args[0]).startsWith('https://kotoba-audio.union-raid.workers.dev/')){
+        if(String(args[0]).includes('/pronunciation/')){
           networkAttempts++;throw Error('Network intentionally unavailable');
         }
         return original(...args);
@@ -33,9 +33,9 @@ const base=(process.argv[2]||'https://mu0767.github.io/japanese/').replace(/\/?$
       finally{window.fetch=original}
       return {result,statusStored:status.stored,bytes,networkAttempts};
     });
-    assert.equal(offlineSample.result.downloaded,1,'Could not save the ゼロ WAV for reuse');
+    assert.equal(offlineSample.result.downloaded,1,'Could not save the ゼロ MP3 for reuse');
     assert(offlineSample.statusStored>=1);
-    assert(offlineSample.bytes>1000,'Cached WAV is invalid');
+    assert(offlineSample.bytes>1000,'Cached MP3 is invalid');
     assert.equal(offlineSample.networkAttempts,0,'Cached pronunciation still makes a network request');
     assert(await page.locator('#audio-cache-all').isVisible(),'Whole-library download control missing');
     await page.locator('#start').click();

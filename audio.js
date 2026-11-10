@@ -1,86 +1,51 @@
-(function(root){
+﻿(function(root){
 'use strict';
-// Prefer native-speaker recordings; all 7,811 words also have a stored first-party
-// Japanese WAV file, independent of the device's TTS language packs.
-// Browser Japanese speech synthesis remains the final emergency fallback.
-// Source attribution: AUDIO-SOURCES.md
+// The published, kana-derived MP3 is the only first-party playback source.
+// Old MeloTTS WAVs must never re-enter playback through fallback or device cache.
 const KANJI='https://media.kanjialive.com/examples_audio/audio-mp3/';
 const WANI='https://raw.githubusercontent.com/tofugu/japanese-vocabulary-pronunciation-audio/master/lib/mp3/';
-const ARCHIVE='https://kotoba-audio.union-raid.workers.dev/v1/audio/';
-let archiveGroups=null;
-function archiveSource(word){
- if(!word?.id||typeof WORDS==='undefined'||typeof KOTOBA_AUDIO_RECORDINGS==='undefined')return null;
- if(!archiveGroups){
-  archiveGroups=new Map();
-  const counts={g:0,n:0};
-  for(const w of WORDS){
-   const prefix=Object.hasOwn(KOTOBA_AUDIO_RECORDINGS,w.id)?'n':'g';
-   const group=Math.floor(counts[prefix]++/12);
-   archiveGroups.set(w.id,prefix+'/'+group+'/'+encodeURIComponent(w.id));
-  }
- }
- const path=archiveGroups.get(word.id);
- return path?ARCHIVE+path:null;
+let wordIndex=null;
+function assetSource(word){
+ if(!word?.id||typeof WORDS==='undefined')return null;
+ if(!wordIndex)wordIndex=new Map(WORDS.map(w=>[w.id,w]));
+ const entry=wordIndex.get(word.id);
+ if(!entry||entry.word!==word.word||entry.reading!==word.reading)return null;
+ const relative='pronunciation/'+entry.level+'/'+encodeURIComponent(entry.id)+'.mp3';
+ return new root.URL(relative,root.document?.baseURI||root.location?.href||'https://mu0767.github.io/japanese/').href;
 }
-let active=null,speaking=null,request=0,watchdog=null;
-const prepared=new Map();
-const MAX_PREPARED=12;
-const PLAYBACK_RATE=1.1;
-function releasePrepared(entry){
- if(entry?.objectUrl&&typeof root.URL?.revokeObjectURL==='function'){
-  try{root.URL.revokeObjectURL(entry.objectUrl)}catch{}
- }
+// Retain the method used by existing UI callers, with the corrected source.
+const archiveSource=assetSource;
+let active=null,speaking=null,request=0,watchdog=null,pendingFinish=null,voiceWaitCancel=null;
+const prepared=new Map(),MAX_PREPARED=12,PLAYBACK_RATE=1.0;
+async function validateBlob(blob){
+ if(!blob||typeof blob.arrayBuffer!=='function'||blob.size<32||blob.size>2000000)throw Error('Invalid MP3 size');
+ const type=String(blob.type||'').toLowerCase().split(';')[0].trim();
+ if(!['audio/mpeg','audio/mp3','application/octet-stream'].includes(type))throw Error('Invalid MP3 content type');
+ const bytes=new Uint8Array(await blob.slice(0,12).arrayBuffer());
+ const id3=bytes[0]===0x49&&bytes[1]===0x44&&bytes[2]===0x33;
+ const frame=bytes[0]===0xff&&(bytes[1]&0xe0)===0xe0;
+ if(!id3&&!frame)throw Error('Invalid MP3 signature');
+ return blob;
 }
-function primeElement(entry,url){
- const audio=new root.Audio(url);
- audio.preload='auto';
- audio.playbackRate=PLAYBACK_RATE;
- if(typeof audio.load==='function')audio.load();
- entry.audio=audio;
-}
+function releasePrepared(entry){if(entry?.objectUrl)try{root.URL.revokeObjectURL(entry.objectUrl)}catch{}}
+function primeElement(entry,url){const audio=new root.Audio(url);audio.preload='auto';audio.playbackRate=PLAYBACK_RATE;audio.load?.();entry.audio=audio}
 function prepare(words){
  if(typeof root.Audio!=='function')return 0;
  let count=0;
  for(const word of words||[]){
-  const url=archiveSource(word);
+  const url=assetSource(word);
   if(!url||prepared.has(word.id))continue;
-  const id=word.id,entry={url,audio:null,objectUrl:null};
-  prepared.set(id,entry);
-  count++;
-  // iOS may ignore audio.preload. Download the CORS WAV ahead of the click
-  // and turn it into a local Blob URL for immediate playback.
+  const id=word.id,entry={url,audio:null,objectUrl:null};prepared.set(id,entry);count++;
   if(typeof root.fetch==='function'&&typeof root.URL?.createObjectURL==='function'){
-   // Persist WAV files in CacheStorage for subsequent sessions. If the browser
-   // does not support device storage, retain the existing network/Blob path.
-   const blobPromise=root.KotobaOfflineAudio?.getBlob?
-    root.KotobaOfflineAudio.getBlob(url):
-    root.fetch(url,{mode:'cors',cache:'force-cache'}).then(response=>{
-     if(!response.ok)throw Error('Audio prefetch failed');
-     return response.blob();
-    });
-   Promise.resolve(blobPromise).then(blob=>{
-    if(prepared.get(id)!==entry)return;
-    entry.objectUrl=root.URL.createObjectURL(blob);
-    primeElement(entry,entry.objectUrl);
-   }).catch(()=>{
-    if(prepared.get(id)===entry){
-     try{primeElement(entry,url)}catch{}
-    }
-   });
-  }else{
-   try{primeElement(entry,url)}catch{prepared.delete(id);count--}
-  }
-  while(prepared.size>MAX_PREPARED){
-   const oldest=prepared.keys().next().value;
-   if(prepared.get(oldest)?.audio===active)break;
-   releasePrepared(prepared.get(oldest));
-   prepared.delete(oldest);
-  }
+   const blobPromise=root.KotobaOfflineAudio?.getBlob?root.KotobaOfflineAudio.getBlob(url):root.fetch(url,{mode:'cors',cache:'force-cache'}).then(response=>{if(!response.ok)throw Error('Audio prefetch failed');return response.blob()}).then(validateBlob);
+   Promise.resolve(blobPromise).then(blob=>{if(prepared.get(id)!==entry)return;entry.objectUrl=root.URL.createObjectURL(blob);primeElement(entry,entry.objectUrl)}).catch(()=>{if(prepared.get(id)===entry)try{primeElement(entry,url)}catch{}});
+  }else try{primeElement(entry,url)}catch{prepared.delete(id);count--}
+  while(prepared.size>MAX_PREPARED){const oldest=prepared.keys().next().value;if(prepared.get(oldest)?.audio===active)break;releasePrepared(prepared.get(oldest));prepared.delete(oldest)}
  }
  return count;
 }
 function sources(word){
- if(!word||!word.id||!word.word||!word.reading||typeof KOTOBA_AUDIO_RECORDINGS==='undefined')return [];
+ if(!word?.id||!word.word||!word.reading||typeof KOTOBA_AUDIO_RECORDINGS==='undefined')return [];
  const data=Object.hasOwn(KOTOBA_AUDIO_RECORDINGS,word.id)?KOTOBA_AUDIO_RECORDINGS[word.id]:null;
  if(!data)return [];
  const result=[];
@@ -88,134 +53,67 @@ function sources(word){
  if(data[1])result.push(WANI+encodeURIComponent(word.word+'【'+word.reading+'】.mp3'));
  return result;
 }
-function clearPrepared(){
- for(const entry of prepared.values())if(entry.audio!==active)releasePrepared(entry);
- prepared.clear();
-}
-function readingText(word){
- // Never ask the speech engine to guess a kanji reading from its spelling.
- // Convert katakana to hiragana to avoid non-Japanese voice heuristics.
- return String(word?.reading||word?.word||'').trim().replace(/[ァ-ヶ]/g,
-  c=>String.fromCharCode(c.charCodeAt(0)-96));
-}
-function japaneseVoice(synth){
- if(typeof synth.getVoices!=='function')return null;
- const voices=synth.getVoices()||[];
- return voices.find(v=>/^ja(?:[-_]|$)/i.test(v.lang||''))||null;
-}
-function clearWatchdog(){
- if(watchdog!==null){root.clearTimeout(watchdog);watchdog=null}
-}
-function stop(){
- request++;
- clearWatchdog();
- if(active){
-  const old=active;active=null;old.onerror=null;
-  try{old.pause()}catch{}
- }
- if(speaking){
-  speaking.onstart=null;speaking.onerror=null;speaking.onend=null;speaking=null;
-  try{root.speechSynthesis?.cancel()}catch{}
- }
-}
-function play(word,options={}){
- const {silent=false,notify=()=>{}}=options;
- stop();
- // Only use precisely keyed WaniKani word+reading recordings before synthetic audio.
- // Kanji alive clips are character readings and can differ from the whole word.
- // The archived synthesized clip remains a fallback, not the default.
- const token=request,urls=[...sources(word).filter(u=>u.startsWith(WANI)),archiveSource(word)].filter(Boolean);
- let resolved=false,next=0;
+function clearPrepared(){for(const entry of prepared.values())releasePrepared(entry);prepared.clear()}
+function readingText(word){return String(word?.reading||'').normalize('NFKC').trim().replace(/[ァ-ヶ]/g,c=>String.fromCharCode(c.charCodeAt(0)-96))}
+function japaneseVoice(synth){let voices=[];try{voices=typeof synth?.getVoices==='function'?synth.getVoices()||[]:[]}catch{return null}return voices.find(v=>/^ja(?:[-_]|$)/i.test(v.lang||''))||null}
+function waitForJapaneseVoice(synth,token){
+ const current=japaneseVoice(synth);if(current)return Promise.resolve(current);
  return new Promise(resolve=>{
-  const finish=value=>{if(!resolved){resolved=true;resolve(value)}};
-  const fail=message=>{if(token===request&&!silent)notify(message);finish(false)};
-  function synthesize(){
-   if(token!==request){finish(false);return}
-   const text=readingText(word);
-   const synth=root.speechSynthesis,Utterance=root.SpeechSynthesisUtterance;
-   if(!text||!synth||typeof synth.speak!=='function'||typeof Utterance!=='function'){
-    fail('일본어 음성을 재생할 수 없습니다. 브라우저의 일본어 음성 지원을 확인해주세요.');
-    return;
-   }
-   let utterance;
-   try{
-    utterance=new Utterance(text);
-    utterance.lang='ja-JP';
-    utterance.rate=1.08;
-    const voice=japaneseVoice(synth);
-    if(voice)utterance.voice=voice;
-    speaking=utterance;
-    utterance.onstart=()=>{
-     if(token!==request||speaking!==utterance)return;
-     clearWatchdog();finish(true);
-    };
-    utterance.onend=()=>{
-     if(speaking!==utterance)return;
-     speaking=null;clearWatchdog();
-     // Some engines report end without start for a blocked/failed utterance.
-     if(!resolved)fail('일본어 음성 재생이 완료되지 않았습니다. 일본어 음성팩을 확인해주세요.');
-    };
-    utterance.onerror=()=>{
-     if(speaking!==utterance)return;
-     speaking=null;clearWatchdog();
-     fail('일본어 음성 재생에 실패했습니다. 기기의 일본어 음성팩과 음량을 확인해주세요.');
-    };
-    synth.speak(utterance);
-    watchdog=root.setTimeout(()=>{
-     if(token!==request||speaking!==utterance||resolved)return;
-     try{synth.cancel()}catch{}
-     speaking=null;
-     fail('일본어 음성 엔진이 응답하지 않습니다. 일본어 음성팩을 확인해주세요.');
-    },7000);
-   }catch{
-    speaking=null;
-    fail('일본어 음성 합성을 시작하지 못했습니다. 브라우저의 음성 설정을 확인해주세요.');
-   }
-  }
-  function attempt(){
-   if(token!==request){finish(false);return}
-   clearWatchdog();
-   const url=urls[next++];
-   if(!url||typeof root.Audio!=='function'){active=null;synthesize();return}
-   let audio;
-   try{
-    const cached=prepared.get(word?.id);
-    audio=cached?.url===url&&cached.audio?cached.audio:new root.Audio(url);
-   }catch{attempt();return}
-   active=audio;
-   audio.preload='auto';
-   audio.playbackRate=PLAYBACK_RATE;
-   if(typeof audio.readyState==='number'&&audio.readyState>=1){
-    try{audio.currentTime=0}catch{}
-   }
-   audio.onended=()=>{if(active===audio)active=null};
-   audio.onerror=()=>{if(active!==audio)return;active=null;attempt()};
-   const failed=()=>{
-    if(active!==audio||token!==request){finish(false);return}
-    active=null;
-    try{audio.pause()}catch{}
-    attempt();
-   };
-   try{
-    const promise=audio.play();
-    watchdog=root.setTimeout(()=>{
-     if(active===audio&&token===request&&!resolved)failed();
-    },url.startsWith(ARCHIVE)?3200:2500);
-    if(promise&&typeof promise.then==='function'){
-     promise.then(()=>{
-      if(active!==audio||token!==request){finish(false);return}
-      clearWatchdog();finish(true);
-     }).catch(failed);
-    }else{clearWatchdog();finish(true)}
-   }catch{failed()}
-  }
-  if(!readingText(word)){fail('읽기 데이터가 없어 발음을 생성할 수 없습니다.');return}
-  attempt();
+  let finished=false,timer,poll;
+  const finish=voice=>{if(finished)return;finished=true;root.clearTimeout(timer);root.clearInterval(poll);synth.removeEventListener?.('voiceschanged',check);if(voiceWaitCancel===cancel)voiceWaitCancel=null;resolve(voice)};
+  const check=()=>{if(token!==request){finish(null);return}const voice=japaneseVoice(synth);if(voice)finish(voice)};
+  const cancel=()=>finish(null);voiceWaitCancel=cancel;
+  synth.addEventListener?.('voiceschanged',check);
+  poll=root.setInterval(check,100);timer=root.setTimeout(()=>finish(null),1200);check();
  });
 }
-root.KotobaAudio={
- sources,archiveSource,prepare,clearPrepared,play,stop,readingText,japaneseVoice,
- hasRecording:word=>sources(word).length>0
-};
+function clearWatchdog(){if(watchdog!==null){root.clearTimeout(watchdog);watchdog=null}}
+function stop(){
+ request++;clearWatchdog();voiceWaitCancel?.();voiceWaitCancel=null;pendingFinish?.(false);pendingFinish=null;
+ if(active){const old=active;active=null;old.onerror=null;try{old.pause()}catch{}}
+ if(speaking){speaking.onstart=null;speaking.onerror=null;speaking.onend=null;speaking=null;try{root.speechSynthesis?.cancel()}catch{}}
+}
+function play(word,options={}){
+ const {silent=false,notify=()=>{}}=options;stop();
+ // Character-reading clips are not safe whole-word fallbacks. Only an exact
+ // WaniKani spelling+reading recording can follow the generated MP3.
+ const token=request,urls=[assetSource(word),...sources(word).filter(u=>u.startsWith(WANI))].filter(Boolean);
+ let resolved=false,next=0;
+ return new Promise(resolve=>{
+  const finish=value=>{if(!resolved){resolved=true;if(pendingFinish===finish)pendingFinish=null;resolve(value)}};pendingFinish=finish;
+  const fail=message=>{if(token===request&&!silent)notify(message);finish(false)};
+  async function synthesize(){
+   if(token!==request){finish(false);return}
+   const text=readingText(word),synth=root.speechSynthesis,Utterance=root.SpeechSynthesisUtterance;
+   if(!text||!synth||typeof synth.speak!=='function'||typeof Utterance!=='function'){fail('일본어 음성을 재생할 수 없습니다. 잠시 후 다시 시도해주세요.');return}
+   const voice=await waitForJapaneseVoice(synth,token);
+   if(token!==request){finish(false);return}
+   if(!voice){fail('일본어 음성이 준비되지 않아 재생하지 않았습니다. 인터넷 연결 또는 일본어 음성 설정을 확인해주세요.');return}
+   try{
+    const utterance=new Utterance(text);utterance.lang='ja-JP';utterance.voice=voice;utterance.rate=1.0;speaking=utterance;
+    utterance.onstart=()=>{if(token===request&&speaking===utterance){clearWatchdog();finish(true)}};
+    utterance.onend=()=>{if(speaking!==utterance)return;speaking=null;clearWatchdog();if(!resolved)fail('일본어 음성 재생을 시작하지 못했습니다. 다시 눌러주세요.')};
+    utterance.onerror=()=>{if(speaking!==utterance)return;speaking=null;clearWatchdog();fail('일본어 음성 재생에 실패했습니다. 다시 눌러주세요.')};
+    watchdog=root.setTimeout(()=>{if(token!==request||speaking!==utterance||resolved)return;try{synth.cancel()}catch{}speaking=null;fail('일본어 음성 엔진이 응답하지 않습니다. 다시 눌러주세요.')},7000);
+    synth.speak(utterance);
+   }catch{speaking=null;clearWatchdog();fail('일본어 음성 재생을 시작하지 못했습니다. 다시 눌러주세요.')}
+  }
+  function attempt(){
+   if(token!==request){finish(false);return}clearWatchdog();
+   const url=urls[next++];if(!url||typeof root.Audio!=='function'){active=null;synthesize();return}
+   let audio;try{const cached=prepared.get(word?.id);audio=cached?.url===url&&cached.audio?cached.audio:new root.Audio(url)}catch{attempt();return}
+   active=audio;audio.preload='auto';audio.playbackRate=PLAYBACK_RATE;if(typeof audio.readyState==='number'&&audio.readyState>=1)try{audio.currentTime=0}catch{}
+   audio.onended=()=>{if(active===audio)active=null};
+   const failed=()=>{if(active!==audio||token!==request){finish(false);return}active=null;audio.onerror=null;try{audio.pause()}catch{}attempt()};audio.onerror=failed;
+   try{
+    const promise=audio.play();watchdog=root.setTimeout(()=>{if(active===audio&&token===request&&!resolved)failed()},3200);
+    if(promise&&typeof promise.then==='function')promise.then(()=>{if(active!==audio||token!==request){finish(false);return}clearWatchdog();finish(true)}).catch(failed);
+    else{clearWatchdog();finish(true)}
+   }catch{failed()}
+  }
+  if(!readingText(word)){fail('읽기 데이터가 없어 발음을 재생할 수 없습니다.');return}attempt();
+ });
+}
+root.KotobaAudio={sources,assetSource,archiveSource,prepare,clearPrepared,play,stop,readingText,japaneseVoice,validateBlob,hasRecording:word=>sources(word).length>0};
 if(typeof module!=='undefined'&&module.exports)module.exports=root.KotobaAudio;
 })(typeof window!=='undefined'?window:globalThis);

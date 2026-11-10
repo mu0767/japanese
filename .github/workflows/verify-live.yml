@@ -17,6 +17,8 @@ on:
       - 'audio-offline.js'
       - 'test-audio-offline.cjs'
       - 'audio-data.js'
+      - 'qa/audit-pronunciation.cjs'
+      - 'qa/verify-shichi-browser.cjs'
       - 'korean-data.js'
       - 'korean-krdict-data.js'
   workflow_dispatch:
@@ -45,6 +47,7 @@ jobs:
           node test-kanji.cjs
           node test-audio.cjs
           node test-audio-offline.cjs
+          node qa/audit-pronunciation.cjs --require-assets
           node test-progress.cjs
           node --check quick-export.js
       - name: Install browser harness
@@ -57,3 +60,7 @@ jobs:
         env:
           CHROME_PATH: /usr/bin/google-chrome
         run: node qa/verify-live-browser.cjs https://mu0767.github.io/japanese/
+      - name: Verify actual 七 pronunciation playback and replay
+        env:
+          CHROME_PATH: /usr/bin/google-chrome
+        run: node qa/verify-shichi-browser.cjs https://mu0767.github.io/japanese/
