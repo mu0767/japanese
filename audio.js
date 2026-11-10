@@ -73,34 +73,41 @@ function stop(){
  if(active){const old=active;active=null;old.onerror=null;try{old.pause()}catch{}}
  if(speaking){speaking.onstart=null;speaking.onerror=null;speaking.onend=null;speaking=null;try{root.speechSynthesis?.cancel()}catch{}}
 }
+// Exact human recordings take precedence. Synthesized speech receives an
+// explicit dictionary reading, never unverified kanji text.
+const spokenOverrides=Object.freeze({'こんにちは':'こんにちわ','こんばんは':'こんばんわ','それでは':'それでわ','では':'でわ','または':'またわ','あるいは':'あるいわ','じつは':'じつわ','ひいては':'ひいてわ','もしくは':'もしくわ'});
+function spokenText(word){const reading=readingText(word);return spokenOverrides[reading]||reading}
 function play(word,options={}){
  const {silent=false,notify=()=>{}}=options;stop();
- // Character-reading clips are not safe whole-word fallbacks. Only an exact
- // WaniKani spelling+reading recording can follow the generated MP3.
- const token=request,urls=[assetSource(word),...sources(word).filter(u=>u.startsWith(WANI))].filter(Boolean);
- let resolved=false,next=0;
+ const token=request,urls=[...sources(word).filter(u=>u.startsWith(WANI)),assetSource(word)].filter(Boolean);
+ let resolved=false,next=0,ttsAttempted=false;
  return new Promise(resolve=>{
-  const finish=value=>{if(!resolved){resolved=true;if(pendingFinish===finish)pendingFinish=null;resolve(value)}};pendingFinish=finish;
+  const finish=value=>{if(!resolved){resolved=true;if(pendingFinish===finish)pendingFinish=null;resolve(value)}};
+  pendingFinish=finish;
   const fail=message=>{if(token===request&&!silent)notify(message);finish(false)};
   async function synthesize(){
+   ttsAttempted=true;
    if(token!==request){finish(false);return}
-   const text=readingText(word),synth=root.speechSynthesis,Utterance=root.SpeechSynthesisUtterance;
-   if(!text||!synth||typeof synth.speak!=='function'||typeof Utterance!=='function'){fail('일본어 음성을 재생할 수 없습니다. 잠시 후 다시 시도해주세요.');return}
+   const text=spokenText(word),synth=root.speechSynthesis,Utterance=root.SpeechSynthesisUtterance;
+   if(!text||!synth||typeof synth.speak!=='function'||typeof Utterance!=='function'){attempt();return}
    const voice=await waitForJapaneseVoice(synth,token);
    if(token!==request){finish(false);return}
-   if(!voice){fail('일본어 음성이 준비되지 않아 재생하지 않았습니다. 인터넷 연결 또는 일본어 음성 설정을 확인해주세요.');return}
+   if(!voice){attempt();return}
    try{
     const utterance=new Utterance(text);utterance.lang='ja-JP';utterance.voice=voice;utterance.rate=1.0;speaking=utterance;
     utterance.onstart=()=>{if(token===request&&speaking===utterance){clearWatchdog();finish(true)}};
-    utterance.onend=()=>{if(speaking!==utterance)return;speaking=null;clearWatchdog();if(!resolved)fail('일본어 음성 재생을 시작하지 못했습니다. 다시 눌러주세요.')};
-    utterance.onerror=()=>{if(speaking!==utterance)return;speaking=null;clearWatchdog();fail('일본어 음성 재생에 실패했습니다. 다시 눌러주세요.')};
-    watchdog=root.setTimeout(()=>{if(token!==request||speaking!==utterance||resolved)return;try{synth.cancel()}catch{}speaking=null;fail('일본어 음성 엔진이 응답하지 않습니다. 다시 눌러주세요.')},7000);
+    utterance.onend=()=>{if(speaking!==utterance)return;speaking=null;clearWatchdog();if(!resolved)attempt()};
+    utterance.onerror=()=>{if(speaking!==utterance)return;speaking=null;clearWatchdog();if(!resolved)attempt()};
+    watchdog=root.setTimeout(()=>{if(token!==request||speaking!==utterance||resolved)return;try{synth.cancel()}catch{}speaking=null;attempt()},3500);
     synth.speak(utterance);
-   }catch{speaking=null;clearWatchdog();fail('일본어 음성 재생을 시작하지 못했습니다. 다시 눌러주세요.')}
+   }catch{speaking=null;clearWatchdog();attempt()}
   }
   function attempt(){
    if(token!==request){finish(false);return}clearWatchdog();
-   const url=urls[next++];if(!url||typeof root.Audio!=='function'){active=null;synthesize();return}
+   // After an exact native clip fails, try Japanese TTS before the generated MP3.
+   if(next===1&&!ttsAttempted&&urls.length===2){synthesize();return}
+   if(next===0&&!urls.some(u=>u.startsWith(WANI))&&!ttsAttempted){synthesize();return}
+   const url=urls[next++];if(!url||typeof root.Audio!=='function'){active=null;fail('일본어 발음을 재생할 수 없습니다. 일본어 음성 설정 또는 인터넷 연결을 확인해주세요.');return}
    let audio;try{const cached=prepared.get(word?.id);audio=cached?.url===url&&cached.audio?cached.audio:new root.Audio(url)}catch{attempt();return}
    active=audio;audio.preload='auto';audio.playbackRate=PLAYBACK_RATE;if(typeof audio.readyState==='number'&&audio.readyState>=1)try{audio.currentTime=0}catch{}
    audio.onended=()=>{if(active===audio)active=null};
@@ -111,9 +118,11 @@ function play(word,options={}){
     else{clearWatchdog();finish(true)}
    }catch{failed()}
   }
-  if(!readingText(word)){fail('읽기 데이터가 없어 발음을 재생할 수 없습니다.');return}attempt();
+  if(!readingText(word)){fail('읽기 데이터가 없어 발음을 재생할 수 없습니다.');return}
+  attempt();
  });
 }
+
 root.KotobaAudio={sources,assetSource,archiveSource,prepare,clearPrepared,play,stop,readingText,japaneseVoice,validateBlob,hasRecording:word=>sources(word).length>0};
 if(typeof module!=='undefined'&&module.exports)module.exports=root.KotobaAudio;
 })(typeof window!=='undefined'?window:globalThis);
