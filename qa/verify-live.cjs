@@ -41,6 +41,15 @@ async function read(path){const url=new URL(path,base);url.searchParams.set('_ve
  const zeroWave=Buffer.from(await zeroResponse.arrayBuffer());
  assert.equal(zeroWave.toString('ascii',0,4),'RIFF');
  assert(zeroWave.length>1000,'Invalid ゼロ WAV size');
+ const partial=await fetch(zeroArchive,{headers:{Range:'bytes=0-43'},cache:'no-store'});
+ assert.equal(partial.status,206,'Safari range playback must return 206 Partial Content');
+ assert.equal(partial.headers.get('content-range'),`bytes 0-43/${zeroWave.length}`);
+ assert.equal(partial.headers.get('accept-ranges'),'bytes');
+ assert.equal((await partial.arrayBuffer()).byteLength,44);
+ const suffix=await fetch(zeroArchive,{headers:{Range:'bytes=-16'},cache:'no-store'});
+ assert.equal(suffix.status,206,'Suffix byte range must be supported');
+ assert.equal((await suffix.arrayBuffer()).byteLength,16);
+
  const lastArchive=vm.runInContext("KotobaAudio.archiveSource(WORDS.filter(w=>KotobaAudio.hasRecording(w)).at(-1))",context);
  assert.match(lastArchive,/\/v1\/audio\/n\/349\//);
  const lastResponse=await fetch(lastArchive,{cache:'no-store'});
