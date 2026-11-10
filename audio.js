@@ -50,10 +50,15 @@ function prepare(words){
   // iOS may ignore audio.preload. Download the CORS WAV ahead of the click
   // and turn it into a local Blob URL for immediate playback.
   if(typeof root.fetch==='function'&&typeof root.URL?.createObjectURL==='function'){
-   root.fetch(url,{mode:'cors',cache:'force-cache'}).then(response=>{
-    if(!response.ok)throw Error('Audio prefetch failed');
-    return response.blob();
-   }).then(blob=>{
+   // Persist WAV files in CacheStorage for subsequent sessions. If the browser
+   // does not support device storage, retain the existing network/Blob path.
+   const blobPromise=root.KotobaOfflineAudio?.getBlob?
+    root.KotobaOfflineAudio.getBlob(url):
+    root.fetch(url,{mode:'cors',cache:'force-cache'}).then(response=>{
+     if(!response.ok)throw Error('Audio prefetch failed');
+     return response.blob();
+    });
+   Promise.resolve(blobPromise).then(blob=>{
     if(prepared.get(id)!==entry)return;
     entry.objectUrl=root.URL.createObjectURL(blob);
     primeElement(entry,entry.objectUrl);
