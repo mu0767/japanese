@@ -94,6 +94,50 @@ const base=(process.argv[2]||'https://mu0767.github.io/japanese/').replace(/\/?$
     assert(targetGloss.includes('돌'),'Sourced N4 Korean meaning did not appear in the actual quiz: '+targetGloss);
     for(const gloss of await page.locator('.option-gloss').allTextContents())
       assert(!gloss.includes('사전 검색 필요'),'Distractor with missing Korean meaning was selected: '+gloss);
+    // Audio → Korean meaning is a separate test type, not a variation that leaks the printed word.
+    await page.goto(base+'#home');
+    assert.equal(await page.locator('#mode option[value="listening"]').count(),1,'Listening test missing from mode selector');
+    const listeningStart=await page.evaluate(()=>{
+      level='N5'; mode='listening';scope='all';size=10;
+      const target=WORDS.find(w=>w.word==='料理'&&w.reading==='りょうり');
+      window.__realAudioPlay=KotobaAudio.play;
+      window.__spokenTestWords=[];
+      KotobaAudio.play=w=>{window.__spokenTestWords.push(w.id);return Promise.resolve(true)};
+      session={list:[target],index:0,correct:0,review:false,answers:[],answered:false,selected:null,q:null};
+      const previous=state.total;
+      quiz();
+      return {id:target.id,word:target.word,reading:target.reading,answer:KanjiDetails.korean(target),previous,spoken:window.__spokenTestWords.slice()};
+    });
+    assert.deepEqual(listeningStart.spoken,[listeningStart.id],'Listening question must automatically play Japanese pronunciation');
+    assert.equal(await page.locator('.question-card .listening-icon').count(),1,'Audio-only question illustration missing');
+    const questionHtml=await page.locator('.question-card').innerHTML();
+    assert(!questionHtml.includes(listeningStart.word)&&!questionHtml.includes(listeningStart.reading),'Question must NOT reveal Japanese spelling or reading before answer');
+    assert.equal(await page.locator('.listening-reveal').count(),0,'Answer is visible before grading');
+    const audioOptions=await page.locator('[data-option] > span:nth-child(2)').allTextContents();
+    assert.equal(audioOptions.length,4);
+    assert.equal(new Set(audioOptions).size,4,'Korean listening choices must be distinct');
+    assert(audioOptions.includes(listeningStart.answer),'Listening quiz has no correct Korean answer');
+    await page.locator('#speak').click();
+    assert.equal(await page.evaluate(()=>window.__spokenTestWords.length),2,'Replay button must repeat the same audio before answer');
+    await page.locator('[data-option]').nth(audioOptions.indexOf(listeningStart.answer)).click();
+    await page.locator('#confirm').click();
+    assert.equal(await page.locator('.option.correct').count(),1);
+    assert((await page.locator('.listening-reveal').textContent()).includes(listeningStart.word));
+    assert((await page.locator('.listening-reveal').textContent()).includes(listeningStart.reading));
+    assert((await page.locator('.listening-reveal').textContent()).includes(listeningStart.answer));
+    await page.locator('#replay-answer').click();
+    const listeningEnd=await page.evaluate(()=>{
+      const snapshot={spoken:window.__spokenTestWords.slice(),total:state.total,correct:session.correct,answers:session.answers.map(a=>({id:a.word.id,correct:a.correct}))};
+      KotobaAudio.play=window.__realAudioPlay;
+      delete window.__realAudioPlay;
+      delete window.__spokenTestWords;
+      return snapshot;
+    });
+    assert.equal(listeningEnd.spoken.length,3,'Replaying answer must use same target audio');
+    assert.equal(listeningEnd.total,listeningStart.previous+1,'Listening result not saved in progress');
+    assert.equal(listeningEnd.correct,1);
+    assert.deepEqual(listeningEnd.answers,[{id:listeningStart.id,correct:true}]);
+    console.log('PASS: audio-first quiz hides Japanese, autoplays, four Korean choices, replay, reveals answer and records score.');
     console.log('PASS: public site 390px quiz, sourced N4 meanings, Korean distractors, colors, audio replay and score.');
     // Default study scope must exclude correctly learned words, but include missed and unseen.
     const scopeState=await page.evaluate(()=>{
