@@ -1,0 +1,2472 @@
+{
+  "version": 2,
+  "engine": "Open JTalk 1.11 forced NJD pronunciation / NIT ATR503 M001",
+  "voiceAttribution": "HTS Working Group / Nagoya Institute of Technology, NIT ATR503 M001 voice; see VOICE-LICENSE.txt",
+  "dictionary": "NAIST Japanese dictionary; MeCab segmentation bypassed for explicit kana pronunciation",
+  "phonemeMethod": "One structured NJD feature with explicit pron/read/mora_size; make_label directly converts it through njd2jpcommon. Accent=0 (neutral synthesis), not a verified pitch-accent dictionary.",
+  "source": "https://open-jtalk.sourceforge.net/",
+  "generatedAt": "2026-11-10T14:31:59.715Z",
+  "totalWords": 7811,
+  "total": 98,
+  "voiceLicenseFile": "VOICE-LICENSE.txt",
+  "validation": "All-word forced-label audit, exact kana-to-phoneme comparison, PCM energy/duration, encoded MP3 stream, SHA-256. This is not human listening verification.",
+  "items": [
+    {
+      "id": "N1-013f46c118",
+      "word": "児",
+      "reading": "こ",
+      "input": "コ。",
+      "inputSha256": "c99a2bf1caca3b7ceb1dbaf2e231e848e946e971f2b0cabf6e37f9aa2a73df90",
+      "path": "pronunciation/N1/N1-013f46c118.mp3",
+      "sha256": "9a322f92b6f21bf96f7f49e025a63dc2fe085c65a20f652540454e8b15b11aca",
+      "bytes": 3426,
+      "phonemes": [
+        "k",
+        "o"
+      ],
+      "expectedPhonemes": [
+        "k",
+        "o"
+      ],
+      "labelSha256": "611c4f316a0ecf7fd7663b17e12b7f2da40215abab10c86a2da9454b322fd27f",
+      "durationSeconds": 1.11,
+      "rms": 0.0447372,
+      "peak": 0.3950806,
+      "sampleRate": 48000,
+      "channels": 1
+    },
+    {
+      "id": "N1-02a57db00d",
+      "word": "非",
+      "reading": "ひ",
+      "input": "ヒ。",
+      "inputSha256": "fdfeb12675a247fdff14a93723a5c7ea650db269d61b246233345011f2e494a7",
+      "path": "pronunciation/N1/N1-02a57db00d.mp3",
+      "sha256": "90e5ada06078663afca6534259360b0dabf08afcc4bb0f6fe4bac64abb8b351c",
+      "bytes": 2724,
+      "phonemes": [
+        "h",
+        "i"
+      ],
+      "expectedPhonemes": [
+        "h",
+        "i"
+      ],
+      "labelSha256": "1c90cae2d0fe61ead346d637d475e489d53bbc9fa759e5d80d547928126739a2",
+      "durationSeconds": 1.01,
+      "rms": 0.028303,
+      "peak": 0.3599854,
+      "sampleRate": 48000,
+      "channels": 1
+    },
+    {
+      "id": "N1-10c1ffea60",
+      "word": "故",
+      "reading": "こ",
+      "input": "コ。",
+      "inputSha256": "c99a2bf1caca3b7ceb1dbaf2e231e848e946e971f2b0cabf6e37f9aa2a73df90",
+      "path": "pronunciation/N1/N1-10c1ffea60.mp3",
+      "sha256": "9a322f92b6f21bf96f7f49e025a63dc2fe085c65a20f652540454e8b15b11aca",
+      "bytes": 3426,
+      "phonemes": [
+        "k",
+        "o"
+      ],
+      "expectedPhonemes": [
+        "k",
+        "o"
+      ],
+      "labelSha256": "611c4f316a0ecf7fd7663b17e12b7f2da40215abab10c86a2da9454b322fd27f",
+      "durationSeconds": 1.11,
+      "rms": 0.0447372,
+      "peak": 0.3950806,
+      "sampleRate": 48000,
+      "channels": 1
+    },
+    {
+      "id": "N1-1e176e82e5",
+      "word": "戸",
+      "reading": "こ",
+      "input": "コ。",
+      "inputSha256": "c99a2bf1caca3b7ceb1dbaf2e231e848e946e971f2b0cabf6e37f9aa2a73df90",
+      "path": "pronunciation/N1/N1-1e176e82e5.mp3",
+      "sha256": "9a322f92b6f21bf96f7f49e025a63dc2fe085c65a20f652540454e8b15b11aca",
+      "bytes": 3426,
+      "phonemes": [
+        "k",
+        "o"
+      ],
+      "expectedPhonemes": [
+        "k",
+        "o"
+      ],
+      "labelSha256": "611c4f316a0ecf7fd7663b17e12b7f2da40215abab10c86a2da9454b322fd27f",
+      "durationSeconds": 1.11,
+      "rms": 0.0447372,
+      "peak": 0.3950806,
+      "sampleRate": 48000,
+      "channels": 1
+    },
+    {
+      "id": "N1-1e2cd74d5d",
+      "word": "卯",
+      "reading": "う",
+      "input": "ウ。",
+      "inputSha256": "ffa5e07f0cdf8a4884248d0916d7414a4226bd2cb546beb4232c022d39783504",
+      "path": "pronunciation/N1/N1-1e2cd74d5d.mp3",
+      "sha256": "184829cba68833d32d201c6a960f8e5523f0c764ca0d715a2352c952f23a336f",
+      "bytes": 2698,
+      "phonemes": [
+        "u"
+      ],
+      "expectedPhonemes": [
+        "u"
+      ],
+      "labelSha256": "77a324e0cba22e949fb3885c40fe8e5c0686518cf64ebcfeb1aefdc46eadea68",
+      "durationSeconds": 1.04,
+      "rms": 0.0897756,
+      "peak": 1,
+      "sampleRate": 48000,
+      "channels": 1
+    },
+    {
+      "id": "N1-290e4e8db6",
+      "word": "と",
+      "reading": "と",
+      "input": "ト。",
+      "inputSha256": "d1715eaf0ff38fbb67afe89d644ef7a356d4644c5f4c2b893d3a21d5d11c559b",
+      "path": "pronunciation/N1/N1-290e4e8db6.mp3",
+      "sha256": "4e17c5801eb7af8e263dec7d1b29b72fcc8101178c1748ac5330e2677c544d98",
+      "bytes": 3114,
+      "phonemes": [
+        "t",
+        "o"
+      ],
+      "expectedPhonemes": [
+        "t",
+        "o"
+      ],
+      "labelSha256": "5edc584f0b485299258e39e3f16ea1b8aa04bb860de3fedd8425c0b247b953a2",
+      "durationSeconds": 1.1,
+      "rms": 0.0229238,
+      "peak": 0.2125244,
+      "sampleRate": 48000,
+      "channels": 1
+    },
+    {
+      "id": "N1-2ec5748d47",
+      "word": "部",
+      "reading": "ぶ",
+      "input": "ブ。",
+      "inputSha256": "ef6e1a0ff4baec5586afde8dbc9590a5487d0f7ea74664cd158ff920e514fc4d",
+      "path": "pronunciation/N1/N1-2ec5748d47.mp3",
+      "sha256": "cada1978cfb0f12af0b10d2d0aa5d2f9237b173e0e0065cd46a1a1744fec6e1f",
+      "bytes": 2984,
+      "phonemes": [
+        "b",
+        "u"
+      ],
+      "expectedPhonemes": [
+        "b",
+        "u"
+      ],
+      "labelSha256": "c81a4ba4b382d522305b497db7b0bc47f35f0859b27fb28c53c1ea1e96852cbe",
+      "durationSeconds": 1.105,
+      "rms": 0.0709739,
+      "peak": 0.6670227,
+      "sampleRate": 48000,
+      "channels": 1
+    },
+    {
+      "id": "N1-529c76a4cf",
+      "word": "期",
+      "reading": "き",
+      "input": "キ。",
+      "inputSha256": "c3b767960c29679aa75d604f716c8b66384d8c2e95fe48591427609a569af4f2",
+      "path": "pronunciation/N1/N1-529c76a4cf.mp3",
+      "sha256": "2fedfe75149901292afd227f6d4c4d2886e706316181584f4a290da88a4b0054",
+      "bytes": 2880,
+      "phonemes": [
+        "k",
+        "i"
+      ],
+      "expectedPhonemes": [
+        "k",
+        "i"
+      ],
+      "labelSha256": "a0b296c4959f7c87887abad61eaae358cfcc767d8e9b72b173dcf6c39dedce61",
+      "durationSeconds": 1.07,
+      "rms": 0.0185403,
+      "peak": 0.2414246,
+      "sampleRate": 48000,
+      "channels": 1
+    },
+    {
+      "id": "N1-56ffead6fe",
+      "word": "個",
+      "reading": "こ",
+      "input": "コ。",
+      "inputSha256": "c99a2bf1caca3b7ceb1dbaf2e231e848e946e971f2b0cabf6e37f9aa2a73df90",
+      "path": "pronunciation/N1/N1-56ffead6fe.mp3",
+      "sha256": "9a322f92b6f21bf96f7f49e025a63dc2fe085c65a20f652540454e8b15b11aca",
+      "bytes": 3426,
+      "phonemes": [
+        "k",
+        "o"
+      ],
+      "expectedPhonemes": [
+        "k",
+        "o"
+      ],
+      "labelSha256": "611c4f316a0ecf7fd7663b17e12b7f2da40215abab10c86a2da9454b322fd27f",
+      "durationSeconds": 1.11,
+      "rms": 0.0447372,
+      "peak": 0.3950806,
+      "sampleRate": 48000,
+      "channels": 1
+    },
+    {
+      "id": "N1-5da1033412",
+      "word": "会",
+      "reading": "え",
+      "input": "エ。",
+      "inputSha256": "a5d51934cc2361b159df6f14223ec346ef99e6029b9c076c75b61ec52d37d9c9",
+      "path": "pronunciation/N1/N1-5da1033412.mp3",
+      "sha256": "f02ddbbd1196c6a9479a746383bb2ba5388f07042ca2490ccb609d6441394fac",
+      "bytes": 2698,
+      "phonemes": [
+        "e"
+      ],
+      "expectedPhonemes": [
+        "e"
+      ],
+      "labelSha256": "dcf055da92cb4f4801d975ab49376d3723d6b3ce0f20d1f91aec01a25ab42992",
+      "durationSeconds": 1.03,
+      "rms": 0.0224316,
+      "peak": 0.3655701,
+      "sampleRate": 48000,
+      "channels": 1
+    },
+    {
+      "id": "N1-5fd6ea6d24",
+      "word": "重",
+      "reading": "え",
+      "input": "エ。",
+      "inputSha256": "a5d51934cc2361b159df6f14223ec346ef99e6029b9c076c75b61ec52d37d9c9",
+      "path": "pronunciation/N1/N1-5fd6ea6d24.mp3",
+      "sha256": "f02ddbbd1196c6a9479a746383bb2ba5388f07042ca2490ccb609d6441394fac",
+      "bytes": 2698,
+      "phonemes": [
+        "e"
+      ],
+      "expectedPhonemes": [
+        "e"
+      ],
+      "labelSha256": "dcf055da92cb4f4801d975ab49376d3723d6b3ce0f20d1f91aec01a25ab42992",
+      "durationSeconds": 1.03,
+      "rms": 0.0224316,
+      "peak": 0.3655701,
+      "sampleRate": 48000,
+      "channels": 1
+    },
+    {
+      "id": "N1-661d1ef651",
+      "word": "刃",
+      "reading": "は",
+      "input": "ハ。",
+      "inputSha256": "3d5de7641eb0be4b820e3ad86fa216e8301174cdd2d33453227f42629675577f",
+      "path": "pronunciation/N1/N1-661d1ef651.mp3",
+      "sha256": "be7ab8663ef1065793dc949af1851126d54baacfc747c21882f82d5588e9c146",
+      "bytes": 3713,
+      "phonemes": [
+        "h",
+        "a"
+      ],
+      "expectedPhonemes": [
+        "h",
+        "a"
+      ],
+      "labelSha256": "c865a0caa09bcc116a578cf7f82ffb295e44b63cb13fb2cf1b52a1878ca88b3d",
+      "durationSeconds": 1.12,
+      "rms": 0.0551493,
+      "peak": 0.7139282,
+      "sampleRate": 48000,
+      "channels": 1
+    },
+    {
+      "id": "N1-6898b85866",
+      "word": "歩",
+      "reading": "ふ",
+      "input": "フ。",
+      "inputSha256": "1c22c5d8be0c341af35099849288c02fc32d0a572862013ed7317d2f547994a9",
+      "path": "pronunciation/N1/N1-6898b85866.mp3",
+      "sha256": "5374dde39a75767555b79731fd58c5c9b664415e517d243b13da5eb96fa5c638",
+      "bytes": 3219,
+      "phonemes": [
+        "f",
+        "u"
+      ],
+      "expectedPhonemes": [
+        "f",
+        "u"
+      ],
+      "labelSha256": "747ac318ce498a9aaaa72c136fbb88d99dc283939db29cea20ede1de1c8ab842",
+      "durationSeconds": 1.06,
+      "rms": 0.1188565,
+      "peak": 1,
+      "sampleRate": 48000,
+      "channels": 1
+    },
+    {
+      "id": "N1-68e9c896bf",
+      "word": "三",
+      "reading": "み",
+      "input": "ミ。",
+      "inputSha256": "53924d7a6080b9032181786a334e3964ed2e2a794d0a0e5d6ab278aea9d354dc",
+      "path": "pronunciation/N1/N1-68e9c896bf.mp3",
+      "sha256": "e5e0811c11a35c7fb490235eca3a45ff692e54aa4584cdcc5a76316306714349",
+      "bytes": 2749,
+      "phonemes": [
+        "m",
+        "i"
+      ],
+      "expectedPhonemes": [
+        "m",
+        "i"
+      ],
+      "labelSha256": "8434a348c2485a5062fe29b17e9fff6cded36f16fed4ed8a7f068f39d3f02ab8",
+      "durationSeconds": 1.095,
+      "rms": 0.0292773,
+      "peak": 0.3010559,
+      "sampleRate": 48000,
+      "channels": 1
+    },
+    {
+      "id": "N1-6a84853cf2",
+      "word": "延いては",
+      "reading": "ひいては",
+      "input": "ヒイテワ。",
+      "inputOverride": "The written particle は is pronounced wa in this expression; the visible vocabulary reading is retained.",
+      "inputSha256": "f1f9ecab2f19960ad64fd58e087eed75aa68220f0843e46352a3594b5765b45a",
+      "path": "pronunciation/N1/N1-6a84853cf2.mp3",
+      "sha256": "f4f8fa09b54da2e5a36723f07a90dc8e8f515e66b75235c3ee65751521a9f99a",
+      "bytes": 6188,
+      "phonemes": [
+        "h",
+        "i",
+        "i",
+        "t",
+        "e",
+        "w",
+        "a"
+      ],
+      "expectedPhonemes": [
+        "h",
+        "i",
+        "i",
+        "t",
+        "e",
+        "w",
+        "a"
+      ],
+      "labelSha256": "e60c4e171b9cd63cf14e58ec3beaa5cc4fc7b5b67f4b62dccc87a64e18cd06ce",
+      "durationSeconds": 1.465,
+      "rms": 0.0421766,
+      "peak": 0.2989197,
+      "sampleRate": 48000,
+      "channels": 1
+    },
+    {
+      "id": "N1-7abab0200b",
+      "word": "派",
+      "reading": "は",
+      "input": "ハ。",
+      "inputSha256": "3d5de7641eb0be4b820e3ad86fa216e8301174cdd2d33453227f42629675577f",
+      "path": "pronunciation/N1/N1-7abab0200b.mp3",
+      "sha256": "be7ab8663ef1065793dc949af1851126d54baacfc747c21882f82d5588e9c146",
+      "bytes": 3713,
+      "phonemes": [
+        "h",
+        "a"
+      ],
+      "expectedPhonemes": [
+        "h",
+        "a"
+      ],
+      "labelSha256": "c865a0caa09bcc116a578cf7f82ffb295e44b63cb13fb2cf1b52a1878ca88b3d",
+      "durationSeconds": 1.12,
+      "rms": 0.0551493,
+      "peak": 0.7139282,
+      "sampleRate": 48000,
+      "channels": 1
+    },
+    {
+      "id": "N1-88e26cec55",
+      "word": "音",
+      "reading": "ね",
+      "input": "ネ。",
+      "inputSha256": "852256260e972943a7e8a1d9d871be8bf6dd7d75d53f578b29ba58c559621826",
+      "path": "pronunciation/N1/N1-88e26cec55.mp3",
+      "sha256": "54ec8c61ece250274a47f919bba8b3b250c7c74cdd8f74e150790955be6f4aa0",
+      "bytes": 2931,
+      "phonemes": [
+        "n",
+        "e"
+      ],
+      "expectedPhonemes": [
+        "n",
+        "e"
+      ],
+      "labelSha256": "2b5aa071add5ca24f347bf74c213c9225c0de43c57dc75cd5f984143c70f84ee",
+      "durationSeconds": 1.08,
+      "rms": 0.0407647,
+      "peak": 0.5788574,
+      "sampleRate": 48000,
+      "channels": 1
+    },
+    {
+      "id": "N1-9413788b34",
+      "word": "世",
+      "reading": "よ",
+      "input": "ヨ。",
+      "inputSha256": "6b6c5f0278bda5ef4173219d25cdff6806da5f340f618c6eed2b78fadb7ff9a5",
+      "path": "pronunciation/N1/N1-9413788b34.mp3",
+      "sha256": "5466c9b2b9d6054925387713fde04e6f3998badd64ba7c8f89b8be3335beb097",
+      "bytes": 3322,
+      "phonemes": [
+        "y",
+        "o"
+      ],
+      "expectedPhonemes": [
+        "y",
+        "o"
+      ],
+      "labelSha256": "d0345ad9ebc29a4db0a6c7ac8c94f79ff4965ac8d2e63e9911a3e32834cf7c3f",
+      "durationSeconds": 1.135,
+      "rms": 0.0462784,
+      "peak": 0.4216919,
+      "sampleRate": 48000,
+      "channels": 1
+    },
+    {
+      "id": "N1-962a85276b",
+      "word": "費",
+      "reading": "ひ",
+      "input": "ヒ。",
+      "inputSha256": "fdfeb12675a247fdff14a93723a5c7ea650db269d61b246233345011f2e494a7",
+      "path": "pronunciation/N1/N1-962a85276b.mp3",
+      "sha256": "90e5ada06078663afca6534259360b0dabf08afcc4bb0f6fe4bac64abb8b351c",
+      "bytes": 2724,
+      "phonemes": [
+        "h",
+        "i"
+      ],
+      "expectedPhonemes": [
+        "h",
+        "i"
+      ],
+      "labelSha256": "1c90cae2d0fe61ead346d637d475e489d53bbc9fa759e5d80d547928126739a2",
+      "durationSeconds": 1.01,
+      "rms": 0.028303,
+      "peak": 0.3599854,
+      "sampleRate": 48000,
+      "channels": 1
+    },
+    {
+      "id": "N1-966e181cea",
+      "word": "次",
+      "reading": "じ",
+      "input": "ジ。",
+      "inputSha256": "631831f055d121fa1865b46125b9cb77676071336ece6266d87f96e0deeb26d9",
+      "path": "pronunciation/N1/N1-966e181cea.mp3",
+      "sha256": "1083d969890f8934d877fde66e97d62a7f25a91ce959e516ad0efed43659876c",
+      "bytes": 2906,
+      "phonemes": [
+        "j",
+        "i"
+      ],
+      "expectedPhonemes": [
+        "j",
+        "i"
+      ],
+      "labelSha256": "0aa4bfdf71a819c6bf66fe75c1cbc587ba848de708517c322183c4a2d24601e4",
+      "durationSeconds": 1.095,
+      "rms": 0.0204679,
+      "peak": 0.2454529,
+      "sampleRate": 48000,
+      "channels": 1
+    },
+    {
+      "id": "N1-a017bb3c0c",
+      "word": "御",
+      "reading": "ご",
+      "input": "ゴ。",
+      "inputSha256": "4a7cab658a92af4f4f163ed1db67dccad33ecd64ec5712f1c7007d02aff0e5c8",
+      "path": "pronunciation/N1/N1-a017bb3c0c.mp3",
+      "sha256": "87ae697d0c17a6ae93a74b5098de7e5185859eda67dccf74187784682b04e284",
+      "bytes": 3427,
+      "phonemes": [
+        "g",
+        "o"
+      ],
+      "expectedPhonemes": [
+        "g",
+        "o"
+      ],
+      "labelSha256": "c00c9a76f4d027cfbeca8c4f0088ff2468daa228c9335c2ccacf64e34823b180",
+      "durationSeconds": 1.13,
+      "rms": 0.0740548,
+      "peak": 0.6619263,
+      "sampleRate": 48000,
+      "channels": 1
+    },
+    {
+      "id": "N1-ad00cfc278",
+      "word": "尾",
+      "reading": "お",
+      "input": "オ。",
+      "inputSha256": "f38034f940103e734b39e29e414ef45125f1e6af40becbe80d06f289debb4ba6",
+      "path": "pronunciation/N1/N1-ad00cfc278.mp3",
+      "sha256": "3fb0d0e9032731c44752f657e363350146599e633272488d9ae60ceda61b4f13",
+      "bytes": 2853,
+      "phonemes": [
+        "o"
+      ],
+      "expectedPhonemes": [
+        "o"
+      ],
+      "labelSha256": "870d63453bbbd7616fd9af7d941583da9ec0f6b6591e9850f0025dd185f8f41d",
+      "durationSeconds": 1.07,
+      "rms": 0.0635247,
+      "peak": 0.671936,
+      "sampleRate": 48000,
+      "channels": 1
+    },
+    {
+      "id": "N1-b25cbb229f",
+      "word": "美",
+      "reading": "び",
+      "input": "ビ。",
+      "inputSha256": "92c7ec99d8b48ea4ffe3e9a8529e505fa5101a81febd4eda3e71002f876685ec",
+      "path": "pronunciation/N1/N1-b25cbb229f.mp3",
+      "sha256": "7401fc8360916b3ef63cec713e43b5b40e5c5983fee552dacc3bf28290bd4602",
+      "bytes": 2775,
+      "phonemes": [
+        "b",
+        "i"
+      ],
+      "expectedPhonemes": [
+        "b",
+        "i"
+      ],
+      "labelSha256": "9470205a8e751b98d2eef312317efd65010e9660c19fcbe502eda09ea46364c7",
+      "durationSeconds": 1.095,
+      "rms": 0.0384903,
+      "peak": 0.4940491,
+      "sampleRate": 48000,
+      "channels": 1
+    },
+    {
+      "id": "N1-b4527d4c3b",
+      "word": "和",
+      "reading": "わ",
+      "input": "ワ。",
+      "inputSha256": "f770d868e0d711ece5e324595daa1642f89dc7ee563a33b6a27bdeca8cbb3f3b",
+      "path": "pronunciation/N1/N1-b4527d4c3b.mp3",
+      "sha256": "4695888e69574a4c6677c451eacce2db0c4eec577f427236754871c16a207675",
+      "bytes": 3556,
+      "phonemes": [
+        "w",
+        "a"
+      ],
+      "expectedPhonemes": [
+        "w",
+        "a"
+      ],
+      "labelSha256": "edb5d0860a85e1270f1350f510a2d8be443d5d457d7baee9a6f2a67ee049c58c",
+      "durationSeconds": 1.17,
+      "rms": 0.0582721,
+      "peak": 0.8061218,
+      "sampleRate": 48000,
+      "channels": 1
+    },
+    {
+      "id": "N1-b68826cd51",
+      "word": "荷",
+      "reading": "に",
+      "input": "ニ。",
+      "inputSha256": "846d1c95ae0dd3d7681a64bc00ae5a461c2629ceba95c4e64f73d43debf8f1e6",
+      "path": "pronunciation/N1/N1-b68826cd51.mp3",
+      "sha256": "dc7b8d10c88ed89f20b579b68789c04431995f3d648e00f287356b0373e2ce68",
+      "bytes": 2802,
+      "phonemes": [
+        "n",
+        "i"
+      ],
+      "expectedPhonemes": [
+        "n",
+        "i"
+      ],
+      "labelSha256": "3248154d82349689445bbcfd96276eb9cc07da2da84e7daffef4b934d7e000a0",
+      "durationSeconds": 1.09,
+      "rms": 0.0321968,
+      "peak": 0.4105225,
+      "sampleRate": 48000,
+      "channels": 1
+    },
+    {
+      "id": "N1-b81e9f6d15",
+      "word": "若しくは",
+      "reading": "もしくは",
+      "input": "モシクワ。",
+      "inputOverride": "The written particle は is pronounced wa in this expression; the visible vocabulary reading is retained.",
+      "inputSha256": "a0569b03f15b2d82293b0ebc5865c0e397e40bdaaddf3e48e8e7f969683a463f",
+      "path": "pronunciation/N1/N1-b81e9f6d15.mp3",
+      "sha256": "67585508ac0ee284cf8f90b530f86e8bdff8d30a6019bb6df6a62c043e4e18cd",
+      "bytes": 5532,
+      "phonemes": [
+        "m",
+        "o",
+        "sh",
+        "i",
+        "k",
+        "u",
+        "w",
+        "a"
+      ],
+      "expectedPhonemes": [
+        "m",
+        "o",
+        "sh",
+        "i",
+        "k",
+        "u",
+        "w",
+        "a"
+      ],
+      "labelSha256": "d8482a202a971c160733d23a3f620dbe4bb363c9f17a8a17655f67ae9690614e",
+      "durationSeconds": 1.535,
+      "rms": 0.0377558,
+      "peak": 0.3221436,
+      "sampleRate": 48000,
+      "channels": 1
+    },
+    {
+      "id": "N1-b8aa9a9501",
+      "word": "矢",
+      "reading": "や",
+      "input": "ヤ。",
+      "inputSha256": "2e4f1d6478cd3f733ab51437fd31a1a4cfd5c1e87062709ad2f48d1947cb26e9",
+      "path": "pronunciation/N1/N1-b8aa9a9501.mp3",
+      "sha256": "3019e6f2843e4848d258b2fcdbae234ebe2e5ba0d44be33717a016e2febd350f",
+      "bytes": 3634,
+      "phonemes": [
+        "y",
+        "a"
+      ],
+      "expectedPhonemes": [
+        "y",
+        "a"
+      ],
+      "labelSha256": "fd0a564a4687be7e2637a15004c0fbf33474e968aa3bf7bc85ae63d68cf18e4b",
+      "durationSeconds": 1.205,
+      "rms": 0.0384702,
+      "peak": 0.3597107,
+      "sampleRate": 48000,
+      "channels": 1
+    },
+    {
+      "id": "N1-bacad0baf0",
+      "word": "科",
+      "reading": "か",
+      "input": "カ。",
+      "inputSha256": "5cc5af6e5ba8cff2d3c3a9b9c3b8c21c582a36b29d8ee98dba7e1bfae5ad7d6f",
+      "path": "pronunciation/N1/N1-bacad0baf0.mp3",
+      "sha256": "93e583b4d8c6f6dd238a0c3511532037dbade2dfc0c17bba8ac3c8a0a743bafd",
+      "bytes": 3557,
+      "phonemes": [
+        "k",
+        "a"
+      ],
+      "expectedPhonemes": [
+        "k",
+        "a"
+      ],
+      "labelSha256": "63cbafd1412eeb151d8d62d75512f2acbfda49e4f4bcd5b57173d50dd57e0284",
+      "durationSeconds": 1.11,
+      "rms": 0.0192232,
+      "peak": 0.2369995,
+      "sampleRate": 48000,
+      "channels": 1
+    },
+    {
+      "id": "N1-bb46d28cb9",
+      "word": "区",
+      "reading": "く",
+      "input": "ク。",
+      "inputSha256": "bd2f6027e3a8f9f0bc82ca92c698fe5edfd7046dc95002bb81f524a548e10ebd",
+      "path": "pronunciation/N1/N1-bb46d28cb9.mp3",
+      "sha256": "584e6b530d8c1fdc8261355fd4fada8aeea3a4be09531bad2b0bd13c717c095f",
+      "bytes": 3219,
+      "phonemes": [
+        "k",
+        "u"
+      ],
+      "expectedPhonemes": [
+        "k",
+        "u"
+      ],
+      "labelSha256": "4a30994a6b4699186d345cbb99b15f89b968d665f3ccd8368ba40d92f3702891",
+      "durationSeconds": 1.08,
+      "rms": 0.0640345,
+      "peak": 0.6838989,
+      "sampleRate": 48000,
+      "channels": 1
+    },
+    {
+      "id": "N1-d05c2603fa",
+      "word": "穂",
+      "reading": "ほ",
+      "input": "ホ。",
+      "inputSha256": "91b12a2c7fd27a3a76444c30b1aa2dde05ed8f38c796840fb4be28a29dc42a64",
+      "path": "pronunciation/N1/N1-d05c2603fa.mp3",
+      "sha256": "d1256cd87658b8bc952be9eef569b2b31f2a15afb19f25fc87eae2d1c986959d",
+      "bytes": 3401,
+      "phonemes": [
+        "h",
+        "o"
+      ],
+      "expectedPhonemes": [
+        "h",
+        "o"
+      ],
+      "labelSha256": "462e7bcc55d5aa2a8ee88a03bd8763e9096f1183fb6496b3f67c3370df610a8e",
+      "durationSeconds": 1.05,
+      "rms": 0.1069226,
+      "peak": 0.9999695,
+      "sampleRate": 48000,
+      "channels": 1
+    },
+    {
+      "id": "N1-ee1a37fa61",
+      "word": "死",
+      "reading": "し",
+      "input": "シ。",
+      "inputSha256": "126b1663725c746bfb968575c68c080b50f03eb7a0d36848a5ab9549ee1181a6",
+      "path": "pronunciation/N1/N1-ee1a37fa61.mp3",
+      "sha256": "3ecfb76d601b8311ba447d18e3d9288b169b03f6e67dbafc2aa16a9583a3400b",
+      "bytes": 3349,
+      "phonemes": [
+        "sh",
+        "i"
+      ],
+      "expectedPhonemes": [
+        "sh",
+        "i"
+      ],
+      "labelSha256": "bc2ca27ec4732a11371a673960246710d835eea206aa25c1de873bbd4164ade4",
+      "durationSeconds": 1.045,
+      "rms": 0.0181075,
+      "peak": 0.2185364,
+      "sampleRate": 48000,
+      "channels": 1
+    },
+    {
+      "id": "N1-f1134267ba",
+      "word": "生",
+      "reading": "き",
+      "input": "キ。",
+      "inputSha256": "c3b767960c29679aa75d604f716c8b66384d8c2e95fe48591427609a569af4f2",
+      "path": "pronunciation/N1/N1-f1134267ba.mp3",
+      "sha256": "2fedfe75149901292afd227f6d4c4d2886e706316181584f4a290da88a4b0054",
+      "bytes": 2880,
+      "phonemes": [
+        "k",
+        "i"
+      ],
+      "expectedPhonemes": [
+        "k",
+        "i"
+      ],
+      "labelSha256": "a0b296c4959f7c87887abad61eaae358cfcc767d8e9b72b173dcf6c39dedce61",
+      "durationSeconds": 1.07,
+      "rms": 0.0185403,
+      "peak": 0.2414246,
+      "sampleRate": 48000,
+      "channels": 1
+    },
+    {
+      "id": "N2-b5cc2a03d3",
+      "word": "蚊",
+      "reading": "か",
+      "input": "カ。",
+      "inputSha256": "5cc5af6e5ba8cff2d3c3a9b9c3b8c21c582a36b29d8ee98dba7e1bfae5ad7d6f",
+      "path": "pronunciation/N2/N2-b5cc2a03d3.mp3",
+      "sha256": "93e583b4d8c6f6dd238a0c3511532037dbade2dfc0c17bba8ac3c8a0a743bafd",
+      "bytes": 3557,
+      "phonemes": [
+        "k",
+        "a"
+      ],
+      "expectedPhonemes": [
+        "k",
+        "a"
+      ],
+      "labelSha256": "63cbafd1412eeb151d8d62d75512f2acbfda49e4f4bcd5b57173d50dd57e0284",
+      "durationSeconds": 1.11,
+      "rms": 0.0192232,
+      "peak": 0.2369995,
+      "sampleRate": 48000,
+      "channels": 1
+    },
+    {
+      "id": "N2-e629f38882",
+      "word": "酢",
+      "reading": "す",
+      "input": "ス。",
+      "inputSha256": "959eb6ec7a1c59492309212db742da4a053ee7f6eeffc8bf6e00050f39fc9442",
+      "path": "pronunciation/N2/N2-e629f38882.mp3",
+      "sha256": "832747ee1aae8355c984c323d2e3495b9a5b59e6d410cff308d5d6a17b2048b4",
+      "bytes": 3140,
+      "phonemes": [
+        "s",
+        "u"
+      ],
+      "expectedPhonemes": [
+        "s",
+        "u"
+      ],
+      "labelSha256": "602c33f5cd3f87c723ad24921194f3cf0ff6129c0fafb0d68d70eca02f0191dc",
+      "durationSeconds": 1.075,
+      "rms": 0.0178148,
+      "peak": 0.1808472,
+      "sampleRate": 48000,
+      "channels": 1
+    },
+    {
+      "id": "N2-f3da3248a8",
+      "word": "碁",
+      "reading": "ご",
+      "input": "ゴ。",
+      "inputSha256": "4a7cab658a92af4f4f163ed1db67dccad33ecd64ec5712f1c7007d02aff0e5c8",
+      "path": "pronunciation/N2/N2-f3da3248a8.mp3",
+      "sha256": "87ae697d0c17a6ae93a74b5098de7e5185859eda67dccf74187784682b04e284",
+      "bytes": 3427,
+      "phonemes": [
+        "g",
+        "o"
+      ],
+      "expectedPhonemes": [
+        "g",
+        "o"
+      ],
+      "labelSha256": "c00c9a76f4d027cfbeca8c4f0088ff2468daa228c9335c2ccacf64e34823b180",
+      "durationSeconds": 1.13,
+      "rms": 0.0740548,
+      "peak": 0.6619263,
+      "sampleRate": 48000,
+      "channels": 1
+    },
+    {
+      "id": "N3-0adf15ff3f",
+      "word": "胃",
+      "reading": "い",
+      "input": "イ。",
+      "inputSha256": "03abd789f42bdbfb565e7ca7c4e22770c4e21d787b989530e221d8940578338b",
+      "path": "pronunciation/N3/N3-0adf15ff3f.mp3",
+      "sha256": "6b86633379bcfa0e0cac5e48353f853c1cde0c04933cc970580b5d5a769a5283",
+      "bytes": 2385,
+      "phonemes": [
+        "i"
+      ],
+      "expectedPhonemes": [
+        "i"
+      ],
+      "labelSha256": "2827417fbc5af7b5d978a967f8d1ee715abb3b6b87f0545fd33c199f798d0ee3",
+      "durationSeconds": 1.03,
+      "rms": 0.0236244,
+      "peak": 0.3333435,
+      "sampleRate": 48000,
+      "channels": 1
+    },
+    {
+      "id": "N3-1357988d61",
+      "word": "芽",
+      "reading": "め",
+      "input": "メ。",
+      "inputSha256": "53273adf934678a7c91c426de5c6ac466c34d7b5524407452d5a11e93f88158e",
+      "path": "pronunciation/N3/N3-1357988d61.mp3",
+      "sha256": "e1be0e6fe649871b3232a1b48662d2b15e880ec3b24ab19012e9743558310d71",
+      "bytes": 2984,
+      "phonemes": [
+        "m",
+        "e"
+      ],
+      "expectedPhonemes": [
+        "m",
+        "e"
+      ],
+      "labelSha256": "c3da8779bc694315000692c972441f1e674f0d69b930267395290ad329de54b7",
+      "durationSeconds": 1.095,
+      "rms": 0.0364958,
+      "peak": 0.4020691,
+      "sampleRate": 48000,
+      "channels": 1
+    },
+    {
+      "id": "N3-1ad5c766ea",
+      "word": "可",
+      "reading": "か",
+      "input": "カ。",
+      "inputSha256": "5cc5af6e5ba8cff2d3c3a9b9c3b8c21c582a36b29d8ee98dba7e1bfae5ad7d6f",
+      "path": "pronunciation/N3/N3-1ad5c766ea.mp3",
+      "sha256": "93e583b4d8c6f6dd238a0c3511532037dbade2dfc0c17bba8ac3c8a0a743bafd",
+      "bytes": 3557,
+      "phonemes": [
+        "k",
+        "a"
+      ],
+      "expectedPhonemes": [
+        "k",
+        "a"
+      ],
+      "labelSha256": "63cbafd1412eeb151d8d62d75512f2acbfda49e4f4bcd5b57173d50dd57e0284",
+      "durationSeconds": 1.11,
+      "rms": 0.0192232,
+      "peak": 0.2369995,
+      "sampleRate": 48000,
+      "channels": 1
+    },
+    {
+      "id": "N3-20b5089feb",
+      "word": "ね",
+      "reading": "ね",
+      "input": "ネ。",
+      "inputSha256": "852256260e972943a7e8a1d9d871be8bf6dd7d75d53f578b29ba58c559621826",
+      "path": "pronunciation/N3/N3-20b5089feb.mp3",
+      "sha256": "54ec8c61ece250274a47f919bba8b3b250c7c74cdd8f74e150790955be6f4aa0",
+      "bytes": 2931,
+      "phonemes": [
+        "n",
+        "e"
+      ],
+      "expectedPhonemes": [
+        "n",
+        "e"
+      ],
+      "labelSha256": "2b5aa071add5ca24f347bf74c213c9225c0de43c57dc75cd5f984143c70f84ee",
+      "durationSeconds": 1.08,
+      "rms": 0.0407647,
+      "peak": 0.5788574,
+      "sampleRate": 48000,
+      "channels": 1
+    },
+    {
+      "id": "N3-20bef3d13c",
+      "word": "地",
+      "reading": "ち",
+      "input": "チ。",
+      "inputSha256": "7f5c0cc3b81aa8640237707b5a9228101890c7d31db2e0a0d619cc023c3da340",
+      "path": "pronunciation/N3/N3-20bef3d13c.mp3",
+      "sha256": "bdc2d59f94cc439a66c53d1b3fb76d074dbdae02229156e30a1424dfd4a13fe4",
+      "bytes": 2828,
+      "phonemes": [
+        "ch",
+        "i"
+      ],
+      "expectedPhonemes": [
+        "ch",
+        "i"
+      ],
+      "labelSha256": "9222f0938145b939b4e7420a2997d76cf4d451b1dfb2fd4e16cab62ed18b35e0",
+      "durationSeconds": 1.01,
+      "rms": 0.0167543,
+      "peak": 0.1976624,
+      "sampleRate": 48000,
+      "channels": 1
+    },
+    {
+      "id": "N3-2306950c03",
+      "word": "柄",
+      "reading": "え",
+      "input": "エ。",
+      "inputSha256": "a5d51934cc2361b159df6f14223ec346ef99e6029b9c076c75b61ec52d37d9c9",
+      "path": "pronunciation/N3/N3-2306950c03.mp3",
+      "sha256": "f02ddbbd1196c6a9479a746383bb2ba5388f07042ca2490ccb609d6441394fac",
+      "bytes": 2698,
+      "phonemes": [
+        "e"
+      ],
+      "expectedPhonemes": [
+        "e"
+      ],
+      "labelSha256": "dcf055da92cb4f4801d975ab49376d3723d6b3ce0f20d1f91aec01a25ab42992",
+      "durationSeconds": 1.03,
+      "rms": 0.0224316,
+      "peak": 0.3655701,
+      "sampleRate": 48000,
+      "channels": 1
+    },
+    {
+      "id": "N3-3f77054caf",
+      "word": "輪",
+      "reading": "わ",
+      "input": "ワ。",
+      "inputSha256": "f770d868e0d711ece5e324595daa1642f89dc7ee563a33b6a27bdeca8cbb3f3b",
+      "path": "pronunciation/N3/N3-3f77054caf.mp3",
+      "sha256": "4695888e69574a4c6677c451eacce2db0c4eec577f427236754871c16a207675",
+      "bytes": 3556,
+      "phonemes": [
+        "w",
+        "a"
+      ],
+      "expectedPhonemes": [
+        "w",
+        "a"
+      ],
+      "labelSha256": "edb5d0860a85e1270f1350f510a2d8be443d5d457d7baee9a6f2a67ee049c58c",
+      "durationSeconds": 1.17,
+      "rms": 0.0582721,
+      "peak": 0.8061218,
+      "sampleRate": 48000,
+      "channels": 1
+    },
+    {
+      "id": "N3-3fdcce9a17",
+      "word": "田",
+      "reading": "た",
+      "input": "タ。",
+      "inputSha256": "e9ea06f978c9335fbea5b490ffdb699063bc830d6b8d9653f689d7689631a2ef",
+      "path": "pronunciation/N3/N3-3fdcce9a17.mp3",
+      "sha256": "fa92e6d27c2b4c747c42e07add12e9e229cf487ad553b8c623f16c1c1f88c025",
+      "bytes": 3323,
+      "phonemes": [
+        "t",
+        "a"
+      ],
+      "expectedPhonemes": [
+        "t",
+        "a"
+      ],
+      "labelSha256": "7e27ccca21ad92653a058daf4a2bbc8a483f0e8308fb4ea8914ec4e66085db8c",
+      "durationSeconds": 1.1,
+      "rms": 0.0124759,
+      "peak": 0.1387024,
+      "sampleRate": 48000,
+      "channels": 1
+    },
+    {
+      "id": "N3-413bbde60b",
+      "word": "野",
+      "reading": "の",
+      "input": "ノ。",
+      "inputSha256": "ca652f5aea708b919979f58d60c80124110bfc6879d3a19bf2646b021794316a",
+      "path": "pronunciation/N3/N3-413bbde60b.mp3",
+      "sha256": "203f8f8f10b80b660d7ec61f3f817c556e616f490fbd1a2b1ccb444eeddfcc8a",
+      "bytes": 3088,
+      "phonemes": [
+        "n",
+        "o"
+      ],
+      "expectedPhonemes": [
+        "n",
+        "o"
+      ],
+      "labelSha256": "a1c192ff0e5a641fc54207e06709eb47092abc615f35ce3dac27c3daa0ce854c",
+      "durationSeconds": 1.12,
+      "rms": 0.045854,
+      "peak": 0.5567322,
+      "sampleRate": 48000,
+      "channels": 1
+    },
+    {
+      "id": "N3-41e221bc4d",
+      "word": "不",
+      "reading": "ふ",
+      "input": "フ。",
+      "inputSha256": "1c22c5d8be0c341af35099849288c02fc32d0a572862013ed7317d2f547994a9",
+      "path": "pronunciation/N3/N3-41e221bc4d.mp3",
+      "sha256": "5374dde39a75767555b79731fd58c5c9b664415e517d243b13da5eb96fa5c638",
+      "bytes": 3219,
+      "phonemes": [
+        "f",
+        "u"
+      ],
+      "expectedPhonemes": [
+        "f",
+        "u"
+      ],
+      "labelSha256": "747ac318ce498a9aaaa72c136fbb88d99dc283939db29cea20ede1de1c8ab842",
+      "durationSeconds": 1.06,
+      "rms": 0.1188565,
+      "peak": 1,
+      "sampleRate": 48000,
+      "channels": 1
+    },
+    {
+      "id": "N3-44bc159936",
+      "word": "句",
+      "reading": "く",
+      "input": "ク。",
+      "inputSha256": "bd2f6027e3a8f9f0bc82ca92c698fe5edfd7046dc95002bb81f524a548e10ebd",
+      "path": "pronunciation/N3/N3-44bc159936.mp3",
+      "sha256": "584e6b530d8c1fdc8261355fd4fada8aeea3a4be09531bad2b0bd13c717c095f",
+      "bytes": 3219,
+      "phonemes": [
+        "k",
+        "u"
+      ],
+      "expectedPhonemes": [
+        "k",
+        "u"
+      ],
+      "labelSha256": "4a30994a6b4699186d345cbb99b15f89b968d665f3ccd8368ba40d92f3702891",
+      "durationSeconds": 1.08,
+      "rms": 0.0640345,
+      "peak": 0.6838989,
+      "sampleRate": 48000,
+      "channels": 1
+    },
+    {
+      "id": "N3-4e53e93195",
+      "word": "図",
+      "reading": "ず",
+      "input": "ズ。",
+      "inputSha256": "c0889780fd705e7e4b8cd3a1ff1226957ddc1104ffd87c66394a75049a7def36",
+      "path": "pronunciation/N3/N3-4e53e93195.mp3",
+      "sha256": "0041e3e49b7783e2dd4172d7fb933178e9441369635ba33f1f4049c56e3dcb85",
+      "bytes": 3165,
+      "phonemes": [
+        "z",
+        "u"
+      ],
+      "expectedPhonemes": [
+        "z",
+        "u"
+      ],
+      "labelSha256": "ce14ae70cad7948fb02d34e03fcdee5c64ab08057211aacff4c0687fc24a99c1",
+      "durationSeconds": 1.145,
+      "rms": 0.0309161,
+      "peak": 0.2885132,
+      "sampleRate": 48000,
+      "channels": 1
+    },
+    {
+      "id": "N3-61f7afccc0",
+      "word": "あるいは",
+      "reading": "あるいは",
+      "input": "アルイワ。",
+      "inputOverride": "The written particle は is pronounced wa in this expression; the visible vocabulary reading is retained.",
+      "inputSha256": "398d72eb36f0f1385f72c9734e40ca21d9f2ae968565950e9ed96a08fbd92176",
+      "path": "pronunciation/N3/N3-61f7afccc0.mp3",
+      "sha256": "216ff1c850115aa26e2a40851f636d3dcd76833a000720fb9aa7b321526cd6a8",
+      "bytes": 5351,
+      "phonemes": [
+        "a",
+        "r",
+        "u",
+        "i",
+        "w",
+        "a"
+      ],
+      "expectedPhonemes": [
+        "a",
+        "r",
+        "u",
+        "i",
+        "w",
+        "a"
+      ],
+      "labelSha256": "24859517557ab1b2e5766a4797c7f0a4e12f1df3f39e433df6d5697abcb18847",
+      "durationSeconds": 1.495,
+      "rms": 0.0640142,
+      "peak": 0.6054382,
+      "sampleRate": 48000,
+      "channels": 1
+    },
+    {
+      "id": "N3-6ebe370c91",
+      "word": "身",
+      "reading": "み",
+      "input": "ミ。",
+      "inputSha256": "53924d7a6080b9032181786a334e3964ed2e2a794d0a0e5d6ab278aea9d354dc",
+      "path": "pronunciation/N3/N3-6ebe370c91.mp3",
+      "sha256": "e5e0811c11a35c7fb490235eca3a45ff692e54aa4584cdcc5a76316306714349",
+      "bytes": 2749,
+      "phonemes": [
+        "m",
+        "i"
+      ],
+      "expectedPhonemes": [
+        "m",
+        "i"
+      ],
+      "labelSha256": "8434a348c2485a5062fe29b17e9fff6cded36f16fed4ed8a7f068f39d3f02ab8",
+      "durationSeconds": 1.095,
+      "rms": 0.0292773,
+      "peak": 0.3010559,
+      "sampleRate": 48000,
+      "channels": 1
+    },
+    {
+      "id": "N3-73db783ef8",
+      "word": "巣",
+      "reading": "す",
+      "input": "ス。",
+      "inputSha256": "959eb6ec7a1c59492309212db742da4a053ee7f6eeffc8bf6e00050f39fc9442",
+      "path": "pronunciation/N3/N3-73db783ef8.mp3",
+      "sha256": "832747ee1aae8355c984c323d2e3495b9a5b59e6d410cff308d5d6a17b2048b4",
+      "bytes": 3140,
+      "phonemes": [
+        "s",
+        "u"
+      ],
+      "expectedPhonemes": [
+        "s",
+        "u"
+      ],
+      "labelSha256": "602c33f5cd3f87c723ad24921194f3cf0ff6129c0fafb0d68d70eca02f0191dc",
+      "durationSeconds": 1.075,
+      "rms": 0.0178148,
+      "peak": 0.1808472,
+      "sampleRate": 48000,
+      "channels": 1
+    },
+    {
+      "id": "N3-7adaa6336c",
+      "word": "他",
+      "reading": "た",
+      "input": "タ。",
+      "inputSha256": "e9ea06f978c9335fbea5b490ffdb699063bc830d6b8d9653f689d7689631a2ef",
+      "path": "pronunciation/N3/N3-7adaa6336c.mp3",
+      "sha256": "fa92e6d27c2b4c747c42e07add12e9e229cf487ad553b8c623f16c1c1f88c025",
+      "bytes": 3323,
+      "phonemes": [
+        "t",
+        "a"
+      ],
+      "expectedPhonemes": [
+        "t",
+        "a"
+      ],
+      "labelSha256": "7e27ccca21ad92653a058daf4a2bbc8a483f0e8308fb4ea8914ec4e66085db8c",
+      "durationSeconds": 1.1,
+      "rms": 0.0124759,
+      "peak": 0.1387024,
+      "sampleRate": 48000,
+      "channels": 1
+    },
+    {
+      "id": "N3-8421f715e7",
+      "word": "間",
+      "reading": "ま",
+      "input": "マ。",
+      "inputSha256": "1e576a5fd756180e327e1c41dabeebf72741ab773ae28272f4758c625fff41b8",
+      "path": "pronunciation/N3/N3-8421f715e7.mp3",
+      "sha256": "6ea5d50028224cb3c53ae433d1076158ec224604fb9e316427f99a867d6f475a",
+      "bytes": 3608,
+      "phonemes": [
+        "m",
+        "a"
+      ],
+      "expectedPhonemes": [
+        "m",
+        "a"
+      ],
+      "labelSha256": "0640bf26ae7fdd73f1e3c9c434e038c8d5b1136dfa6badec9dc59a81030dd491",
+      "durationSeconds": 1.205,
+      "rms": 0.0792761,
+      "peak": 0.9999695,
+      "sampleRate": 48000,
+      "channels": 1
+    },
+    {
+      "id": "N3-9ba2a9c365",
+      "word": "氏",
+      "reading": "し",
+      "input": "シ。",
+      "inputSha256": "126b1663725c746bfb968575c68c080b50f03eb7a0d36848a5ab9549ee1181a6",
+      "path": "pronunciation/N3/N3-9ba2a9c365.mp3",
+      "sha256": "3ecfb76d601b8311ba447d18e3d9288b169b03f6e67dbafc2aa16a9583a3400b",
+      "bytes": 3349,
+      "phonemes": [
+        "sh",
+        "i"
+      ],
+      "expectedPhonemes": [
+        "sh",
+        "i"
+      ],
+      "labelSha256": "bc2ca27ec4732a11371a673960246710d835eea206aa25c1de873bbd4164ade4",
+      "durationSeconds": 1.045,
+      "rms": 0.0181075,
+      "peak": 0.2185364,
+      "sampleRate": 48000,
+      "channels": 1
+    },
+    {
+      "id": "N3-9c851c43f7",
+      "word": "御",
+      "reading": "お",
+      "input": "オ。",
+      "inputSha256": "f38034f940103e734b39e29e414ef45125f1e6af40becbe80d06f289debb4ba6",
+      "path": "pronunciation/N3/N3-9c851c43f7.mp3",
+      "sha256": "3fb0d0e9032731c44752f657e363350146599e633272488d9ae60ceda61b4f13",
+      "bytes": 2853,
+      "phonemes": [
+        "o"
+      ],
+      "expectedPhonemes": [
+        "o"
+      ],
+      "labelSha256": "870d63453bbbd7616fd9af7d941583da9ec0f6b6591e9850f0025dd185f8f41d",
+      "durationSeconds": 1.07,
+      "rms": 0.0635247,
+      "peak": 0.671936,
+      "sampleRate": 48000,
+      "channels": 1
+    },
+    {
+      "id": "N3-ad70550f9b",
+      "word": "実",
+      "reading": "み",
+      "input": "ミ。",
+      "inputSha256": "53924d7a6080b9032181786a334e3964ed2e2a794d0a0e5d6ab278aea9d354dc",
+      "path": "pronunciation/N3/N3-ad70550f9b.mp3",
+      "sha256": "e5e0811c11a35c7fb490235eca3a45ff692e54aa4584cdcc5a76316306714349",
+      "bytes": 2749,
+      "phonemes": [
+        "m",
+        "i"
+      ],
+      "expectedPhonemes": [
+        "m",
+        "i"
+      ],
+      "labelSha256": "8434a348c2485a5062fe29b17e9fff6cded36f16fed4ed8a7f068f39d3f02ab8",
+      "durationSeconds": 1.095,
+      "rms": 0.0292773,
+      "peak": 0.3010559,
+      "sampleRate": 48000,
+      "channels": 1
+    },
+    {
+      "id": "N3-b5d6202e3f",
+      "word": "差",
+      "reading": "さ",
+      "input": "サ。",
+      "inputSha256": "0e33161146bf4bc99366c2c5c97b6d4790fb2998bb4b80f290b6f0ee2fc369ee",
+      "path": "pronunciation/N3/N3-b5d6202e3f.mp3",
+      "sha256": "af9ff4bd5ace83a5b6d7e587185a11facb4fe920a47b53460c29d057c2ff3d56",
+      "bytes": 3557,
+      "phonemes": [
+        "s",
+        "a"
+      ],
+      "expectedPhonemes": [
+        "s",
+        "a"
+      ],
+      "labelSha256": "beeedadcf074c5dcbb468da9652f7e94285f68a9733dc55065de1b1c37f7db8f",
+      "durationSeconds": 1.105,
+      "rms": 0.0135382,
+      "peak": 0.1556702,
+      "sampleRate": 48000,
+      "channels": 1
+    },
+    {
+      "id": "N3-bd67aff522",
+      "word": "無",
+      "reading": "む",
+      "input": "ム。",
+      "inputSha256": "2f4823ea17c4e8635de200197378d6b8199ff3dcef5a281b7e9285499b613273",
+      "path": "pronunciation/N3/N3-bd67aff522.mp3",
+      "sha256": "c65a675b6aed8e23813da6540ffc6a1eb6c64a89424289295e4073387e1eb71d",
+      "bytes": 3035,
+      "phonemes": [
+        "m",
+        "u"
+      ],
+      "expectedPhonemes": [
+        "m",
+        "u"
+      ],
+      "labelSha256": "beaff4af04b7774bb63ff3bc72eff48fc12f612213f0568934128621c6c74c21",
+      "durationSeconds": 1.145,
+      "rms": 0.060045,
+      "peak": 0.4948425,
+      "sampleRate": 48000,
+      "channels": 1
+    },
+    {
+      "id": "N3-c2946190ea",
+      "word": "で",
+      "reading": "で",
+      "input": "デ。",
+      "inputSha256": "8f990e41b44d80c7642df4ca4e9aac77c8e95a196d3d61f6ab09e271cd58bfcd",
+      "path": "pronunciation/N3/N3-c2946190ea.mp3",
+      "sha256": "3222a855f3a8f04a3787244b86c5238ffd240601db75cb5b0bfb2bc9003e8c3d",
+      "bytes": 2879,
+      "phonemes": [
+        "d",
+        "e"
+      ],
+      "expectedPhonemes": [
+        "d",
+        "e"
+      ],
+      "labelSha256": "13d9a4f4377bab1e2f21a61099b53bf7531afc4555eb9c306c0448ffcde62cc7",
+      "durationSeconds": 1.085,
+      "rms": 0.0319496,
+      "peak": 0.4332275,
+      "sampleRate": 48000,
+      "channels": 1
+    },
+    {
+      "id": "N3-c5b127def2",
+      "word": "語",
+      "reading": "ご",
+      "input": "ゴ。",
+      "inputSha256": "4a7cab658a92af4f4f163ed1db67dccad33ecd64ec5712f1c7007d02aff0e5c8",
+      "path": "pronunciation/N3/N3-c5b127def2.mp3",
+      "sha256": "87ae697d0c17a6ae93a74b5098de7e5185859eda67dccf74187784682b04e284",
+      "bytes": 3427,
+      "phonemes": [
+        "g",
+        "o"
+      ],
+      "expectedPhonemes": [
+        "g",
+        "o"
+      ],
+      "labelSha256": "c00c9a76f4d027cfbeca8c4f0088ff2468daa228c9335c2ccacf64e34823b180",
+      "durationSeconds": 1.13,
+      "rms": 0.0740548,
+      "peak": 0.6619263,
+      "sampleRate": 48000,
+      "channels": 1
+    },
+    {
+      "id": "N3-ca4cbf878d",
+      "word": "場",
+      "reading": "ば",
+      "input": "バ。",
+      "inputSha256": "82b1ccbe863d40962cc920fa392af19d53f2a8a7cd73e1f72fab20c39a76facf",
+      "path": "pronunciation/N3/N3-ca4cbf878d.mp3",
+      "sha256": "8da44bc84edb6391f5528bd7e0d3fccbbaaa66a24283b77869b58d565baf5eef",
+      "bytes": 3244,
+      "phonemes": [
+        "b",
+        "a"
+      ],
+      "expectedPhonemes": [
+        "b",
+        "a"
+      ],
+      "labelSha256": "05eb796337dd12cbd0f65feea011b7a4bfb19d97b5c09bf9f3ad94b6c0c810c7",
+      "durationSeconds": 1.135,
+      "rms": 0.0470522,
+      "peak": 0.6906128,
+      "sampleRate": 48000,
+      "channels": 1
+    },
+    {
+      "id": "N3-dd3e8e77f0",
+      "word": "課",
+      "reading": "か",
+      "input": "カ。",
+      "inputSha256": "5cc5af6e5ba8cff2d3c3a9b9c3b8c21c582a36b29d8ee98dba7e1bfae5ad7d6f",
+      "path": "pronunciation/N3/N3-dd3e8e77f0.mp3",
+      "sha256": "93e583b4d8c6f6dd238a0c3511532037dbade2dfc0c17bba8ac3c8a0a743bafd",
+      "bytes": 3557,
+      "phonemes": [
+        "k",
+        "a"
+      ],
+      "expectedPhonemes": [
+        "k",
+        "a"
+      ],
+      "labelSha256": "63cbafd1412eeb151d8d62d75512f2acbfda49e4f4bcd5b57173d50dd57e0284",
+      "durationSeconds": 1.11,
+      "rms": 0.0192232,
+      "peak": 0.2369995,
+      "sampleRate": 48000,
+      "channels": 1
+    },
+    {
+      "id": "N3-de6ed799d8",
+      "word": "灯",
+      "reading": "ひ",
+      "input": "ヒ。",
+      "inputSha256": "fdfeb12675a247fdff14a93723a5c7ea650db269d61b246233345011f2e494a7",
+      "path": "pronunciation/N3/N3-de6ed799d8.mp3",
+      "sha256": "90e5ada06078663afca6534259360b0dabf08afcc4bb0f6fe4bac64abb8b351c",
+      "bytes": 2724,
+      "phonemes": [
+        "h",
+        "i"
+      ],
+      "expectedPhonemes": [
+        "h",
+        "i"
+      ],
+      "labelSha256": "1c90cae2d0fe61ead346d637d475e489d53bbc9fa759e5d80d547928126739a2",
+      "durationSeconds": 1.01,
+      "rms": 0.028303,
+      "peak": 0.3599854,
+      "sampleRate": 48000,
+      "channels": 1
+    },
+    {
+      "id": "N3-e7a5df28c0",
+      "word": "根",
+      "reading": "ね",
+      "input": "ネ。",
+      "inputSha256": "852256260e972943a7e8a1d9d871be8bf6dd7d75d53f578b29ba58c559621826",
+      "path": "pronunciation/N3/N3-e7a5df28c0.mp3",
+      "sha256": "54ec8c61ece250274a47f919bba8b3b250c7c74cdd8f74e150790955be6f4aa0",
+      "bytes": 2931,
+      "phonemes": [
+        "n",
+        "e"
+      ],
+      "expectedPhonemes": [
+        "n",
+        "e"
+      ],
+      "labelSha256": "2b5aa071add5ca24f347bf74c213c9225c0de43c57dc75cd5f984143c70f84ee",
+      "durationSeconds": 1.08,
+      "rms": 0.0407647,
+      "peak": 0.5788574,
+      "sampleRate": 48000,
+      "channels": 1
+    },
+    {
+      "id": "N3-f263ebe6ea",
+      "word": "詩",
+      "reading": "し",
+      "input": "シ。",
+      "inputSha256": "126b1663725c746bfb968575c68c080b50f03eb7a0d36848a5ab9549ee1181a6",
+      "path": "pronunciation/N3/N3-f263ebe6ea.mp3",
+      "sha256": "3ecfb76d601b8311ba447d18e3d9288b169b03f6e67dbafc2aa16a9583a3400b",
+      "bytes": 3349,
+      "phonemes": [
+        "sh",
+        "i"
+      ],
+      "expectedPhonemes": [
+        "sh",
+        "i"
+      ],
+      "labelSha256": "bc2ca27ec4732a11371a673960246710d835eea206aa25c1de873bbd4164ade4",
+      "durationSeconds": 1.045,
+      "rms": 0.0181075,
+      "peak": 0.2185364,
+      "sampleRate": 48000,
+      "channels": 1
+    },
+    {
+      "id": "N3-fcdc62db50",
+      "word": "名",
+      "reading": "な",
+      "input": "ナ。",
+      "inputSha256": "74c6fb44fef7552b860bb9f62f19654722bfb4f65ff3c6afe011bf8587bd4951",
+      "path": "pronunciation/N3/N3-fcdc62db50.mp3",
+      "sha256": "0b38136d1264d0100a4fbf2aada5fd9e926c65792f8695cc0c2e420300064bfe",
+      "bytes": 3139,
+      "phonemes": [
+        "n",
+        "a"
+      ],
+      "expectedPhonemes": [
+        "n",
+        "a"
+      ],
+      "labelSha256": "485682c3a8c0e7cded80b0fb6ef98a302694544de4ef85dc879b8119a4a5133d",
+      "durationSeconds": 1.12,
+      "rms": 0.0366626,
+      "peak": 0.3766174,
+      "sampleRate": 48000,
+      "channels": 1
+    },
+    {
+      "id": "N3-fffb310ed7",
+      "word": "実は",
+      "reading": "じつは",
+      "input": "ジツワ。",
+      "inputOverride": "The written particle は is pronounced wa in this expression; the visible vocabulary reading is retained.",
+      "inputSha256": "bbea4488b7a6830b8754824230821fb0969e4116843542d34c66ca42e7613cc2",
+      "path": "pronunciation/N3/N3-fffb310ed7.mp3",
+      "sha256": "f1fca842761686be1cffdb9ca676432f5ad39efa741eda44988cc0e5684e2a20",
+      "bytes": 5092,
+      "phonemes": [
+        "j",
+        "i",
+        "ts",
+        "u",
+        "w",
+        "a"
+      ],
+      "expectedPhonemes": [
+        "j",
+        "i",
+        "ts",
+        "u",
+        "w",
+        "a"
+      ],
+      "labelSha256": "d10f72a20da45c62143b5233011d507f7ac777d9e011f037ae2388b7b6d22ea2",
+      "durationSeconds": 1.455,
+      "rms": 0.0361956,
+      "peak": 0.331543,
+      "sampleRate": 48000,
+      "channels": 1
+    },
+    {
+      "id": "N4-0fa3edce9b",
+      "word": "または",
+      "reading": "または",
+      "input": "マタワ。",
+      "inputOverride": "The written particle は is pronounced wa in this expression; the visible vocabulary reading is retained.",
+      "inputSha256": "8d4dbc37359b0941a2725b5dc155ede474693abf0a375277d10fe5c86d4d1744",
+      "path": "pronunciation/N4/N4-0fa3edce9b.mp3",
+      "sha256": "58c1967c5fbd91c3d35959da96900800579ab95d262320fe7bd985594ebc596e",
+      "bytes": 4882,
+      "phonemes": [
+        "m",
+        "a",
+        "t",
+        "a",
+        "w",
+        "a"
+      ],
+      "expectedPhonemes": [
+        "m",
+        "a",
+        "t",
+        "a",
+        "w",
+        "a"
+      ],
+      "labelSha256": "bb4a88355a78db25ff08a00f72a359cab6480459d848a885b53d01aab3a8b7e8",
+      "durationSeconds": 1.415,
+      "rms": 0.070861,
+      "peak": 0.7543945,
+      "sampleRate": 48000,
+      "channels": 1
+    },
+    {
+      "id": "N4-254439ebbe",
+      "word": "葉",
+      "reading": "は",
+      "input": "ハ。",
+      "inputSha256": "3d5de7641eb0be4b820e3ad86fa216e8301174cdd2d33453227f42629675577f",
+      "path": "pronunciation/N4/N4-254439ebbe.mp3",
+      "sha256": "be7ab8663ef1065793dc949af1851126d54baacfc747c21882f82d5588e9c146",
+      "bytes": 3713,
+      "phonemes": [
+        "h",
+        "a"
+      ],
+      "expectedPhonemes": [
+        "h",
+        "a"
+      ],
+      "labelSha256": "c865a0caa09bcc116a578cf7f82ffb295e44b63cb13fb2cf1b52a1878ca88b3d",
+      "durationSeconds": 1.12,
+      "rms": 0.0551493,
+      "peak": 0.7139282,
+      "sampleRate": 48000,
+      "channels": 1
+    },
+    {
+      "id": "N4-4fff6d0441",
+      "word": "あ",
+      "reading": "あ",
+      "input": "ア。",
+      "inputSha256": "bf8eafcebb7dabd425d6cb89b706647dbc59a6517e3227a019ddba8b237ef50b",
+      "path": "pronunciation/N4/N4-4fff6d0441.mp3",
+      "sha256": "c2e73de196155eb52fb494a8936fc888ba5fd2b9d1d4f58a3fcc5370aa7c031f",
+      "bytes": 2828,
+      "phonemes": [
+        "a"
+      ],
+      "expectedPhonemes": [
+        "a"
+      ],
+      "labelSha256": "be99ef67bc2438da999c0ae6c300cf09203a3a44debdbd6820180c8cda69fb6a",
+      "durationSeconds": 1.07,
+      "rms": 0.0237022,
+      "peak": 0.3061523,
+      "sampleRate": 48000,
+      "channels": 1
+    },
+    {
+      "id": "N4-53162e310d",
+      "word": "都",
+      "reading": "と",
+      "input": "ト。",
+      "inputSha256": "d1715eaf0ff38fbb67afe89d644ef7a356d4644c5f4c2b893d3a21d5d11c559b",
+      "path": "pronunciation/N4/N4-53162e310d.mp3",
+      "sha256": "4e17c5801eb7af8e263dec7d1b29b72fcc8101178c1748ac5330e2677c544d98",
+      "bytes": 3114,
+      "phonemes": [
+        "t",
+        "o"
+      ],
+      "expectedPhonemes": [
+        "t",
+        "o"
+      ],
+      "labelSha256": "5edc584f0b485299258e39e3f16ea1b8aa04bb860de3fedd8425c0b247b953a2",
+      "durationSeconds": 1.1,
+      "rms": 0.0229238,
+      "peak": 0.2125244,
+      "sampleRate": 48000,
+      "channels": 1
+    },
+    {
+      "id": "N4-55a030e65f",
+      "word": "日",
+      "reading": "ひ",
+      "input": "ヒ。",
+      "inputSha256": "fdfeb12675a247fdff14a93723a5c7ea650db269d61b246233345011f2e494a7",
+      "path": "pronunciation/N4/N4-55a030e65f.mp3",
+      "sha256": "90e5ada06078663afca6534259360b0dabf08afcc4bb0f6fe4bac64abb8b351c",
+      "bytes": 2724,
+      "phonemes": [
+        "h",
+        "i"
+      ],
+      "expectedPhonemes": [
+        "h",
+        "i"
+      ],
+      "labelSha256": "1c90cae2d0fe61ead346d637d475e489d53bbc9fa759e5d80d547928126739a2",
+      "durationSeconds": 1.01,
+      "rms": 0.028303,
+      "peak": 0.3599854,
+      "sampleRate": 48000,
+      "channels": 1
+    },
+    {
+      "id": "N4-56a36774ce",
+      "word": "血",
+      "reading": "ち",
+      "input": "チ。",
+      "inputSha256": "7f5c0cc3b81aa8640237707b5a9228101890c7d31db2e0a0d619cc023c3da340",
+      "path": "pronunciation/N4/N4-56a36774ce.mp3",
+      "sha256": "bdc2d59f94cc439a66c53d1b3fb76d074dbdae02229156e30a1424dfd4a13fe4",
+      "bytes": 2828,
+      "phonemes": [
+        "ch",
+        "i"
+      ],
+      "expectedPhonemes": [
+        "ch",
+        "i"
+      ],
+      "labelSha256": "9222f0938145b939b4e7420a2997d76cf4d451b1dfb2fd4e16cab62ed18b35e0",
+      "durationSeconds": 1.01,
+      "rms": 0.0167543,
+      "peak": 0.1976624,
+      "sampleRate": 48000,
+      "channels": 1
+    },
+    {
+      "id": "N4-988f9bb24f",
+      "word": "市",
+      "reading": "し",
+      "input": "シ。",
+      "inputSha256": "126b1663725c746bfb968575c68c080b50f03eb7a0d36848a5ab9549ee1181a6",
+      "path": "pronunciation/N4/N4-988f9bb24f.mp3",
+      "sha256": "3ecfb76d601b8311ba447d18e3d9288b169b03f6e67dbafc2aa16a9583a3400b",
+      "bytes": 3349,
+      "phonemes": [
+        "sh",
+        "i"
+      ],
+      "expectedPhonemes": [
+        "sh",
+        "i"
+      ],
+      "labelSha256": "bc2ca27ec4732a11371a673960246710d835eea206aa25c1de873bbd4164ade4",
+      "durationSeconds": 1.045,
+      "rms": 0.0181075,
+      "peak": 0.2185364,
+      "sampleRate": 48000,
+      "channels": 1
+    },
+    {
+      "id": "N4-ab366b6c9d",
+      "word": "気",
+      "reading": "き",
+      "input": "キ。",
+      "inputSha256": "c3b767960c29679aa75d604f716c8b66384d8c2e95fe48591427609a569af4f2",
+      "path": "pronunciation/N4/N4-ab366b6c9d.mp3",
+      "sha256": "2fedfe75149901292afd227f6d4c4d2886e706316181584f4a290da88a4b0054",
+      "bytes": 2880,
+      "phonemes": [
+        "k",
+        "i"
+      ],
+      "expectedPhonemes": [
+        "k",
+        "i"
+      ],
+      "labelSha256": "a0b296c4959f7c87887abad61eaae358cfcc767d8e9b72b173dcf6c39dedce61",
+      "durationSeconds": 1.07,
+      "rms": 0.0185403,
+      "peak": 0.2414246,
+      "sampleRate": 48000,
+      "channels": 1
+    },
+    {
+      "id": "N4-d81bb54f03",
+      "word": "湯",
+      "reading": "ゆ",
+      "input": "ユ。",
+      "inputSha256": "3af6f6473ea790a807bb2ecd5278874fb48efbe441150df01f25bf08605909cd",
+      "path": "pronunciation/N4/N4-d81bb54f03.mp3",
+      "sha256": "22aec49344ae197c949387ffa03ffa356ec431458361003877048ef39b5cf014",
+      "bytes": 3113,
+      "phonemes": [
+        "y",
+        "u"
+      ],
+      "expectedPhonemes": [
+        "y",
+        "u"
+      ],
+      "labelSha256": "1ec9be086c80f1fdba63e73279cba9e35a220eeb38c510b963f12777b0ed7eb3",
+      "durationSeconds": 1.145,
+      "rms": 0.048246,
+      "peak": 0.414856,
+      "sampleRate": 48000,
+      "channels": 1
+    },
+    {
+      "id": "N4-dd89673ae0",
+      "word": "字",
+      "reading": "じ",
+      "input": "ジ。",
+      "inputSha256": "631831f055d121fa1865b46125b9cb77676071336ece6266d87f96e0deeb26d9",
+      "path": "pronunciation/N4/N4-dd89673ae0.mp3",
+      "sha256": "1083d969890f8934d877fde66e97d62a7f25a91ce959e516ad0efed43659876c",
+      "bytes": 2906,
+      "phonemes": [
+        "j",
+        "i"
+      ],
+      "expectedPhonemes": [
+        "j",
+        "i"
+      ],
+      "labelSha256": "0aa4bfdf71a819c6bf66fe75c1cbc587ba848de708517c322183c4a2d24601e4",
+      "durationSeconds": 1.095,
+      "rms": 0.0204679,
+      "peak": 0.2454529,
+      "sampleRate": 48000,
+      "channels": 1
+    },
+    {
+      "id": "N4-e9bab5c151",
+      "word": "毛",
+      "reading": "け",
+      "input": "ケ。",
+      "inputSha256": "c4c0710754c2d2b29f2acfdc8df80b3aa698e0a694c43997465017369c39466a",
+      "path": "pronunciation/N4/N4-e9bab5c151.mp3",
+      "sha256": "a9c7190075449478e909c244ad232283d25991ad0b29036ff744b1d605130218",
+      "bytes": 3114,
+      "phonemes": [
+        "k",
+        "e"
+      ],
+      "expectedPhonemes": [
+        "k",
+        "e"
+      ],
+      "labelSha256": "436b7f93053fd6ae560befd28eada0b1bc7927775e3f26ca530de52f1c5611bd",
+      "durationSeconds": 1.07,
+      "rms": 0.0134252,
+      "peak": 0.2244568,
+      "sampleRate": 48000,
+      "channels": 1
+    },
+    {
+      "id": "N4-f17fa2d7e1",
+      "word": "子",
+      "reading": "こ",
+      "input": "コ。",
+      "inputSha256": "c99a2bf1caca3b7ceb1dbaf2e231e848e946e971f2b0cabf6e37f9aa2a73df90",
+      "path": "pronunciation/N4/N4-f17fa2d7e1.mp3",
+      "sha256": "9a322f92b6f21bf96f7f49e025a63dc2fe085c65a20f652540454e8b15b11aca",
+      "bytes": 3426,
+      "phonemes": [
+        "k",
+        "o"
+      ],
+      "expectedPhonemes": [
+        "k",
+        "o"
+      ],
+      "labelSha256": "611c4f316a0ecf7fd7663b17e12b7f2da40215abab10c86a2da9454b322fd27f",
+      "durationSeconds": 1.11,
+      "rms": 0.0447372,
+      "peak": 0.3950806,
+      "sampleRate": 48000,
+      "channels": 1
+    },
+    {
+      "id": "N4-f9f80b1a36",
+      "word": "火",
+      "reading": "ひ",
+      "input": "ヒ。",
+      "inputSha256": "fdfeb12675a247fdff14a93723a5c7ea650db269d61b246233345011f2e494a7",
+      "path": "pronunciation/N4/N4-f9f80b1a36.mp3",
+      "sha256": "90e5ada06078663afca6534259360b0dabf08afcc4bb0f6fe4bac64abb8b351c",
+      "bytes": 2724,
+      "phonemes": [
+        "h",
+        "i"
+      ],
+      "expectedPhonemes": [
+        "h",
+        "i"
+      ],
+      "labelSha256": "1c90cae2d0fe61ead346d637d475e489d53bbc9fa759e5d80d547928126739a2",
+      "durationSeconds": 1.01,
+      "rms": 0.028303,
+      "peak": 0.3599854,
+      "sampleRate": 48000,
+      "channels": 1
+    },
+    {
+      "id": "N5-0a65b39cf7",
+      "word": "こんにちは",
+      "reading": "こんにちは",
+      "input": "コンニチワ。",
+      "inputOverride": "The written particle は is pronounced wa in this expression; the visible vocabulary reading is retained.",
+      "inputSha256": "3d273b29b4664c92429c17beddf1f115cd10773602c4822639ffaeb88950fe91",
+      "path": "pronunciation/N5/N5-0a65b39cf7.mp3",
+      "sha256": "e628fdcba9d30a4e496a81179ce50b4c88cb86f839a4c31a87c025925e6e6879",
+      "bytes": 6446,
+      "phonemes": [
+        "k",
+        "o",
+        "N",
+        "n",
+        "i",
+        "ch",
+        "i",
+        "w",
+        "a"
+      ],
+      "expectedPhonemes": [
+        "k",
+        "o",
+        "N",
+        "n",
+        "i",
+        "ch",
+        "i",
+        "w",
+        "a"
+      ],
+      "labelSha256": "1914470597dce9768d53c4562c90337883047217ba19b4e74f7aee8b7439f589",
+      "durationSeconds": 1.605,
+      "rms": 0.0492575,
+      "peak": 0.4520874,
+      "sampleRate": 48000,
+      "channels": 1
+    },
+    {
+      "id": "N5-22836046e2",
+      "word": "木",
+      "reading": "き",
+      "input": "キ。",
+      "inputSha256": "c3b767960c29679aa75d604f716c8b66384d8c2e95fe48591427609a569af4f2",
+      "path": "pronunciation/N5/N5-22836046e2.mp3",
+      "sha256": "2fedfe75149901292afd227f6d4c4d2886e706316181584f4a290da88a4b0054",
+      "bytes": 2880,
+      "phonemes": [
+        "k",
+        "i"
+      ],
+      "expectedPhonemes": [
+        "k",
+        "i"
+      ],
+      "labelSha256": "a0b296c4959f7c87887abad61eaae358cfcc767d8e9b72b173dcf6c39dedce61",
+      "durationSeconds": 1.07,
+      "rms": 0.0185403,
+      "peak": 0.2414246,
+      "sampleRate": 48000,
+      "channels": 1
+    },
+    {
+      "id": "N5-34108268e1",
+      "word": "二",
+      "reading": "に",
+      "input": "ニ。",
+      "inputSha256": "846d1c95ae0dd3d7681a64bc00ae5a461c2629ceba95c4e64f73d43debf8f1e6",
+      "path": "pronunciation/N5/N5-34108268e1.mp3",
+      "sha256": "dc7b8d10c88ed89f20b579b68789c04431995f3d648e00f287356b0373e2ce68",
+      "bytes": 2802,
+      "phonemes": [
+        "n",
+        "i"
+      ],
+      "expectedPhonemes": [
+        "n",
+        "i"
+      ],
+      "labelSha256": "3248154d82349689445bbcfd96276eb9cc07da2da84e7daffef4b934d7e000a0",
+      "durationSeconds": 1.09,
+      "rms": 0.0321968,
+      "peak": 0.4105225,
+      "sampleRate": 48000,
+      "channels": 1
+    },
+    {
+      "id": "N5-3464318c23",
+      "word": "歌う",
+      "reading": "うたう",
+      "input": "ウタウ。",
+      "inputSha256": "d4035b0168118e10245423c5130825554eccf983e63794c4ceb5d42caeabb0c0",
+      "path": "pronunciation/N5/N5-3464318c23.mp3",
+      "sha256": "7b3eca24b00dc5027fea68aa46d84116d3ac66949b5954e943e954a823c5d4d8",
+      "bytes": 4206,
+      "phonemes": [
+        "u",
+        "t",
+        "a",
+        "u"
+      ],
+      "expectedPhonemes": [
+        "u",
+        "t",
+        "a",
+        "u"
+      ],
+      "labelSha256": "b0efbeaaf261886f84c1d5c41ee27267fc6c7110aad24d2114623f982448b46f",
+      "durationSeconds": 1.28,
+      "rms": 0.0580531,
+      "peak": 0.5944824,
+      "sampleRate": 48000,
+      "channels": 1
+    },
+    {
+      "id": "N5-390ac6443d",
+      "word": "歯",
+      "reading": "は",
+      "input": "ハ。",
+      "inputSha256": "3d5de7641eb0be4b820e3ad86fa216e8301174cdd2d33453227f42629675577f",
+      "path": "pronunciation/N5/N5-390ac6443d.mp3",
+      "sha256": "be7ab8663ef1065793dc949af1851126d54baacfc747c21882f82d5588e9c146",
+      "bytes": 3713,
+      "phonemes": [
+        "h",
+        "a"
+      ],
+      "expectedPhonemes": [
+        "h",
+        "a"
+      ],
+      "labelSha256": "c865a0caa09bcc116a578cf7f82ffb295e44b63cb13fb2cf1b52a1878ca88b3d",
+      "durationSeconds": 1.12,
+      "rms": 0.0551493,
+      "peak": 0.7139282,
+      "sampleRate": 48000,
+      "channels": 1
+    },
+    {
+      "id": "N5-434707d737",
+      "word": "ゼロ",
+      "reading": "ゼロ",
+      "input": "ゼロ。",
+      "inputSha256": "bdfb72b40ca53df3021a390b2af0dbf65677cea3369d02be357148773f0e47ef",
+      "path": "pronunciation/N5/N5-434707d737.mp3",
+      "sha256": "0499daa1d65914c4af9594f79b7bcf0db1b87e2fe38d49d5f1a9acc0d87ce5cc",
+      "bytes": 4521,
+      "phonemes": [
+        "z",
+        "e",
+        "r",
+        "o"
+      ],
+      "expectedPhonemes": [
+        "z",
+        "e",
+        "r",
+        "o"
+      ],
+      "labelSha256": "5946d22967464cd97c8ba1744202dd5f03ee2682b5c0b811e726fef7b51c2e16",
+      "durationSeconds": 1.275,
+      "rms": 0.0443347,
+      "peak": 0.3821716,
+      "sampleRate": 48000,
+      "channels": 1
+    },
+    {
+      "id": "N5-46c1721526",
+      "word": "それでは",
+      "reading": "それでは",
+      "input": "ソレデワ。",
+      "inputOverride": "The written particle は is pronounced wa in this expression; the visible vocabulary reading is retained.",
+      "inputSha256": "27e9e856e2bbc8ec1662b5050bbf1a0575192618b72450e3fcd87807bb65069e",
+      "path": "pronunciation/N5/N5-46c1721526.mp3",
+      "sha256": "8bb77672a801cbdf3330225e4837dd8dd7e3e522c2e3d16ebfe84d7b3e677473",
+      "bytes": 5688,
+      "phonemes": [
+        "s",
+        "o",
+        "r",
+        "e",
+        "d",
+        "e",
+        "w",
+        "a"
+      ],
+      "expectedPhonemes": [
+        "s",
+        "o",
+        "r",
+        "e",
+        "d",
+        "e",
+        "w",
+        "a"
+      ],
+      "labelSha256": "97dc50b18f4933ac305b764f6f77c55946aa1be050ca5df1570d46f6fb520df2",
+      "durationSeconds": 1.5,
+      "rms": 0.0504196,
+      "peak": 0.3275452,
+      "sampleRate": 48000,
+      "channels": 1
+    },
+    {
+      "id": "N5-47c1fdbe2f",
+      "word": "五",
+      "reading": "ご",
+      "input": "ゴ。",
+      "inputSha256": "4a7cab658a92af4f4f163ed1db67dccad33ecd64ec5712f1c7007d02aff0e5c8",
+      "path": "pronunciation/N5/N5-47c1fdbe2f.mp3",
+      "sha256": "87ae697d0c17a6ae93a74b5098de7e5185859eda67dccf74187784682b04e284",
+      "bytes": 3427,
+      "phonemes": [
+        "g",
+        "o"
+      ],
+      "expectedPhonemes": [
+        "g",
+        "o"
+      ],
+      "labelSha256": "c00c9a76f4d027cfbeca8c4f0088ff2468daa228c9335c2ccacf64e34823b180",
+      "durationSeconds": 1.13,
+      "rms": 0.0740548,
+      "peak": 0.6619263,
+      "sampleRate": 48000,
+      "channels": 1
+    },
+    {
+      "id": "N5-5b9670420a",
+      "word": "手",
+      "reading": "て",
+      "input": "テ。",
+      "inputSha256": "5b85e017d9611f3b5f9a44d15c1bcbadb4ba0e4fdade5ca07c80b0e0bb347343",
+      "path": "pronunciation/N5/N5-5b9670420a.mp3",
+      "sha256": "7a005e9e1526c649c9cb7163d5b3d92f419e907baf38dbba47fe9d19f66fd8f5",
+      "bytes": 2776,
+      "phonemes": [
+        "t",
+        "e"
+      ],
+      "expectedPhonemes": [
+        "t",
+        "e"
+      ],
+      "labelSha256": "d6b22b8bb284a00a1bd278e46d8250151112f92caaac3a829e2ab7bf39d0caad",
+      "durationSeconds": 1.06,
+      "rms": 0.0093847,
+      "peak": 0.1483154,
+      "sampleRate": 48000,
+      "channels": 1
+    },
+    {
+      "id": "N5-5bb390da0b",
+      "word": "絵",
+      "reading": "え",
+      "input": "エ。",
+      "inputSha256": "a5d51934cc2361b159df6f14223ec346ef99e6029b9c076c75b61ec52d37d9c9",
+      "path": "pronunciation/N5/N5-5bb390da0b.mp3",
+      "sha256": "f02ddbbd1196c6a9479a746383bb2ba5388f07042ca2490ccb609d6441394fac",
+      "bytes": 2698,
+      "phonemes": [
+        "e"
+      ],
+      "expectedPhonemes": [
+        "e"
+      ],
+      "labelSha256": "dcf055da92cb4f4801d975ab49376d3723d6b3ce0f20d1f91aec01a25ab42992",
+      "durationSeconds": 1.03,
+      "rms": 0.0224316,
+      "peak": 0.3655701,
+      "sampleRate": 48000,
+      "channels": 1
+    },
+    {
+      "id": "N5-6c0551dd8a",
+      "word": "こんばんは",
+      "reading": "こんばんは",
+      "input": "コンバンワ。",
+      "inputOverride": "The written particle は is pronounced wa in this expression; the visible vocabulary reading is retained.",
+      "inputSha256": "c1c05575ae27c1aaffd66b0e03b8f3f4bc13f7cc42232ca2943c716ba4f4519a",
+      "path": "pronunciation/N5/N5-6c0551dd8a.mp3",
+      "sha256": "0470a2e41161ac15d4c1b8475b904dc8b61cb4c522de6506d00c6d4d667b6457",
+      "bytes": 6522,
+      "phonemes": [
+        "k",
+        "o",
+        "N",
+        "b",
+        "a",
+        "N",
+        "w",
+        "a"
+      ],
+      "expectedPhonemes": [
+        "k",
+        "o",
+        "N",
+        "b",
+        "a",
+        "N",
+        "w",
+        "a"
+      ],
+      "labelSha256": "3437a366b288ac0fff2f6c952deb2bcd1ae101a4f4e69bbc2c8b3edf4c1bc6d2",
+      "durationSeconds": 1.625,
+      "rms": 0.0791691,
+      "peak": 0.7863159,
+      "sampleRate": 48000,
+      "channels": 1
+    },
+    {
+      "id": "N5-6f4691297f",
+      "word": "戸",
+      "reading": "と",
+      "input": "ト。",
+      "inputSha256": "d1715eaf0ff38fbb67afe89d644ef7a356d4644c5f4c2b893d3a21d5d11c559b",
+      "path": "pronunciation/N5/N5-6f4691297f.mp3",
+      "sha256": "4e17c5801eb7af8e263dec7d1b29b72fcc8101178c1748ac5330e2677c544d98",
+      "bytes": 3114,
+      "phonemes": [
+        "t",
+        "o"
+      ],
+      "expectedPhonemes": [
+        "t",
+        "o"
+      ],
+      "labelSha256": "5edc584f0b485299258e39e3f16ea1b8aa04bb860de3fedd8425c0b247b953a2",
+      "durationSeconds": 1.1,
+      "rms": 0.0229238,
+      "peak": 0.2125244,
+      "sampleRate": 48000,
+      "channels": 1
+    },
+    {
+      "id": "N5-7cb27c411e",
+      "word": "階段",
+      "reading": "かいだん",
+      "input": "カイダン。",
+      "inputSha256": "9dfdc93d4d93e9960538af9ffe779eb615eb959e69f428cad26cd3578816a0e7",
+      "path": "pronunciation/N5/N5-7cb27c411e.mp3",
+      "sha256": "41fd0ad3ff190ece13c429b0864d0ea9515cebf6e61073f68b8d55286cc350ea",
+      "bytes": 5456,
+      "phonemes": [
+        "k",
+        "a",
+        "i",
+        "d",
+        "a",
+        "N"
+      ],
+      "expectedPhonemes": [
+        "k",
+        "a",
+        "i",
+        "d",
+        "a",
+        "N"
+      ],
+      "labelSha256": "d761a99641e918f3a343f67576f180aec8b9dd5c03ebe8c6eac0dfe0a8723ee8",
+      "durationSeconds": 1.435,
+      "rms": 0.0514879,
+      "peak": 0.4664612,
+      "sampleRate": 48000,
+      "channels": 1
+    },
+    {
+      "id": "N5-898b067287",
+      "word": "背",
+      "reading": "せ",
+      "input": "セ。",
+      "inputSha256": "93c6011565db79095603644138c4e78f353bb7adc3a4b6d6e4fb04e42b8d066c",
+      "path": "pronunciation/N5/N5-898b067287.mp3",
+      "sha256": "60cf500bee835fd039129acc6dc0e065d6386fb0949d461ef5f6946cb357ef6e",
+      "bytes": 3479,
+      "phonemes": [
+        "s",
+        "e"
+      ],
+      "expectedPhonemes": [
+        "s",
+        "e"
+      ],
+      "labelSha256": "34bf9f20a31e49ef1c80ff0aca5d0a94f4290ea257d76dcca4d03453ada21500",
+      "durationSeconds": 1.065,
+      "rms": 0.0172514,
+      "peak": 0.2255859,
+      "sampleRate": 48000,
+      "channels": 1
+    },
+    {
+      "id": "N5-988db98632",
+      "word": "七",
+      "reading": "しち",
+      "input": "シチ。",
+      "inputSha256": "69f8488ef6dfb90c9cbcb3786fbc94a1e54912f56038f40116bbcca9fb5db487",
+      "path": "pronunciation/N5/N5-988db98632.mp3",
+      "sha256": "e487461f106b93f4463d787fed3157f6c424f10b1a0c9f7681a6f6d3565361a8",
+      "bytes": 4391,
+      "phonemes": [
+        "sh",
+        "i",
+        "ch",
+        "i"
+      ],
+      "expectedPhonemes": [
+        "sh",
+        "i",
+        "ch",
+        "i"
+      ],
+      "labelSha256": "ccbfcb4d9a08db749d40429c675752224212183482da104663c2c7c0552249bc",
+      "durationSeconds": 1.185,
+      "rms": 0.0277444,
+      "peak": 0.3285828,
+      "sampleRate": 48000,
+      "channels": 1
+    },
+    {
+      "id": "N5-ae534d4ca8",
+      "word": "目",
+      "reading": "め",
+      "input": "メ。",
+      "inputSha256": "53273adf934678a7c91c426de5c6ac466c34d7b5524407452d5a11e93f88158e",
+      "path": "pronunciation/N5/N5-ae534d4ca8.mp3",
+      "sha256": "e1be0e6fe649871b3232a1b48662d2b15e880ec3b24ab19012e9743558310d71",
+      "bytes": 2984,
+      "phonemes": [
+        "m",
+        "e"
+      ],
+      "expectedPhonemes": [
+        "m",
+        "e"
+      ],
+      "labelSha256": "c3da8779bc694315000692c972441f1e674f0d69b930267395290ad329de54b7",
+      "durationSeconds": 1.095,
+      "rms": 0.0364958,
+      "peak": 0.4020691,
+      "sampleRate": 48000,
+      "channels": 1
+    },
+    {
+      "id": "N5-d33540fe8e",
+      "word": "では",
+      "reading": "では",
+      "input": "デワ。",
+      "inputOverride": "The written particle は is pronounced wa in this expression; the visible vocabulary reading is retained.",
+      "inputSha256": "495e9a00adb26e9cc4c3e926ff693d36d423952c3d1bf5c6ef6c59ab26366e93",
+      "path": "pronunciation/N5/N5-d33540fe8e.mp3",
+      "sha256": "d17a29b622819e9a5cd45a3569083b2894d5f6ddbe700b3fb2d89497c227ff78",
+      "bytes": 4312,
+      "phonemes": [
+        "d",
+        "e",
+        "w",
+        "a"
+      ],
+      "expectedPhonemes": [
+        "d",
+        "e",
+        "w",
+        "a"
+      ],
+      "labelSha256": "ab700c703dd7aaaa7f23156400986b1cd049c9a49f5b3fc15fde396a98e5ed92",
+      "durationSeconds": 1.3,
+      "rms": 0.0472314,
+      "peak": 0.4081726,
+      "sampleRate": 48000,
+      "channels": 1
+    },
+    {
+      "id": "N5-da4b805e0b",
+      "word": "四",
+      "reading": "し",
+      "input": "シ。",
+      "inputSha256": "126b1663725c746bfb968575c68c080b50f03eb7a0d36848a5ab9549ee1181a6",
+      "path": "pronunciation/N5/N5-da4b805e0b.mp3",
+      "sha256": "3ecfb76d601b8311ba447d18e3d9288b169b03f6e67dbafc2aa16a9583a3400b",
+      "bytes": 3349,
+      "phonemes": [
+        "sh",
+        "i"
+      ],
+      "expectedPhonemes": [
+        "sh",
+        "i"
+      ],
+      "labelSha256": "bc2ca27ec4732a11371a673960246710d835eea206aa25c1de873bbd4164ade4",
+      "durationSeconds": 1.045,
+      "rms": 0.0181075,
+      "peak": 0.2185364,
+      "sampleRate": 48000,
+      "channels": 1
+    },
+    {
+      "id": "N5-ee85169acd",
+      "word": "料理",
+      "reading": "りょうり",
+      "input": "リョウリ。",
+      "inputSha256": "893c7322eadb043ab9213b3291b55dafcc9d6f537b283154da829a0abcf2b5a2",
+      "path": "pronunciation/N5/N5-ee85169acd.mp3",
+      "sha256": "84693a42562984ac4c174fd5487f32d900eae9d8ae0496936b5c1f4e402345ab",
+      "bytes": 4154,
+      "phonemes": [
+        "ry",
+        "o",
+        "u",
+        "r",
+        "i"
+      ],
+      "expectedPhonemes": [
+        "ry",
+        "o",
+        "u",
+        "r",
+        "i"
+      ],
+      "labelSha256": "8d00f650f3beae29c8ceef382a566bb75f8fc812fee85fa022f370dbf650a678",
+      "durationSeconds": 1.31,
+      "rms": 0.0553937,
+      "peak": 0.4411621,
+      "sampleRate": 48000,
+      "channels": 1
+    }
+  ]
+}
