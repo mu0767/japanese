@@ -1,0 +1,38 @@
+name: Audit all JLPT vocabulary readings against EDRDG
+on:
+  push:
+    paths:
+      - 'data.js'
+      - 'qa/audit-dictionary-readings.py'
+      - '.github/workflows/audit-dictionary-readings.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Independently cross-check all 7811 Japanese readings
+        run: python qa/audit-dictionary-readings.py
+      - name: Publish audit report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: dictionary-reading-audit
+          path: qa/dictionary-reading-audit.json
+      - name: Commit audit report
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add qa/dictionary-reading-audit.json
+          git diff --cached --quiet && exit 0
+          git commit -m "qa: record EDRDG reading audit for all 7811 JLPT entries"
+          git pull --rebase origin main
+          git push origin HEAD:main
