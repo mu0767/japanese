@@ -14,6 +14,8 @@ on:
       - 'worker/kotoba-sync.js'
       - 'core.js'
       - 'audio.js'
+      - 'audio-offline.js'
+      - 'test-audio-offline.cjs'
       - 'audio-data.js'
       - 'korean-data.js'
       - 'korean-krdict-data.js'
@@ -42,6 +44,7 @@ jobs:
           node test.cjs
           node test-kanji.cjs
           node test-audio.cjs
+          node test-audio-offline.cjs
           node test-progress.cjs
           node --check quick-export.js
       - name: Install browser harness
