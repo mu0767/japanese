@@ -24,8 +24,11 @@ async function read(path){const url=new URL(path,base);url.searchParams.set('_ve
  assert(sync.includes('https://kotoba-sync.union-raid.workers.dev/api/kotoba-progress'),'New D1 endpoint not published');assert.equal(coverage.translated,7811);
  assert(app.includes('id="confirm"'));assert(app.includes("b.onclick=()=>speak(s.q.optionWords[i])"),'Post-answer option replay lost');
  assert(!app.includes('SpeechSynthesisUtterance'),'Mispronouncing browser TTS must not be used');
- assert(paths.includes('audio-data.js?v=1')&&paths.includes('audio.js?v=3'),'Archived audio player not published');
- assert(paths.includes('app.js?v=23'),'Quiz audio playback version not published');
+ assert(paths.includes('audio-data.js?v=1')&&paths.includes('audio.js?v=4'),'Prefetch-capable audio player not published');
+ assert(paths.includes('app.js?v=24'),'Quiz audio preloading version not published');
+ assert(html.includes('rel="preconnect" href="https://kotoba-audio.union-raid.workers.dev"'),'Audio server preconnect missing');
+ assert(app.includes("KotobaAudio.prepare(mode==='reading'?s.q.optionWords:[w])"),'Quiz must preload all four option voices');
+ assert(app.includes('KotobaAudio.prepare(list.slice(page*30,page*30+3))'),'Word list audio preload missing');
  assert(app.includes('speak(s.q.optionWords[index]);'),'Quiz option selection still silently ignores audio failures');
  assert.equal(vm.runInContext("KotobaAudio.readingText(WORDS.find(w=>w.word==='ゼロ'))",context),'ぜろ');
  const audioScript=scripts[paths.findIndex(p=>p.startsWith('audio.js'))];
