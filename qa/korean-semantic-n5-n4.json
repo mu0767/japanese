@@ -1,0 +1,3659 @@
+{
+  "scope": [
+    "N5",
+    "N4"
+  ],
+  "reviewed": 1304,
+  "batches": 29,
+  "failedBatches": [
+    {
+      "ix": 8,
+      "status": "err",
+      "message": "SyntaxError: Expected ',' or '}' after property value in JSON at position 145 (line 1 column 146)",
+      "items": []
+    }
+  ],
+  "engine": "independent-qa-llama-3.3-70b",
+  "suggestions": [
+    {
+      "id": "N5-321963ed35",
+      "word": "開ける",
+      "reading": "あける",
+      "english": "to open",
+      "current": "풀다",
+      "proposed": "열다"
+    },
+    {
+      "id": "N5-9661cbac61",
+      "word": "上げる",
+      "reading": "あげる",
+      "english": "to give",
+      "current": "주다, 올리다",
+      "proposed": "주다"
+    },
+    {
+      "id": "N5-b62cb9ce4c",
+      "word": "頭",
+      "reading": "あたま",
+      "english": "head",
+      "current": "골치",
+      "proposed": "머리"
+    },
+    {
+      "id": "N5-34e6f7d220",
+      "word": "あちら",
+      "reading": "あちら",
+      "english": "there",
+      "current": "게",
+      "proposed": "저쪽"
+    },
+    {
+      "id": "N5-9949d87445",
+      "word": "厚い",
+      "reading": "あつい",
+      "english": "kind; deep; thick",
+      "current": "톡톡하다",
+      "proposed": "두껍다"
+    },
+    {
+      "id": "N5-f8fa96946f",
+      "word": "洗う",
+      "reading": "あらう",
+      "english": "to wash",
+      "current": "감다",
+      "proposed": "씻다"
+    },
+    {
+      "id": "N5-ac08788418",
+      "word": "ある",
+      "reading": "ある",
+      "english": "to be; to have (used for inanimate objects)",
+      "current": "(사물이 존재하다) 있다",
+      "proposed": "있다"
+    },
+    {
+      "id": "N5-ae0cc00f94",
+      "word": "言う",
+      "reading": "いう",
+      "english": "to say",
+      "current": "하다",
+      "proposed": "말하다"
+    },
+    {
+      "id": "N5-93bdc81dd9",
+      "word": "後ろ",
+      "reading": "うしろ",
+      "english": "behind",
+      "current": "뒷전",
+      "proposed": "뒤"
+    },
+    {
+      "id": "N5-6f664d3ded",
+      "word": "男の子",
+      "reading": "おとこのこ",
+      "english": "boy",
+      "current": "사내애",
+      "proposed": "소년"
+    },
+    {
+      "id": "N5-c6f43a8cc3",
+      "word": "お兄さん",
+      "reading": "おにいさん",
+      "english": "(honorable) older brother",
+      "current": "형님. 오빠. 시숙. 자형. 손위 처남. 형부의 높임말",
+      "proposed": "오빠"
+    },
+    {
+      "id": "N5-af378a4c86",
+      "word": "お姉さん",
+      "reading": "おねえさん",
+      "english": "(honorable) older sister",
+      "current": "누님, 언니",
+      "proposed": "언니"
+    },
+    {
+      "id": "N5-03d7b15720",
+      "word": "伯母さん",
+      "reading": "おばさん",
+      "english": "aunt",
+      "current": "큰어머니",
+      "proposed": "이모"
+    },
+    {
+      "id": "N5-cdfb776826",
+      "word": "重い",
+      "reading": "おもい",
+      "english": "heavy",
+      "current": "중하다",
+      "proposed": "무겁다"
+    },
+    {
+      "id": "N5-7cb27c411e",
+      "word": "階段",
+      "reading": "かいだん",
+      "english": "stairs",
+      "current": "층층대",
+      "proposed": "계단"
+    },
+    {
+      "id": "N5-bdb125e5c6",
+      "word": "買う",
+      "reading": "かう",
+      "english": "to buy",
+      "current": "뽑다",
+      "proposed": "사다"
+    },
+    {
+      "id": "N5-8ea4b03d7f",
+      "word": "返す",
+      "reading": "かえす",
+      "english": "to return something",
+      "current": "답례하다",
+      "proposed": "돌려주다"
+    },
+    {
+      "id": "N5-cd08f9cdc2",
+      "word": "紙",
+      "reading": "かみ",
+      "english": "paper",
+      "current": "보",
+      "proposed": "종이"
+    },
+    {
+      "id": "N5-8cd440a181",
+      "word": "借りる",
+      "reading": "かりる",
+      "english": "to borrow",
+      "current": "꾸다",
+      "proposed": "빌리다"
+    },
+    {
+      "id": "N5-6030b50276",
+      "word": "消える",
+      "reading": "きえる",
+      "english": "to disappear",
+      "current": "꺼지다",
+      "proposed": "사라지다"
+    },
+    {
+      "id": "N5-cf23f5fba1",
+      "word": "切る",
+      "reading": "きる",
+      "english": "to cut",
+      "current": "끊다",
+      "proposed": "자르다"
+    },
+    {
+      "id": "N5-43cd9825f0",
+      "word": "きれい",
+      "reading": "きれい",
+      "english": "pretty; clean",
+      "current": "말쑥하다",
+      "proposed": "예쁘다"
+    },
+    {
+      "id": "N5-d890e45616",
+      "word": "声",
+      "reading": "こえ",
+      "english": "voice",
+      "current": "언성",
+      "proposed": "소리"
+    },
+    {
+      "id": "N5-2da7034c1e",
+      "word": "コップ",
+      "reading": "コップ",
+      "english": "a glass",
+      "current": "글라스",
+      "proposed": "컵"
+    },
+    {
+      "id": "N5-491cfa69be",
+      "word": "言葉",
+      "reading": "ことば",
+      "english": "word; language",
+      "current": "말",
+      "proposed": "말, 언어"
+    },
+    {
+      "id": "N5-1f4bb6e503",
+      "word": "子供",
+      "reading": "こども",
+      "english": "child",
+      "current": "아동",
+      "proposed": "아이"
+    },
+    {
+      "id": "N5-a2694d259e",
+      "word": "御飯",
+      "reading": "ごはん",
+      "english": "cooked rice; meal",
+      "current": ". 밥(정중한 말씨)",
+      "proposed": "밥"
+    },
+    {
+      "id": "N5-6313cc9cb5",
+      "word": "これ",
+      "reading": "これ",
+      "english": "this",
+      "current": "요",
+      "proposed": "이것"
+    },
+    {
+      "id": "N5-dbd7cd319c",
+      "word": "魚",
+      "reading": "さかな",
+      "english": "fish",
+      "current": "고기",
+      "proposed": "물고기"
+    },
+    {
+      "id": "N5-20fcc4f54f",
+      "word": "先",
+      "reading": "さき",
+      "english": "the future; previous",
+      "current": "앞",
+      "proposed": "앞, 미래"
+    },
+    {
+      "id": "N5-4c39babf5f",
+      "word": "咲く",
+      "reading": "さく",
+      "english": "to bloom",
+      "current": "발하다",
+      "proposed": "피다"
+    },
+    {
+      "id": "N5-c10cb3070d",
+      "word": "作文",
+      "reading": "さくぶん",
+      "english": "composition; writing",
+      "current": "작문",
+      "proposed": "글쓰기"
+    },
+    {
+      "id": "N5-4e2aefb855",
+      "word": "差す",
+      "reading": "さす",
+      "english": "to stretch out hands; to raise an umbrella",
+      "current": "가리다, (우산을) 쓰다",
+      "proposed": "뻗다, 우산을 펼치다"
+    },
+    {
+      "id": "N5-a371cc6a54",
+      "word": "雑誌",
+      "reading": "ざっし",
+      "english": "magazine",
+      "current": "잡지",
+      "proposed": "잡지, 기사"
+    },
+    {
+      "id": "N5-8af5030b7a",
+      "word": "砂糖",
+      "reading": "さとう",
+      "english": "sugar",
+      "current": "설탕",
+      "proposed": "설탕"
+    },
+    {
+      "id": "N5-688bc67044",
+      "word": "寒い",
+      "reading": "さむい",
+      "english": "cold",
+      "current": "춥다",
+      "proposed": "추운"
+    },
+    {
+      "id": "N5-0a1f511640",
+      "word": "さようなら",
+      "reading": "さようなら",
+      "english": "good-bye",
+      "current": "안녕히 가세요, 안녕",
+      "proposed": "안녕"
+    },
+    {
+      "id": "N5-5cb07674a3",
+      "word": "三",
+      "reading": "さん",
+      "english": "three",
+      "current": "삼",
+      "proposed": "세"
+    },
+    {
+      "id": "N5-da4b805e0b",
+      "word": "四",
+      "reading": "し",
+      "english": "four",
+      "current": "넷",
+      "proposed": "네"
+    },
+    {
+      "id": "N5-988db98632",
+      "word": "七",
+      "reading": "しち",
+      "english": "seven",
+      "current": "칠",
+      "proposed": "일곱"
+    },
+    {
+      "id": "N5-db9f5d4422",
+      "word": "十",
+      "reading": "じゅう",
+      "english": "ten",
+      "current": "십",
+      "proposed": "열"
+    },
+    {
+      "id": "N5-44d9d70862",
+      "word": "水曜日",
+      "reading": "すいようび",
+      "english": "Wednesday",
+      "current": "수",
+      "proposed": "수요일"
+    },
+    {
+      "id": "N5-e82727193e",
+      "word": "吸う",
+      "reading": "すう",
+      "english": "to smoke; to suck",
+      "current": "태우다",
+      "proposed": "마시다, 흡입하다"
+    },
+    {
+      "id": "N5-20cbecd474",
+      "word": "好き",
+      "reading": "すき",
+      "english": "likeable",
+      "current": "좋아함",
+      "proposed": "좋아하다"
+    },
+    {
+      "id": "N5-ce75057c4c",
+      "word": "すぐ",
+      "reading": "すぐ",
+      "english": "immediately; soon; easily; right (near); honest; upright",
+      "current": "쉬",
+      "proposed": "すぐ, 곧, 쉽게, 가까이, 정직하게, 올바르게"
+    },
+    {
+      "id": "N5-0d38b01113",
+      "word": "少ない",
+      "reading": "すくない",
+      "english": "a few",
+      "current": "적다",
+      "proposed": "적다, 少ない"
+    },
+    {
+      "id": "N5-a8722990f1",
+      "word": "すぐに",
+      "reading": "すぐに",
+      "english": "instantly",
+      "current": "곧, 즉시",
+      "proposed": "곧, 즉시"
+    },
+    {
+      "id": "N5-c373555102",
+      "word": "少し",
+      "reading": "すこし",
+      "english": "few",
+      "current": "조금, 좀",
+      "proposed": "조금,少し"
+    },
+    {
+      "id": "N5-67f5908e10",
+      "word": "涼しい",
+      "reading": "すずしい",
+      "english": "refreshing",
+      "current": "선선하다",
+      "proposed": "서늘하다"
+    },
+    {
+      "id": "N5-b48d0c99d4",
+      "word": "せっけん",
+      "reading": "せっけん",
+      "english": "economy",
+      "current": "비누",
+      "proposed": "비누 -> 경제"
+    },
+    {
+      "id": "N5-5ef4f7dde9",
+      "word": "出る",
+      "reading": "でる",
+      "english": "to appear; to leave",
+      "current": "나가다",
+      "proposed": "나타나다"
+    },
+    {
+      "id": "N5-679e34031e",
+      "word": "天気",
+      "reading": "てんき",
+      "english": "weather",
+      "current": "천기",
+      "proposed": "날씨"
+    },
+    {
+      "id": "N5-62b5c13164",
+      "word": "電車",
+      "reading": "でんしゃ",
+      "english": "electric train",
+      "current": "전동차",
+      "proposed": "전철"
+    },
+    {
+      "id": "N5-6f4691297f",
+      "word": "戸",
+      "reading": "と",
+      "english": "Japanese style door",
+      "current": "문짝",
+      "proposed": "문"
+    },
+    {
+      "id": "N5-d0fb41651f",
+      "word": "どう",
+      "reading": "どう",
+      "english": "how; in what way",
+      "current": "어이",
+      "proposed": "어떻게"
+    },
+    {
+      "id": "N5-a891b73f8b",
+      "word": "どうして",
+      "reading": "どうして",
+      "english": "for what reason",
+      "current": "어째서, 왜",
+      "proposed": "왜"
+    },
+    {
+      "id": "N5-a71cbc3ce4",
+      "word": "どうぞ",
+      "reading": "どうぞ",
+      "english": "please",
+      "current": "제발",
+      "proposed": "부디"
+    },
+    {
+      "id": "N5-93b9cec3d4",
+      "word": "どうぞよろしく",
+      "reading": "どうぞよろしく",
+      "english": "pleased to meet you",
+      "current": "잘 부탁드립니다",
+      "proposed": "잘 부탁드립니다"
+    },
+    {
+      "id": "N5-03d03cf25d",
+      "word": "動物",
+      "reading": "どうぶつ",
+      "english": "animal",
+      "current": "동물",
+      "proposed": "동물"
+    },
+    {
+      "id": "N5-d2cb14f88a",
+      "word": "どうも",
+      "reading": "どうも",
+      "english": "thanks",
+      "current": "고마워요",
+      "proposed": "감사합니다"
+    },
+    {
+      "id": "N5-f840779b9e",
+      "word": "遠い",
+      "reading": "とおい",
+      "english": "far",
+      "current": "멀다",
+      "proposed": "멀리"
+    },
+    {
+      "id": "N5-e8579084ba",
+      "word": "十日",
+      "reading": "とおか",
+      "english": "ten days; the tenth day",
+      "current": "열흘",
+      "proposed": "열흘"
+    },
+    {
+      "id": "N5-978a2cefa5",
+      "word": "時々",
+      "reading": "ときどき",
+      "english": "sometimes",
+      "current": "가끔, 때때로",
+      "proposed": "가끔"
+    },
+    {
+      "id": "N5-e3ad76810f",
+      "word": "時計",
+      "reading": "とけい",
+      "english": "watch; clock",
+      "current": "시계",
+      "proposed": "시계"
+    },
+    {
+      "id": "N5-ad884a3b70",
+      "word": "どこ",
+      "reading": "どこ",
+      "english": "where",
+      "current": "어디",
+      "proposed": "어디"
+    },
+    {
+      "id": "N5-ca332ac7b4",
+      "word": "所",
+      "reading": "ところ",
+      "english": "place",
+      "current": "곳",
+      "proposed": "장소"
+    },
+    {
+      "id": "N5-358fc382cb",
+      "word": "年",
+      "reading": "とし",
+      "english": "year",
+      "current": "해, 나이",
+      "proposed": "연도"
+    },
+    {
+      "id": "N5-de5a452667",
+      "word": "図書館",
+      "reading": "としょかん",
+      "english": "library",
+      "current": "도서관",
+      "proposed": "도서관"
+    },
+    {
+      "id": "N5-5480c153dc",
+      "word": "どちら",
+      "reading": "どちら",
+      "english": "which of two",
+      "current": "어느 쪽",
+      "proposed": "어느 쪽"
+    },
+    {
+      "id": "N5-e8a4843059",
+      "word": "どっち",
+      "reading": "どっち",
+      "english": "which",
+      "current": "어느 쪽",
+      "proposed": "어느 쪽"
+    },
+    {
+      "id": "N5-a3679ee665",
+      "word": "とても",
+      "reading": "とても",
+      "english": "very",
+      "current": "매우",
+      "proposed": "매우"
+    },
+    {
+      "id": "N5-10fb2e55c0",
+      "word": "どなた",
+      "reading": "どなた",
+      "english": "who",
+      "current": "어느 분",
+      "proposed": "누구"
+    },
+    {
+      "id": "N5-c597c353cb",
+      "word": "隣",
+      "reading": "となり",
+      "english": "next door to",
+      "current": "옆집",
+      "proposed": "옆집"
+    },
+    {
+      "id": "N5-cd4b8c6381",
+      "word": "どの",
+      "reading": "どの",
+      "english": "which",
+      "current": "(지시사) '어느'",
+      "proposed": "어느"
+    },
+    {
+      "id": "N5-397b682fa7",
+      "word": "飛ぶ",
+      "reading": "とぶ",
+      "english": "to fly; to hop",
+      "current": "날다",
+      "proposed": "날다"
+    },
+    {
+      "id": "N5-9d1aa046d6",
+      "word": "止まる",
+      "reading": "とまる",
+      "english": "to come to a halt",
+      "current": "서다",
+      "proposed": "멈추다"
+    },
+    {
+      "id": "N5-72c525f37a",
+      "word": "友達",
+      "reading": "ともだち",
+      "english": "friend",
+      "current": "벗",
+      "proposed": "친구"
+    },
+    {
+      "id": "N5-86e7fb81c6",
+      "word": "土曜日",
+      "reading": "どようび",
+      "english": "Saturday",
+      "current": "토",
+      "proposed": "토요일"
+    },
+    {
+      "id": "N5-7e4fccba7f",
+      "word": "鳥",
+      "reading": "とり",
+      "english": "bird",
+      "current": "새",
+      "proposed": "새"
+    },
+    {
+      "id": "N5-3669c65744",
+      "word": "鶏肉",
+      "reading": "とりにく",
+      "english": "chicken meat",
+      "current": "닭고기",
+      "proposed": "치킨"
+    },
+    {
+      "id": "N5-4cc27797ba",
+      "word": "撮る",
+      "reading": "とる",
+      "english": "to take a photo or record a film",
+      "current": "찍다",
+      "proposed": "사진을 찍다"
+    },
+    {
+      "id": "N5-1313ed47fb",
+      "word": "取る",
+      "reading": "とる",
+      "english": "to take something",
+      "current": "(자리 등을) 잡다, 예약하다",
+      "proposed": "가지다"
+    },
+    {
+      "id": "N5-b21477c7db",
+      "word": "どれ",
+      "reading": "どれ",
+      "english": "which (of three or more)",
+      "current": "어느 것",
+      "proposed": "어느 것"
+    },
+    {
+      "id": "N5-3ae88c29c4",
+      "word": "ナイフ",
+      "reading": "ナイフ",
+      "english": "knife",
+      "current": "칼",
+      "proposed": "칼"
+    },
+    {
+      "id": "N5-5d32281da9",
+      "word": "中",
+      "reading": "なか",
+      "english": "middle",
+      "current": "가운데",
+      "proposed": "중간"
+    },
+    {
+      "id": "N5-fcea29f192",
+      "word": "長い",
+      "reading": "ながい",
+      "english": "long",
+      "current": "오랜",
+      "proposed": "길다"
+    },
+    {
+      "id": "N5-07a4101167",
+      "word": "鳴く",
+      "reading": "なく",
+      "english": "to make a sound (of an animal); to cry; to chirp; to sing (of birds)",
+      "current": "울다",
+      "proposed": "울다"
+    },
+    {
+      "id": "N5-04015c3825",
+      "word": "無くす",
+      "reading": "なくす",
+      "english": "to lose something",
+      "current": "분실하다",
+      "proposed": "잃다"
+    },
+    {
+      "id": "N5-c17f97fafc",
+      "word": "賑やか",
+      "reading": "にぎやか",
+      "english": "bustling; busy",
+      "current": "흥청거리다. 번화하다. 번잡하다. 분주하다. 바쁘다",
+      "proposed": "번잡하다"
+    },
+    {
+      "id": "N5-e0bcec9bd9",
+      "word": "飲む",
+      "reading": "のむ",
+      "english": "to drink",
+      "current": "음용하다",
+      "proposed": "마시다"
+    },
+    {
+      "id": "N5-822c5e11a6",
+      "word": "乗る",
+      "reading": "のる",
+      "english": "to get on; to ride",
+      "current": "타다",
+      "proposed": "타다"
+    },
+    {
+      "id": "N5-390ac6443d",
+      "word": "歯",
+      "reading": "は",
+      "english": "tooth",
+      "current": "이",
+      "proposed": "이"
+    },
+    {
+      "id": "N5-4729cc56f4",
+      "word": "はく",
+      "reading": "はく",
+      "english": "to wear; to put on trousers",
+      "current": "신다",
+      "proposed": "입다"
+    },
+    {
+      "id": "N5-8fea1e3f3c",
+      "word": "始まる",
+      "reading": "はじまる",
+      "english": "to begin",
+      "current": "비롯되다",
+      "proposed": "시작되다"
+    },
+    {
+      "id": "N5-244e138920",
+      "word": "走る",
+      "reading": "はしる",
+      "english": "to run",
+      "current": "뛰다",
+      "proposed": "달리다"
+    },
+    {
+      "id": "N5-9ea671262d",
+      "word": "働く",
+      "reading": "はたらく",
+      "english": "to work",
+      "current": "뛰다",
+      "proposed": "일하다"
+    },
+    {
+      "id": "N5-68571540e1",
+      "word": "服",
+      "reading": "ふく",
+      "english": "clothes",
+      "current": "옷가지",
+      "proposed": "옷"
+    },
+    {
+      "id": "N5-4162724f9a",
+      "word": "太い",
+      "reading": "ふとい",
+      "english": "fat",
+      "current": "굵다",
+      "proposed": "뚱뚱하다"
+    },
+    {
+      "id": "N5-5791e248f1",
+      "word": "降る",
+      "reading": "ふる",
+      "english": "to fall (e.g. rain or snow)",
+      "current": "(눈,비가) '내리다'",
+      "proposed": "내리다"
+    },
+    {
+      "id": "N5-aa60dd4a11",
+      "word": "古い",
+      "reading": "ふるい",
+      "english": "old (not used for people)",
+      "current": "낡다",
+      "proposed": "오래된"
+    },
+    {
+      "id": "N5-34784ed6ca",
+      "word": "ふろ",
+      "reading": "ふろ",
+      "english": "bath",
+      "current": "욕조, 욕실, 목욕하다",
+      "proposed": "목욕"
+    },
+    {
+      "id": "N5-71c372d7b2",
+      "word": "辺",
+      "reading": "へん",
+      "english": "area",
+      "current": "주변",
+      "proposed": "가까운 곳"
+    },
+    {
+      "id": "N5-f71c69492e",
+      "word": "ほか",
+      "reading": "ほか",
+      "english": "other; the rest",
+      "current": "딴것. 딴곳[데]",
+      "proposed": "다른"
+    },
+    {
+      "id": "N5-ab9f2792c4",
+      "word": "ポケット",
+      "reading": "ポケット",
+      "english": "pocket",
+      "current": "주머니",
+      "proposed": "주머니"
+    },
+    {
+      "id": "N5-2dbe65ee1d",
+      "word": "ポスト",
+      "reading": "ポスト",
+      "english": "post",
+      "current": "자리",
+      "proposed": "우체통"
+    },
+    {
+      "id": "N5-785adc4f9d",
+      "word": "細い",
+      "reading": "ほそい",
+      "english": "thin",
+      "current": "가늘다",
+      "proposed": "얇다"
+    },
+    {
+      "id": "N5-04ab635f4b",
+      "word": "ボタン",
+      "reading": "ボタン",
+      "english": "button",
+      "current": "단추",
+      "proposed": "버튼"
+    },
+    {
+      "id": "N5-0e8f798dbf",
+      "word": "本",
+      "reading": "ほん",
+      "english": "book",
+      "current": "책",
+      "proposed": "책, 본"
+    },
+    {
+      "id": "N5-3839786bac",
+      "word": "本棚",
+      "reading": "ほんだな",
+      "english": "bookshelves",
+      "current": "서가, 책꽂이",
+      "proposed": "책장"
+    },
+    {
+      "id": "N5-849baaf2c3",
+      "word": "ほんとう",
+      "reading": "ほんとう",
+      "english": "truth",
+      "current": "사실, 진실, 정말임",
+      "proposed": "진실, 사실"
+    },
+    {
+      "id": "N5-b19034ded1",
+      "word": "まずい",
+      "reading": "まずい",
+      "english": "unpleasant",
+      "current": "맛없다",
+      "proposed": "별로 좋지 않다"
+    },
+    {
+      "id": "N5-6a7163f5f7",
+      "word": "まだ",
+      "reading": "まだ",
+      "english": "yet; still",
+      "current": "아직(도), 여태까지, 계속, 지금껏",
+      "proposed": "아직, 아직도"
+    },
+    {
+      "id": "N5-4d76d06d84",
+      "word": "町",
+      "reading": "まち",
+      "english": "town; city",
+      "current": "시가(지), 시내, 읍내(邑內), 마을",
+      "proposed": "마을, 시가"
+    },
+    {
+      "id": "N5-6a39701228",
+      "word": "待つ",
+      "reading": "まつ",
+      "english": "to wait",
+      "current": "참다",
+      "proposed": "기다리다"
+    },
+    {
+      "id": "N5-0c8a588e53",
+      "word": "店",
+      "reading": "みせ",
+      "english": "shop",
+      "current": "가겟집",
+      "proposed": "가게"
+    },
+    {
+      "id": "N5-f81d503d6f",
+      "word": "やる",
+      "reading": "やる",
+      "english": "to do",
+      "current": "하다",
+      "proposed": "하다 (no change needed)"
+    },
+    {
+      "id": "N5-285b008622",
+      "word": "夕方",
+      "reading": "ゆうがた",
+      "english": "evening",
+      "current": "저녁",
+      "proposed": "저녁 (no change needed)"
+    },
+    {
+      "id": "N5-ae2b9f6d7e",
+      "word": "夕飯",
+      "reading": "ゆうはん",
+      "english": "dinner",
+      "current": "저녁",
+      "proposed": "저녁 (no change needed)"
+    },
+    {
+      "id": "N5-8b86921749",
+      "word": "郵便局",
+      "reading": "ゆうびんきょく",
+      "english": "post office",
+      "current": "우체국",
+      "proposed": "우체국 (no change needed)"
+    },
+    {
+      "id": "N5-39fff8fc4b",
+      "word": "昨夜",
+      "reading": "ゆうべ",
+      "english": "last night",
+      "current": "어젯밤",
+      "proposed": "어젯밤 (no change needed)"
+    },
+    {
+      "id": "N5-50b217ed0b",
+      "word": "有名",
+      "reading": "ゆうめい",
+      "english": "famous",
+      "current": "유명하다",
+      "proposed": "유명하다 (no change needed)"
+    },
+    {
+      "id": "N5-78c044b951",
+      "word": "雪",
+      "reading": "ゆき",
+      "english": "snow",
+      "current": "눈",
+      "proposed": "눈 (no change needed)"
+    },
+    {
+      "id": "N5-d980cb1531",
+      "word": "ゆっくりと",
+      "reading": "ゆっくりと",
+      "english": "slowly",
+      "current": "천천히",
+      "proposed": "천천히 (no change needed)"
+    },
+    {
+      "id": "N5-4f8e83945d",
+      "word": "八日",
+      "reading": "ようか",
+      "english": "eight days; eighth day of the month",
+      "current": "여드레",
+      "proposed": "여드레 (consider adding '8일' for clarity)"
+    },
+    {
+      "id": "N5-1907b6fc38",
+      "word": "洋服",
+      "reading": "ようふく",
+      "english": "western-style clothes",
+      "current": "양복, 서양식 옷",
+      "proposed": "양복, 서양식 옷 (no change needed)"
+    },
+    {
+      "id": "N5-19db29fbbb",
+      "word": "よく",
+      "reading": "よく",
+      "english": "often; well",
+      "current": "잘",
+      "proposed": "잘 (no change needed)"
+    },
+    {
+      "id": "N5-4cb7c969c4",
+      "word": "横",
+      "reading": "よこ",
+      "english": "beside; side; width",
+      "current": "옆",
+      "proposed": "옆 (no change needed)"
+    },
+    {
+      "id": "N5-222ae96df7",
+      "word": "四日",
+      "reading": "よっか",
+      "english": "four days; fouth day of the month",
+      "current": "나흘",
+      "proposed": "나흘 (no change needed)"
+    },
+    {
+      "id": "N5-1000ee441a",
+      "word": "四つ",
+      "reading": "よっつ",
+      "english": "four",
+      "current": "4개",
+      "proposed": "4 (consider adding '네 개' for clarity)"
+    },
+    {
+      "id": "N5-76f05a0739",
+      "word": "呼ぶ",
+      "reading": "よぶ",
+      "english": "to call out; to invite",
+      "current": "청하다",
+      "proposed": "부르다 (instead of 청하다)"
+    },
+    {
+      "id": "N5-eb7e675902",
+      "word": "読む",
+      "reading": "よむ",
+      "english": "to read",
+      "current": "읽다",
+      "proposed": "읽다 (no change needed)"
+    },
+    {
+      "id": "N5-6c214111ea",
+      "word": "より",
+      "reading": "より",
+      "english": "than; (used for comparison)",
+      "current": "~보다",
+      "proposed": "~보다 (no change needed)"
+    },
+    {
+      "id": "N5-1a0aec6793",
+      "word": "夜",
+      "reading": "よる",
+      "english": "evening; night",
+      "current": "밤",
+      "proposed": "밤 (no change needed)"
+    },
+    {
+      "id": "N5-83da293775",
+      "word": "弱い",
+      "reading": "よわい",
+      "english": "weak",
+      "current": "약하다",
+      "proposed": "약하다 (no change needed)"
+    },
+    {
+      "id": "N5-61fd50f12e",
+      "word": "来月",
+      "reading": "らいげつ",
+      "english": "next month",
+      "current": "내달",
+      "proposed": "내달 (no change needed)"
+    },
+    {
+      "id": "N5-7a4ef637be",
+      "word": "来週",
+      "reading": "らいしゅう",
+      "english": "next week",
+      "current": "내주",
+      "proposed": "내주 (no change needed)"
+    },
+    {
+      "id": "N5-c68f2caa2f",
+      "word": "来年",
+      "reading": "らいねん",
+      "english": "next year",
+      "current": "내년",
+      "proposed": "내년 (no change needed)"
+    },
+    {
+      "id": "N5-670f2dd0dc",
+      "word": "ラジオ",
+      "reading": "ラジオ",
+      "english": "radio",
+      "current": "라디오",
+      "proposed": "라디오 (no change needed)"
+    },
+    {
+      "id": "N5-924572e50c",
+      "word": "ラジカセ",
+      "reading": "ラジカセ",
+      "english": "radio cassette player",
+      "current": "라디오 카세트",
+      "proposed": "라디오 카세트 (no change needed)"
+    },
+    {
+      "id": "N5-a45af4ed89",
+      "word": "りっぱ",
+      "reading": "りっぱ",
+      "english": "splendid",
+      "current": "훌륭하다",
+      "proposed": "훌륭하다 (no change needed)"
+    },
+    {
+      "id": "N5-dc7d39c7af",
+      "word": "留学生",
+      "reading": "りゅうがくせい",
+      "english": "overseas student",
+      "current": "유학생",
+      "proposed": "유학생 (no change needed)"
+    },
+    {
+      "id": "N5-0139a208fe",
+      "word": "両親",
+      "reading": "りょうしん",
+      "english": "both parents",
+      "current": ". 부모",
+      "proposed": "부모님 (instead of . 부모)"
+    },
+    {
+      "id": "N5-ee85169acd",
+      "word": "料理",
+      "reading": "りょうり",
+      "english": "cuisine",
+      "current": "요리",
+      "proposed": "요리 (no change needed)"
+    },
+    {
+      "id": "N5-2ba96bef9a",
+      "word": "旅行",
+      "reading": "りょこう",
+      "english": "travel",
+      "current": "여행",
+      "proposed": "여행 (no change needed)"
+    },
+    {
+      "id": "N5-92b3bb727e",
+      "word": "零",
+      "reading": "れい",
+      "english": "zero",
+      "current": "공",
+      "proposed": "0 (instead of 공)"
+    },
+    {
+      "id": "N5-f7a15687a1",
+      "word": "冷蔵庫",
+      "reading": "れいぞうこ",
+      "english": "refrigerator",
+      "current": "냉장고",
+      "proposed": "냉장고 (no change needed)"
+    },
+    {
+      "id": "N5-0455201fe6",
+      "word": "レコード",
+      "reading": "レコード",
+      "english": "record",
+      "current": "레코드",
+      "proposed": "레코드 (no change needed)"
+    },
+    {
+      "id": "N5-31893e4378",
+      "word": "レストラン",
+      "reading": "レストラン",
+      "english": "restaurant",
+      "current": "레스토랑",
+      "proposed": "레스토랑 (no change needed)"
+    },
+    {
+      "id": "N5-d23f06249a",
+      "word": "練習",
+      "reading": "れんしゅう",
+      "english": "to practice",
+      "current": "연습",
+      "proposed": "연습하다 (instead of 연습)"
+    },
+    {
+      "id": "N5-5fc0f979e6",
+      "word": "廊下",
+      "reading": "ろうか",
+      "english": "corridor",
+      "current": "복도",
+      "proposed": "복도 (no change needed)"
+    },
+    {
+      "id": "N5-f9ccc7bfdf",
+      "word": "六",
+      "reading": "ろく",
+      "english": "six",
+      "current": "엿",
+      "proposed": "6 (no change needed, but consider adding '여섯' for clarity)"
+    },
+    {
+      "id": "N5-38249a2dd2",
+      "word": "ワイシャツ",
+      "reading": "ワイシャツ",
+      "english": "business shirt",
+      "current": "와이셔츠",
+      "proposed": "와이셔츠 (no change needed)"
+    },
+    {
+      "id": "N5-640761cb8b",
+      "word": "若い",
+      "reading": "わかい",
+      "english": "young",
+      "current": "젊다",
+      "proposed": "젊다 (no change needed)"
+    },
+    {
+      "id": "N5-ecee43eb04",
+      "word": "分かる",
+      "reading": "わかる",
+      "english": "to be understood",
+      "current": "알다",
+      "proposed": "알다 (no change needed)"
+    },
+    {
+      "id": "N5-0ca0de9dea",
+      "word": "忘れる",
+      "reading": "わすれる",
+      "english": "to forget",
+      "current": "잊다",
+      "proposed": "잊다 (no change needed)"
+    },
+    {
+      "id": "N5-d5c2e69813",
+      "word": "私",
+      "reading": "わたくし",
+      "english": "(humble) I; myself",
+      "current": "저",
+      "proposed": "저 (no change needed)"
+    },
+    {
+      "id": "N5-b1d440d4e1",
+      "word": "渡す",
+      "reading": "わたす",
+      "english": "to hand over",
+      "current": "건네주다",
+      "proposed": "건네주다 (no change needed)"
+    },
+    {
+      "id": "N5-78255b9860",
+      "word": "渡る",
+      "reading": "わたる",
+      "english": "to go across",
+      "current": "건너가다",
+      "proposed": "건너가다 (no change needed)"
+    },
+    {
+      "id": "N5-13b6dbec03",
+      "word": "悪い",
+      "reading": "わるい",
+      "english": "bad",
+      "current": "나쁘다",
+      "proposed": "나쁘다 (no change needed)"
+    },
+    {
+      "id": "N4-4fff6d0441",
+      "word": "あ",
+      "reading": "あ",
+      "english": "Ah",
+      "current": "아!, 어!",
+      "proposed": "아 (instead of 아!, 어!)"
+    },
+    {
+      "id": "N4-6a4011f27f",
+      "word": "ああ",
+      "reading": "ああ",
+      "english": "like that",
+      "current": "저렇다",
+      "proposed": "그렇다"
+    },
+    {
+      "id": "N4-91f0d5ac9e",
+      "word": "空く",
+      "reading": "あく",
+      "english": "to open; to become empty",
+      "current": "비다",
+      "proposed": "비어 있다"
+    },
+    {
+      "id": "N4-f935952fed",
+      "word": "浅い",
+      "reading": "あさい",
+      "english": "shallow; superficial",
+      "current": "옅다",
+      "proposed": "얕다, 허술하다"
+    },
+    {
+      "id": "N4-97bdb63259",
+      "word": "アジア",
+      "reading": "アジア",
+      "english": "Asia",
+      "current": "아시아",
+      "proposed": "아시아 대륙"
+    },
+    {
+      "id": "N4-4c3461199c",
+      "word": "明日",
+      "reading": "あす",
+      "english": "tomorrow",
+      "current": "내일",
+      "proposed": "내일"
+    },
+    {
+      "id": "N4-7fe5e36942",
+      "word": "遊び",
+      "reading": "あそび",
+      "english": "play",
+      "current": "놀이",
+      "proposed": "놀이,游戏"
+    },
+    {
+      "id": "N4-8c98c01eff",
+      "word": "集まる",
+      "reading": "あつまる",
+      "english": "to gather",
+      "current": "모이다",
+      "proposed": "모여들다"
+    },
+    {
+      "id": "N4-b00801af22",
+      "word": "集める",
+      "reading": "あつめる",
+      "english": "to collect something",
+      "current": "모으다",
+      "proposed": "모으다,집합하다"
+    },
+    {
+      "id": "N4-c1fb180c70",
+      "word": "アナウンサー",
+      "reading": "アナウンサー",
+      "english": "announcer",
+      "current": "아나운서",
+      "proposed": "방송 진행자"
+    },
+    {
+      "id": "N4-0fa879c73d",
+      "word": "アフリカ",
+      "reading": "アフリカ",
+      "english": "Africa",
+      "current": "아프리카",
+      "proposed": "아프리카 대륙"
+    },
+    {
+      "id": "N4-b921645383",
+      "word": "アメリカ",
+      "reading": "アメリカ",
+      "english": "America",
+      "current": "미국",
+      "proposed": "미주"
+    },
+    {
+      "id": "N4-1056f23586",
+      "word": "謝る",
+      "reading": "あやまる",
+      "english": "to apologize",
+      "current": "사과하다",
+      "proposed": "사과하다,謝罪하다"
+    },
+    {
+      "id": "N4-ab0767b2f7",
+      "word": "アルコール",
+      "reading": "アルコール",
+      "english": "alcohol",
+      "current": "알코올",
+      "proposed": "알콜,酒精"
+    },
+    {
+      "id": "N4-88d4196563",
+      "word": "アルバイト",
+      "reading": "アルバイト",
+      "english": "part-time job",
+      "current": "아르바이트",
+      "proposed": "아르바이트,알바"
+    },
+    {
+      "id": "N4-d06643e4e1",
+      "word": "安心",
+      "reading": "あんしん",
+      "english": "relief",
+      "current": "안도",
+      "proposed": "안심,화평"
+    },
+    {
+      "id": "N4-160a8399af",
+      "word": "安全",
+      "reading": "あんぜん",
+      "english": "safety",
+      "current": "안전",
+      "proposed": "안전,무사"
+    },
+    {
+      "id": "N4-367da027cb",
+      "word": "あんな",
+      "reading": "あんな",
+      "english": "such",
+      "current": "저런, 저와 같은",
+      "proposed": "그런,그와 같은"
+    },
+    {
+      "id": "N4-52a79a5d69",
+      "word": "案内",
+      "reading": "あんない",
+      "english": "to guide",
+      "current": "안내, 안내하다",
+      "proposed": "안내,導遊"
+    },
+    {
+      "id": "N4-629362dbfc",
+      "word": "以下",
+      "reading": "いか",
+      "english": "less than",
+      "current": "이하",
+      "proposed": "이하,以下に"
+    },
+    {
+      "id": "N4-da4198f39c",
+      "word": "以外",
+      "reading": "いがい",
+      "english": "with the exception of",
+      "current": "이외",
+      "proposed": "을 제외하고,除く"
+    },
+    {
+      "id": "N4-20044dd689",
+      "word": "医学",
+      "reading": "いがく",
+      "english": "medical science",
+      "current": "의학",
+      "proposed": "의학,醫學"
+    },
+    {
+      "id": "N4-db01fd59d7",
+      "word": "生きる",
+      "reading": "いきる",
+      "english": "to live",
+      "current": "살아가다",
+      "proposed": "살다,生きる"
+    },
+    {
+      "id": "N4-ba5a03baf1",
+      "word": "意見",
+      "reading": "いけん",
+      "english": "opinion",
+      "current": "의견",
+      "proposed": "의견,意見"
+    },
+    {
+      "id": "N4-372ce69caf",
+      "word": "石",
+      "reading": "いし",
+      "english": "stone",
+      "current": "돌",
+      "proposed": "돌,石"
+    },
+    {
+      "id": "N4-770aa71095",
+      "word": "いじめる",
+      "reading": "いじめる",
+      "english": "to tease",
+      "current": "괴롭히다",
+      "proposed": "괴롭히다,いじめ"
+    },
+    {
+      "id": "N4-13ab63d79a",
+      "word": "以上",
+      "reading": "いじょう",
+      "english": "more than; this is all",
+      "current": "이상",
+      "proposed": "이상,以上"
+    },
+    {
+      "id": "N4-05b5de61ab",
+      "word": "急ぐ",
+      "reading": "いそぐ",
+      "english": "to hurry",
+      "current": "서두르다",
+      "proposed": "서두르다,急ぐ"
+    },
+    {
+      "id": "N4-6dbf756da1",
+      "word": "致す",
+      "reading": "いたす",
+      "english": "(humble) to do",
+      "current": "하다 (겸양어)",
+      "proposed": "하다,致す(謙譲語)"
+    },
+    {
+      "id": "N4-47cc7185d5",
+      "word": "いただく",
+      "reading": "いただく",
+      "english": "(humble) to receive",
+      "current": "받다, 먹다 (겸양 표현)",
+      "proposed": "받다,먹다(謙譲語)"
+    },
+    {
+      "id": "N4-bf82bb12d2",
+      "word": "一度",
+      "reading": "いちど",
+      "english": "once",
+      "current": "한 번",
+      "proposed": "한 번,一度"
+    },
+    {
+      "id": "N4-cf69ef2274",
+      "word": "一生懸命",
+      "reading": "いっしょうけんめい",
+      "english": "with utmost effort",
+      "current": "목숨을 걸고 일함. 열심임",
+      "proposed": "최선을 다해,一生懸命"
+    },
+    {
+      "id": "N4-95f7288e1b",
+      "word": "いっぱい",
+      "reading": "いっぱい",
+      "english": "full",
+      "current": "그득",
+      "proposed": "가득 차다,いっぱい"
+    },
+    {
+      "id": "N4-3de1fe452d",
+      "word": "糸",
+      "reading": "いと",
+      "english": "thread",
+      "current": "실",
+      "proposed": "실,糸"
+    },
+    {
+      "id": "N4-556e3e0d99",
+      "word": "以内",
+      "reading": "いない",
+      "english": "within",
+      "current": "이내",
+      "proposed": "이내,以内"
+    },
+    {
+      "id": "N4-11d4a3118b",
+      "word": "田舎",
+      "reading": "いなか",
+      "english": "countryside",
+      "current": "촌",
+      "proposed": "시골,田舎"
+    },
+    {
+      "id": "N4-877a39a99f",
+      "word": "祈る",
+      "reading": "いのる",
+      "english": "to pray",
+      "current": "축원하다",
+      "proposed": "빌다,祈る"
+    },
+    {
+      "id": "N4-bc25dff617",
+      "word": "いらっしゃる",
+      "reading": "いらっしゃる",
+      "english": "(respectful) to be; to come or to go",
+      "current": "(行く・来る의 존경어) 가시다, 오시다,",
+      "proposed": "오시다,가시다(존경어)"
+    },
+    {
+      "id": "N4-833af5347e",
+      "word": "植える",
+      "reading": "うえる",
+      "english": "to plant; to grow",
+      "current": "심다",
+      "proposed": "심어보다"
+    },
+    {
+      "id": "N4-bf69a1d9f2",
+      "word": "うかがう",
+      "reading": "うかがう",
+      "english": "to visit",
+      "current": "(겸양어) 여쭙다, 방문하다, 듣다",
+      "proposed": "방문하다, 뵙다"
+    },
+    {
+      "id": "N4-20989c0cb5",
+      "word": "受ける",
+      "reading": "うける",
+      "english": "to take a lesson or test",
+      "current": "받다.(자기의 의지에 관계없이 작용이 미침을 받다.)",
+      "proposed": "수강하다, 받다"
+    },
+    {
+      "id": "N4-e54d4fef93",
+      "word": "動く",
+      "reading": "うごく",
+      "english": "to move",
+      "current": "움직이다",
+      "proposed": "움직이다, 동하다"
+    },
+    {
+      "id": "N4-da1a2f9721",
+      "word": "うそ",
+      "reading": "うそ",
+      "english": "a lie",
+      "current": "거짓말",
+      "proposed": "거짓말, 속임수"
+    },
+    {
+      "id": "N4-76d4bcd098",
+      "word": "うち",
+      "reading": "うち",
+      "english": "within",
+      "current": "안, 내부",
+      "proposed": "안, 속"
+    },
+    {
+      "id": "N4-e6f3a7d91a",
+      "word": "打つ",
+      "reading": "うつ",
+      "english": "to hit",
+      "current": "타격하다",
+      "proposed": "치다, 때리다"
+    },
+    {
+      "id": "N4-0dd54894db",
+      "word": "美しい",
+      "reading": "うつくしい",
+      "english": "beautiful",
+      "current": "아름답다",
+      "proposed": "아름답다, 예쁘다"
+    },
+    {
+      "id": "N4-69589e0288",
+      "word": "写す",
+      "reading": "うつす",
+      "english": "to copy or photograph",
+      "current": "베끼다",
+      "proposed": "사진을 찍다, 복사하다"
+    },
+    {
+      "id": "N4-c7362b5e02",
+      "word": "移る",
+      "reading": "うつる",
+      "english": "to move house or transfer",
+      "current": "옮기다",
+      "proposed": "이사하다, 옮기다"
+    },
+    {
+      "id": "N4-78d94c404b",
+      "word": "腕",
+      "reading": "うで",
+      "english": "arm",
+      "current": "팔",
+      "proposed": "팔, 손목"
+    },
+    {
+      "id": "N4-6d3b3fe0a4",
+      "word": "うまい",
+      "reading": "うまい",
+      "english": "delicious",
+      "current": "맛있다",
+      "proposed": "맛있다, 달다"
+    },
+    {
+      "id": "N4-1b5a6286d6",
+      "word": "裏",
+      "reading": "うら",
+      "english": "reverse side",
+      "current": "앞쪽과는 반대 부분, 뒤",
+      "proposed": "뒷면, 뒷편"
+    },
+    {
+      "id": "N4-11222e25b5",
+      "word": "売り場",
+      "reading": "うりば",
+      "english": "place where things are sold",
+      "current": "판매소",
+      "proposed": "판매장, 매장"
+    },
+    {
+      "id": "N4-c67a9658b1",
+      "word": "うれしい",
+      "reading": "うれしい",
+      "english": "glad",
+      "current": "기쁘다",
+      "proposed": "기쁘다, 행복하다"
+    },
+    {
+      "id": "N4-533b248802",
+      "word": "うん",
+      "reading": "うん",
+      "english": "(informal) yes",
+      "current": "응",
+      "proposed": "예, 네"
+    },
+    {
+      "id": "N4-44f33984fb",
+      "word": "運転",
+      "reading": "うんてん",
+      "english": "to drive",
+      "current": "운전",
+      "proposed": "운전하다, 조종하다"
+    },
+    {
+      "id": "N4-9f6e25d5e2",
+      "word": "運転手",
+      "reading": "うんてんしゅ",
+      "english": "driver",
+      "current": "운전수",
+      "proposed": "운전기사, 기사"
+    },
+    {
+      "id": "N4-47487b1e85",
+      "word": "運動",
+      "reading": "うんどう",
+      "english": "to exercise",
+      "current": "운동",
+      "proposed": "운동하다, 운동을 하다"
+    },
+    {
+      "id": "N4-3139c14254",
+      "word": "エスカレーター",
+      "reading": "エスカレーター",
+      "english": "escalator",
+      "current": "에스컬레이터",
+      "proposed": "에스컬레이터, 계단승강기"
+    },
+    {
+      "id": "N4-bb01cb559f",
+      "word": "枝",
+      "reading": "えだ",
+      "english": "branch; twig",
+      "current": "나뭇가지",
+      "proposed": "가지, 나뭇가지"
+    },
+    {
+      "id": "N4-60c9784974",
+      "word": "選ぶ",
+      "reading": "えらぶ",
+      "english": "to choose",
+      "current": "뽑아내다",
+      "proposed": "선택하다, 고르다"
+    },
+    {
+      "id": "N4-5ceed9165d",
+      "word": "遠慮",
+      "reading": "えんりょ",
+      "english": "to be reserved; to be restrained",
+      "current": "삼가다, 자제하다",
+      "proposed": "자제하다, 삼가다"
+    },
+    {
+      "id": "N4-53c76e5c6e",
+      "word": "おいでになる",
+      "reading": "おいでになる",
+      "english": "(respectful) to be",
+      "current": "계시다, 가시다, 오시다",
+      "proposed": "계시다, 오시다, 가시다"
+    },
+    {
+      "id": "N4-12e7bd036b",
+      "word": "お祝い",
+      "reading": "おいわい",
+      "english": "congratulation",
+      "current": "축하, 축하 선물",
+      "proposed": "축하, 축하의 인사"
+    },
+    {
+      "id": "N4-5c63f36f44",
+      "word": "オートバイ",
+      "reading": "オートバイ",
+      "english": "motorcycle",
+      "current": "오토바이",
+      "proposed": "오토바이, 모터사이클"
+    },
+    {
+      "id": "N4-e5e5899ce2",
+      "word": "おかげ",
+      "reading": "おかげ",
+      "english": "owing to",
+      "current": "덕분, 덕택",
+      "proposed": "덕분에, 덕택에"
+    },
+    {
+      "id": "N4-4d2128cddd",
+      "word": "おかしい",
+      "reading": "おかしい",
+      "english": "strange or funny",
+      "current": "우습다, 이상하다",
+      "proposed": "이상하다, 우습다"
+    },
+    {
+      "id": "N4-a58874b751",
+      "word": "お金持ち",
+      "reading": "おかねもち",
+      "english": "rich man",
+      "current": "부자",
+      "proposed": "부자, 부호"
+    },
+    {
+      "id": "N4-4cfa8f43e2",
+      "word": "億",
+      "reading": "おく",
+      "english": "one hundred million",
+      "current": "억",
+      "proposed": "1억"
+    },
+    {
+      "id": "N4-1065d7145c",
+      "word": "屋上",
+      "reading": "おくじょう",
+      "english": "rooftop",
+      "current": "옥상",
+      "proposed": "옥상, 지붕"
+    },
+    {
+      "id": "N4-ba001e2f36",
+      "word": "贈り物",
+      "reading": "おくりもの",
+      "english": "gift",
+      "current": "선물",
+      "proposed": "선물, 증정품"
+    },
+    {
+      "id": "N4-af1dae5588",
+      "word": "送る",
+      "reading": "おくる",
+      "english": "to send",
+      "current": "보내다",
+      "proposed": "보내다, 전달하다"
+    },
+    {
+      "id": "N4-ae8ce3986c",
+      "word": "遅れる",
+      "reading": "おくれる",
+      "english": "to be late",
+      "current": "때늦다",
+      "proposed": "늦다, 지연되다"
+    },
+    {
+      "id": "N4-99de4451f7",
+      "word": "起す",
+      "reading": "おこす",
+      "english": "to wake",
+      "current": "깨우다, 일으키다",
+      "proposed": "깨우다, 기醒시키다"
+    },
+    {
+      "id": "N4-2139fab218",
+      "word": "行う",
+      "reading": "おこなう",
+      "english": "to do",
+      "current": "실행하다, 수행하다, 진행하다",
+      "proposed": "하다, 실행하다"
+    },
+    {
+      "id": "N4-2e0f32c097",
+      "word": "怒る",
+      "reading": "おこる",
+      "english": "to get angry; to be angry",
+      "current": "노하다",
+      "proposed": "화내다, 노하다"
+    },
+    {
+      "id": "N4-3787755f33",
+      "word": "押し入れ",
+      "reading": "おしいれ",
+      "english": "closet",
+      "current": "벽장",
+      "proposed": "장식장, 옷장"
+    },
+    {
+      "id": "N4-1f5a7d8e07",
+      "word": "お嬢さん",
+      "reading": "おじょうさん",
+      "english": "young lady",
+      "current": "아가씨",
+      "proposed": "아가씨, 젊은 여성"
+    },
+    {
+      "id": "N4-6693b4e9f7",
+      "word": "お宅",
+      "reading": "おたく",
+      "english": "(polite) your house",
+      "current": "댁",
+      "proposed": "집, 댁"
+    },
+    {
+      "id": "N4-981ee66f59",
+      "word": "落ちる",
+      "reading": "おちる",
+      "english": "to fall or drop",
+      "current": "떨어지다",
+      "proposed": "떨어지다, 내리다"
+    },
+    {
+      "id": "N4-050024e2d9",
+      "word": "おっしゃる",
+      "reading": "おっしゃる",
+      "english": "(respectful) to say",
+      "current": "말씀하시다",
+      "proposed": "말씀하다, 하신다"
+    },
+    {
+      "id": "N4-b8630e0875",
+      "word": "夫",
+      "reading": "おっと",
+      "english": "husband",
+      "current": "남편",
+      "proposed": "남편, 부군"
+    },
+    {
+      "id": "N4-f2c38f9517",
+      "word": "おつり",
+      "reading": "おつり",
+      "english": "change from purchase; balance",
+      "current": "잔돈",
+      "proposed": "잔돈, 거스름돈"
+    },
+    {
+      "id": "N4-f586632207",
+      "word": "お土産",
+      "reading": "おみやげ",
+      "english": "souvenir",
+      "current": "기념품",
+      "proposed": "기념품, 선물"
+    },
+    {
+      "id": "N4-721424863e",
+      "word": "表",
+      "reading": "おもて",
+      "english": "the front",
+      "current": "앞면",
+      "proposed": "앞, 앞면"
+    },
+    {
+      "id": "N4-9099d4615b",
+      "word": "親",
+      "reading": "おや",
+      "english": "parents",
+      "current": "부모",
+      "proposed": "부모님"
+    },
+    {
+      "id": "N4-4806278f5b",
+      "word": "下りる",
+      "reading": "おりる",
+      "english": "to get off",
+      "current": "내려가다, 내려오다",
+      "proposed": "내리다"
+    },
+    {
+      "id": "N4-ac3d1de39a",
+      "word": "折る",
+      "reading": "おる",
+      "english": "to break or to fold",
+      "current": "부러뜨리다",
+      "proposed": "부러지다, 접다"
+    },
+    {
+      "id": "N4-12db3e5f4e",
+      "word": "お礼",
+      "reading": "おれい",
+      "english": "expression of gratitude",
+      "current": "사례, 감사 인사",
+      "proposed": "감사, 인사"
+    },
+    {
+      "id": "N4-d517e5d931",
+      "word": "折れる",
+      "reading": "おれる",
+      "english": "to break or be folded",
+      "current": "꺾이다",
+      "proposed": "부러지다, 꺾이다"
+    },
+    {
+      "id": "N4-19cb869e4d",
+      "word": "終わり",
+      "reading": "おわり",
+      "english": "the end",
+      "current": "끝",
+      "proposed": "끝, 종료"
+    },
+    {
+      "id": "N4-cbbc4c3524",
+      "word": "カーテン",
+      "reading": "カーテン",
+      "english": "curtain",
+      "current": "커튼",
+      "proposed": "커튼, 창문가리개"
+    },
+    {
+      "id": "N4-6f4ad2115e",
+      "word": "海岸",
+      "reading": "かいがん",
+      "english": "coast",
+      "current": "해안",
+      "proposed": "해안, 해변"
+    },
+    {
+      "id": "N4-83af91b7eb",
+      "word": "会議",
+      "reading": "かいぎ",
+      "english": "meeting",
+      "current": "회의",
+      "proposed": "회의, 모임"
+    },
+    {
+      "id": "N4-93ff1a80c2",
+      "word": "会議室",
+      "reading": "かいぎしつ",
+      "english": "meeting room",
+      "current": "회의실",
+      "proposed": "회의실, 회의장"
+    },
+    {
+      "id": "N4-7508a7d366",
+      "word": "会場",
+      "reading": "かいじょう",
+      "english": "assembly hall or meeting place",
+      "current": "행사장, 회의장",
+      "proposed": "행사장, 회의장, 모임장소"
+    },
+    {
+      "id": "N4-81b9c23c14",
+      "word": "会話",
+      "reading": "かいわ",
+      "english": "conversation",
+      "current": "회화",
+      "proposed": "대화, 회화"
+    },
+    {
+      "id": "N4-6365c5ac47",
+      "word": "帰り",
+      "reading": "かえり",
+      "english": "return",
+      "current": "돌아감, 돌아오는 길",
+      "proposed": "돌아감, 귀가"
+    },
+    {
+      "id": "N4-64e3e16740",
+      "word": "変える",
+      "reading": "かえる",
+      "english": "to change",
+      "current": "바꾸다",
+      "proposed": "바꾸다, 변하다"
+    },
+    {
+      "id": "N4-ea150f3d48",
+      "word": "科学",
+      "reading": "かがく",
+      "english": "science",
+      "current": "과학",
+      "proposed": "과학, 자연과학"
+    },
+    {
+      "id": "N4-2c7db27d62",
+      "word": "鏡",
+      "reading": "かがみ",
+      "english": "mirror",
+      "current": "거울",
+      "proposed": "거울,鏡子"
+    },
+    {
+      "id": "N4-2d6f99582c",
+      "word": "飾る",
+      "reading": "かざる",
+      "english": "to decorate",
+      "current": "꾸미다",
+      "proposed": "꾸미다, 장식하다"
+    },
+    {
+      "id": "N4-b64af0c4f7",
+      "word": "火事",
+      "reading": "かじ",
+      "english": "fire",
+      "current": "불",
+      "proposed": "화재, 불꽃"
+    },
+    {
+      "id": "N4-376ccb94c4",
+      "word": "ガス",
+      "reading": "ガス",
+      "english": "petrol",
+      "current": "가스",
+      "proposed": "가스, 연료"
+    },
+    {
+      "id": "N4-b3c360789e",
+      "word": "ガソリン",
+      "reading": "ガソリン",
+      "english": "petrol",
+      "current": "가솔린. 휘발유",
+      "proposed": "가솔린, 휘발유, 연료"
+    },
+    {
+      "id": "N4-57c68573b7",
+      "word": "ガソリンスタンド",
+      "reading": "ガソリンスタンド",
+      "english": "petrol station",
+      "current": "주유소",
+      "proposed": "주유소, 가스 스테이션"
+    },
+    {
+      "id": "N4-d0e700807a",
+      "word": "堅い",
+      "reading": "かたい",
+      "english": "hard",
+      "current": "단단하다",
+      "proposed": "단단하다, 경도"
+    },
+    {
+      "id": "N4-26f2ddd0a2",
+      "word": "形",
+      "reading": "かたち",
+      "english": "shape",
+      "current": "모양, 형태",
+      "proposed": "모양, 형태, 체형"
+    },
+    {
+      "id": "N4-119fdf575e",
+      "word": "片付ける",
+      "reading": "かたづける",
+      "english": "to tidy up",
+      "current": "치우다",
+      "proposed": "치우다, 정리하다"
+    },
+    {
+      "id": "N4-26a19196b7",
+      "word": "課長",
+      "reading": "かちょう",
+      "english": "section manager",
+      "current": "과장",
+      "proposed": "과장, 부서장"
+    },
+    {
+      "id": "N4-021c00423f",
+      "word": "勝つ",
+      "reading": "かつ",
+      "english": "to win",
+      "current": "이기다",
+      "proposed": "이기다, 승리하다"
+    },
+    {
+      "id": "N4-876713fb67",
+      "word": "かっこう",
+      "reading": "かっこう",
+      "english": "appearance",
+      "current": "맵시",
+      "proposed": "외모, 겉모습"
+    },
+    {
+      "id": "N4-89927b8fa1",
+      "word": "家内",
+      "reading": "かない",
+      "english": "housewife",
+      "current": "(높이지 않음) 아내",
+      "proposed": "주부, 아내"
+    },
+    {
+      "id": "N4-3153705f1f",
+      "word": "悲しい",
+      "reading": "かなしい",
+      "english": "sad",
+      "current": "슬프다",
+      "proposed": "슬프다, 우울하다"
+    },
+    {
+      "id": "N4-5a76ee84b9",
+      "word": "必ず",
+      "reading": "かならず",
+      "english": "certainly; necessarily",
+      "current": "반드시, 꼭",
+      "proposed": "반드시, 꼭, 필수적으로"
+    },
+    {
+      "id": "N4-be3dacfc93",
+      "word": "彼女",
+      "reading": "かのじょ",
+      "english": "she; girlfriend",
+      "current": "그녀",
+      "proposed": "그녀, 여자친구, 애인"
+    },
+    {
+      "id": "N4-0752484ec5",
+      "word": "壁",
+      "reading": "かべ",
+      "english": "wall",
+      "current": "담벼락",
+      "proposed": "담, 벽면"
+    },
+    {
+      "id": "N4-6b240c6105",
+      "word": "噛む",
+      "reading": "かむ",
+      "english": "to bite; to chew",
+      "current": "물다",
+      "proposed": "깨물다"
+    },
+    {
+      "id": "N4-836311c7d4",
+      "word": "計画",
+      "reading": "けいかく",
+      "english": "to plan",
+      "current": "계획",
+      "proposed": "계획하다"
+    },
+    {
+      "id": "N4-9746b57413",
+      "word": "経験",
+      "reading": "けいけん",
+      "english": "to experience",
+      "current": "경험, 경험하다",
+      "proposed": "경험하다 (primary meaning should be '경험' or '경험하다' as a noun and verb respectively)"
+    },
+    {
+      "id": "N4-e9bab5c151",
+      "word": "毛",
+      "reading": "け",
+      "english": "hair or fur",
+      "current": "터럭",
+      "proposed": "털"
+    },
+    {
+      "id": "N4-17279b1beb",
+      "word": "暮れる",
+      "reading": "くれる",
+      "english": "to get dark; to come to an end",
+      "current": "저물다",
+      "proposed": "저물다 (this is correct, but 'くれる' has a different primary meaning, which is 'to give')"
+    },
+    {
+      "id": "N4-5079fc5daf",
+      "word": "経済",
+      "reading": "けいざい",
+      "english": "finance; economy",
+      "current": "경제",
+      "proposed": "경제학"
+    },
+    {
+      "id": "N4-8426193f36",
+      "word": "ケーキ",
+      "reading": "ケーキ",
+      "english": "cake",
+      "current": "케이크",
+      "proposed": "케이크 (this is correct, but consider adding '디저트' or '떡' as a secondary meaning)"
+    },
+    {
+      "id": "N4-8fb005254a",
+      "word": "けがする",
+      "reading": "けがする",
+      "english": "to injure",
+      "current": "다치다",
+      "proposed": "다치다 (this is correct, but consider adding '부상' as a secondary meaning)"
+    },
+    {
+      "id": "N4-a200494cec",
+      "word": "景色",
+      "reading": "けしき",
+      "english": "scene; landscape",
+      "current": "경관",
+      "proposed": "풍경"
+    },
+    {
+      "id": "N4-ba1b3c0d13",
+      "word": "消しゴム",
+      "reading": "けしゴム",
+      "english": "eraser",
+      "current": "지우개",
+      "proposed": "지우개 (this is correct, but consider adding '消しゴム' as a secondary meaning in Korean)"
+    },
+    {
+      "id": "N4-c3da539389",
+      "word": "下宿",
+      "reading": "げしゅく",
+      "english": "lodging",
+      "current": "하숙",
+      "proposed": "하숙집"
+    },
+    {
+      "id": "N4-511cbf9eee",
+      "word": "決して",
+      "reading": "けっして",
+      "english": "never",
+      "current": "결코",
+      "proposed": "절대"
+    },
+    {
+      "id": "N4-0435dab637",
+      "word": "けれど",
+      "reading": "けれど",
+      "english": "however",
+      "current": "그러나, 그렇지만",
+      "proposed": "그러나"
+    },
+    {
+      "id": "N4-43f91bcf9d",
+      "word": "原因",
+      "reading": "げんいん",
+      "english": "cause; source",
+      "current": "까닭",
+      "proposed": "원인"
+    },
+    {
+      "id": "N4-063c94089d",
+      "word": "けんかする",
+      "reading": "けんかする",
+      "english": "to quarrel",
+      "current": "싸우다",
+      "proposed": "爭論하다"
+    },
+    {
+      "id": "N4-607f3c4430",
+      "word": "研究",
+      "reading": "けんきゅう",
+      "english": "research",
+      "current": "연구",
+      "proposed": "연구하다"
+    },
+    {
+      "id": "N4-912c269668",
+      "word": "研究室",
+      "reading": "けんきゅうしつ",
+      "english": "study room; laboratory",
+      "current": "연구실",
+      "proposed": "연구실, 실험실"
+    },
+    {
+      "id": "N4-a9a71878f0",
+      "word": "見物",
+      "reading": "けんぶつ",
+      "english": "sightseeing",
+      "current": "구경",
+      "proposed": "관광"
+    },
+    {
+      "id": "N4-f17fa2d7e1",
+      "word": "子",
+      "reading": "こ",
+      "english": "child",
+      "current": "애",
+      "proposed": "아이"
+    },
+    {
+      "id": "N4-3cd723d544",
+      "word": "こう",
+      "reading": "こう",
+      "english": "this way",
+      "current": "요러하다",
+      "proposed": "이렇게"
+    },
+    {
+      "id": "N4-aa95e437a0",
+      "word": "郊外",
+      "reading": "こうがい",
+      "english": "outskirts",
+      "current": "교외",
+      "proposed": "교외 지역"
+    },
+    {
+      "id": "N4-8063587e53",
+      "word": "講義",
+      "reading": "こうぎ",
+      "english": "lecture",
+      "current": "강의",
+      "proposed": "강의, 수업"
+    },
+    {
+      "id": "N4-baaaf1524a",
+      "word": "工業",
+      "reading": "こうぎょう",
+      "english": "the manufacturing industry",
+      "current": "공업",
+      "proposed": "제조업"
+    },
+    {
+      "id": "N4-22ba4ea959",
+      "word": "高校",
+      "reading": "こうこう",
+      "english": "high school",
+      "current": "고교",
+      "proposed": "고등학교"
+    },
+    {
+      "id": "N4-795156bbfe",
+      "word": "高校生",
+      "reading": "こうこうせい",
+      "english": "high school student",
+      "current": "고교생",
+      "proposed": "고등학생"
+    },
+    {
+      "id": "N4-8b7434e649",
+      "word": "工場",
+      "reading": "こうじょう",
+      "english": "factory",
+      "current": "공장",
+      "proposed": "공장, завод"
+    },
+    {
+      "id": "N4-0c49fbf17c",
+      "word": "校長",
+      "reading": "こうちょう",
+      "english": "headmaster",
+      "current": "교장",
+      "proposed": "교장 선생님"
+    },
+    {
+      "id": "N4-d64432f194",
+      "word": "交通",
+      "reading": "こうつう",
+      "english": "traffic; transportation",
+      "current": "교통",
+      "proposed": "교통, 운송"
+    },
+    {
+      "id": "N4-8786f4e971",
+      "word": "講堂",
+      "reading": "こうどう",
+      "english": "auditorium",
+      "current": "강당",
+      "proposed": "강당, 회의실"
+    },
+    {
+      "id": "N4-9593b3e04f",
+      "word": "高等学校",
+      "reading": "こうとうがっこう",
+      "english": "high school",
+      "current": "고등학교",
+      "proposed": "고등학교"
+    },
+    {
+      "id": "N4-a431dff83f",
+      "word": "公務員",
+      "reading": "こうむいん",
+      "english": "government worker",
+      "current": "공무원",
+      "proposed": "공무원, 정부 직원"
+    },
+    {
+      "id": "N4-8fd9bc63e8",
+      "word": "国際",
+      "reading": "こくさい",
+      "english": "international",
+      "current": "국제",
+      "proposed": "국제적"
+    },
+    {
+      "id": "N4-be527b9f9d",
+      "word": "心",
+      "reading": "こころ",
+      "english": "core; heart",
+      "current": "마음, 중심",
+      "proposed": "마음, 심장"
+    },
+    {
+      "id": "N4-8bd7bc72e8",
+      "word": "御主人",
+      "reading": "ごしゅじん",
+      "english": "(honorable) your husband",
+      "current": "남편분",
+      "proposed": "남편"
+    },
+    {
+      "id": "N4-ce133477e7",
+      "word": "故障",
+      "reading": "こしょう",
+      "english": "to break-down",
+      "current": "고장나다",
+      "proposed": "고장나다, 고장"
+    },
+    {
+      "id": "N4-5bb88bc7a4",
+      "word": "ご存じ",
+      "reading": "ごぞんじ",
+      "english": "knowing; acquaintance",
+      "current": "알고 계심, 아는 사이",
+      "proposed": "알고 계심, 지식"
+    },
+    {
+      "id": "N4-aac669551b",
+      "word": "答",
+      "reading": "こたえ",
+      "english": "response",
+      "current": "답",
+      "proposed": "답변, 반응"
+    },
+    {
+      "id": "N4-5bd8adf14c",
+      "word": "ごちそう",
+      "reading": "ごちそう",
+      "english": "a feast",
+      "current": "손님을 접대함.; 진수성찬",
+      "proposed": "만찬, 연회"
+    },
+    {
+      "id": "N4-038f67b635",
+      "word": "こと",
+      "reading": "こと",
+      "english": "thing; matter",
+      "current": "일, 것, 물건, 사실",
+      "proposed": "일, 문제, 事情"
+    },
+    {
+      "id": "N4-0ae014e274",
+      "word": "小鳥",
+      "reading": "ことり",
+      "english": "small bird",
+      "current": "작은 새",
+      "proposed": "작은 새, 조류"
+    },
+    {
+      "id": "N4-cd7dd383c9",
+      "word": "このあいだ",
+      "reading": "このあいだ",
+      "english": "the other day; recently",
+      "current": "지난번",
+      "proposed": "최근, 근래"
+    },
+    {
+      "id": "N4-22f8fe69bf",
+      "word": "このごろ",
+      "reading": "このごろ",
+      "english": "these days; nowadays",
+      "current": "요즘",
+      "proposed": "요즘, 최근"
+    },
+    {
+      "id": "N4-286e978a7d",
+      "word": "細かい",
+      "reading": "こまかい",
+      "english": "small; fine",
+      "current": "잘다",
+      "proposed": "세부적이다, 미세하다"
+    },
+    {
+      "id": "N4-0470fc929f",
+      "word": "込む",
+      "reading": "こむ",
+      "english": "to be crowded",
+      "current": "붐비다",
+      "proposed": "붐비다,拥挤하다"
+    },
+    {
+      "id": "N4-19a8ef6b7a",
+      "word": "米",
+      "reading": "こめ",
+      "english": "uncooked rice",
+      "current": "쌀",
+      "proposed": "밥"
+    },
+    {
+      "id": "N4-17fb3976d2",
+      "word": "ごらんになる",
+      "reading": "ごらんになる",
+      "english": "(respectful) to see",
+      "current": "보시다",
+      "proposed": "보다"
+    },
+    {
+      "id": "N4-b71d50ee32",
+      "word": "これから",
+      "reading": "これから",
+      "english": "after this",
+      "current": "지금부터",
+      "proposed": "이제부터"
+    },
+    {
+      "id": "N4-a769e4c0da",
+      "word": "怖い",
+      "reading": "こわい",
+      "english": "frightening",
+      "current": "무섭다",
+      "proposed": "무서운"
+    },
+    {
+      "id": "N4-0b089107f6",
+      "word": "壊す",
+      "reading": "こわす",
+      "english": "to break",
+      "current": "부수다",
+      "proposed": "부수다, 깨다"
+    },
+    {
+      "id": "N4-63290aef69",
+      "word": "壊れる",
+      "reading": "こわれる",
+      "english": "to be broken",
+      "current": "망가지다, 부서지다",
+      "proposed": "부서지다, 고장나다"
+    },
+    {
+      "id": "N4-d11b994212",
+      "word": "コンサート",
+      "reading": "コンサート",
+      "english": "concert",
+      "current": "연주회",
+      "proposed": "공연"
+    },
+    {
+      "id": "N4-cbb63150b8",
+      "word": "今度",
+      "reading": "こんど",
+      "english": "now; next time",
+      "current": "이다음",
+      "proposed": "이번, 다음번"
+    },
+    {
+      "id": "N4-918e096f88",
+      "word": "コンピュータ",
+      "reading": "コンピュータ",
+      "english": "computer",
+      "current": "컴퓨터",
+      "proposed": "컴퓨터, 전산기"
+    },
+    {
+      "id": "N4-bdad768057",
+      "word": "今夜",
+      "reading": "こんや",
+      "english": "tonight",
+      "current": "오늘저녁, 오늘밤",
+      "proposed": "오늘 밤"
+    },
+    {
+      "id": "N4-df21df827a",
+      "word": "最近",
+      "reading": "さいきん",
+      "english": "latest; nowadays",
+      "current": "최근",
+      "proposed": "최근, 요즘"
+    },
+    {
+      "id": "N4-c54201ce25",
+      "word": "最後",
+      "reading": "さいご",
+      "english": "last; end",
+      "current": "끝",
+      "proposed": "마지막, 끝"
+    },
+    {
+      "id": "N4-f5c169269f",
+      "word": "最初",
+      "reading": "さいしょ",
+      "english": "beginning; first",
+      "current": "처음, 최초",
+      "proposed": "처음, 시작"
+    },
+    {
+      "id": "N4-856f1c8216",
+      "word": "坂",
+      "reading": "さか",
+      "english": "slope; hill",
+      "current": "고개",
+      "proposed": "오르막, 내리막"
+    },
+    {
+      "id": "N4-0f4440571e",
+      "word": "探す",
+      "reading": "さがす",
+      "english": "to look for",
+      "current": "찾다",
+      "proposed": "찾다, 찾아다니다"
+    },
+    {
+      "id": "N4-608037bdca",
+      "word": "下がる",
+      "reading": "さがる",
+      "english": "to get down; to descend",
+      "current": "내려가다",
+      "proposed": "내려가다, 하강하다"
+    },
+    {
+      "id": "N4-c70caf0317",
+      "word": "盛ん",
+      "reading": "さかん",
+      "english": "popularity; prosperous",
+      "current": "번성함, 번창함",
+      "proposed": "번창함, 융성함"
+    },
+    {
+      "id": "N4-92226ca7db",
+      "word": "下げる",
+      "reading": "さげる",
+      "english": "to hang; to lower; to move back",
+      "current": "내리다",
+      "proposed": "내리다, 낮추다"
+    },
+    {
+      "id": "N4-4d497f75cf",
+      "word": "差し上げる",
+      "reading": "さしあげる",
+      "english": "(polite) to give",
+      "current": "드리다",
+      "proposed": "드리다, 주다"
+    },
+    {
+      "id": "N4-97bf3a5f9e",
+      "word": "さっき",
+      "reading": "さっき",
+      "english": "some time ago",
+      "current": "아까",
+      "proposed": "얼마 전"
+    },
+    {
+      "id": "N4-6dc70626da",
+      "word": "寂しい",
+      "reading": "さびしい",
+      "english": "lonely",
+      "current": "외롭다, 쓸쓸하다",
+      "proposed": "외로움, 쓸쓸함"
+    },
+    {
+      "id": "N4-22a8ff8a88",
+      "word": "再来月",
+      "reading": "さらいげつ",
+      "english": "the month after next",
+      "current": "다다음 달",
+      "proposed": "다음 달의 다음 달"
+    },
+    {
+      "id": "N4-a6678a1d99",
+      "word": "再来週",
+      "reading": "さらいしゅう",
+      "english": "the week after next",
+      "current": "다다음주",
+      "proposed": "다음 주의 다음 주"
+    },
+    {
+      "id": "N4-43f6c947f9",
+      "word": "サラダ",
+      "reading": "サラダ",
+      "english": "salad",
+      "current": "샐러드",
+      "proposed": "샐러드, 야채샐러드"
+    },
+    {
+      "id": "N4-5afe333d1c",
+      "word": "騒ぐ",
+      "reading": "さわぐ",
+      "english": "to make noise; to be excited",
+      "current": "떠들다",
+      "proposed": "시끄럽다, 떠들다"
+    },
+    {
+      "id": "N4-6d0bb40a1f",
+      "word": "触る",
+      "reading": "さわる",
+      "english": "to touch",
+      "current": "건드리다",
+      "proposed": "건드리다, 만지다"
+    },
+    {
+      "id": "N4-28faf8f7a3",
+      "word": "産業",
+      "reading": "さんぎょう",
+      "english": "industry",
+      "current": "산업",
+      "proposed": "산업, 공업"
+    },
+    {
+      "id": "N4-4b94df57e2",
+      "word": "サンダル",
+      "reading": "サンダル",
+      "english": "sandal",
+      "current": "샌들",
+      "proposed": "샌들, 구두"
+    },
+    {
+      "id": "N4-f919deef04",
+      "word": "サンドイッチ",
+      "reading": "サンドイッチ",
+      "english": "sandwich",
+      "current": "샌드위치",
+      "proposed": "샌드위치, 이중식빵"
+    },
+    {
+      "id": "N4-6243a1575b",
+      "word": "残念",
+      "reading": "ざんねん",
+      "english": "disappointment",
+      "current": "아쉬움",
+      "proposed": "아쉬움, 유감"
+    },
+    {
+      "id": "N4-988f9bb24f",
+      "word": "市",
+      "reading": "し",
+      "english": "city",
+      "current": "시",
+      "proposed": "도시, 시정촌"
+    },
+    {
+      "id": "N4-dd89673ae0",
+      "word": "字",
+      "reading": "じ",
+      "english": "character",
+      "current": "글씨",
+      "proposed": "글자, 문자"
+    },
+    {
+      "id": "N4-fd00937783",
+      "word": "試合",
+      "reading": "しあい",
+      "english": "match; game",
+      "current": "게임",
+      "proposed": "경기, 경쟁"
+    },
+    {
+      "id": "N4-88125cd960",
+      "word": "仕方",
+      "reading": "しかた",
+      "english": "method",
+      "current": "방법",
+      "proposed": "방법, 수단"
+    },
+    {
+      "id": "N4-f9a20b5203",
+      "word": "しかる",
+      "reading": "しかる",
+      "english": "a particular",
+      "current": "야단치다, 꾸짖다(활용할 때는 수동 형태로 바꿔서 사용함)",
+      "proposed": "야단치다, 꾸짖다"
+    },
+    {
+      "id": "N4-7855de335f",
+      "word": "試験",
+      "reading": "しけん",
+      "english": "examination",
+      "current": "고사",
+      "proposed": "시험, 시험이다"
+    },
+    {
+      "id": "N4-7f6ffe3432",
+      "word": "事故",
+      "reading": "じこ",
+      "english": "accident",
+      "current": "탈",
+      "proposed": "사고, 사건"
+    },
+    {
+      "id": "N4-ba8831572d",
+      "word": "地震",
+      "reading": "じしん",
+      "english": "earthquake",
+      "current": "지진",
+      "proposed": "지진, 지동"
+    },
+    {
+      "id": "N4-62ebad7ac3",
+      "word": "時代",
+      "reading": "じだい",
+      "english": "era",
+      "current": "시대",
+      "proposed": "시대,時代, 시기"
+    },
+    {
+      "id": "N4-0c0fb94d28",
+      "word": "下着",
+      "reading": "したぎ",
+      "english": "underwear",
+      "current": "속옷",
+      "proposed": "속옷, 내의"
+    },
+    {
+      "id": "N4-ecb83e16fd",
+      "word": "支度",
+      "reading": "したく",
+      "english": "to prepare",
+      "current": "장만",
+      "proposed": "준비하다, 장치하다"
+    },
+    {
+      "id": "N4-48fce6928c",
+      "word": "しっかり",
+      "reading": "しっかり",
+      "english": "firmly; steadily",
+      "current": "질끈",
+      "proposed": "단단히, 견고히"
+    },
+    {
+      "id": "N4-23afff6d4b",
+      "word": "倒れる",
+      "reading": "たおれる",
+      "english": "to break down",
+      "current": "쓰러지다",
+      "proposed": "쓰러지다 -> 무너지다"
+    },
+    {
+      "id": "N4-2b610cb1a7",
+      "word": "確か",
+      "reading": "たしか",
+      "english": "definite",
+      "current": "확실함, 분명함",
+      "proposed": "확실함, 분명함 -> 확실하다"
+    },
+    {
+      "id": "N4-12d94456b3",
+      "word": "足す",
+      "reading": "たす",
+      "english": "to add a number",
+      "current": "더하다",
+      "proposed": "더하다 -> 추가하다"
+    },
+    {
+      "id": "N4-2710211107",
+      "word": "訪ねる",
+      "reading": "たずねる",
+      "english": "to visit",
+      "current": "찾다",
+      "proposed": "찾다 -> 방문하다"
+    },
+    {
+      "id": "N4-abb49cd233",
+      "word": "正しい",
+      "reading": "ただしい",
+      "english": "correct",
+      "current": "옳다",
+      "proposed": "옳다 -> 맞다"
+    },
+    {
+      "id": "N4-b5579bc4a6",
+      "word": "畳",
+      "reading": "たたみ",
+      "english": "Japanese straw mat",
+      "current": "다다미, 일본식 짚자리",
+      "proposed": "다다미, 일본식 짚자리 -> 일본식 방석"
+    },
+    {
+      "id": "N4-c5741f54d6",
+      "word": "建てる",
+      "reading": "たてる",
+      "english": "to build",
+      "current": "올리다",
+      "proposed": "올리다 -> 세우다"
+    },
+    {
+      "id": "N4-cad7f1010a",
+      "word": "立てる",
+      "reading": "たてる",
+      "english": "to stand something up",
+      "current": "세우다",
+      "proposed": "세우다 -> 바로세우다"
+    },
+    {
+      "id": "N4-9c96fd3cb4",
+      "word": "棚",
+      "reading": "たな",
+      "english": "shelves",
+      "current": "선반",
+      "proposed": "선반 -> 책장"
+    },
+    {
+      "id": "N4-fb53d716c6",
+      "word": "楽しみ",
+      "reading": "たのしみ",
+      "english": "joy",
+      "current": "즐거움",
+      "proposed": "즐거움 -> 기쁨"
+    },
+    {
+      "id": "N4-9f86b83cad",
+      "word": "楽しむ",
+      "reading": "たのしむ",
+      "english": "to enjoy oneself",
+      "current": "즐기다",
+      "proposed": "즐기다 -> 기뻐하다"
+    },
+    {
+      "id": "N4-ebaf7ce5e4",
+      "word": "たまに",
+      "reading": "たまに",
+      "english": "occasionally",
+      "current": "더러",
+      "proposed": "더러 -> 가끔"
+    },
+    {
+      "id": "N4-06aec1d647",
+      "word": "為",
+      "reading": "ため",
+      "english": "in order to",
+      "current": "~하기 위해, ~을 위하여",
+      "proposed": "~하기 위해, ~을 위하여 -> ~하기 위해"
+    },
+    {
+      "id": "N4-6cf505ee55",
+      "word": "だめ",
+      "reading": "だめ",
+      "english": "no good",
+      "current": "바람직하지 않음. 하면 안 됨, 금지",
+      "proposed": "바람직하지 않음. 하면 안 됨, 금지 -> 안 된다"
+    },
+    {
+      "id": "N4-19f08c094e",
+      "word": "足りる",
+      "reading": "たりる",
+      "english": "to be enough",
+      "current": "족하다",
+      "proposed": "족하다 -> 충분하다"
+    },
+    {
+      "id": "N4-73a3e59782",
+      "word": "男性",
+      "reading": "だんせい",
+      "english": "male",
+      "current": "남성",
+      "proposed": "남성 -> 남자"
+    },
+    {
+      "id": "N4-aaac8221c9",
+      "word": "暖房",
+      "reading": "だんぼう",
+      "english": "heating",
+      "current": "난방",
+      "proposed": "난방 -> 보일러"
+    },
+    {
+      "id": "N4-56a36774ce",
+      "word": "血",
+      "reading": "ち",
+      "english": "blood",
+      "current": "피",
+      "proposed": "피 -> 혈액"
+    },
+    {
+      "id": "N4-83a456da88",
+      "word": "チェックする",
+      "reading": "チェックする",
+      "english": "to check",
+      "current": "체크하다",
+      "proposed": "체크하다 -> 확인하다"
+    },
+    {
+      "id": "N4-43965bbba0",
+      "word": "力",
+      "reading": "ちから",
+      "english": "strength; power",
+      "current": "힘",
+      "proposed": "힘 -> 힘, 능력"
+    },
+    {
+      "id": "N4-f527f52c5c",
+      "word": "ちっとも",
+      "reading": "ちっとも",
+      "english": "not at all (used with a negative verb)",
+      "current": "조금도, 전혀 (부정 표현과 함께)",
+      "proposed": "조금도, 전혀 (부정 표현과 함께) -> 전혀 (부정과 함께)"
+    },
+    {
+      "id": "N4-18035049f8",
+      "word": "ちゃん",
+      "reading": "ちゃん",
+      "english": "suffix for familiar female person",
+      "current": "아",
+      "proposed": "아 ->ちゃん(여성 이름에 붙임)"
+    },
+    {
+      "id": "N4-4e6d200127",
+      "word": "注意",
+      "reading": "ちゅうい",
+      "english": "caution",
+      "current": "주의",
+      "proposed": "주의 -> 주의하다"
+    },
+    {
+      "id": "N4-4b99b4673b",
+      "word": "中学校",
+      "reading": "ちゅうがっこう",
+      "english": "junior high school; middle school",
+      "current": "중학교",
+      "proposed": "중학교 -> 중등 학교"
+    },
+    {
+      "id": "N4-3f26d1cef7",
+      "word": "注射",
+      "reading": "ちゅうしゃ",
+      "english": "injection",
+      "current": "주사",
+      "proposed": "주사 -> 접종"
+    },
+    {
+      "id": "N4-36f583c207",
+      "word": "駐車場",
+      "reading": "ちゅうしゃじょう",
+      "english": "parking lot",
+      "current": "주차장",
+      "proposed": "주차장 -> 자동차 주차장"
+    },
+    {
+      "id": "N4-16db6a0f53",
+      "word": "地理",
+      "reading": "ちり",
+      "english": "geography",
+      "current": "지리",
+      "proposed": "지리 -> 지리학"
+    },
+    {
+      "id": "N4-ef537ea4a9",
+      "word": "捕まえる",
+      "reading": "つかまえる",
+      "english": "to seize",
+      "current": "잡다",
+      "proposed": "잡다 -> 포획하다"
+    },
+    {
+      "id": "N4-ba74488833",
+      "word": "つき",
+      "reading": "つき",
+      "english": "moon",
+      "current": "(천문학) 달",
+      "proposed": "(천문학) 달 -> 달"
+    },
+    {
+      "id": "N4-356e03170b",
+      "word": "付く",
+      "reading": "つく",
+      "english": "to be attached",
+      "current": "달리다",
+      "proposed": "달리다 -> 부착하다"
+    },
+    {
+      "id": "N4-c206b05b9d",
+      "word": "漬ける",
+      "reading": "つける",
+      "english": "to soak; to pickle",
+      "current": "절이다",
+      "proposed": "절이다 -> 담그다"
+    },
+    {
+      "id": "N4-7d940762d2",
+      "word": "都合",
+      "reading": "つごう",
+      "english": "circumstances; convenience",
+      "current": "사정, 형편, 편의",
+      "proposed": "사정, 형편, 편의 -> 상황"
+    },
+    {
+      "id": "N4-bbe4edb30f",
+      "word": "伝える",
+      "reading": "つたえる",
+      "english": "to report",
+      "current": "전하다",
+      "proposed": "전하다 -> 알리다"
+    },
+    {
+      "id": "N4-a1db204b87",
+      "word": "続く",
+      "reading": "つづく",
+      "english": "to be continued",
+      "current": "뒤잇다",
+      "proposed": "뒤잇다 -> 계속하다"
+    },
+    {
+      "id": "N4-d177796b00",
+      "word": "続ける",
+      "reading": "つづける",
+      "english": "to continue",
+      "current": "계속하다",
+      "proposed": "계속하다 -> 지속하다"
+    },
+    {
+      "id": "N4-ce21381e4f",
+      "word": "包む",
+      "reading": "つつむ",
+      "english": "to wrap",
+      "current": "싸다",
+      "proposed": "싸다 -> 감싸다"
+    },
+    {
+      "id": "N4-776c4df05f",
+      "word": "妻",
+      "reading": "つま",
+      "english": "(humble) wife",
+      "current": "처",
+      "proposed": "처 -> 아내"
+    },
+    {
+      "id": "N4-342df55815",
+      "word": "つもり",
+      "reading": "つもり",
+      "english": "intention",
+      "current": "생각, 작정, 의도",
+      "proposed": "생각, 작정, 의도 -> 계획"
+    },
+    {
+      "id": "N4-53162e310d",
+      "word": "都",
+      "reading": "と",
+      "english": "metropolitan",
+      "current": "도, 도쿄도의 행정구역 단위",
+      "proposed": "도쿄"
+    },
+    {
+      "id": "N4-e1cfd51839",
+      "word": "苦い",
+      "reading": "にがい",
+      "english": "bitter",
+      "current": "쓰다",
+      "proposed": "매울다"
+    },
+    {
+      "id": "N4-254439ebbe",
+      "word": "葉",
+      "reading": "は",
+      "english": "leaf",
+      "current": "잎사귀",
+      "proposed": "잎"
+    },
+    {
+      "id": "N4-4610276c99",
+      "word": "始める",
+      "reading": "はじめる",
+      "english": "to begin",
+      "current": "비롯하다",
+      "proposed": "시작하다"
+    },
+    {
+      "id": "N4-32ca6422d6",
+      "word": "場所",
+      "reading": "ばしょ",
+      "english": "location",
+      "current": "처소",
+      "proposed": "장소"
+    },
+    {
+      "id": "N4-54a6f375d8",
+      "word": "パソコン",
+      "reading": "パソコン",
+      "english": "personal computer",
+      "current": "피시",
+      "proposed": "컴퓨터"
+    },
+    {
+      "id": "N4-8825d6d645",
+      "word": "花見",
+      "reading": "はなみ",
+      "english": "cherry-blossom viewing",
+      "current": "꽃구경",
+      "proposed": "벚꽃구경"
+    },
+    {
+      "id": "N4-a2962b07bc",
+      "word": "林",
+      "reading": "はやし",
+      "english": "woods; forester",
+      "current": "수풀",
+      "proposed": "숲"
+    },
+    {
+      "id": "N4-76e19fba1a",
+      "word": "番組",
+      "reading": "ばんぐみ",
+      "english": "television or radio program",
+      "current": "프로",
+      "proposed": "방송 프로그램"
+    },
+    {
+      "id": "N4-70eb9aa3ff",
+      "word": "ハンドバッグ",
+      "reading": "ハンドバッグ",
+      "english": "handbag",
+      "current": "핸드백",
+      "proposed": "손가방"
+    },
+    {
+      "id": "N4-33a024fce6",
+      "word": "ひどい",
+      "reading": "ひどい",
+      "english": "awful",
+      "current": "가혹하다",
+      "proposed": "나쁨"
+    },
+    {
+      "id": "N4-9097d5cc39",
+      "word": "ほめる",
+      "reading": "ほめる",
+      "english": "to praise",
+      "current": "칭찬하다(활용할 때는 수동 형태로 바꿔서 사용함)",
+      "proposed": "칭찬하다"
+    },
+    {
+      "id": "N4-8011fa51a8",
+      "word": "役に立つ",
+      "reading": "やくにたつ",
+      "english": "to be helpful",
+      "current": "도움이 되다, 쓸모가 있다",
+      "proposed": "도움이 되다, 쓸모가 있다 -> 도움이 되다, 유용하다"
+    },
+    {
+      "id": "N4-7d2bcb5a30",
+      "word": "焼ける",
+      "reading": "やける",
+      "english": "to burn; to be roasted",
+      "current": "타다, 구워지다",
+      "proposed": "타다, 구워지다 -> 타다, 불타다"
+    },
+    {
+      "id": "N4-427a618271",
+      "word": "優しい",
+      "reading": "やさしい",
+      "english": "kind",
+      "current": "상냥하다",
+      "proposed": "상냥하다 -> 친절하다"
+    },
+    {
+      "id": "N4-3771ac0921",
+      "word": "痩せる",
+      "reading": "やせる",
+      "english": "to become thin",
+      "current": "마르다",
+      "proposed": "마르다 ->瘦다, 가벼워지다"
+    },
+    {
+      "id": "N4-f2a77c1c6d",
+      "word": "やっと",
+      "reading": "やっと",
+      "english": "at last",
+      "current": "그제야",
+      "proposed": "그제야 ->终于, 마침내"
+    },
+    {
+      "id": "N4-7a0b48d3e5",
+      "word": "やはり",
+      "reading": "やはり",
+      "english": "as I thought; absolutely",
+      "current": "역시, 전과 같이",
+      "proposed": "역시, 전과 같이 -> 당연히, 역시"
+    },
+    {
+      "id": "N4-10ee6bdb9e",
+      "word": "止む",
+      "reading": "やむ",
+      "english": "to stop",
+      "current": "멎다",
+      "proposed": "멎다 ->停止하다, 그치다"
+    },
+    {
+      "id": "N4-3ccc927e4b",
+      "word": "柔らかい",
+      "reading": "やわらかい",
+      "english": "soft",
+      "current": "말랑하다",
+      "proposed": "말랑하다 -> 부드럽다,柔らかい"
+    },
+    {
+      "id": "N4-d81bb54f03",
+      "word": "湯",
+      "reading": "ゆ",
+      "english": "hot water",
+      "current": "온수",
+      "proposed": "온수 ->熱水,湯"
+    },
+    {
+      "id": "N4-ad11ce072b",
+      "word": "輸出",
+      "reading": "ゆしゅつ",
+      "english": "to export",
+      "current": "수출",
+      "proposed": "수출 ->輸出, 수출하다"
+    },
+    {
+      "id": "N4-5d0d49b3fe",
+      "word": "輸入",
+      "reading": "ゆにゅう",
+      "english": "to import",
+      "current": "수입",
+      "proposed": "수입 ->輸入, 수입하다"
+    },
+    {
+      "id": "N4-63846aa88f",
+      "word": "指",
+      "reading": "ゆび",
+      "english": "finger",
+      "current": "손가락",
+      "proposed": "손가락 ->指, 손가락"
+    },
+    {
+      "id": "N4-688ed7ca0f",
+      "word": "指輪",
+      "reading": "ゆびわ",
+      "english": "finger ring",
+      "current": "반지",
+      "proposed": "반지 ->指輪, 반지"
+    },
+    {
+      "id": "N4-79e62e3c87",
+      "word": "夢",
+      "reading": "ゆめ",
+      "english": "dream",
+      "current": "꿈",
+      "proposed": "꿈 ->夢, 꿈"
+    },
+    {
+      "id": "N4-fa8716c349",
+      "word": "揺れる",
+      "reading": "ゆれる",
+      "english": "to shake; to sway",
+      "current": "흔들대다",
+      "proposed": "흔들대다 -> 흔들리다,摇れる"
+    },
+    {
+      "id": "N4-7c9d2c46eb",
+      "word": "用",
+      "reading": "よう",
+      "english": "use",
+      "current": "일",
+      "proposed": "일 ->用, 용도"
+    },
+    {
+      "id": "N4-cbb67e1b4d",
+      "word": "用意",
+      "reading": "ようい",
+      "english": "preparation",
+      "current": "준비",
+      "proposed": "준비 ->用意, 준비하다"
+    },
+    {
+      "id": "N4-c64fff23ae",
+      "word": "用事",
+      "reading": "ようじ",
+      "english": "things to do",
+      "current": "볼일",
+      "proposed": "볼일 ->用事, 볼일"
+    },
+    {
+      "id": "N4-cd96cff1ab",
+      "word": "汚れる",
+      "reading": "よごれる",
+      "english": "to get dirty",
+      "current": "더러워지다",
+      "proposed": "더러워지다 ->汚れる, 더러워지다"
+    },
+    {
+      "id": "N4-de815ae4e6",
+      "word": "予習",
+      "reading": "よしゅう",
+      "english": "preparation for a lesson",
+      "current": "예습",
+      "proposed": "예습 ->予習, 예습하다"
+    },
+    {
+      "id": "N4-a9fe0e98c1",
+      "word": "予定",
+      "reading": "よてい",
+      "english": "arrangement",
+      "current": "예정",
+      "proposed": "예정 ->予定, 예정이다"
+    },
+    {
+      "id": "N4-ed37fe04b5",
+      "word": "予約",
+      "reading": "よやく",
+      "english": "reservation",
+      "current": "예약",
+      "proposed": "예약 ->予約, 예약하다"
+    },
+    {
+      "id": "N4-7ffceb4055",
+      "word": "寄る",
+      "reading": "よる",
+      "english": "to visit",
+      "current": "접근하다; 다가가다[서다]",
+      "proposed": "접근하다; 다가가다[서다] ->寄る, 방문하다"
+    },
+    {
+      "id": "N4-82b0bf966f",
+      "word": "喜ぶ",
+      "reading": "よろこぶ",
+      "english": "to be delighted",
+      "current": "즐거워하다",
+      "proposed": "즐거워하다 ->喜ぶ, 기뻐하다"
+    },
+    {
+      "id": "N4-5f81e206e3",
+      "word": "よろしい",
+      "reading": "よろしい",
+      "english": "(respectful) OK; all right",
+      "current": "(‘よい’의 격식 차린 말씨) 좋다; 나쁘지 않다; 괜찮다",
+      "proposed": "(‘よい’의 격식 차린 말씨) 좋다; 나쁘지 않다; 괜찮다 ->よい, 좋다"
+    },
+    {
+      "id": "N4-df83eb2b9c",
+      "word": "理由",
+      "reading": "りゆう",
+      "english": "reason",
+      "current": "이유",
+      "proposed": "이유 ->理由, 이유"
+    },
+    {
+      "id": "N4-977d6bf88c",
+      "word": "利用",
+      "reading": "りよう",
+      "english": "utilization",
+      "current": "이용",
+      "proposed": "이용 ->利用, 이용하다"
+    },
+    {
+      "id": "N4-520cc83d87",
+      "word": "両方",
+      "reading": "りょうほう",
+      "english": "both sides",
+      "current": "양쪽",
+      "proposed": "양쪽 ->両方, 양쪽"
+    },
+    {
+      "id": "N4-cd95253850",
+      "word": "旅館",
+      "reading": "りょかん",
+      "english": "Japanese hotel",
+      "current": "여관",
+      "proposed": "여관 ->旅館, 여관"
+    },
+    {
+      "id": "N4-0989d94de1",
+      "word": "留守",
+      "reading": "るす",
+      "english": "absence",
+      "current": "부재, 집을 비움",
+      "proposed": "부재, 집을 비움 ->留守, 부재중"
+    },
+    {
+      "id": "N4-8ff4f12975",
+      "word": "冷房",
+      "reading": "れいぼう",
+      "english": "air conditioning",
+      "current": "냉방",
+      "proposed": "냉방 ->冷房, 에어컨"
+    },
+    {
+      "id": "N4-bcb7922671",
+      "word": "歴史",
+      "reading": "れきし",
+      "english": "history",
+      "current": "역사",
+      "proposed": "역사 ->歴史, 역사"
+    },
+    {
+      "id": "N4-b80da200ff",
+      "word": "レジ",
+      "reading": "レジ",
+      "english": "register",
+      "current": "계산대",
+      "proposed": "계산대 ->レジ, 계산대"
+    },
+    {
+      "id": "N4-d9f9f17224",
+      "word": "レポート",
+      "reading": "レポート",
+      "english": "report",
+      "current": "리포트",
+      "proposed": "리포트 ->レポート, 보고서"
+    },
+    {
+      "id": "N4-6926bbe9d4",
+      "word": "連絡",
+      "reading": "れんらく",
+      "english": "contact",
+      "current": "연락",
+      "proposed": "연락 ->連絡, 연락하다"
+    },
+    {
+      "id": "N4-f079ca12a7",
+      "word": "ワープロ",
+      "reading": "ワープロ",
+      "english": "word processor",
+      "current": "워드 프로세서",
+      "proposed": "워드 프로세서 ->ワープロ, 워드 프로세서"
+    },
+    {
+      "id": "N4-58c9a21aa1",
+      "word": "沸かす",
+      "reading": "わかす",
+      "english": "to boil; to heat",
+      "current": "끓이다",
+      "proposed": "끓이다 ->沸かす, 끓이다"
+    },
+    {
+      "id": "N4-e1641974f4",
+      "word": "別れる",
+      "reading": "わかれる",
+      "english": "to separate",
+      "current": "이별하다",
+      "proposed": "이별하다 ->別れる, 헤어지다"
+    },
+    {
+      "id": "N4-f7e0744822",
+      "word": "沸く",
+      "reading": "わく",
+      "english": "to boil; to grow hot; to get excited",
+      "current": "끓다",
+      "proposed": "끓다 ->沸く, 끓다"
+    },
+    {
+      "id": "N4-ceec15828f",
+      "word": "訳",
+      "reading": "わけ",
+      "english": "meaning; reason",
+      "current": "뜻",
+      "proposed": "뜻 ->訳, 의미"
+    },
+    {
+      "id": "N4-12abb2a2c6",
+      "word": "忘れ物",
+      "reading": "わすれもの",
+      "english": "lost article",
+      "current": "유실물",
+      "proposed": "유실물 ->忘れ物, 분실물"
+    },
+    {
+      "id": "N4-327c67b830",
+      "word": "笑う",
+      "reading": "わらう",
+      "english": "to laugh; to smile",
+      "current": "웃다",
+      "proposed": "웃다 ->笑う, 웃다"
+    },
+    {
+      "id": "N4-44a2bc7c32",
+      "word": "割合",
+      "reading": "わりあい",
+      "english": "rate; ratio; percentage",
+      "current": "비율",
+      "proposed": "비율 ->割合, 비율"
+    },
+    {
+      "id": "N4-27046b71e1",
+      "word": "割れる",
+      "reading": "われる",
+      "english": "to break",
+      "current": "깨어지다",
+      "proposed": "깨어지다 ->割れる, 깨지다"
+    }
+  ]
+}
