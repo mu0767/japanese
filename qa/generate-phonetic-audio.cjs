@@ -9,6 +9,10 @@ const VOICE=process.env.JTALK_VOICE||'/usr/share/hts-voice/nitech-jp-atr503-m001
 const DIC=process.env.JTALK_DICT||'/var/lib/mecab/dic/open-jtalk/naist-jdic';
 const sha=data=>crypto.createHash('sha256').update(data).digest('hex');
 const normalizedReading=s=>String(s).normalize('NFKC').trim().replace(/[ぁ-ゖ]/g,c=>String.fromCharCode(c.charCodeAt(0)+96));
+// These nine greetings/expressions contain the written particle は, pronounced
+// /wa/. Lexical 歯/葉/刃/派/特派/爆破 retain /ha/. Preserve every visible reading.
+const spokenOverrides={'こんにちは':'コンニチワ','こんばんは':'コンバンワ','それでは':'ソレデワ','では':'デワ','または':'マタワ','あるいは':'アルイワ','じつは':'ジツワ','ひいては':'ヒイテワ','もしくは':'モシクワ'};
+const synthesisReading=word=>spokenOverrides[word.reading]||normalizedReading(word.reading);
 // Kana-to-phoneme facts, independent of the dictionary's word segmentation.
 const mora=new Map();
 for(const [kana,phones] of [
@@ -38,7 +42,7 @@ function pcmInfo(wav){
 }
 async function main(){
  const words=vm.runInNewContext(fs.readFileSync('data.js','utf8')+';WORDS'),sample=process.argv.includes('--sample');
- const samples=new Set(['七','絵','胃','料理','階段','歌う','ゼロ','歯','葉','を']),target=sample?words.filter(w=>samples.has(w.word)||w.reading.length===1):words;
+ const samples=new Set(['七','絵','胃','料理','階段','歌う','ゼロ','歯','葉','を']),target=sample?words.filter(w=>samples.has(w.word)||w.reading.length===1||Object.hasOwn(spokenOverrides,w.reading)):words;
  if(!fs.existsSync(path.join(DIC,'sys.dic'))||!fs.existsSync(VOICE))throw Error('Missing Open JTalk dictionary/voice');
  for(const w of words){if(!/^N[1-5]-[a-f\d]+$/.test(w.id)||!/^N[1-5]$/.test(w.level))throw Error('Invalid vocabulary ID');expectedPhonemes(w.reading)}
  fs.mkdirSync(ROOT,{recursive:true});let cursor=0,processed=0,bytes=0;const failures=[],items=[];
@@ -49,9 +53,9 @@ async function main(){
    const word=target[cursor++],relativePath='pronunciation/'+word.level+'/'+word.id+'.mp3',output=path.resolve(relativePath);fs.mkdirSync(path.dirname(output),{recursive:true});
    try{
     // Katakana specifies phonetic input; standalone は/へ must not become particles.
-    const text=normalizedReading(word.reading)+'。';fs.writeFileSync(input,text,'utf8');
+    const text=synthesisReading(word)+'。';fs.writeFileSync(input,text,'utf8');
     await run('open_jtalk',['-x',DIC,'-m',VOICE,'-r','1.0','-ot',trace,'-ow',wav,input],options);
-    const phonemes=tracePhonemes(fs.readFileSync(trace,'utf8')),expected=expectedPhonemes(word.reading);
+    const phonemes=tracePhonemes(fs.readFileSync(trace,'utf8')),expected=expectedPhonemes(synthesisReading(word));
     if(JSON.stringify(canonicalPhones(phonemes))!==JSON.stringify(canonicalPhones(expected)))throw Error('PHONEME_MISMATCH expected='+expected.join(' ')+' actual='+phonemes.join(' '));
     if(word.word==='七'&&word.reading==='しち'&&canonicalPhones(phonemes).join(' ')!=='sh i ch i')throw Error('Seven pronunciation regression');
     const pcm=pcmInfo(fs.readFileSync(wav));
@@ -59,7 +63,7 @@ async function main(){
     const probe=JSON.parse((await run('ffprobe',['-v','error','-select_streams','a:0','-show_entries','format=duration:stream=codec_name,sample_rate,channels','-of','json',output],options)).stdout);
     if(probe.streams?.[0]?.codec_name!=='mp3'||Number(probe.format?.duration)<0.1)throw Error('Invalid encoded MP3 stream');
     const encoded=fs.readFileSync(output);if(encoded.length<256||encoded.length>500000)throw Error('Invalid MP3 asset size');bytes+=encoded.length;
-    items.push({id:word.id,word:word.word,reading:word.reading,input:text,inputSha256:sha(text),path:relativePath,sha256:sha(encoded),bytes:encoded.length,phonemes,expectedPhonemes:expected,...pcm});
+    items.push({id:word.id,word:word.word,reading:word.reading,input:text,...(spokenOverrides[word.reading]?{inputOverride:'The written particle は is pronounced wa in this expression; the visible vocabulary reading is retained.'}:{}),inputSha256:sha(text),path:relativePath,sha256:sha(encoded),bytes:encoded.length,phonemes,expectedPhonemes:expected,...pcm});
    }catch(err){failures.push({id:word.id,word:word.word,reading:word.reading,error:String(err.message||err).slice(0,400)});try{fs.unlinkSync(output)}catch{}}
    processed++;if(processed%200===0||processed===target.length)console.log('GENERATED_PROGRESS',JSON.stringify({processed,total:target.length,generated:items.length,failures:failures.length,bytes}));
   }}finally{fs.rmSync(tmp,{recursive:true,force:true})}
@@ -70,5 +74,5 @@ async function main(){
  const manifest={version:2,engine:'Open JTalk 1.11 / NIT ATR503 M001',voiceAttribution:'HTS Working Group / Nagoya Institute of Technology, NIT ATR503 M001 voice; see VOICE-LICENSE.txt',dictionary:'NAIST Japanese dictionary',source:'https://open-jtalk.sourceforge.net/',generatedAt:new Date().toISOString(),totalWords:words.length,total:items.length,voiceLicenseFile:'VOICE-LICENSE.txt',validation:'Exact kana-to-phoneme comparison (vowel devoicing and ei/ou long-vowel equivalence), PCM energy/duration, encoded MP3 stream, SHA-256. This is not human listening verification.',items:items.sort((a,b)=>a.id.localeCompare(b.id))};
  fs.writeFileSync(path.join(ROOT,sample?'sample-manifest.json':'manifest.json'),JSON.stringify(manifest,null,2)+'\n');
 }
-module.exports={normalizedReading,expectedPhonemes,canonicalPhones,tracePhonemes,pcmInfo};
+module.exports={normalizedReading,synthesisReading,expectedPhonemes,canonicalPhones,tracePhonemes,pcmInfo};
 if(require.main===module)main().catch(e=>{console.error(e.stack||e);process.exitCode=1});
