@@ -23,6 +23,22 @@ ctx.SpeechSynthesisUtterance=class{constructor(text){this.text=text}};
 ctx.speechSynthesis={getVoices:()=>voices,addEventListener(){},removeEventListener(){},
  speak(u){spoken.push(u);queueMicrotask(()=>u.onstart?.())},cancel(){}};
 (async()=>{
+ // Exercise the real selection path for every vocabulary entry (not only URL generation).
+ for(const word of words){
+  const beforeAudio=audioPlayed.length,beforeSpeech=spoken.length;
+  assert.equal(await audio.play(word),true,'Playback dispatch failed for '+word.id);
+  const original=audio.sources(word).find(src=>src.includes('raw.githubusercontent.com/tofugu/'));
+  if(original){
+   assert.equal(audioPlayed.length,beforeAudio+1,'Exact human recording skipped for '+word.id);
+   assert.equal(audioPlayed.at(-1),original,'Incorrect human recording for '+word.id);
+   assert.equal(spoken.length,beforeSpeech,'TTS incorrectly superseded native audio for '+word.id);
+  }else{
+   assert.equal(spoken.length,beforeSpeech+1,'Japanese TTS not dispatched for '+word.id);
+   assert.equal(spoken.at(-1).text,audio.readingText(word),'Wrong TTS reading for '+word.id);
+   assert.equal(spoken.at(-1).lang,'ja-JP');
+  }
+ }
+ console.log('PASS: dispatched all 7811 vocabulary audio routes.');
  const native=words.find(w=>audio.sources(w).some(s=>s.includes('raw.githubusercontent.com/tofugu/')));
  const synthesized=words.find(w=>!audio.sources(w).some(s=>s.includes('raw.githubusercontent.com/tofugu/')));
  assert(native&&synthesized);
