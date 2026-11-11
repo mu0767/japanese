@@ -75,7 +75,34 @@ async function downloadAudio(targetLevel){
   refreshAudioPanel();
  }
 }
-function start(review){let pool=review?missed():studyPool(WORDS.filter(w=>w.level===level),state,scope);if(mode==='meaning'||mode==='listening')pool=pool.filter(w=>KanjiDetails.korean(w));if(mode==='reading')pool=pool.filter(w=>Kotoba.normalize(w.word)!==Kotoba.normalize(w.reading));if(!pool.length){toast(!review&&scope==='pending'?'새로 풀거나 틀린 단어가 없습니다. 전체 단어로 바꾸면 다시 학습할 수 있어요.':'현재 조건에 맞는 문제가 없습니다. 급수나 퀴즈 유형을 바꿔보세요.');return}let list=shuffle(pool).slice(0,size);session={list,index:0,correct:0,review,answers:[],answered:false,selected:null,q:null};quiz();window.scrollTo(0,0)}
+function start(review){
+ const words=review?missed():WORDS.filter(w=>w.level===level);
+ const eligible=w=>!!KanjiDetails.korean(w);
+ let pool,reason=null;
+ if(review){
+  pool=words.filter(w=>mode==='reading'?Kotoba.normalize(w.word)!==Kotoba.normalize(w.reading):eligible(w));
+  if(!pool.length&&mode==='reading'){
+   // A kana-only wrong answer can still be revised with a meaning question.
+   pool=words.filter(eligible);
+   if(pool.length){mode='meaning';reason='review-meaning'}
+  }
+ }else{
+  const planned=Kotoba.planStudy(words,state,mode,scope,eligible);
+  pool=planned.pool;
+  reason=planned.reason;
+  if(planned.mode!==mode)mode=planned.mode;
+ }
+ if(!pool.length){
+  toast(review?'현재 복습할 수 있는 단어가 없습니다.':'현재 단어장에 출제 가능한 문제가 없습니다.');
+  return;
+ }
+ const list=shuffle(pool).slice(0,size);
+ session={list,index:0,correct:0,review,answers:[],answered:false,selected:null,q:null};
+ quiz();window.scrollTo(0,0);
+ if(reason==='pending-exhausted')toast('미학습·오답 문제가 없어 전체 단어에서 다시 출제합니다. 학습 기록은 유지됩니다.');
+ if(reason==='reading-exhausted')toast('남은 단어는 읽기와 표기가 같아 뜻 맞히기로 이어서 학습합니다.');
+ if(reason==='review-meaning')toast('복습할 읽기 문제가 없어 뜻 맞히기로 전환했습니다.');
+}
 function quiz(){const s=session,w=s.list[s.index];s.answered=false;s.selected=null;s.q=(mode==='meaning'||mode==='listening')?Kotoba.question(w,WORDS.filter(x=>x.level===w.level&&KanjiDetails.korean(x)),mode,x=>KanjiDetails.korean(x)):question(w,WORDS.filter(x=>x.level===w.level&&(x.id===w.id||KanjiDetails.korean(x))),mode);app.innerHTML=`<section class="quiz-shell"><div class="quiz-top"><button class="secondary" id="exit">← 나가기</button><h1>${s.review?'오답 복습':w.level+' 단어 학습'}</h1><span class="muted">${mode==='reading'?'읽기 퀴즈':mode==='listening'?'듣고 뜻 맞히기':'한국어 뜻 퀴즈'}</span></div><div class="quiz-progress"><span>${s.index+1} / ${s.list.length}</span><div class="track"><i style="width:${s.index/s.list.length*100}%"></i></div><span>정답 ${s.correct}</span></div><div class="question-card"><span class="badge">${w.level} · ${labels[w.level][0]}</span><h2 ${mode==='listening'?'class="listening-icon" aria-label="일본어 음성을 들어보세요"':'lang="ja"'}>${mode==='listening'?'♪':escape(w.word)}</h2><p>${mode==='reading'?'이 단어의 올바른 읽기를 골라주세요.':mode==='listening'?'일본어 발음을 듣고 한국어 뜻을 골라주세요. 정답을 확인하면 일본어 표기가 공개됩니다.':'이 단어의 한국어 뜻을 골라주세요.'}</p>${mode==='meaning'||mode==='listening'?'<button class="sound" id="speak" type="button">◖)) '+(mode==='listening'?'발음 다시 듣기':'발음 듣기')+'</button>':'<span class="muted">정답 확인 후 발음을 들을 수 있어요.</span>'}</div><div class="options">${s.q.options.map((o,i)=>`<button class="option" data-option="${i}"><span class="key">${i+1}</span><span>${escape(o)}${mode==='reading'&&s.q.optionWords?.[i]?`<small class="option-gloss">${escape(s.q.optionWords[i].word)} · ${escape(KanjiDetails.korean(s.q.optionWords[i])||'뜻 확인 필요')}</small>`:''}</span></button>`).join('')}</div><div id="feedback" aria-live="polite"></div><div class="quiz-bottom"><span class="muted">키보드 1–4로 선택 · Enter로 다음 문제</span><div class="quiz-buttons"><button class="secondary" id="skip">모르겠어요</button><button class="primary" id="confirm" disabled>확인</button></div></div></section>`;$('#exit').onclick=()=>{session=null;route()};if($('#speak'))$('#speak').onclick=()=>speak(w);document.querySelectorAll('[data-option]').forEach(b=>b.onclick=()=>selectOption(Number(b.dataset.option)));$('#confirm').onclick=()=>answer(s.selected);$('#skip').onclick=()=>answer(-1);if(typeof KotobaAudio!== 'undefined'){KotobaAudio.prepare(mode==='reading'?s.q.optionWords:[w]);if(mode==='listening')speak(w)}}
 function selectOption(index){const s=session;if(!s||s.answered)return;s.selected=index;document.querySelectorAll('[data-option]').forEach(b=>{const chosen=Number(b.dataset.option)===index;b.classList.toggle('selected',chosen);b.setAttribute('aria-pressed',String(chosen))});$('#confirm').disabled=false;if(mode==='reading')speak(s.q.optionWords[index]);}
 function optionGloss(option,w,source){if(mode!=='reading')return '';const relevant=source||WORDS.find(x=>x.word===w.word&&x.reading===option)||WORDS.find(x=>x.reading===option);if(!relevant)return '';const meaning=KanjiDetails.korean(relevant);return `${escape(relevant.word)} · ${meaning?escape(meaning):'사전 검색 필요'}`;}
