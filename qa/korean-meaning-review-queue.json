@@ -1,15 +1,15 @@
 {
-  "purpose": "Review queue, NOT a claim of semantic correctness or confirmed translation errors",
-  "method": "Whole-repository mapping and orthographic heuristic only. Independently verify each flagged term against a Japanese dictionary and the original OpenJLPT sense.",
+  "purpose": "Prioritized manual semantic review; not a certificate of semantic accuracy",
+  "method": "Exhaustive mapping scan for all 7,811 words, plus short-gloss heuristic. An external dictionary or expert must confirm semantic correctness before any change.",
   "summary": {
     "total": 7811,
     "uniqueIds": 7811,
     "translated": 7811,
     "missingKorean": 0,
-    "verifiedCorrections": 13,
+    "verifiedCorrections": 18,
     "verifiedMismatch": [],
-    "singleHangulGlosses": 516,
-    "oneCharacterReviewCandidates": 210
+    "singleHangulGlosses": 511,
+    "unreviewedShortGlossCandidates": 205
   },
   "candidates": [
     {
@@ -616,15 +616,6 @@
       "reviewStatus": "not-semantically-verified"
     },
     {
-      "id": "N3-8d570a517c",
-      "level": "N3",
-      "word": "職業",
-      "reading": "しょくぎょう",
-      "originalEnglish": "occupation; business",
-      "currentKorean": "직",
-      "reviewStatus": "not-semantically-verified"
-    },
-    {
       "id": "N3-d271a61e9b",
       "level": "N3",
       "word": "身体",
@@ -949,15 +940,6 @@
       "reviewStatus": "not-semantically-verified"
     },
     {
-      "id": "N2-20b4a043ec",
-      "level": "N2",
-      "word": "乾電池",
-      "reading": "かんでんち",
-      "originalEnglish": "dry cell; battery",
-      "currentKorean": "약",
-      "reviewStatus": "not-semantically-verified"
-    },
-    {
       "id": "N2-a58604399c",
       "level": "N2",
       "word": "儀式",
@@ -991,15 +973,6 @@
       "reading": "ぎょうれつ",
       "originalEnglish": "line; procession; matrix (math)",
       "currentKorean": "줄",
-      "reviewStatus": "not-semantically-verified"
-    },
-    {
-      "id": "N2-5f2c3ba54c",
-      "level": "N2",
-      "word": "工夫",
-      "reading": "くふう",
-      "originalEnglish": "labourer; worker",
-      "currentKorean": "꾀",
       "reviewStatus": "not-semantically-verified"
     },
     {
@@ -1081,15 +1054,6 @@
       "reading": "すいじょうき",
       "originalEnglish": "water vapour; steam",
       "currentKorean": "김",
-      "reviewStatus": "not-semantically-verified"
-    },
-    {
-      "id": "N2-8966975727",
-      "level": "N2",
-      "word": "水曜",
-      "reading": "すいよう",
-      "originalEnglish": "Wednesday",
-      "currentKorean": "수",
       "reviewStatus": "not-semantically-verified"
     },
     {
@@ -1207,15 +1171,6 @@
       "reading": "てっぽう",
       "originalEnglish": "gun",
       "currentKorean": "총",
-      "reviewStatus": "not-semantically-verified"
-    },
-    {
-      "id": "N2-8e4ddc0409",
-      "level": "N2",
-      "word": "電池",
-      "reading": "でんち",
-      "originalEnglish": "battery",
-      "currentKorean": "약",
       "reviewStatus": "not-semantically-verified"
     },
     {
