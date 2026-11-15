@@ -18,5 +18,35 @@
     "url": "https://ja.wiktionary.org/wiki/%E3%81%99%E3%81%90",
     "license": "reference-only",
     "reason": "Adverb meaning immediately/soon or spatially near, not 'rest'"
+  },
+  "N5-34e6f7d220": {
+    "word": "あちら",
+    "reading": "あちら",
+    "meaning": "저쪽, 저쪽 방향",
+    "previous": "게",
+    "source": "Tokyo University of Foreign Studies Japanese vocabulary module",
+    "url": "https://www.coelang.tufs.ac.jp/mt/ja/vmod/v_search_detail.php?id=1297&ls=%E3%81%82&rf=3",
+    "license": "reference-only",
+    "reason": "that way, that place over there"
+  },
+  "N5-bdb125e5c6": {
+    "word": "買う",
+    "reading": "かう",
+    "meaning": "사다, 구입하다",
+    "previous": "뽑다",
+    "source": "Cambridge Japanese-English Dictionary",
+    "url": "https://dictionary.cambridge.org/dictionary/japanese-english/%E8%B2%B7%E3%81%86",
+    "license": "reference-only",
+    "reason": "pay money to buy a good"
+  },
+  "N5-cd08f9cdc2": {
+    "word": "紙",
+    "reading": "かみ",
+    "meaning": "종이",
+    "previous": "보",
+    "source": "Bunpro Japanese N5 vocabulary",
+    "url": "https://bunpro.jp/ja/vocabs/%E7%B4%99",
+    "license": "reference-only",
+    "reason": "paper"
   }
 }
