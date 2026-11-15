@@ -1,0 +1,1906 @@
+{
+  "purpose": "Review queue, NOT a claim of semantic correctness or confirmed translation errors",
+  "method": "Whole-repository mapping and orthographic heuristic only. Independently verify each flagged term against a Japanese dictionary and the original OpenJLPT sense.",
+  "summary": {
+    "total": 7811,
+    "uniqueIds": 7811,
+    "translated": 7811,
+    "missingKorean": 0,
+    "verifiedCorrections": 13,
+    "verifiedMismatch": [],
+    "singleHangulGlosses": 516,
+    "oneCharacterReviewCandidates": 210
+  },
+  "candidates": [
+    {
+      "id": "N5-026ae57b50",
+      "level": "N5",
+      "word": "いくつ",
+      "reading": "いくつ",
+      "originalEnglish": "how many?; how old?",
+      "currentKorean": "몇",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N5-1cfccd0cdd",
+      "level": "N5",
+      "word": "一日",
+      "reading": "いちにち",
+      "originalEnglish": "one day; first of month",
+      "currentKorean": "일",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N5-dea2a1df8b",
+      "level": "N5",
+      "word": "いつも",
+      "reading": "いつも",
+      "originalEnglish": "always",
+      "currentKorean": "늘",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N5-cb29ccdd2a",
+      "level": "N5",
+      "word": "意味",
+      "reading": "いみ",
+      "originalEnglish": "meaning",
+      "currentKorean": "뜻",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N5-8ac60a4060",
+      "level": "N5",
+      "word": "ええ",
+      "reading": "ええ",
+      "originalEnglish": "yes",
+      "currentKorean": "응",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N5-3a2de0afca",
+      "level": "N5",
+      "word": "大きな",
+      "reading": "おおきな",
+      "originalEnglish": "big",
+      "currentKorean": "큰",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N5-3e015d0a8b",
+      "level": "N5",
+      "word": "お金",
+      "reading": "おかね",
+      "originalEnglish": "money",
+      "currentKorean": "돈",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N5-f843b00173",
+      "level": "N5",
+      "word": "お酒",
+      "reading": "おさけ",
+      "originalEnglish": "alcohol; rice wine",
+      "currentKorean": "술",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N5-edca336b1f",
+      "level": "N5",
+      "word": "お茶",
+      "reading": "おちゃ",
+      "originalEnglish": "green tea",
+      "currentKorean": "차",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N5-3707072a6b",
+      "level": "N5",
+      "word": "おなか",
+      "reading": "おなか",
+      "originalEnglish": "stomach",
+      "currentKorean": "배",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N5-613c41bd1d",
+      "level": "N5",
+      "word": "カップ",
+      "reading": "カップ",
+      "originalEnglish": "cup",
+      "currentKorean": "컵",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N5-4fee5be397",
+      "level": "N5",
+      "word": "切符",
+      "reading": "きっぷ",
+      "originalEnglish": "ticket",
+      "currentKorean": "표",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N5-491cfa69be",
+      "level": "N5",
+      "word": "言葉",
+      "reading": "ことば",
+      "originalEnglish": "word; language",
+      "currentKorean": "말",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N5-bd3a2ad2ad",
+      "level": "N5",
+      "word": "この",
+      "reading": "この",
+      "originalEnglish": "this",
+      "currentKorean": "이",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N5-434707d737",
+      "level": "N5",
+      "word": "ゼロ",
+      "reading": "ゼロ",
+      "originalEnglish": "zero",
+      "currentKorean": "공",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N5-677d3c5fac",
+      "level": "N5",
+      "word": "ドア",
+      "reading": "ドア",
+      "originalEnglish": "Western style door",
+      "currentKorean": "문",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N5-72c525f37a",
+      "level": "N5",
+      "word": "友達",
+      "reading": "ともだち",
+      "originalEnglish": "friend",
+      "currentKorean": "벗",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N5-3ae88c29c4",
+      "level": "N5",
+      "word": "ナイフ",
+      "reading": "ナイフ",
+      "originalEnglish": "knife",
+      "currentKorean": "칼",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N5-ef9536b1ee",
+      "level": "N5",
+      "word": "なぜ",
+      "reading": "なぜ",
+      "originalEnglish": "why",
+      "currentKorean": "왜",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N5-cf58476318",
+      "level": "N5",
+      "word": "など",
+      "reading": "など",
+      "originalEnglish": "et cetera",
+      "currentKorean": "등",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N5-2e6c7d2d9d",
+      "level": "N5",
+      "word": "荷物",
+      "reading": "にもつ",
+      "originalEnglish": "luggage",
+      "currentKorean": "짐",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N5-542f39c93d",
+      "level": "N5",
+      "word": "はい",
+      "reading": "はい",
+      "originalEnglish": "yes",
+      "currentKorean": "네",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N5-098e9e7e67",
+      "level": "N5",
+      "word": "パン",
+      "reading": "パン",
+      "originalEnglish": "bread",
+      "currentKorean": "빵",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N5-0c1dbd4838",
+      "level": "N5",
+      "word": "二つ",
+      "reading": "ふたつ",
+      "originalEnglish": "two",
+      "currentKorean": "두",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N5-f8fc73bd75",
+      "level": "N5",
+      "word": "ページ",
+      "reading": "ページ",
+      "originalEnglish": "page",
+      "currentKorean": "쪽",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N5-dd1183b005",
+      "level": "N5",
+      "word": "ペン",
+      "reading": "ペン",
+      "originalEnglish": "pen",
+      "currentKorean": "펜",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N5-19db29fbbb",
+      "level": "N5",
+      "word": "よく",
+      "reading": "よく",
+      "originalEnglish": "often; well",
+      "currentKorean": "잘",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N4-11d4a3118b",
+      "level": "N4",
+      "word": "田舎",
+      "reading": "いなか",
+      "originalEnglish": "countryside",
+      "currentKorean": "촌",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N4-533b248802",
+      "level": "N4",
+      "word": "うん",
+      "reading": "うん",
+      "originalEnglish": "(informal) yes",
+      "currentKorean": "응",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N4-6693b4e9f7",
+      "level": "N4",
+      "word": "お宅",
+      "reading": "おたく",
+      "originalEnglish": "(polite) your house",
+      "currentKorean": "댁",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N4-8c636a46f4",
+      "level": "N4",
+      "word": "踊り",
+      "reading": "おどり",
+      "originalEnglish": "a dance",
+      "currentKorean": "춤",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N4-19cb869e4d",
+      "level": "N4",
+      "word": "終わり",
+      "reading": "おわり",
+      "originalEnglish": "the end",
+      "currentKorean": "끝",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N4-b64af0c4f7",
+      "level": "N4",
+      "word": "火事",
+      "reading": "かじ",
+      "originalEnglish": "fire",
+      "currentKorean": "불",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N4-c54201ce25",
+      "level": "N4",
+      "word": "最後",
+      "reading": "さいご",
+      "originalEnglish": "last; end",
+      "currentKorean": "끝",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N4-ddfb670acf",
+      "level": "N4",
+      "word": "ジャム",
+      "reading": "ジャム",
+      "originalEnglish": "jam",
+      "currentKorean": "잼",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N4-d8623369cb",
+      "level": "N4",
+      "word": "背中",
+      "reading": "せなか",
+      "originalEnglish": "back of the body",
+      "currentKorean": "등",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N4-18035049f8",
+      "level": "N4",
+      "word": "ちゃん",
+      "reading": "ちゃん",
+      "originalEnglish": "suffix for familiar female person",
+      "currentKorean": "아",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N4-b89d0618be",
+      "level": "N4",
+      "word": "ねだん",
+      "reading": "ねだん",
+      "originalEnglish": "price",
+      "currentKorean": "값",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N4-6a3d0e7070",
+      "level": "N4",
+      "word": "のど",
+      "reading": "のど",
+      "originalEnglish": "throat",
+      "currentKorean": "목",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N4-ee0c991348",
+      "level": "N4",
+      "word": "昼間",
+      "reading": "ひるま",
+      "originalEnglish": "daytime; during the day",
+      "currentKorean": "낮",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N4-e5cfcfab45",
+      "level": "N4",
+      "word": "ベル",
+      "reading": "ベル",
+      "originalEnglish": "bell",
+      "currentKorean": "벨",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N4-ff9e385277",
+      "level": "N4",
+      "word": "返事",
+      "reading": "へんじ",
+      "originalEnglish": "reply",
+      "currentKorean": "답",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N4-845a23790b",
+      "level": "N4",
+      "word": "法律",
+      "reading": "ほうりつ",
+      "originalEnglish": "law",
+      "currentKorean": "법",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N4-96e10e7209",
+      "level": "N4",
+      "word": "木綿",
+      "reading": "もめん",
+      "originalEnglish": "cotton",
+      "currentKorean": "면",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N3-b36b0a71b9",
+      "level": "N3",
+      "word": "明かり",
+      "reading": "あかり",
+      "originalEnglish": "lamplight; light (in general); brightness",
+      "currentKorean": "불",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N3-56d7bebebd",
+      "level": "N3",
+      "word": "市場",
+      "reading": "いちば",
+      "originalEnglish": "(the) market (as a concept)",
+      "currentKorean": "장",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N3-ed0978af53",
+      "level": "N3",
+      "word": "およそ",
+      "reading": "およそ",
+      "originalEnglish": "about; roughly; as a rule; approximately",
+      "currentKorean": "약",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N3-533668820b",
+      "level": "N3",
+      "word": "香り",
+      "reading": "かおり",
+      "originalEnglish": "aroma; fragrance; scent; smell",
+      "currentKorean": "향",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N3-5164cf437e",
+      "level": "N3",
+      "word": "価格",
+      "reading": "かかく",
+      "originalEnglish": "price; value; cost",
+      "currentKorean": "값",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N3-222231aefb",
+      "level": "N3",
+      "word": "火災",
+      "reading": "かさい",
+      "originalEnglish": "conflagration; fire",
+      "currentKorean": "불",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N3-7634c5903a",
+      "level": "N3",
+      "word": "かなり",
+      "reading": "かなり",
+      "originalEnglish": "considerably; fairly; quite",
+      "currentKorean": "꽤",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N3-302bc4694a",
+      "level": "N3",
+      "word": "生地",
+      "reading": "きじ",
+      "originalEnglish": "cloth; fabric; material; texture",
+      "currentKorean": "감",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N3-a4e6e6b186",
+      "level": "N3",
+      "word": "きちんと",
+      "reading": "きちんと",
+      "originalEnglish": "precisely; accurately",
+      "currentKorean": "잘",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N3-34bee09fdb",
+      "level": "N3",
+      "word": "軍隊",
+      "reading": "ぐんたい",
+      "originalEnglish": "army; troops",
+      "currentKorean": "군",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N3-d17214b7e4",
+      "level": "N3",
+      "word": "欠点",
+      "reading": "けってん",
+      "originalEnglish": "faults; defect; weakness",
+      "currentKorean": "티",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N3-75cd952e9c",
+      "level": "N3",
+      "word": "幸運",
+      "reading": "こううん",
+      "originalEnglish": "good luck; fortune",
+      "currentKorean": "복",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N3-87062c3230",
+      "level": "N3",
+      "word": "合計",
+      "reading": "ごうけい",
+      "originalEnglish": "sum total; total amount",
+      "currentKorean": "계",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N3-4f77e1d360",
+      "level": "N3",
+      "word": "ゴール",
+      "reading": "ゴール",
+      "originalEnglish": "goal",
+      "currentKorean": "골",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N3-f9c7285539",
+      "level": "N3",
+      "word": "呼吸",
+      "reading": "こきゅう",
+      "originalEnglish": "breath; respiration",
+      "currentKorean": "숨",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N3-a1093c8201",
+      "level": "N3",
+      "word": "小麦",
+      "reading": "こむぎ",
+      "originalEnglish": "wheat",
+      "currentKorean": "밀",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N3-dc6aa5133f",
+      "level": "N3",
+      "word": "才能",
+      "reading": "さいのう",
+      "originalEnglish": "talent; ability",
+      "currentKorean": "끼",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N3-83aba83042",
+      "level": "N3",
+      "word": "幸い",
+      "reading": "さいわい",
+      "originalEnglish": "happiness; blessedness",
+      "currentKorean": "복",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N3-d15a9f3445",
+      "level": "N3",
+      "word": "時刻",
+      "reading": "じこく",
+      "originalEnglish": "instant; time; moment",
+      "currentKorean": "때",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N3-96bd500096",
+      "level": "N3",
+      "word": "実に",
+      "reading": "じつに",
+      "originalEnglish": "indeed; truly; surely",
+      "currentKorean": "참",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N3-2bd8c47394",
+      "level": "N3",
+      "word": "芝居",
+      "reading": "しばい",
+      "originalEnglish": "play; drama",
+      "currentKorean": "극",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N3-0bd00cd76e",
+      "level": "N3",
+      "word": "借金",
+      "reading": "しゃっきん",
+      "originalEnglish": "debt; loan; liabilities",
+      "currentKorean": "빚",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N3-ad063e9d9a",
+      "level": "N3",
+      "word": "手段",
+      "reading": "しゅだん",
+      "originalEnglish": "means; way; measure",
+      "currentKorean": "수",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N3-8d570a517c",
+      "level": "N3",
+      "word": "職業",
+      "reading": "しょくぎょう",
+      "originalEnglish": "occupation; business",
+      "currentKorean": "직",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N3-d271a61e9b",
+      "level": "N3",
+      "word": "身体",
+      "reading": "しんたい",
+      "originalEnglish": "the body",
+      "currentKorean": "몸",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N3-5f3091a6cb",
+      "level": "N3",
+      "word": "親友",
+      "reading": "しんゆう",
+      "originalEnglish": "close friend; buddy",
+      "currentKorean": "벗",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N3-7b89bdd9ec",
+      "level": "N3",
+      "word": "スター",
+      "reading": "スター",
+      "originalEnglish": "star",
+      "currentKorean": "별",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N3-65dfe9149d",
+      "level": "N3",
+      "word": "セット",
+      "reading": "セット",
+      "originalEnglish": "set",
+      "currentKorean": "벌",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N3-5315a22cf3",
+      "level": "N3",
+      "word": "そのうち",
+      "reading": "そのうち",
+      "originalEnglish": "eventually; sooner or later; of the previously mentioned",
+      "currentKorean": "곧",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N3-a7bc912ad3",
+      "level": "N3",
+      "word": "太陽",
+      "reading": "たいよう",
+      "originalEnglish": "sun; solar",
+      "currentKorean": "해",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N3-60eed96a97",
+      "level": "N3",
+      "word": "直ちに",
+      "reading": "ただちに",
+      "originalEnglish": "at once; immediately; directly; in person",
+      "currentKorean": "곧",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N3-7864a376ed",
+      "level": "N3",
+      "word": "チーム",
+      "reading": "チーム",
+      "originalEnglish": "team",
+      "currentKorean": "팀",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N3-47dad745df",
+      "level": "N3",
+      "word": "中心",
+      "reading": "ちゅうしん",
+      "originalEnglish": "center; core; heart; pivot; emphasis; balance",
+      "currentKorean": "축",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N3-94696ff83d",
+      "level": "N3",
+      "word": "調子",
+      "reading": "ちょうし",
+      "originalEnglish": "tune; tone; key",
+      "currentKorean": "톤",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N3-43f9074428",
+      "level": "N3",
+      "word": "常に",
+      "reading": "つねに",
+      "originalEnglish": "always; constantly",
+      "currentKorean": "늘",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N3-bcadb9720d",
+      "level": "N3",
+      "word": "ドラマ",
+      "reading": "ドラマ",
+      "originalEnglish": "drama",
+      "currentKorean": "극",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N3-6556dc10d1",
+      "level": "N3",
+      "word": "トン",
+      "reading": "トン",
+      "originalEnglish": "ton",
+      "currentKorean": "톤",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N3-a6e18afc55",
+      "level": "N3",
+      "word": "トンネル",
+      "reading": "トンネル",
+      "originalEnglish": "tunnel",
+      "currentKorean": "굴",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N3-5564da9929",
+      "level": "N3",
+      "word": "半ば",
+      "reading": "なかば",
+      "originalEnglish": "middle; half; semi; halfway; partly",
+      "currentKorean": "반",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N3-317aef42d7",
+      "level": "N3",
+      "word": "年間",
+      "reading": "ねんかん",
+      "originalEnglish": "year",
+      "currentKorean": "연",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N3-08f58c3770",
+      "level": "N3",
+      "word": "はあ",
+      "reading": "はあ",
+      "originalEnglish": "yes; indeed; well",
+      "currentKorean": "하",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N3-7a68fa62f5",
+      "level": "N3",
+      "word": "バッグ",
+      "reading": "バッグ",
+      "originalEnglish": "bag; bug",
+      "currentKorean": "백",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N3-1038a70c3e",
+      "level": "N3",
+      "word": "ばったり",
+      "reading": "ばったり",
+      "originalEnglish": "with a clash (thud); with a bang; plump; flop",
+      "currentKorean": "팍",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N3-01dda94e77",
+      "level": "N3",
+      "word": "範囲",
+      "reading": "はんい",
+      "originalEnglish": "extent; scope; sphere; range",
+      "currentKorean": "폭",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N3-6997e916e3",
+      "level": "N3",
+      "word": "批評",
+      "reading": "ひひょう",
+      "originalEnglish": "criticism; review; commentary",
+      "currentKorean": "평",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N3-18ce3e646d",
+      "level": "N3",
+      "word": "ピン",
+      "reading": "ピン",
+      "originalEnglish": "pin",
+      "currentKorean": "핀",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N3-02a74abcd0",
+      "level": "N3",
+      "word": "再び",
+      "reading": "ふたたび",
+      "originalEnglish": "again; once more; a second time",
+      "currentKorean": "또",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N3-38dd5eb4a0",
+      "level": "N3",
+      "word": "ボール",
+      "reading": "ボール",
+      "originalEnglish": "ball; bowl",
+      "currentKorean": "볼",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N3-ea7888aea6",
+      "level": "N3",
+      "word": "マーケット",
+      "reading": "マーケット",
+      "originalEnglish": "market",
+      "currentKorean": "장",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N3-8e820edd3b",
+      "level": "N3",
+      "word": "味方",
+      "reading": "みかた",
+      "originalEnglish": "friend; ally; supporter",
+      "currentKorean": "편",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N3-c6c155ada8",
+      "level": "N3",
+      "word": "迷惑",
+      "reading": "めいわく",
+      "originalEnglish": "trouble; bother; annoyance",
+      "currentKorean": "폐",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N3-02424c2277",
+      "level": "N3",
+      "word": "役割",
+      "reading": "やくわり",
+      "originalEnglish": "part; assigning (allotment of) parts; role; duties",
+      "currentKorean": "몫",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N3-95203a9427",
+      "level": "N3",
+      "word": "友人",
+      "reading": "ゆうじん",
+      "originalEnglish": "friend",
+      "currentKorean": "벗",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N3-d75a953f22",
+      "level": "N3",
+      "word": "利益",
+      "reading": "りえき",
+      "originalEnglish": "profits; gains; (political, economic) interest",
+      "currentKorean": "득",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N3-b87cfb16ef",
+      "level": "N3",
+      "word": "僅か",
+      "reading": "わずか",
+      "originalEnglish": "only; merely; a little; small quantity",
+      "currentKorean": "좀",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N2-b453cd7ae1",
+      "level": "N2",
+      "word": "ウール",
+      "reading": "ウール",
+      "originalEnglish": "wool",
+      "currentKorean": "모",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N2-002731ca75",
+      "level": "N2",
+      "word": "液体",
+      "reading": "えきたい",
+      "originalEnglish": "liquid; fluid",
+      "currentKorean": "액",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N2-286e536eba",
+      "level": "N2",
+      "word": "おかず",
+      "reading": "おかず",
+      "originalEnglish": "side dish; accompaniment for rice dishes",
+      "currentKorean": "찬",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N2-66c46c763c",
+      "level": "N2",
+      "word": "垣根",
+      "reading": "かきね",
+      "originalEnglish": "hedge",
+      "currentKorean": "담",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N2-31c272208c",
+      "level": "N2",
+      "word": "ガム",
+      "reading": "ガム",
+      "originalEnglish": "chewing gum",
+      "currentKorean": "껌",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N2-20b4a043ec",
+      "level": "N2",
+      "word": "乾電池",
+      "reading": "かんでんち",
+      "originalEnglish": "dry cell; battery",
+      "currentKorean": "약",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N2-a58604399c",
+      "level": "N2",
+      "word": "儀式",
+      "reading": "ぎしき",
+      "originalEnglish": "ceremony; rite; ritual; service",
+      "currentKorean": "식",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N2-d84448f0f9",
+      "level": "N2",
+      "word": "ぎっしり",
+      "reading": "ぎっしり",
+      "originalEnglish": "tightly; fully",
+      "currentKorean": "꽉",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N2-0ac7cfded0",
+      "level": "N2",
+      "word": "ギャング",
+      "reading": "ギャング",
+      "originalEnglish": "gang",
+      "currentKorean": "갱",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N2-af99de8ced",
+      "level": "N2",
+      "word": "行列",
+      "reading": "ぎょうれつ",
+      "originalEnglish": "line; procession; matrix (math)",
+      "currentKorean": "줄",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N2-5f2c3ba54c",
+      "level": "N2",
+      "word": "工夫",
+      "reading": "くふう",
+      "originalEnglish": "labourer; worker",
+      "currentKorean": "꾀",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N2-043a33f231",
+      "level": "N2",
+      "word": "血液",
+      "reading": "けつえき",
+      "originalEnglish": "blood",
+      "currentKorean": "피",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N2-19b3644127",
+      "level": "N2",
+      "word": "効力",
+      "reading": "こうりょく",
+      "originalEnglish": "effect; efficacy; validity; potency",
+      "currentKorean": "힘",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N2-bb828438c9",
+      "level": "N2",
+      "word": "酒場",
+      "reading": "さかば",
+      "originalEnglish": "bar; bar-room",
+      "currentKorean": "바",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N2-b1a974f767",
+      "level": "N2",
+      "word": "敷地",
+      "reading": "しきち",
+      "originalEnglish": "site",
+      "currentKorean": "터",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N2-2f2bfb723b",
+      "level": "N2",
+      "word": "子孫",
+      "reading": "しそん",
+      "originalEnglish": "descendants; posterity; offspring",
+      "currentKorean": "손",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N2-344ec73c51",
+      "level": "N2",
+      "word": "実例",
+      "reading": "じつれい",
+      "originalEnglish": "example; illustration",
+      "currentKorean": "예",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N2-bf39c2aae9",
+      "level": "N2",
+      "word": "蒸気",
+      "reading": "じょうき",
+      "originalEnglish": "steam; vapour",
+      "currentKorean": "김",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N2-5cf2c92338",
+      "level": "N2",
+      "word": "書籍",
+      "reading": "しょせき",
+      "originalEnglish": "book; publication",
+      "currentKorean": "책",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N2-e5bc9f56c0",
+      "level": "N2",
+      "word": "水蒸気",
+      "reading": "すいじょうき",
+      "originalEnglish": "water vapour; steam",
+      "currentKorean": "김",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N2-8966975727",
+      "level": "N2",
+      "word": "水曜",
+      "reading": "すいよう",
+      "originalEnglish": "Wednesday",
+      "currentKorean": "수",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N2-d41d1a3e3a",
+      "level": "N2",
+      "word": "ずうっと",
+      "reading": "ずうっと",
+      "originalEnglish": "continuously; the whole time; all the way; throughout",
+      "currentKorean": "죽",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N2-172c14a0d6",
+      "level": "N2",
+      "word": "隙間",
+      "reading": "すきま",
+      "originalEnglish": "crevice; crack; gap; opening",
+      "currentKorean": "틈",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N2-d46254efba",
+      "level": "N2",
+      "word": "性別",
+      "reading": "せいべつ",
+      "originalEnglish": "distinction by sex; sex; gender",
+      "currentKorean": "성",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N2-966b2f8873",
+      "level": "N2",
+      "word": "そういえば",
+      "reading": "そういえば",
+      "originalEnglish": "which reminds me ..",
+      "currentKorean": "참",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N2-5880c88977",
+      "level": "N2",
+      "word": "素質",
+      "reading": "そしつ",
+      "originalEnglish": "character; qualities; genius",
+      "currentKorean": "질",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N2-84fe109bdf",
+      "level": "N2",
+      "word": "そのほか",
+      "reading": "そのほか",
+      "originalEnglish": "otherwise",
+      "currentKorean": "밖",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N2-7060eefe03",
+      "level": "N2",
+      "word": "だいいち",
+      "reading": "だいいち",
+      "originalEnglish": "first; foremost",
+      "currentKorean": "젤",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N2-9490de4029",
+      "level": "N2",
+      "word": "太鼓",
+      "reading": "たいこ",
+      "originalEnglish": "drum; tambourine",
+      "currentKorean": "북",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N2-a9b5d114ca",
+      "level": "N2",
+      "word": "但し",
+      "reading": "ただし",
+      "originalEnglish": "but; however; provided that",
+      "currentKorean": "단",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N2-34b4191f3c",
+      "level": "N2",
+      "word": "ダム",
+      "reading": "ダム",
+      "originalEnglish": "dumb",
+      "currentKorean": "댐",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N2-fc4bbe285e",
+      "level": "N2",
+      "word": "ついで",
+      "reading": "ついで",
+      "originalEnglish": "opportunity; occasion",
+      "currentKorean": "김",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N2-258b38b002",
+      "level": "N2",
+      "word": "突き当たり",
+      "reading": "つきあたり",
+      "originalEnglish": "end (e.g. of street)",
+      "currentKorean": "끝",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N2-2f149505a1",
+      "level": "N2",
+      "word": "鉄砲",
+      "reading": "てっぽう",
+      "originalEnglish": "gun",
+      "currentKorean": "총",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N2-8e4ddc0409",
+      "level": "N2",
+      "word": "電池",
+      "reading": "でんち",
+      "originalEnglish": "battery",
+      "currentKorean": "약",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N2-7137e5312a",
+      "level": "N2",
+      "word": "永い",
+      "reading": "ながい",
+      "originalEnglish": "long; lengthy",
+      "currentKorean": "긴",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N2-611ba7e8a3",
+      "level": "N2",
+      "word": "のこぎり",
+      "reading": "のこぎり",
+      "originalEnglish": "saw",
+      "currentKorean": "톱",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N2-7c2c754f5f",
+      "level": "N2",
+      "word": "残らず",
+      "reading": "のこらず",
+      "originalEnglish": "all; entirely; completely; without exception",
+      "currentKorean": "다",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N2-903c265643",
+      "level": "N2",
+      "word": "日差し",
+      "reading": "ひざし",
+      "originalEnglish": "sunlight; rays of the sun",
+      "currentKorean": "볕",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N2-63bf0178ca",
+      "level": "N2",
+      "word": "ぴたり",
+      "reading": "ぴたり",
+      "originalEnglish": "tightly; closely",
+      "currentKorean": "딱",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N2-50b6055d9b",
+      "level": "N2",
+      "word": "日日",
+      "reading": "ひにち",
+      "originalEnglish": "every day; daily; day after day",
+      "currentKorean": "날",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N2-ad69650418",
+      "level": "N2",
+      "word": "皮膚",
+      "reading": "ひふ",
+      "originalEnglish": "skin",
+      "currentKorean": "살",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N2-0aa9e30a0b",
+      "level": "N2",
+      "word": "ブラシ",
+      "reading": "ブラシ",
+      "originalEnglish": "brushy; brush",
+      "currentKorean": "솔",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N2-c5ce96af8e",
+      "level": "N2",
+      "word": "坊さん",
+      "reading": "ぼうさん",
+      "originalEnglish": "Buddhist priest; monk",
+      "currentKorean": "중",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N2-e9cdfd4e18",
+      "level": "N2",
+      "word": "方面",
+      "reading": "ほうめん",
+      "originalEnglish": "direction; district; field (e.g., of study)",
+      "currentKorean": "쪽",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N2-2caf48afc9",
+      "level": "N2",
+      "word": "マスク",
+      "reading": "マスク",
+      "originalEnglish": "mask",
+      "currentKorean": "탈",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N2-718a562886",
+      "level": "N2",
+      "word": "名字",
+      "reading": "みょうじ",
+      "originalEnglish": "surname; family name",
+      "currentKorean": "성",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N2-5e56475dc8",
+      "level": "N2",
+      "word": "物置",
+      "reading": "ものおき",
+      "originalEnglish": "storage room",
+      "currentKorean": "광",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N2-32ae3dcc06",
+      "level": "N2",
+      "word": "物差し",
+      "reading": "ものさし",
+      "originalEnglish": "ruler; measure",
+      "currentKorean": "자",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N2-9183205d2c",
+      "level": "N2",
+      "word": "役目",
+      "reading": "やくめ",
+      "originalEnglish": "duty; business",
+      "currentKorean": "몫",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N2-cec3699484",
+      "level": "N2",
+      "word": "湯気",
+      "reading": "ゆげ",
+      "originalEnglish": "steam; vapour",
+      "currentKorean": "김",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N2-4977d2381f",
+      "level": "N2",
+      "word": "羊毛",
+      "reading": "ようもう",
+      "originalEnglish": "wool",
+      "currentKorean": "모",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N2-037cf136b2",
+      "level": "N2",
+      "word": "蝋燭",
+      "reading": "ろうそく",
+      "originalEnglish": "candle",
+      "currentKorean": "초",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N1-64eb41fae7",
+      "level": "N1",
+      "word": "あら",
+      "reading": "あら",
+      "originalEnglish": "oh; ah; saw-edged perch (Niphon spinosus)",
+      "currentKorean": "아",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N1-9b84f255df",
+      "level": "N1",
+      "word": "怒り",
+      "reading": "いかり",
+      "originalEnglish": "anger; hatred",
+      "currentKorean": "골",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N1-dcdd5a11a3",
+      "level": "N1",
+      "word": "衣装",
+      "reading": "いしょう",
+      "originalEnglish": "clothing; costume; outfit; garment; dress",
+      "currentKorean": "옷",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N1-30935266bc",
+      "level": "N1",
+      "word": "未だ",
+      "reading": "いまだ",
+      "originalEnglish": "as yet; hitherto; not yet (neg)",
+      "currentKorean": "채",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N1-8b18560ec9",
+      "level": "N1",
+      "word": "おまけ",
+      "reading": "おまけ",
+      "originalEnglish": "a discount; a prize; something additional; bonus; an extra; an exaggeration",
+      "currentKorean": "덤",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N1-d87794e93f",
+      "level": "N1",
+      "word": "及び",
+      "reading": "および",
+      "originalEnglish": "and; as well as",
+      "currentKorean": "급",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N1-06f4ced5f8",
+      "level": "N1",
+      "word": "階層",
+      "reading": "かいそう",
+      "originalEnglish": "class; level; stratum; hierarchy",
+      "currentKorean": "층",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N1-9f60aaa2a3",
+      "level": "N1",
+      "word": "河川",
+      "reading": "かせん",
+      "originalEnglish": "rivers",
+      "currentKorean": "강",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N1-bf831318fb",
+      "level": "N1",
+      "word": "カット",
+      "reading": "カット",
+      "originalEnglish": "cut; cutting",
+      "currentKorean": "컷",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N1-1e5e52057a",
+      "level": "N1",
+      "word": "借り",
+      "reading": "かり",
+      "originalEnglish": "borrowing; debt; loan",
+      "currentKorean": "빚",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N1-0aba7c931b",
+      "level": "N1",
+      "word": "気立て",
+      "reading": "きだて",
+      "originalEnglish": "disposition; nature",
+      "currentKorean": "맘",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N1-34b30a1719",
+      "level": "N1",
+      "word": "権力",
+      "reading": "けんりょく",
+      "originalEnglish": "power; authority; influence",
+      "currentKorean": "세",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N1-896f36ec1e",
+      "level": "N1",
+      "word": "指図",
+      "reading": "さしず",
+      "originalEnglish": "instruction; mandate",
+      "currentKorean": "명",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N1-76c9379fe5",
+      "level": "N1",
+      "word": "さっと",
+      "reading": "さっと",
+      "originalEnglish": "quickly; suddenly",
+      "currentKorean": "쓱",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N1-8b1e86984f",
+      "level": "N1",
+      "word": "刺繍",
+      "reading": "ししゅう",
+      "originalEnglish": "embroidery",
+      "currentKorean": "수",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N1-9ee0d57fa7",
+      "level": "N1",
+      "word": "じっくり",
+      "reading": "じっくり",
+      "originalEnglish": "deliberately; carefully",
+      "currentKorean": "잘",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N1-4cd81e6ad4",
+      "level": "N1",
+      "word": "嫉妬",
+      "reading": "しっと",
+      "originalEnglish": "jealousy",
+      "currentKorean": "샘",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N1-b240d751be",
+      "level": "N1",
+      "word": "仕舞",
+      "reading": "しまい",
+      "originalEnglish": "end; termination; informal (Noh play)",
+      "currentKorean": "끝",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N1-cbeffe12e0",
+      "level": "N1",
+      "word": "ショー",
+      "reading": "ショー",
+      "originalEnglish": "show",
+      "currentKorean": "쇼",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N1-14a20b03ef",
+      "level": "N1",
+      "word": "真理",
+      "reading": "しんり",
+      "originalEnglish": "truth",
+      "currentKorean": "도",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N1-69b03989d5",
+      "level": "N1",
+      "word": "水田",
+      "reading": "すいでん",
+      "originalEnglish": "(water-filled) paddy field",
+      "currentKorean": "논",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N1-0f0d43dcdb",
+      "level": "N1",
+      "word": "ずらっと",
+      "reading": "ずらっと",
+      "originalEnglish": "in a line; in a row",
+      "currentKorean": "죽",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N1-1bd79302aa",
+      "level": "N1",
+      "word": "すんなり",
+      "reading": "すんなり",
+      "originalEnglish": "pass with no objection; slim; slender",
+      "currentKorean": "쏙",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N1-4831341731",
+      "level": "N1",
+      "word": "勢力",
+      "reading": "せいりょく",
+      "originalEnglish": "influence; power; might; strength; potency; force; energy",
+      "currentKorean": "세",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N1-72112e3cd6",
+      "level": "N1",
+      "word": "先だって",
+      "reading": "せんだって",
+      "originalEnglish": "recently; the other day",
+      "currentKorean": "전",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N1-1399573421",
+      "level": "N1",
+      "word": "揃い",
+      "reading": "そろい",
+      "originalEnglish": "set; suit; uniform",
+      "currentKorean": "벌",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N1-a707d72877",
+      "level": "N1",
+      "word": "大便",
+      "reading": "だいべん",
+      "originalEnglish": "feces; excrement; shit",
+      "currentKorean": "똥",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N1-5b13a6dd8f",
+      "level": "N1",
+      "word": "タワー",
+      "reading": "タワー",
+      "originalEnglish": "tower",
+      "currentKorean": "탑",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N1-a9f3b0c184",
+      "level": "N1",
+      "word": "ちらっと",
+      "reading": "ちらっと",
+      "originalEnglish": "at a glance; by accident",
+      "currentKorean": "척",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N1-4634e54c9a",
+      "level": "N1",
+      "word": "堤防",
+      "reading": "ていぼう",
+      "originalEnglish": "bank; weir",
+      "currentKorean": "둑",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N1-d49ecb6fe8",
+      "level": "N1",
+      "word": "トーン",
+      "reading": "トーン",
+      "originalEnglish": "tone",
+      "currentKorean": "톤",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N1-150cea0f30",
+      "level": "N1",
+      "word": "土手",
+      "reading": "どて",
+      "originalEnglish": "embankment; bank",
+      "currentKorean": "둑",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N1-0d977668eb",
+      "level": "N1",
+      "word": "情け",
+      "reading": "なさけ",
+      "originalEnglish": "sympathy; compassion",
+      "currentKorean": "정",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N1-2ee52d40e1",
+      "level": "N1",
+      "word": "並びに",
+      "reading": "ならびに",
+      "originalEnglish": "and",
+      "currentKorean": "및",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N1-ee708f5bbd",
+      "level": "N1",
+      "word": "延べ",
+      "reading": "のべ",
+      "originalEnglish": "futures; credit (buying); stretching; total",
+      "currentKorean": "연",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N1-19f66d37d7",
+      "level": "N1",
+      "word": "バー",
+      "reading": "バー",
+      "originalEnglish": "bar",
+      "currentKorean": "바",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N1-5c73b68e41",
+      "level": "N1",
+      "word": "蜂蜜",
+      "reading": "はちみつ",
+      "originalEnglish": "honey",
+      "currentKorean": "꿀",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N1-750951d516",
+      "level": "N1",
+      "word": "果て",
+      "reading": "はて",
+      "originalEnglish": "the end; the extremity; the limit(s); the result",
+      "currentKorean": "끝",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N1-6e3cda5641",
+      "level": "N1",
+      "word": "甚だ",
+      "reading": "はなはだ",
+      "originalEnglish": "very; greatly; exceedingly",
+      "currentKorean": "퍽",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N1-505203967e",
+      "level": "N1",
+      "word": "腹立ち",
+      "reading": "はらだち",
+      "originalEnglish": "anger",
+      "currentKorean": "화",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N1-ed2719ab9d",
+      "level": "N1",
+      "word": "ファン",
+      "reading": "ファン",
+      "originalEnglish": "fan; fun",
+      "currentKorean": "팬",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N1-484b3552ce",
+      "level": "N1",
+      "word": "ブーム",
+      "reading": "ブーム",
+      "originalEnglish": "boom",
+      "currentKorean": "붐",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N1-0101791a03",
+      "level": "N1",
+      "word": "フォーム",
+      "reading": "フォーム",
+      "originalEnglish": "foam; form",
+      "currentKorean": "폼",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N1-471e8a709b",
+      "level": "N1",
+      "word": "振り",
+      "reading": "ふり",
+      "originalEnglish": "pretence; show; appearance",
+      "currentKorean": "태",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N1-47e4de1f65",
+      "level": "N1",
+      "word": "ペア",
+      "reading": "ペア",
+      "originalEnglish": "pair; pear",
+      "currentKorean": "쌍",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N1-5138ac69ee",
+      "level": "N1",
+      "word": "返答",
+      "reading": "へんとう",
+      "originalEnglish": "reply",
+      "currentKorean": "답",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N1-966b77c0d5",
+      "level": "N1",
+      "word": "褒美",
+      "reading": "ほうび",
+      "originalEnglish": "reward; prize",
+      "currentKorean": "상",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N1-2352843605",
+      "level": "N1",
+      "word": "ホール",
+      "reading": "ホール",
+      "originalEnglish": "hall; hole",
+      "currentKorean": "홀",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N1-a94e911306",
+      "level": "N1",
+      "word": "頬っぺた",
+      "reading": "ほっぺた",
+      "originalEnglish": "cheek",
+      "currentKorean": "볼",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N1-a191aa054e",
+      "level": "N1",
+      "word": "本体",
+      "reading": "ほんたい",
+      "originalEnglish": "substance; real form; object of worship",
+      "currentKorean": "몸",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N1-0234ae0bc2",
+      "level": "N1",
+      "word": "纏まり",
+      "reading": "まとまり",
+      "originalEnglish": "conclusion; settlement; consistency",
+      "currentKorean": "합",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N1-7d2fc5b5b0",
+      "level": "N1",
+      "word": "丸っきり",
+      "reading": "まるっきり",
+      "originalEnglish": "completely; perfectly; just as if",
+      "currentKorean": "통",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N1-2b0e48cde1",
+      "level": "N1",
+      "word": "見込み",
+      "reading": "みこみ",
+      "originalEnglish": "hope; prospects; expectation",
+      "currentKorean": "싹",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N1-bb06602638",
+      "level": "N1",
+      "word": "目盛",
+      "reading": "めもり",
+      "originalEnglish": "scale; gradations",
+      "currentKorean": "눈",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N1-16f035d374",
+      "level": "N1",
+      "word": "もしかして",
+      "reading": "もしかして",
+      "originalEnglish": "perhaps; possibly",
+      "currentKorean": "혹",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N1-911636ba99",
+      "level": "N1",
+      "word": "夕焼け",
+      "reading": "ゆうやけ",
+      "originalEnglish": "sunset",
+      "currentKorean": "놀",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N1-ed498ffde0",
+      "level": "N1",
+      "word": "誘惑",
+      "reading": "ゆうわく",
+      "originalEnglish": "temptation; allurement; lure",
+      "currentKorean": "꾐",
+      "reviewStatus": "not-semantically-verified"
+    },
+    {
+      "id": "N1-9f069bc7a9",
+      "level": "N1",
+      "word": "様式",
+      "reading": "ようしき",
+      "originalEnglish": "style; form; pattern",
+      "currentKorean": "폼",
+      "reviewStatus": "not-semantically-verified"
+    }
+  ]
+}
