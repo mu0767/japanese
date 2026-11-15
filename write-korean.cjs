@@ -1,6 +1,13 @@
 const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm');
 function writeOutputs(records){
  const words=vm.runInNewContext(fs.readFileSync(path.join(__dirname,'data.js'),'utf8')+';WORDS');
+ const verifiedCorrections=JSON.parse(fs.readFileSync(path.join(__dirname,'qa/verified-meaning-corrections.json'),'utf8'));
+ for(const [id,correction] of Object.entries(verifiedCorrections)){
+  const original=words.find(w=>w.id===id);
+  if(!original||original.word!==correction.word||original.reading!==correction.reading)throw Error('Verified meaning ID/reading mismatch: '+id);
+  if(!records[id]||![correction.previous,correction.meaning].includes(records[id].meaning))throw Error('Verified meaning source changed; review manually: '+id);
+  records[id]={...records[id],meaning:correction.meaning,source:'source-verified-correction',url:correction.url,license:'reference-only'};
+ }
  const common={},kengdic={},commonEvidence={},kengdicEvidence={};
  for(const w of words){const r=records[w.id];if(!r)continue;
   if(!r.url)r.url=/krdict|NIKL/i.test(r.source)?'https://krdict.korean.go.kr/jpn':r.source==='kaikki'?'https://ko.wiktionary.org/wiki/'+encodeURIComponent(w.word):'https://github.com/evanclan/OpenJLPT';
