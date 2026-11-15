@@ -48,5 +48,55 @@
     "url": "https://bunpro.jp/ja/vocabs/%E7%B4%99",
     "license": "reference-only",
     "reason": "paper"
+  },
+  "N5-6313cc9cb5": {
+    "word": "これ",
+    "reading": "これ",
+    "meaning": "이것",
+    "previous": "요",
+    "source": "OpenJLPT gloss crosschecked against Japanese dictionary / Japan Foundation wordlist",
+    "url": "https://jisho.org/search/%E3%81%93%E3%82%8C",
+    "license": "reference-only",
+    "reason": "Demonstrative pronoun 'this'; isolated 요 is not the meaning"
+  },
+  "N5-d00ef0a9d5": {
+    "word": "次",
+    "reading": "つぎ",
+    "meaning": "다음, 다음 차례",
+    "previous": "담",
+    "source": "OpenJLPT gloss crosschecked against Japanese dictionary / Japan Foundation wordlist",
+    "url": "https://jisho.org/search/%E6%AC%A1%20%E3%81%A4%E3%81%8E",
+    "license": "reference-only",
+    "reason": "Next, following; '담' alone is not a complete learning gloss"
+  },
+  "N5-f9ccc7bfdf": {
+    "word": "六",
+    "reading": "ろく",
+    "meaning": "여섯, 육",
+    "previous": "엿",
+    "source": "OpenJLPT gloss crosschecked against Japanese dictionary / Japan Foundation wordlist",
+    "url": "https://jisho.org/search/%E5%85%AD%20%E3%82%8D%E3%81%8F",
+    "license": "reference-only",
+    "reason": "Six; 엿 is an unrelated Korean word"
+  },
+  "N5-44d9d70862": {
+    "word": "水曜日",
+    "reading": "すいようび",
+    "meaning": "수요일",
+    "previous": "수",
+    "source": "OpenJLPT gloss crosschecked against Japanese dictionary / Japan Foundation wordlist",
+    "url": "https://yg.jpf.go.jp/wp-content/uploads/2021/06/wordlist_X.pdf",
+    "license": "reference-only",
+    "reason": "Japan Foundation weekday chart: Wednesday"
+  },
+  "N5-86e7fb81c6": {
+    "word": "土曜日",
+    "reading": "どようび",
+    "meaning": "토요일",
+    "previous": "토",
+    "source": "OpenJLPT gloss crosschecked against Japanese dictionary / Japan Foundation wordlist",
+    "url": "https://yg.jpf.go.jp/wp-content/uploads/2021/06/wordlist_X.pdf",
+    "license": "reference-only",
+    "reason": "Japan Foundation weekday chart: Saturday"
   }
 }
