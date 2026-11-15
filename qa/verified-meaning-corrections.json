@@ -1,0 +1,22 @@
+{
+  "N5-ac4706068b": {
+    "word": "あの",
+    "reading": "あの",
+    "meaning": "저, 저쪽의",
+    "previous": "조",
+    "source": "Bunpro Japanese grammar N5; verified against OpenJLPT original meaning",
+    "url": "https://bunpro.jp/ja/grammar_points/%E3%81%82%E3%81%AE",
+    "license": "reference-only",
+    "reason": "Demonstrative modifying following noun; original English 'that over there'"
+  },
+  "N5-ce75057c4c": {
+    "word": "すぐ",
+    "reading": "すぐ",
+    "meaning": "곧, 즉시; 바로 근처",
+    "previous": "쉬",
+    "source": "Japanese Wiktionary; verified against OpenJLPT original meaning",
+    "url": "https://ja.wiktionary.org/wiki/%E3%81%99%E3%81%90",
+    "license": "reference-only",
+    "reason": "Adverb meaning immediately/soon or spatially near, not 'rest'"
+  }
+}
