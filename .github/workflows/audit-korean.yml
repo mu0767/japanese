@@ -5,6 +5,9 @@ on:
       - '.github/workflows/audit-korean.yml'
       - 'qa/audit-korean.cjs'
       - 'korean-data.js'
+      - 'data.js'
+      - 'korean-kengdic.js'
+      - 'qa/verified-meaning-corrections.json'
       - 'korean-provenance.json'
       - 'korean-kengdic-provenance.json'
   workflow_dispatch:
@@ -20,3 +23,5 @@ jobs:
           node-version: '22'
       - name: Report source analysis and translation risk
         run: node qa/audit-korean.cjs
+      - name: Test every vocabulary item and every verified correction
+        run: node test-korean.cjs
