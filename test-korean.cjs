@@ -3,7 +3,18 @@ const context=vm.createContext({});
 for(const file of ['data.js','core.js','kanji-data.js','korean-kengdic.js','korean-data.js','kanji.js'])vm.runInContext(fs.readFileSync(file,'utf8'),context);
 const words=vm.runInContext('WORDS',context),meanings=vm.runInContext('KOREAN_BY_ID',context),details=context.KanjiDetails;
 assert.equal(words.length,7811);assert.equal(Object.keys(meanings).length,words.length);
+const verifiedCorrections=JSON.parse(fs.readFileSync('qa/verified-meaning-corrections.json','utf8'));
 const provenance={...JSON.parse(fs.readFileSync('korean-kengdic-provenance.json','utf8')),...JSON.parse(fs.readFileSync('korean-provenance.json','utf8'))};
+for(const [id,correction] of Object.entries(verifiedCorrections)){
+  const original=words.find(w=>w.id===id);
+  assert(original, 'Verified correction ID missing: '+id);
+  assert.equal(original.word,correction.word);
+  assert.equal(original.reading,correction.reading);
+  assert.equal(provenance[id].meaning===correction.meaning||provenance[id].meaning===correction.previous,true,'Unexpected provenance mismatch: '+id);
+  assert(/^https:\/\//.test(correction.url),'Missing reference URL for '+id);
+  assert.equal(meanings[id],correction.meaning,'Verified translation missing: '+id);
+  provenance[id]={...provenance[id],meaning:correction.meaning};
+}
 for(const w of words){
   const meaning=details.korean(w);
   assert.equal(typeof meaning,'string',`${w.id} ${w.word}: no Korean meaning`);
