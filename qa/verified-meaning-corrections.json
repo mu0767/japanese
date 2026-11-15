@@ -128,5 +128,55 @@
     "url": "https://ja.wiktionary.org/wiki/%E5%9C%9F%E6%9B%9C",
     "license": "reference-only",
     "reason": "Saturday abbreviated Japanese form, still means Saturday"
+  },
+  "N2-20b4a043ec": {
+    "word": "乾電池",
+    "reading": "かんでんち",
+    "meaning": "건전지",
+    "previous": "약",
+    "source": "Japanese Wiktionary, independent word and reading validation",
+    "url": "https://ja.wiktionary.org/wiki/%E9%9B%BB%E6%B1%A0",
+    "license": "reference-only",
+    "reason": "Dry-cell battery; verified from Japanese battery / dry cell relation"
+  },
+  "N2-8e4ddc0409": {
+    "word": "電池",
+    "reading": "でんち",
+    "meaning": "전지, 배터리",
+    "previous": "약",
+    "source": "Japanese Wiktionary, independent word and reading validation",
+    "url": "https://ja.wiktionary.org/wiki/%E9%9B%BB%E6%B1%A0",
+    "license": "reference-only",
+    "reason": "Electrical battery, not medicine"
+  },
+  "N2-8966975727": {
+    "word": "水曜",
+    "reading": "すいよう",
+    "meaning": "수요일",
+    "previous": "수",
+    "source": "Japanese Wiktionary, independent word and reading validation",
+    "url": "https://ja.wiktionary.org/wiki/%E6%B0%B4%E6%9B%9C",
+    "license": "reference-only",
+    "reason": "Wednesday"
+  },
+  "N3-8d570a517c": {
+    "word": "職業",
+    "reading": "しょくぎょう",
+    "meaning": "직업",
+    "previous": "직",
+    "source": "Japanese Wiktionary, independent word and reading validation",
+    "url": "https://ja.wiktionary.org/wiki/%E8%81%B7%E6%A5%AD",
+    "license": "reference-only",
+    "reason": "Occupation, job"
+  },
+  "N2-5f2c3ba54c": {
+    "word": "工夫",
+    "reading": "くふう",
+    "meaning": "궁리, 고안",
+    "previous": "꾀",
+    "source": "Japanese Wiktionary, independent word and reading validation",
+    "url": "https://ja.wiktionary.org/wiki/%E5%B7%A5%E5%A4%AB",
+    "license": "reference-only",
+    "reason": "くふう is ingenuity, planning or devising; English source gloss 'labourer' refers to こうふ"
   }
 }
