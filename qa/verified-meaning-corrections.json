@@ -98,5 +98,35 @@
     "url": "https://yg.jpf.go.jp/wp-content/uploads/2021/06/wordlist_X.pdf",
     "license": "reference-only",
     "reason": "Japan Foundation weekday chart: Saturday"
+  },
+  "N3-6bec104564": {
+    "word": "悪魔",
+    "reading": "あくま",
+    "meaning": "악마, 마귀",
+    "previous": "마",
+    "source": "Japanese Wiktionary cross-check of OpenJLPT gloss",
+    "url": "https://ja.wiktionary.org/wiki/%E6%82%AA%E9%AD%94",
+    "license": "reference-only",
+    "reason": "Devil or demon, not the Korean fragment 마"
+  },
+  "N4-7f6ffe3432": {
+    "word": "事故",
+    "reading": "じこ",
+    "meaning": "사고",
+    "previous": "탈",
+    "source": "Japanese Wiktionary cross-check of OpenJLPT gloss",
+    "url": "https://ja.wiktionary.org/wiki/%E4%BA%8B%E6%95%85",
+    "license": "reference-only",
+    "reason": "Accident, incident"
+  },
+  "N3-94cd75297e": {
+    "word": "土曜",
+    "reading": "どよう",
+    "meaning": "토요일",
+    "previous": "토",
+    "source": "Japanese Wiktionary cross-check of OpenJLPT gloss",
+    "url": "https://ja.wiktionary.org/wiki/%E5%9C%9F%E6%9B%9C",
+    "license": "reference-only",
+    "reason": "Saturday abbreviated Japanese form, still means Saturday"
   }
 }
