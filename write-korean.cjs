@@ -8,6 +8,16 @@ function writeOutputs(records){
   if(!records[id]||![correction.previous,correction.meaning].includes(records[id].meaning))throw Error('Verified meaning source changed; review manually: '+id);
   records[id]={...records[id],meaning:correction.meaning,source:'source-verified-correction',url:correction.url,license:'reference-only'};
  }
+ const reviewed=JSON.parse(fs.readFileSync(path.join(__dirname,'korean-reviewed-overrides.json'),'utf8'));
+ for(const [id,c] of Object.entries(reviewed)){
+  const original=words.find(w=>w.id===id);
+  if(!original||original.word!==c.word||original.reading!==c.reading||original.meaning!==c.english)throw Error('Reviewed meaning identity mismatch: '+id);
+  if(!records[id])throw Error('Missing provenance for reviewed meaning: '+id);
+  // Independently verified corrections can supersede the older review's proposed wording.
+  if(records[id].meaning===c.after)continue;
+  if(records[id].meaning!==c.before){if(verifiedCorrections[id]&&records[id].meaning===verifiedCorrections[id].meaning)continue;throw Error('Reviewed meaning needs reconciliation: '+id)}
+  records[id]={...records[id],meaning:c.after,source:'reviewed-source-aligned-translation',reviewReason:c.reason,reviewSource:c.source};
+ }
  const common={},kengdic={},commonEvidence={},kengdicEvidence={};
  for(const w of words){const r=records[w.id];if(!r)continue;
   if(!r.url)r.url=/krdict|NIKL/i.test(r.source)?'https://krdict.korean.go.kr/jpn':r.source==='kaikki'?'https://ko.wiktionary.org/wiki/'+encodeURIComponent(w.word):'https://github.com/evanclan/OpenJLPT';
