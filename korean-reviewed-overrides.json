@@ -1087,5 +1087,14 @@
     "after": "붉어지다",
     "reason": "일본어 원어·읽기·원뜻 대조 및 일상 한국어 대표뜻 교정. 역대조 사전의 부분 의미·낡은 표현·오역 우선 선택 방지.",
     "source": "Japanese JLPT reading and dictionary senses compared with Korean everyday usage"
+  },
+  "N4-4fbc32438d": {
+    "word": "熱",
+    "reading": "ねつ",
+    "english": "fever",
+    "before": "신열",
+    "after": "열, 발열",
+    "reason": "일상 일본어 熱がある/熱が出る의 의미는 열이 있다/열이 나다. 신열은 학습용 대표 뜻으로 부적절",
+    "source": "OpenJLPT English gloss (fever), Japanese dictionary meaning cross-check"
   }
 }
