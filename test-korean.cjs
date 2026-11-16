@@ -5,6 +5,7 @@ const words=vm.runInContext('WORDS',context),meanings=vm.runInContext('KOREAN_BY
 assert.equal(words.length,7811);assert.equal(Object.keys(meanings).length,words.length);
 const verifiedCorrections=JSON.parse(fs.readFileSync('qa/verified-meaning-corrections.json','utf8'));
 const provenance={...JSON.parse(fs.readFileSync('korean-kengdic-provenance.json','utf8')),...JSON.parse(fs.readFileSync('korean-provenance.json','utf8'))};
+const reviewed=JSON.parse(fs.readFileSync('korean-reviewed-overrides.json','utf8'));
 for(const [id,correction] of Object.entries(verifiedCorrections)){
   const original=words.find(w=>w.id===id);
   assert(original, 'Verified correction ID missing: '+id);
@@ -22,12 +23,16 @@ for(const w of words){
   assert(!/어간의 하나|좆같|^낼$|^머$/.test(meaning),`${w.id}: unrelated dictionary fragment or unsuitable learning gloss`);
   assert(!/한국어 뜻 (미등록|확인 필요)/.test(details.render(w)));
   assert.equal(provenance[w.id].reading,w.reading);assert.equal(provenance[w.id].word,w.word);
-  assert.equal(provenance[w.id].meaning,meaning);assert(provenance[w.id].source&&provenance[w.id].url);
+  const review=reviewed[w.id];
+  const expected=review&&provenance[w.id].meaning===review.before?review.after:provenance[w.id].meaning;
+  assert.equal(expected,meaning,`Review and deployed meaning disagree: ${w.id}`);assert(provenance[w.id].source&&provenance[w.id].url);
 }
 const get=(word,reading)=>words.find(w=>w.word===word&&w.reading===reading);
 assert.match(details.korean(get('大切','たいせつ')),/소중|중요/);
 assert.match(details.korean(get('散歩','さんぽ')),/산[보책]/);
 assert.match(details.korean(get('辛い','からい')),/맵/);assert.match(details.korean(get('辛い','つらい')),/괴롭|고통|쓰라/);
+assert.equal(details.korean(get('熱','ねつ')),'열, 발열');
+assert.equal(details.korean(get('階段','かいだん')),'계단');
 assert.equal(details.korean('辛い'),null);assert.notEqual(details.korean(get('方','かた')),details.korean(get('方','ほう')));
 for(const level of ['N5','N4','N3','N2','N1']){
   const pool=words.filter(w=>w.level===level);
